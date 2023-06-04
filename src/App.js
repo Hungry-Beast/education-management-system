@@ -15,6 +15,8 @@ import Geography from "./scenes/geography";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
 import Calendar from "./scenes/calendar/calendar";
+import Login from './scenes/login/Login'
+
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -22,7 +24,9 @@ function App() {
 
   return (
     <ColorModeContext.Provider value={colorMode}>
-      <ThemeProvider theme={theme}>
+
+      <Login />
+      {/* <ThemeProvider theme={theme}>
         <CssBaseline />
         <div className="app">
           <Sidebar isSidebar={isSidebar} />
@@ -43,7 +47,8 @@ function App() {
             </Routes>
           </main>
         </div>
-      </ThemeProvider>
+      </ThemeProvider> */}
+
     </ColorModeContext.Provider>
   );
 }
