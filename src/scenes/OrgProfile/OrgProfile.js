@@ -50,46 +50,27 @@ const Span = styled.span``;
 
 const OrgProfile = () => {
   const isNonMobile = useMediaQuery("(min-width:600px)");
-  // const [initialValues, setInitialValues] = useState({
-  //   instituteName: "",
-  //   email: "",
-  //   contact: "",
-  //   address1: "",
-  //   address2: "",
-  // });
-  // useEffect(() => {
-  //   let values = localStorage.getItem("universityDetails")
-  //     ? JSON.parse(localStorage.getItem("universityDetails"))
-  //     : null;
-  //   if (values) {
-  //     setInitialValues(values);
-  //   }
-  // }, []);
+  const [initialValues, setInitialValues] = useState();
+  useEffect(() => {
+    let values = localStorage.getItem("universityDetails")
+      ? JSON.parse(localStorage.getItem("universityDetails"))
+      : null;
+    if (values) {
+      setInitialValues(values);
+    }
+  }, []);
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
-
-  let initialValues = {
-    instituteName: "",
-    shortName: "",
-    affiliationNo: "",
-    schoolCode: "",
-    country: "",
-    pincode: "",
-    email: "",
-    contact: "",
-    address1: "",
-    address2: "",
+  const onSubmit = (data) => {
+    localStorage.setItem("universityDetails", JSON.stringify(data));
   };
 
-  const handleFormSubmit = (values) => {
-    console.log(values);
-    localStorage.setItem("universityDetails", JSON.stringify(values));
-  };
+  if(!initialValues)
+    return;
 
   return (
     <Box m="20px">
@@ -112,199 +93,173 @@ const OrgProfile = () => {
           handleSubmit,
           submitForm,
         }) => ( */}
-          <form onSubmit={handleSubmit}>
-            <HeaderBar>Basic Infomation</HeaderBar>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <HeaderBar>Basic Infomation</HeaderBar>
 
-            {/* <InfoContainer>
-              <DivInput>
-                <ImageDiv>
-                  <Typography variant="h3">Logo </Typography>
-                  <Image src="/assets/NERIST_LOGO.png" />
-                </ImageDiv>
-                <FileInputDiv>
-                  <FileInput type="file" />
-                  <Span>Maximum allowed size 500kb</Span>
-                  <Span>Recommended logo size is 90 * 90 px</Span>
-                </FileInputDiv>
-              </DivInput>
-              <DivInput>
-                <ImageDiv>
-                  <Typography variant="h3">App Logo </Typography>
-                  <Image src="/assets/NERIST_LOGO.png" />
-                </ImageDiv>
-                <FileInputDiv>
-                  <FileInput type="file" />
-                  <Span>Maximum allowed size 500kb</Span>
-                  <Span>Recommended logo size is 90 * 90 px</Span>
-                </FileInputDiv>
-              </DivInput>
-            </InfoContainer> */}
-            <Box
-              display="grid"
-              gap="30px"
-              gridTemplateColumns="repeat(4, minmax(0, 1fr))"
-              sx={{
-                "& > div": { gridColumn: isNonMobile ? undefined : "span 4" },
-              }}
-            >
-              <TextField
-                required
-                fullWidth
-                variant="outlined"
-                type="text"
-                label="Institute Name"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                value={values.instituteName}
-                name="instituteName"
-                error={!!touched.instituteName && !!errors.instituteName}
-                helperText={touched.instituteName && errors.instituteName}
-                sx={{ gridColumn: "span 2" }}
-              />
-              <TextField
-                required
-                fullWidth
-                variant="outlined"
-                type="text"
-                label="Institute Short Name/SMS Sender Id"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                value={values.shortName}
-                name="shortName"
-                error={!!touched.shortName && !!errors.shortName}
-                helperText={touched.shortName && errors.shortName}
-                sx={{ gridColumn: "span 2" }}
-              />
-              <TextField
-                required
-                fullWidth
-                variant="outlined"
-                type="text"
-                label="Institute Affiliation No"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                value={values.affiliationNo}
-                name="affiliationNo"
-                error={!!touched.affiliationNo && !!errors.affiliationNo}
-                helperText={touched.affiliationNo && errors.affiliationNo}
-                sx={{ gridColumn: "span 2" }}
-              />
-              <TextField
-                required
-                fullWidth
-                variant="outlined"
-                type="text"
-                label="School Code"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                value={values.schoolCode}
-                name="schoolCode"
-                error={!!touched.schoolCode && !!errors.schoolCode}
-                helperText={touched.schoolCode && errors.schoolCode}
-                sx={{ gridColumn: "span 2" }}
-              />
-            </Box>
-            <HeaderBar>Contact Infomation</HeaderBar>
-            <Box
-              display="grid"
-              gap="30px"
-              gridTemplateColumns="repeat(4, minmax(0, 1fr))"
-              sx={{
-                "& > div": { gridColumn: isNonMobile ? undefined : "span 4" },
-              }}
-            >
-              <TextField
-                required
-                fullWidth
-                variant="outlined"
-                type="text"
-                label="Address 1"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                value={values.address1}
-                name="address1"
-                error={!!touched.address1 && !!errors.address1}
-                helperText={touched.address1 && errors.address1}
-                sx={{ gridColumn: "span 4" }}
-              />
-              <TextField
-                required
-                fullWidth
-                variant="outlined"
-                type="text"
-                label="Address 2"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                value={values.address2}
-                name="address2"
-                error={!!touched.address2 && !!errors.address2}
-                helperText={touched.address2 && errors.address2}
-                sx={{ gridColumn: "span 4" }}
-              />
-              <TextField
-                required
-                fullWidth
-                variant="outlined"
-                type="text"
-                label="Email"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                value={values.email}
-                name="email"
-                error={!!touched.email && !!errors.email}
-                helperText={touched.email && errors.email}
-                sx={{ gridColumn: "span 4" }}
-              />
-              <TextField
-                required
-                fullWidth
-                variant="outlined"
-                type="text"
-                label="Contact Number"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                value={values.contact}
-                name="contact"
-                error={!!touched.contact && !!errors.contact}
-                helperText={touched.contact && errors.contact}
-                sx={{ gridColumn: "span 4" }}
-              />
-              <TextField
-                required
-                fullWidth
-                variant="outlined"
-                type="text"
-                label="Country"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                value={values.country}
-                name="country"
-                error={!!touched.country && !!errors.country}
-                helperText={touched.country && errors.country}
-                sx={{ gridColumn: "span 2" }}
-              />
-              <TextField
-                required
-                fullWidth
-                variant="outlined"
-                type="text"
-                label="Pin Code"
-                sx={{ gridColumn: "span 2" }}
-                {...register("pincode")}
-              />
-            </Box>
-            <Box display="flex" justifyContent="first" mt="20px">
-              <Button
-                type="submit"
-                color="secondary"
-                variant="contained"
-                sx={{ fontSize: "16 px" }}
-              >
-                Update Profile
-              </Button>
-            </Box>
-          </form>
-        {/* )}
+        <InfoContainer>
+          <DivInput>
+            <ImageDiv>
+              <Typography variant="h3">Logo </Typography>
+              <Image src="/assets/NERIST_LOGO.png" />
+            </ImageDiv>
+            <FileInputDiv>
+              <FileInput type="file" {...register("logo")} />
+              <Span>Maximum allowed size 500kb</Span>
+              <Span>Recommended logo size is 90 * 90 px</Span>
+            </FileInputDiv>
+          </DivInput>
+          <DivInput>
+            <ImageDiv>
+              <Typography variant="h3">App Logo </Typography>
+              <Image src="/assets/NERIST_LOGO.png" />
+            </ImageDiv>
+            <FileInputDiv>
+              <FileInput type="file" {...register("appLogo")} />
+              <Span>Maximum allowed size 500kb</Span>
+              <Span>Recommended logo size is 90 * 90 px</Span>
+            </FileInputDiv>
+          </DivInput>
+        </InfoContainer>
+        <Box
+          display="grid"
+          gap="30px"
+          gridTemplateColumns="repeat(4, minmax(0, 1fr))"
+          sx={{
+            "& > div": { gridColumn: isNonMobile ? undefined : "span 4" },
+          }}
+        >
+          <TextField
+            required
+            fullWidth
+            variant="outlined"
+            type="text"
+            label="Institute Name"
+            defaultValue={initialValues?.instituteName}
+            {...register("instituteName")}
+            sx={{ gridColumn: "span 2" }}
+          />
+          <TextField
+            required
+            fullWidth
+            variant="outlined"
+            type="text"
+            label="Institute Short Name/SMS Sender Id"
+            defaultValue={initialValues?.shortName}
+
+            {...register("shortName")}
+            sx={{ gridColumn: "span 2" }}
+          />
+          <TextField
+            required
+            fullWidth
+            variant="outlined"
+            type="text"
+            label="Institute Affiliation No"
+            defaultValue={initialValues?.affiliationNo}
+
+            {...register("affiliationNo")}
+            sx={{ gridColumn: "span 2" }}
+          />
+          <TextField
+            required
+            fullWidth
+            variant="outlined"
+            type="text"
+            label="School Code"
+            defaultValue={initialValues?.schoolCode}
+
+            {...register("schoolcode")}
+            sx={{ gridColumn: "span 2" }}
+          />
+        </Box>
+        <HeaderBar>Contact Infomation</HeaderBar>
+        <Box
+          display="grid"
+          gap="30px"
+          gridTemplateColumns="repeat(4, minmax(0, 1fr))"
+          sx={{
+            "& > div": { gridColumn: isNonMobile ? undefined : "span 4" },
+          }}
+        >
+          <TextField
+            required
+            fullWidth
+            variant="outlined"
+            type="text"
+            label="Address 1"
+            defaultValue={initialValues?.address1}
+
+            {...register("address1")}
+            sx={{ gridColumn: "span 4" }}
+          />
+          <TextField
+            required
+            fullWidth
+            variant="outlined"
+            type="text"
+            label="Address 2"
+            defaultValue={initialValues?.address2}
+
+            {...register("address2")}
+            sx={{ gridColumn: "span 4" }}
+          />
+          <TextField
+            required
+            fullWidth
+            variant="outlined"
+            type="text"
+            label="Email"
+            defaultValue={initialValues?.email}
+
+            {...register("email")}
+            sx={{ gridColumn: "span 4" }}
+          />
+          <TextField
+            required
+            fullWidth
+            variant="outlined"
+            type="text"
+            label="Contact Number"
+            defaultValue={initialValues?.contact}
+
+            {...register("contact")}
+            sx={{ gridColumn: "span 4" }}
+          />
+          <TextField
+            required
+            fullWidth
+            variant="outlined"
+            type="text"
+            label="Country"
+            defaultValue={initialValues?.country}
+
+            {...register("country")}
+            sx={{ gridColumn: "span 2" }}
+          />
+          <TextField
+            required
+            fullWidth
+            variant="outlined"
+            type="text"
+            label="Pin Code"
+            defaultValue={initialValues?.pincode}
+
+            sx={{ gridColumn: "span 2" }}
+            {...register("pincode")}
+          />
+        </Box>
+        <Box display="flex" justifyContent="first" mt="20px">
+          <Button
+            type="submit"
+            color="secondary"
+            variant="contained"
+            sx={{ fontSize: "16 px" }}
+          >
+            Update Profile
+          </Button>
+        </Box>
+      </form>
+      {/* )}
       </Formik> */}
     </Box>
   );
