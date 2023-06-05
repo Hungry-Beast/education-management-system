@@ -23,7 +23,7 @@ function App() {
   return (
     <ColorModeContext.Provider value={colorMode}>
 
-      <Login />
+      
        <ThemeProvider theme={theme}>
         <CssBaseline />
         <Routes>
@@ -37,7 +37,8 @@ function App() {
             <Route path="/admin/calender" element={<Calendar />} />
             <Route path="/admin/form" element={<Form />} />
           </Route>
-          <Route path="/login" element={<>d</>} />
+          <Route path="/login" element={<Login/>} />
+          
         </Routes>
       </ThemeProvider>
     </ColorModeContext.Provider>

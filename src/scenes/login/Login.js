@@ -1,53 +1,85 @@
-import React from 'react'
+import React ,{useState} from "react";
+import { Routes, Route } from "react-router-dom";
 
-// import './login.css'
-import { StyledContainer } from './Login.styles'
-// import { StyledContainer } from '../../components/Styles/Login.styles'
+import "./login.css";
+
+import FormValidation from './FormLogin/FormValidation'
+import {
+  StyledContainer,
+  StyledDesc,
+  StyledStudent,
+  StyledTeacher,
+  StyledAdmin,
+  StyledForm,
+  StyledWork,
+} from "./Login.styles";
+import { GlobalFont } from "./GlobalFont.styles";
+
+
 
 function Login() {
+
+  const [isSubmitted, setIsSubmitted] = useState(false)
+
+  function submitForm(){
+    setIsSubmitted(true);
+  }
+
   return (
+    <StyledForm>
+      <GlobalFont />
+      <StyledContainer>
+        <StyledStudent>
+          <img src="/assets/download.jpeg" alt="" />
+          <StyledDesc>
+            <h1>Student</h1>
+            <p>
+              The <span>Future </span>of Tomorrow
+            </p>
+          </StyledDesc>
+        </StyledStudent>
 
-    // <div className='logos'>
+        <StyledTeacher>
+          <img src="/assets/teacher.jpeg" alt="" />
+          <StyledDesc>
+            <h1>Teacher</h1>
+            <p>
+              The Architecture of <span>Future </span>
+            </p>
+          </StyledDesc>
+        </StyledTeacher>
 
-    //       <div className='logo'>
-    //     <img  className='student-img' src ={Student_img}  alt='' />
-    //     <div>
-    //     <h1>Student</h1>
-    //     <p>The <span className='future'>Future</span> of Tomorrow</p>
-    //     </div>
-    //   </div>
+        <StyledAdmin>
+          <img src="/assets/admin.webp" alt="" />
+          <StyledDesc>
+            <h1>Administrator</h1>
+            <p>The People, Process, Teams, Office</p>
+          </StyledDesc>
+        </StyledAdmin>
 
+        <StyledAdmin>
+          <img src="/assets/management.jpeg" alt="" />
+          <StyledDesc>
+            <h1>Management</h1>
+            <p>
+              Applies Leadership, Defines Vision for the <span>Future </span>
+            </p>
+          </StyledDesc>
+        </StyledAdmin>
+      </StyledContainer>
 
-
-    //   <div className='logo'>
-    //     <img  className='teacher-img' src ={Teacher_img }  alt='' />
-    //     <div>
-    //     <h1>Teacher</h1>
-    //     <p>The Arhitecture of <span className='future'>Future</span></p>
-    //     </div>
-    //   </div>
-
-
-    //   <div className='logo'>
-    //     <img  className='Admin-img' src ={Admin_img}  alt='' />
-    //     <div>
-    //     <h1>Administrator</h1>
-    //     <p>The People, Process</p>
-    //     </div>
-    //   </div>
-    // </div>
-
-
-    
-    <StyledContainer>
-
+      <StyledWork>
+        <img src="/assets/working.png" alt="" />
+      </StyledWork>
       
-    </StyledContainer>
-  
-    
+     
+      {!isSubmitted ? (<FormValidation submitForm={submitForm} /> ) : '' }
 
-    
-  )
+       <Routes>
+          <Route path='admin' element={<admin/>} />
+        </Routes>
+    </StyledForm>
+  );
 }
 
-export default Login
+export default Login;
