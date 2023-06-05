@@ -12,6 +12,8 @@ import FAQ from "./scenes/faq";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
 import Calendar from "./scenes/calendar/calendar";
+import Login from './scenes/login/Login'
+
 import OrgProfile from "./scenes/OrgProfile/OrgProfile";
 import AdminLayout from "./AdminLayout";
 
@@ -20,7 +22,9 @@ function App() {
 
   return (
     <ColorModeContext.Provider value={colorMode}>
-      <ThemeProvider theme={theme}>
+
+      
+       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Routes>
           <Route element={<AdminLayout />}>
@@ -33,7 +37,8 @@ function App() {
             <Route path="/admin/calender" element={<Calendar />} />
             <Route path="/admin/form" element={<Form />} />
           </Route>
-          <Route path="/login" element={<>d</>} />
+          <Route path="/login" element={<Login/>} />
+          
         </Routes>
       </ThemeProvider>
     </ColorModeContext.Provider>
