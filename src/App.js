@@ -33,7 +33,8 @@ function App() {
             <Route path="/admin/calender" element={<Calendar />} />
             <Route path="/admin/form" element={<Form />} />
           </Route>
-          <Route path="/login" element={<>d</>} />
+          <Route path="/login" element={<></>} />
+          
         </Routes>
       </ThemeProvider>
     </ColorModeContext.Provider>

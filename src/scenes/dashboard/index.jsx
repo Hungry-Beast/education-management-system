@@ -9,11 +9,16 @@ import TrafficIcon from "@mui/icons-material/Traffic";
 import Header from "../../components/Header";
 import StatBox from "../../components/StatBox";
 import ProgressCircle from "../../components/ProgressCircle";
+import { useState } from "react";
 
 const Dashboard = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+  const [isMenu, setIsMenu] = useState(false)
 
+  const toggleMenu = () => {
+    setIsMenu(!isMenu);
+  };
   return (
     <Box m="20px">
       {/* HEADER */}
