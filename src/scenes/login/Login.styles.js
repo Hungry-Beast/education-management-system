@@ -42,7 +42,8 @@ export const StyledForm = styled.div`
   @media ${devices.tablet} {
     flex-direction: column-reverse;
     align-items: center;
-    margin-top: 200px;
+    /* margin-top: 200px; */
+    overflow-y: scroll;
   }
 `;
 

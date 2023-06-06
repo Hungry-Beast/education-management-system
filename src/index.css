@@ -10,11 +10,14 @@ body,
   font-family: "Source Sans Pro", sans-serif;
 }
 
+
 .app {
   display: flex;
   position: relative;
   height: 100vh;
   overflow: hidden;
+  /* max-width: 1200px ;
+  margin: 0 auto; */
 }
 
 ::-webkit-scrollbar {
@@ -38,4 +41,5 @@ body,
 .content{
   height: 100vh;
   overflow-y: scroll;
+  
 }

@@ -116,6 +116,10 @@ export const tokens = (mode) => ({
           700: "#a4a9fc",
           800: "#c3c6fd",
           900: "#e1e2fe",
+          1000: "#1dbfc1",
+        },
+        yellowAccent: {
+          100: "#f1f5f8",
         },
       }),
 });
@@ -152,10 +156,16 @@ export const themeSettings = (mode) => {
             secondary: {
               main: colors.greenAccent[500],
             },
+            success: {
+              main: colors.blueAccent[1000],
+            },
             neutral: {
               dark: colors.grey[700],
               main: colors.grey[500],
               light: colors.grey[100],
+            },
+            info: {
+              main: colors.yellowAccent[100],
             },
             background: {
               default: "#fcfcfc",
