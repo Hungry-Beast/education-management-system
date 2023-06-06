@@ -1,9 +1,6 @@
 import React ,{useState} from "react";
-import { Routes, Route } from "react-router-dom";
-
-import "./login.css";
-
 import FormValidation from './FormLogin/FormValidation'
+import './login.css'
 import {
   StyledContainer,
   StyledDesc,
@@ -12,6 +9,7 @@ import {
   StyledAdmin,
   StyledForm,
   StyledWork,
+  StyledContainerWrap
 } from "./Login.styles";
 import { GlobalFont } from "./GlobalFont.styles";
 
@@ -19,6 +17,7 @@ import { GlobalFont } from "./GlobalFont.styles";
 
 function Login() {
 
+  
   const [isSubmitted, setIsSubmitted] = useState(false)
 
   function submitForm(){
@@ -26,8 +25,16 @@ function Login() {
   }
 
   return (
+   
+
+
+    // <StyledContainerWrap>
+
+    
     <StyledForm>
-      <GlobalFont />
+    <GlobalFont />
+     
+
       <StyledContainer>
         <StyledStudent>
           <img src="/assets/download.jpeg" alt="" />
@@ -73,12 +80,12 @@ function Login() {
       </StyledWork>
       
      
-      {!isSubmitted ? (<FormValidation submitForm={submitForm} /> ) : '' }
+      <FormValidation submitForm={submitForm} />
 
-       <Routes>
-          <Route path='admin' element={<admin/>} />
-        </Routes>
+      
     </StyledForm>
+    // </StyledContainerWrap>
+  
   );
 }
 
