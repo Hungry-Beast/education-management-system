@@ -12,11 +12,17 @@ export const StyledError = styled.div`
 
 
 export const StyledLoginForm = styled.form`
-  width:400px;
-  margin-top:200px;
-  margin-left: 950px;
+  
   border-radius: 5px;
-  position:absolute;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+  height: 100%;
+  flex: 2;
+  max-width: 400px;
+  margin:0 20px ;
+  /* position:absolute; */
 
 
   @media (max-width: 586px) {

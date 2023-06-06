@@ -1,6 +1,6 @@
-import React ,{useState} from "react";
-import FormValidation from './FormLogin/FormValidation'
-import './login.css'
+import React, { useState } from "react";
+import FormValidation from "./FormLogin/FormValidation";
+import "./login.css";
 import {
   StyledContainer,
   StyledDesc,
@@ -9,31 +9,22 @@ import {
   StyledAdmin,
   StyledForm,
   StyledWork,
-  StyledContainerWrap
+  StyledContainerWrap,
 } from "./Login.styles";
 import { GlobalFont } from "./GlobalFont.styles";
 
-
-
 function Login() {
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
-  
-  const [isSubmitted, setIsSubmitted] = useState(false)
-
-  function submitForm(){
+  function submitForm() {
     setIsSubmitted(true);
   }
 
   return (
-   
-
-
     // <StyledContainerWrap>
 
-    
     <StyledForm>
-    <GlobalFont />
-     
+      <GlobalFont />
 
       <StyledContainer>
         <StyledStudent>
@@ -78,14 +69,10 @@ function Login() {
       <StyledWork>
         <img src="/assets/working.png" alt="" />
       </StyledWork>
-      
-     
-      <FormValidation submitForm={submitForm} />
 
-      
+      <FormValidation submitForm={submitForm} />
     </StyledForm>
     // </StyledContainerWrap>
-  
   );
 }
 

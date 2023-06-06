@@ -37,11 +37,7 @@ function App() {
             <Route path="/admin/calender" element={<Calendar />} />
             <Route path="/admin/form" element={<Form />} />
           </Route>
-<<<<<<< HEAD
-          <Route path="/login" element={<></>} />
-=======
           <Route path="/login" element={<Login/>} />
->>>>>>> e427ea747320d536c3399be48e70ac5972aac337
           
         </Routes>
       </ThemeProvider>
