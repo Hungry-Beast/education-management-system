@@ -5,17 +5,24 @@ import styled from 'styled-components'
 
 export const StyledError = styled.div`
   color: red;
-  font-weight: 800;
-  margin: 0 0 40px 0;
+  /* font-weight: 800; */
+  /* margin: 0 0 40px 0; */
 
 `
 
 
 export const StyledLoginForm = styled.form`
-  width:380px;
+  width:400px;
   margin-top:200px;
+  margin-left: 950px;
   border-radius: 5px;
-  position: relative;
+  position:absolute;
+
+
+  @media (max-width: 586px) {
+        
+    
+    }
 `
 
 export const StyledLabel = styled.label`
@@ -28,7 +35,7 @@ export const StyledLabel = styled.label`
 
 export const StyledInput = styled.input`
  
-
+  background-color:white;
   width: 100%;
   padding: 5px;
   font-size: 19px;
@@ -51,7 +58,7 @@ export const StyledButton = styled.button`
   border-radius: 19px;
   cursor: pointer;
   background: rgb(50,70,85);
-background: linear-gradient(90deg, rgba(50,70,85,1) 56%, rgba(157,149,2,0.486453956582633) 100%, rgba(0,212,255,1) 100%);
+  background: linear-gradient(90deg, rgba(50,70,85,1) 56%, rgba(157,149,2,0.486453956582633) 100%, rgba(0,212,255,1) 100%);
  
 `
 
@@ -81,6 +88,24 @@ export const StyledVersion = styled.div`
         color:gray;
         font-size:16px
     }
+
+    @media (max-width: 586px){
+      text-align:center;
+    padding-top:10px;
+    line-height: 0.5cm;
+
+    h2{
+      font-weight:bold;
+    }
+
+    p{
+        color:gray;
+        font-size:16px
+    }
+
+    }
 `
+
+
 
 
