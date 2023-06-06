@@ -1,4 +1,4 @@
-import { Box, IconButton, useTheme } from "@mui/material";
+import { Box, IconButton, useTheme, Typography, Link } from "@mui/material";
 import { useContext } from "react";
 import { ColorModeContext, tokens } from "../../theme";
 import InputBase from "@mui/material/InputBase";
@@ -15,18 +15,41 @@ const Topbar = () => {
   const colorMode = useContext(ColorModeContext);
 
   return (
-    <Box display="flex" justifyContent="space-between" p={2}>
-      {/* SEARCH BAR */}
-      <Box
-        display="flex"
-        backgroundColor={colors.primary[400]}
-        borderRadius="3px"
-      >
-        <InputBase sx={{ ml: 2, flex: 1 }} placeholder="Search" />
-        <IconButton type="button" sx={{ p: 1 }}>
-          <SearchIcon />
+    <Box display="flex" justifyContent="space-between" alignItems="center" p={2}>
+      
+      <Box display="flex">
+        <Link href="/admin">
+          <Box
+            component="img"
+            sx={{ height: 40}}
+            alt="Logo"
+            src="/logo192.png"
+          />
+        </Link>
+        <IconButton sx={{marginLeft: "10px" }} >
+          <SettingsOutlinedIcon />
         </IconButton>
+        <IconButton>
+          <PersonOutlinedIcon />
+        </IconButton>
+
+        {/* SEARCH BAR */}
+        <Box display="flex" backgroundColor={colors.primary[400]} borderRadius="3px">
+          <InputBase sx={{ ml: 2, flex: 1 }} placeholder="Search" />
+          <IconButton type="button" sx={{ p: 1 }}>
+            <SearchIcon />
+          </IconButton>
+        </Box>
       </Box>
+
+      <Box>
+        <Typography variant="h3" color={colors.grey[100]} fontWeight="bold" > Infotute EMS </Typography>
+      </Box>
+
+      <Box>
+        <Typography variant="h4" fontWeight="bold" color="#ae261d" > Academic Year 2022-23 </Typography>
+      </Box>
+
 
       {/* ICONS */}
       <Box display="flex">
