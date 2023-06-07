@@ -16,12 +16,9 @@ import Login from './scenes/login/Login'
 
 import OrgProfile from "./scenes/OrgProfile/OrgProfile";
 import AdminLayout from "./AdminLayout";
-<<<<<<< HEAD
 import ModulesLayout from "./ModulesLayout";
 import Academic from "./scenes/modules/academic/Academic";
-=======
 import Dprofile from "./scenes/detailProfile/Dprofile";
->>>>>>> 432a349056aa3c7ae8dad93d329917ab14899fc6
 
 function App() {
   const [theme, colorMode] = useMode();
