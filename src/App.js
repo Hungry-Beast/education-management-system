@@ -15,9 +15,9 @@ import Login from './scenes/login/Login'
 
 import OrgProfile from "./scenes/OrgProfile/OrgProfile";
 import AdminLayout from "./AdminLayout";
-// import SetModules from "./scenes/setmodules";
-// import AcademicStructure from "./settingcomponents/academicstructure";
-// import EmailTemplates from "./settingcomponents/emailtemplates";
+import SetModules from "./scenes/setmodules";
+import AcademicStructure from "./settingcomponents/academicstructure";
+import EmailTemplates from "./settingcomponents/emailtemplates";
 import ModulesLayout from "./ModulesLayout";
 import Academic from "./scenes/modules/academic/Academic";
 import Dprofile from "./scenes/detailProfile/Dprofile";
