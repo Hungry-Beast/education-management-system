@@ -2,7 +2,6 @@ import React from "react";
 
 import { useForm } from "react-hook-form";
 
-
 import { useNavigate } from "react-router-dom";
 
 import {
@@ -13,10 +12,8 @@ import {
   StyledWelcome,
   StyledWelcomeIcon,
   StyledVersion,
-  StyledError
+  StyledError,
 } from "../LoginForm.styles";
-
-
 
 function FormValidation() {
   const navigate = useNavigate();
@@ -57,16 +54,23 @@ function FormValidation() {
         aria-invalid={errors.username ? "true" : "false"}
       />
       <StyledError>
-      {errors.username && <p role="alert">{errors.username?.message}</p>}
+        {errors.username && <p role="alert">{errors.username?.message}</p>}
       </StyledError>
 
       <StyledLabel>Password:</StyledLabel>
       <StyledInput
-        {...register("password", { required: "Password of minimum 6 length is required", minLength: 6 })}
+        type="password"
+        {...register("password", {
+          required: "Password of minimum 6 length is required",
+          minLength: {
+            value: 6,
+            message: "Password must be more than 6 characters",
+          },
+        })}
         aria-invalid={errors.password ? "true" : "false"}
-    />
-     <StyledError>
-      {errors.password && <p role="alert">{errors.password?.message}</p>}
+      />
+      <StyledError>
+        {errors.password && <p role="alert">{errors.password?.message}</p>}
       </StyledError>
       <StyledButton type="submit">Login</StyledButton>
 

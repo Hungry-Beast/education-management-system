@@ -15,9 +15,12 @@ import Login from './scenes/login/Login'
 
 import OrgProfile from "./scenes/OrgProfile/OrgProfile";
 import AdminLayout from "./AdminLayout";
-import SetModules from "./scenes/setmodules";
-import AcademicStructure from "./settingcomponents/academicstructure";
-import EmailTemplates from "./settingcomponents/emailtemplates";
+// import SetModules from "./scenes/setmodules";
+// import AcademicStructure from "./settingcomponents/academicstructure";
+// import EmailTemplates from "./settingcomponents/emailtemplates";
+import ModulesLayout from "./ModulesLayout";
+import Academic from "./scenes/modules/academic/Academic";
+import Dprofile from "./scenes/detailProfile/Dprofile";
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -43,7 +46,10 @@ function App() {
             </Route>
           </Route>
           <Route path="/login" element={<Login/>} />
-          
+          <Route  element={<ModulesLayout/>} >
+            <Route path="/modules/academic" element={<Academic />} />
+          </Route>
+          <Route path="/profile" element={<Dprofile/>} />
         </Routes>
       </ThemeProvider>
     // </ColorModeContext.Provider>

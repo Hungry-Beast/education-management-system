@@ -1,13 +1,13 @@
 import styled from "styled-components";
 import { devices } from "../../devices";
 
-export const StyledContainerWrap = styled.div`
-  position: absolute;
+// export const StyledContainerWrap = styled.div`
+//   position: absolute;
 
-  @media (max-width: 586px) {
-    background-color: red;
-  }
-`;
+//   @media (max-width: 586px) {
+//     background-color: red;
+//   }
+// `;
 
 export const StyledDesc = styled.div`
   line-height: 0.3cm;
@@ -19,13 +19,23 @@ export const StyledDesc = styled.div`
     font-size: 15px;
   }
 
-  @media (max-width: 586px) {
+  @media ${devices.mobileL}  {
+    line-height: 0.41cm;
+    h1 {
+      font-size: 18px;
+    }
+    p {
+      font-size: 14px;
+    }
+  }
+
+  @media ${devices.tablet}  {
     line-height: 0.41cm;
     h1 {
       font-size: 20px;
     }
     p {
-      font-size: 14px;
+      font-size: 16px;
     }
   }
 `;
@@ -42,8 +52,18 @@ export const StyledForm = styled.div`
   @media ${devices.tablet} {
     flex-direction: column-reverse;
     align-items: center;
-    margin-top: 200px;
+    /* margin-top: 200px; */
+    overflow-y: scroll;
+    margin-top: 80px;
   }
+
+  @media ${devices.mobileL} {
+    flex-direction: column-reverse;
+    align-items: center;
+    margin-top: 80px;
+  }
+
+  
 `;
 
 export const StyledContainer = styled.div`
@@ -52,12 +72,16 @@ export const StyledContainer = styled.div`
   @media ${devices.tablet} {
     margin-top: 20px;
     display: flex;
+    /* width:300px; */
     /* flex-wrap: wrap; */
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
     /* align-items: flex-start; */
     /* justify-content: space-around; */
   }
+
+
+  
   flex: 1.5;
 `;
 
@@ -65,7 +89,7 @@ export const StyledStudent = styled.div`
   display: flex;
   gap: 20px;
   align-items: end;
-  margin-top: 30px;
+  margin-top: 70px;
   margin-left: 100px;
   img {
     width: 60px;
@@ -77,7 +101,7 @@ export const StyledStudent = styled.div`
 
   @media ${devices.tablet} {
     display: flex;
-    gap: 20px;
+    gap: 10px;
     align-items: center;
     /* margin-top: 30px;
 
@@ -85,7 +109,7 @@ export const StyledStudent = styled.div`
     margin: 0;
 
     img {
-      width: 40px;
+      width: 30px;
       border-radius: 50%;
     }
     span {
@@ -119,12 +143,21 @@ export const StyledAdmin = styled(StyledStudent)`
   margin-top: 30px; */
 
   img {
-    width: 80px;
+    width:70px;
     /* margin-top: 20px;
     height: 80px;
     border-radius: 50%; */
   }
   @media ${devices.tablet} {
+    img{
+      width:45px;
+    }
+  }
+
+  @media ${devices.mobileL} {
+    img{
+      width:42px;
+    }
   }
 `;
 
@@ -133,7 +166,6 @@ export const StyledWork = styled.div`
   flex: 1.2;
   img {
     width: 300px;
-
     padding: 0;
     height: 200px;
     object-fit: contain;
