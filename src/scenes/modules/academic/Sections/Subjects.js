@@ -1,9 +1,10 @@
 import { Add } from "@mui/icons-material";
-import { Button, Icon, Switch, Typography, colors } from "@mui/material";
-import React from "react";
+import { Button, Icon, Modal, Switch, Typography, colors } from "@mui/material";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 import SubjectTable from "./SubjectTable";
+import NewSubjectModal from "./NewSubjectModal";
 const Container = styled.div`
   width: 100%;
   height: 100%;
@@ -36,6 +37,10 @@ const TopbarRight = styled.div`
 `;
 
 const Subjects = () => {
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return (
     <Container>
       <Topbar>
@@ -43,6 +48,7 @@ const Subjects = () => {
           <Button
             color="success"
             variant="contained"
+            onClick={handleOpen}
             startIcon={<Add />}
             sx={{ color: "white", mx: "5px", py: "8px" }}
           >
@@ -90,7 +96,15 @@ const Subjects = () => {
           <Switch label="Edit Data" color="warning" />
         </TopbarRight>
       </Topbar>
-      <SubjectTable/>
+      <SubjectTable />
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <NewSubjectModal handleClose={handleClose}/>
+      </Modal>
     </Container>
   );
 };
