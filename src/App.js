@@ -19,6 +19,7 @@ import AdminLayout from "./AdminLayout";
 import ModulesLayout from "./ModulesLayout";
 import Academic from "./scenes/modules/academic/Academic";
 import Dprofile from "./scenes/detailProfile/Dprofile";
+import SubCategory from "./scenes/modules/academic/Sections/Subject/SubCategory";
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -41,6 +42,7 @@ function App() {
           <Route path="/login" element={<Login/>} />
           <Route  element={<ModulesLayout/>} >
             <Route path="/modules/academic" element={<Academic />} />
+            <Route path="/modules/academic/subject-category" element={<SubCategory />} />
           </Route>
           <Route path="/profile" element={<Dprofile/>} />
         </Routes>

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Subjects from './Sections/Subjects';
+import Subjects from './Sections/Subject/Subjects';
 
 const Container = styled.div`
 

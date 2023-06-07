@@ -5,6 +5,7 @@ import styled from "styled-components";
 
 import SubjectTable from "./SubjectTable";
 import NewSubjectModal from "./NewSubjectModal";
+import { Link } from "react-router-dom";
 const Container = styled.div`
   width: 100%;
   height: 100%;
@@ -54,14 +55,16 @@ const Subjects = () => {
           >
             New Subject
           </Button>
-          <Button
-            color="success"
-            variant="contained"
-            startIcon={<Add />}
-            sx={{ color: "white", mx: "5px", py: "8px" }}
-          >
-            Subject Category
-          </Button>
+          <Link to={"/modules/academic/subject-category"}>
+            <Button
+              color="success"
+              variant="contained"
+              startIcon={<Add />}
+              sx={{ color: "white", mx: "5px", py: "8px" }}
+            >
+              Subject Category
+            </Button>
+          </Link>
         </TopbarLeft>
         <TopbarMiddle>
           <MiddleElement first={true}>
@@ -103,7 +106,7 @@ const Subjects = () => {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <NewSubjectModal handleClose={handleClose}/>
+        <NewSubjectModal handleClose={handleClose} />
       </Modal>
     </Container>
   );
