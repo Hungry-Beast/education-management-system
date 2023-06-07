@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-
+import { devices } from "../../devices";
 
 
 
@@ -12,7 +12,7 @@ export const StyledError = styled.div`
 
 
 export const StyledLoginForm = styled.form`
-  
+ 
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -25,10 +25,12 @@ export const StyledLoginForm = styled.form`
   /* position:absolute; */
 
 
-  @media (max-width: 586px) {
-        
-    
-    }
+  @media ${devices.tablet} {
+    width:400px;
+  }
+  @media ${devices.mobileL} {
+    width:300px;
+  }
 `
 
 export const StyledLabel = styled.label`
@@ -41,7 +43,7 @@ export const StyledLabel = styled.label`
 
 export const StyledInput = styled.input`
  
-  background-color:white;
+  background-color:transparent;
   width: 100%;
   padding: 5px;
   font-size: 19px;
@@ -66,6 +68,12 @@ export const StyledButton = styled.button`
   background: rgb(50,70,85);
   background: linear-gradient(90deg, rgba(50,70,85,1) 56%, rgba(157,149,2,0.486453956582633) 100%, rgba(0,212,255,1) 100%);
  
+  @media ${devices.tablet} {
+   padding:12px;
+   cursor:pointer;
+   font-weight:bold;
+   font-size: 18px;
+  }
 `
 
 export const StyledWelcome = styled.h1`

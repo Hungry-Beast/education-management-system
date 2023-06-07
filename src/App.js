@@ -16,6 +16,7 @@ import Login from './scenes/login/Login'
 
 import OrgProfile from "./scenes/OrgProfile/OrgProfile";
 import AdminLayout from "./AdminLayout";
+import Dprofile from "./scenes/detailProfile/Dprofile";
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -36,7 +37,7 @@ function App() {
             <Route path="/admin/form" element={<Form />} />
           </Route>
           <Route path="/login" element={<Login/>} />
-          
+          <Route path="/profile" element={<Dprofile/>} />
         </Routes>
       </ThemeProvider>
     // </ColorModeContext.Provider>
