@@ -21,7 +21,7 @@ function App() {
   const [theme, colorMode] = useMode();
 
   return (
-    <ColorModeContext.Provider value={colorMode}>
+    // <ColorModeContext.Provider value={colorMode}>
        <ThemeProvider theme={theme}>
         <CssBaseline />
         <Routes>
@@ -39,7 +39,7 @@ function App() {
           
         </Routes>
       </ThemeProvider>
-    </ColorModeContext.Provider>
+    // </ColorModeContext.Provider>
   );
 }
 
