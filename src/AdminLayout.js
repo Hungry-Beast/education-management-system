@@ -8,7 +8,7 @@ const AdminLayout = ({ children }) => {
 
   return (
     <div className="app">
-      <Sidebar isSidebar={isSidebar} />
+      {/* <Sidebar isSidebar={isSidebar} /> */}
       <main className="content">
         <Topbar setIsSidebar={setIsSidebar} />
         <Outlet/>

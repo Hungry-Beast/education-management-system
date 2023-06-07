@@ -6,7 +6,6 @@ import Dashboard from "./scenes/dashboard";
 import Team from "./scenes/team";
 import Invoices from "./scenes/invoices";
 import Contacts from "./scenes/contacts";
-
 import Form from "./scenes/form";
 import FAQ from "./scenes/faq";
 import { CssBaseline, ThemeProvider } from "@mui/material";
@@ -16,6 +15,9 @@ import Login from './scenes/login/Login'
 
 import OrgProfile from "./scenes/OrgProfile/OrgProfile";
 import AdminLayout from "./AdminLayout";
+import SetModules from "./scenes/setmodules";
+import AcademicStructure from "./settingcomponents/academicstructure";
+import EmailTemplates from "./settingcomponents/emailtemplates";
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -30,10 +32,15 @@ function App() {
             <Route path="/admin/team" element={<Team />} />
             <Route path="/admin/contacts" element={<Contacts />} />
             <Route path="/admin/invoices" element={<Invoices />} />
-            <Route path="/admin/orgProfile" element={<OrgProfile />} />
+            {/* <Route path="/admin/orgProfile" element={<OrgProfile />} /> */}
             <Route path="/admin/faq" element={<FAQ />} />
             <Route path="/admin/calendar" element={<Calendar />} />
             <Route path="/admin/form" element={<Form />} />
+            <Route path="/admin/set-modules" element={<SetModules />} >
+              <Route path="orgProfile" element={<OrgProfile />} />
+              <Route path="acc-structure" element={ <AcademicStructure/> } />
+              <Route path="set-email-template" element={ <EmailTemplates/> } />
+            </Route>
           </Route>
           <Route path="/login" element={<Login/>} />
           

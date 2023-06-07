@@ -127,21 +127,21 @@ const Sidebar = () => {
             />
             <Item
               title="Manage Org. Profile"
-              to="/admin/orgProfile"
+              to="orgProfile"
               icon={<NoteAlt />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
               title="Academic Structure"
-              to="/admin/form"
+              to="acc-structure"
               icon={<CloudUpload />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
               title="Email Template"
-              to="/admin/form"
+              to="set-email-template"
               icon={<Email />}
               selected={selected}
               setSelected={setSelected}

@@ -127,8 +127,14 @@ const Topbar = () => {
         <IconButton onClick={handleClickMenu}>
           <NotificationsOutlinedIcon />
         </IconButton>
-        <IconButton>
-          <SettingsOutlinedIcon />
+         <IconButton> 
+
+
+          <Link sx={{ mt: 2}} to="/admin/set-modules">
+            <SettingsOutlinedIcon sx={{ mt: 0.8, color: "#807f7f" }} />                        {/*  Main/ Original settings icon */}
+          </Link>
+
+          
         </IconButton>
         <IconButton onClick={handleClick}>
           <PersonOutlinedIcon />
