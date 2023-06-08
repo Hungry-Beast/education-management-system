@@ -27,6 +27,8 @@ import SubCategory from "./scenes/modules/academic/Sections/Subject/SubCategory"
 import NotificationTemplate from "./settingcomponents/notificationtemplate";
 import TermsConditions from "./settingcomponents/termsconditions";
 import TermsDisplayPage from "./settingcomponents/termsconditions/TermsDisplayPage";
+import EmptyTableMessage from "./settingcomponents/emptytablemessage";
+import SmsModule from "./settingcomponents/smsmodule";
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -54,6 +56,8 @@ function App() {
               <Route path="holidays" element={ <Holidays/>} />
               <Route path="notification-template" element={ <NotificationTemplate/> } />
               <Route path="terms-conditions" element={ <TermsConditions /> } />
+              <Route path="empty-table-message" element={ <EmptyTableMessage /> } />
+              <Route path="sms-module" element={ <SmsModule /> } />
             </Route>
           </Route>
           <Route path="/login" element={<Login/>} />
