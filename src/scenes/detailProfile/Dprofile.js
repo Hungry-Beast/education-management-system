@@ -18,8 +18,19 @@ import { StyledDetailProfileWrapper,
 } from './Dprofile.styles'
 import { GlobalFont } from "../login/GlobalFont.styles";
 import InputFieldProfile from './InputFieldProfile';
+import { Tab, Tabs } from '@mui/material';
+import DetailsContainer from './DetailsContainer';
 
 function Dprofile() {
+
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
+
+
   const [radioValue, setRadio] = useState(true);
   return (
     <StyledDetailProfileWrapper>
@@ -40,17 +51,30 @@ function Dprofile() {
 <StyledTabandDetailFlex>
 
     <StyledTabContainer>
-          <StyledButton>Home</StyledButton>
+
+
+
+
+<Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
+      <Tab label="Item" value={0} />
+      <Tab label="Item Two" value={1} />
+      <Tab label="Item Three" value={2} />
+        </Tabs>
+
+
+
+
+          {/* <StyledButton>Home</StyledButton>
           <StyledButton>Profile</StyledButton>
           <StyledButton>Health Record</StyledButton>
           <StyledButton>Fees & Invoices</StyledButton>
           <StyledButton>My leaves</StyledButton>
-          <StyledButton>Advance Payment</StyledButton>    
+          <StyledButton>Advance Payment</StyledButton>     */}
     </StyledTabContainer>
 
     <StyledInputDetails>
 
-    <InputFieldProfile/>
+    <DetailsContainer value={value}/>
     </StyledInputDetails>
     
     
@@ -64,4 +88,4 @@ function Dprofile() {
   )
 }
 
-export default Dprofile
+export default Dprofile;
