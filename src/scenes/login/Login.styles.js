@@ -99,6 +99,8 @@ export const StyledStudent = styled.div`
     color: orange;
   }
 
+  
+
   @media ${devices.tablet} {
     display: flex;
     gap: 10px;
