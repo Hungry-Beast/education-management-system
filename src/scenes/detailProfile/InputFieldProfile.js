@@ -31,14 +31,9 @@ import {
   StyledLabelBloodInput,
   StyledPan,
   StyledCommunicationLine,
-  StyledCommunicationCard,
   StyledCommunicationDetails,
   StyledThirdInputCard,
-  StyledLeftCommunicationInput,
-  StyledCommunicationLeft,
-  StyledComInputLeft,
-  StyledCommunicationRight,
-  StyledComInputRight,
+
   StyledToggle,
 } from "./DetailInput.styled.js";
 import { Box } from "@mui/system";
@@ -260,49 +255,49 @@ const InputFieldProfile = ({ handleClose }) => {
               Communication Details
             </StyledCommunicationDetails>
 
-            <StyledLeftCommunicationInput>
-              <StyledCommunicationCard>
+<StyledStaffCard>
+            <StyledStaffLeftCard>
+              <StyledStaffInputLeft>
+                <StyledLabelInput>
+                  PIN
+                  <TextField />
+                </StyledLabelInput>
+                <StyledLabelInput>
+                  Vill/Will
+                  <TextField />
+                </StyledLabelInput>
+                <StyledLabelInput>
+                  District
+                  <TextField />
+                </StyledLabelInput>
+</StyledStaffInputLeft>
+</StyledStaffLeftCard>
 
 
-                <StyledCommunicationLeft>
-                  <StyledComInputLeft>
-                    <StyledLabelInput>
-                      First name
-                      <TextField />
-                    </StyledLabelInput>
-                    <StyledLabelInput>
-                      Vill/Ward
-                      <TextField />
-                    </StyledLabelInput>
-                    <StyledLabelInput>
-                      District
-                      <TextField />
-                    </StyledLabelInput>
-                  </StyledComInputLeft>
-                </StyledCommunicationLeft>
 
-  <StyledCommunicationRight>
-                  <StyledComInputRight>
-                    <StyledLabelInput>
-                      PO
-                      <TextField />
-                    </StyledLabelInput>
-                    <StyledLabelInput>
-                      PS
-                      <TextField />
-                    </StyledLabelInput>
-                    <StyledLabelInput>
-                      State
-                      <TextField />
-                    </StyledLabelInput>
+<StyledStaffRightCard>
+              <StyledStaffInputRight>
+                <StyledLabelInput>
+                  PO
+                  <TextField />
+                </StyledLabelInput>
 
-  </StyledComInputRight>
-                    </StyledCommunicationRight>
+                <StyledLabelInput>
+                  PS
+                  <TextField />
+                </StyledLabelInput>
 
-                    
+                <StyledLabelInput>
+                  State
+                  <TextField />
+                </StyledLabelInput>
 
-              </StyledCommunicationCard>
-            </StyledLeftCommunicationInput>
+           
+              </StyledStaffInputRight>
+            </StyledStaffRightCard>
+            </StyledStaffCard>
+
+
             <StyledCommunicationLine></StyledCommunicationLine>
           </StyledThirdInputCard>
         </StyledSecondInputCard>

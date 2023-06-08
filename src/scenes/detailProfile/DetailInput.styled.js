@@ -185,9 +185,7 @@ export const StyledLabelBloodInput = styled.div`
 
 `
 
-export const StyledLeftCommunicationInput = styled.div`
- 
-`
+
 
 export const StyledCommunicationLine = styled.div`
     width: 800px;
@@ -198,6 +196,7 @@ export const StyledCommunicationLine = styled.div`
 
 export const StyledThirdInputCard = styled.div`
   width:800px;
+
    
 `
 
@@ -208,35 +207,6 @@ export const StyledCommunicationDetails = styled.div`
     padding: 5px;
     padding-left:10px;
     background-color: #E3F2FD;
-    /* border:1px solid black; */
-`
-
-
-export const StyledCommunicationCard = styled.div`
-    
-    display:flex;
-    gap:40px;
-    align-items:start;
     
 `
 
-export  const StyledCommunicationLeft = styled(StyledInputLeftCard)`
-
-`
-
-export const StyledComInputLeft = styled(StyledInputLeftCard)`
-    /* input{
-        width:300px;
-    } */
-`
-
-
-// StyledComInputRight
-  export const StyledCommunicationRight  = styled(StyledStaffRightCard)`
-  
-  `
-
-
-export const StyledComInputRight  = styled(StyledStaffInputRight)`
-  
-`

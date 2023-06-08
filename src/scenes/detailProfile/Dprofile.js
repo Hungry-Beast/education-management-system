@@ -56,9 +56,13 @@ function Dprofile() {
 
 
 <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-      <Tab label="Item" value={0} />
-      <Tab label="Item Two" value={1} />
-      <Tab label="Item Three" value={2} />
+      <Tab label="Home" value={0} />
+      <Tab label="Profile" value={1} />
+      <Tab label="Health Record" value={2} />
+      <Tab label="Fees and Invoices" value={3} />
+      <Tab label="My Leaves" value={4} />
+      <Tab label="Advance Payment" value={5} />
+
         </Tabs>
 
 

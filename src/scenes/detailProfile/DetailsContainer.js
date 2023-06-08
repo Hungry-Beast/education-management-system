@@ -8,10 +8,10 @@ const Container = styled.div`
 
 
 const DetailsContainer = ({value}) => {
-    console.log(value)
+    
   switch (value) {
 
-    case 0:
+    case 1:
         return  <InputFieldProfile/>
   
     default:
