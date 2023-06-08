@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Topbar from "./scenes/global/Topbar";
 import Sidebar from "./scenes/global/Sidebar";
 import Dashboard from "./scenes/dashboard";
@@ -45,6 +45,7 @@ function App() {
             <Route path="/modules/academic/subject-category" element={<SubCategory />} />
           </Route>
           <Route path="/profile" element={<Dprofile/>} />
+          <Route path="/" element={<Navigate replace to="/login"/>} />
         </Routes>
       </ThemeProvider>
     // </ColorModeContext.Provider>

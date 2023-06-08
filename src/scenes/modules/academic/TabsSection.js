@@ -18,9 +18,9 @@ const TabsSection = ({value,handleChange}) => {
         onChange={handleChange}
         aria-label="tabs"
       >
-        <Tab label="Subject" icon={<Subject/>} />
-        <Tab label="Courses" icon={<LibraryBooks/>}  />
-        <Tab label="Class/Sem/Year" icon={<ModeEdit/>} />
+        <Tab label="Subject" value={0} icon={<Subject/>} />
+        <Tab label="Courses" value={1} icon={<LibraryBooks/>}  />
+        <Tab label="Class/Sem/Year" value={2} icon={<ModeEdit/>} />
       </Tabs>
     </Container>
   );
