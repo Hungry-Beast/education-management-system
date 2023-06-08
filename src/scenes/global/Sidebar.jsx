@@ -176,15 +176,15 @@ const Sidebar = () => {
               setSelected={setSelected}
             />
             <Item
-              title="FAQ Page"
-              to="/admin/faq"
+              title="Empty Table Message"
+              to="empty-table-message"
               icon={<HelpOutlineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
-              title="Bar Chart"
-              to="/admin/bar"
+              title="SMS Module"
+              to="sms-module"
               icon={<BarChartOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
