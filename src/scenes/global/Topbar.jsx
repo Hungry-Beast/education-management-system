@@ -130,7 +130,7 @@ const Topbar = () => {
          <IconButton> 
 
 
-          <Link sx={{ mt: 2}} to="/admin/set-modules">
+          <Link sx={{ mt: 2}} to="/admin/settings">
             <SettingsOutlinedIcon sx={{ mt: 0.8, color: "#807f7f" }} />                        {/*  Main/ Original settings icon */}
           </Link>
 
