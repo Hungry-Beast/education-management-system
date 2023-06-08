@@ -24,6 +24,9 @@ import Dprofile from "./scenes/detailProfile/Dprofile";
 import ModulesOnOff from "./settingcomponents/modulesonoff";
 import Holidays from "./settingcomponents/holidays";
 import SubCategory from "./scenes/modules/academic/Sections/Subject/SubCategory";
+import NotificationTemplate from "./settingcomponents/notificationtemplate";
+import TermsConditions from "./settingcomponents/termsconditions";
+import TermsDisplayPage from "./settingcomponents/termsconditions/TermsDisplayPage";
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -42,15 +45,19 @@ function App() {
             <Route path="/admin/faq" element={<FAQ />} />
             <Route path="/admin/calendar" element={<Calendar />} />
             <Route path="/admin/form" element={<Form />} />
+            
             <Route path="/admin/settings" element={<SetSettings />} >
               <Route path="orgProfile" element={<OrgProfile />} />
               <Route path="acc-structure" element={ <AcademicStructure/> } />
               <Route path="set-email-template" element={ <EmailTemplates/> } />
               <Route path="set-modules" element={ <ModulesOnOff/> } />
               <Route path="holidays" element={ <Holidays/>} />
+              <Route path="notification-template" element={ <NotificationTemplate/> } />
+              <Route path="terms-conditions" element={ <TermsConditions /> } />
             </Route>
           </Route>
           <Route path="/login" element={<Login/>} />
+          <Route path="/school-terms" element={ <TermsDisplayPage/> } />    {/*Route to Display the terms and conditions */}
           <Route  element={<ModulesLayout/>} >
             <Route path="/modules/academic" element={<Academic />} />
             <Route path="/modules/academic/subject-category" element={<SubCategory />} />

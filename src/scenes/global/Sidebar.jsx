@@ -161,16 +161,16 @@ const Sidebar = () => {
               setSelected={setSelected}
             />
             <Item
-              title="Invoices Balances"
-              to="/admin/invoices"
+              title="Notification Templates"
+              to="notification-template"
               icon={<ReceiptOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
 
             <Item
-              title="Calendar"
-              to="/admin/calendar"
+              title="Org. Terms and Conditions"
+              to="terms-conditions"
               icon={<CalendarTodayOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
