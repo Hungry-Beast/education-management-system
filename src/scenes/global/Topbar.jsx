@@ -30,8 +30,8 @@ import UpperMenuContains from "./UpperMenuContains";
 import { Link } from "react-router-dom";
 
 const UpperMenuContainer = styled.div`
-  width: 75vw;
-  height: 80vh;
+  width: 95vw;
+  height: 88vh;
   display: flex;
   flex-direction: column;
 `;
@@ -127,8 +127,14 @@ const Topbar = () => {
         <IconButton onClick={handleClickMenu}>
           <NotificationsOutlinedIcon />
         </IconButton>
-        <IconButton>
-          <SettingsOutlinedIcon />
+         <IconButton> 
+
+
+          <Link sx={{ mt: 2}} to="/admin/settings">
+            <SettingsOutlinedIcon sx={{ mt: 0.8, color: "#807f7f" }} />                        {/*  Main/ Original settings icon */}
+          </Link>
+
+          
         </IconButton>
         <IconButton onClick={handleClick}>
           <PersonOutlinedIcon />
