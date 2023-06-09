@@ -14,39 +14,43 @@ const InputEl = styled.input`
     border: 2px solid #3292d27b;
 `;
 
-
 const EditDeleteButton = () => {
-    return (
-        <>
-      <EditIcon/> <DeleteIcon/>
-      </>
-    );
-  };
-  
+  return (
+      <>
+    <EditIcon/> <DeleteIcon/>
+    </>
+  );
+};
 
 const columns = [
-    { field: 'id', headerName: 'Sl No', flex: 1 },
-    { field: 'title', headerName: 'Title', flex: 3 },
-    { field: 'message', headerName: 'Message', flex: 1},
-    { field: 'action', headerName: 'Action', flex: 1,  renderCell: (params) => (
-        <EditDeleteButton/>
-      )  }
-  ];
-  
-  
-  const rows = [
-    { id: 1, title: "OTP registration"  , message: 'Snow', action: 35},
-    { id: 2, title: "Fees Paid"  , message: 'Lannister', action: 42 },
-    { id: 3, title: "OTP Testing"  , message: 'Lannister', action: 45 },
-  ];
+  { field: 'id', headerName: 'Sl No', flex: 1 },
+  { field: 'mindays', headerName: 'Min Days', flex: 1 },
+  { field: 'maxdays', headerName: 'Max Days', flex: 1},
+  { field: 'type', headerName: 'Type', flex: 1},
+  { field: 'typename', headerName: 'Type Name', flex: 1},
+  { field: 'verifyby', headerName: 'Verify By', flex: 1},
+  { field: 'reverify', headerName: 'Re-verify for Students/Verify By for Others', flex: 3},
+  { field: 'action', headerName: 'Action', flex: 1,  renderCell: (params) => (
+      <EditDeleteButton/>
+    )  }
+];
 
-function SmsModule() {
+
+const rows = [
+  { id: 1, mindays: "OTP registration", maxdays: 'Snow', type: "teacher", typename: '', verifyby: '', reverify: 'RAJNISH KUMAR[teacher]'},
+  { id: 2, mindays: "Fees Paid", maxdays: 'Lannister', type: "teacher", typename: '', verifyby: '', reverify: 'PRANAB GOSWAMI[staff]' },
+  { id: 3, mindays: "OTP Testing"  , maxdays: 'Lannister', type: "staff", typename: '', verifyby: '', reverify: 'PRANAB GOSWAMI[staff]'},
+  { id: 4, mindays: "OTP Testing"  , maxdays: 'Lannister', type: "class", typename: '', verifyby: '', reverify: '	ARINDOM CHATTERJEE[teacher]'},
+
+];
+
+
+function LeaveSetting() {
   return (
     <Box sx={{ width: '100%' }} >
 
         <Box sx={{display: "flex", justifyContent: "flex-end", mb: "30px"}} >
-            <FormControlLabel control={<Switch sx={{mr: "20px"}}  defaultChecked />} labelPlacement="start" label='Edit Data' />
-            <Button variant="contained" sx={{color: 'white'}} color="success" >New Message</Button>
+            <Button variant="contained" sx={{color: 'white'}} color="success" >Add Leave</Button>
         </Box>
 
         <Box>
@@ -80,7 +84,8 @@ function SmsModule() {
       </div>
 
     </Box>
- )
+
+  )
 }
 
-export default SmsModule
+export default LeaveSetting

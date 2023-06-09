@@ -30,6 +30,7 @@ import TermsDisplayPage from "./settingcomponents/termsconditions/TermsDisplayPa
 import EmptyTableMessage from "./settingcomponents/emptytablemessage";
 import SmsModule from "./settingcomponents/smsmodule";
 import WeeklyOff from "./settingcomponents/weeklyoff";
+import LeaveSetting from "./settingcomponents/leavesetting";
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -60,6 +61,7 @@ function App() {
               <Route path="empty-table-message" element={ <EmptyTableMessage /> } />
               <Route path="sms-module" element={ <SmsModule /> } />
               <Route path="weekly-off" element={ <WeeklyOff /> } />
+              <Route path="leave-setting" element={ <LeaveSetting /> } />
             </Route>
           </Route>
           <Route path="/login" element={<Login/>} />
