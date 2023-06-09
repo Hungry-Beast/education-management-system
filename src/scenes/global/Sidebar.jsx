@@ -190,8 +190,8 @@ const Sidebar = () => {
               setSelected={setSelected}
             />
             <Item
-              title="Weekly Off"
-              to="weekly-off"
+              title="Leave Setting"
+              to="leave-setting"
               icon={<PieChartOutlineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
