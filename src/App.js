@@ -29,6 +29,7 @@ import TermsConditions from "./settingcomponents/termsconditions";
 import TermsDisplayPage from "./settingcomponents/termsconditions/TermsDisplayPage";
 import EmptyTableMessage from "./settingcomponents/emptytablemessage";
 import SmsModule from "./settingcomponents/smsmodule";
+import WeeklyOff from "./settingcomponents/weeklyoff";
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -58,6 +59,7 @@ function App() {
               <Route path="terms-conditions" element={ <TermsConditions /> } />
               <Route path="empty-table-message" element={ <EmptyTableMessage /> } />
               <Route path="sms-module" element={ <SmsModule /> } />
+              <Route path="weekly-off" element={ <WeeklyOff /> } />
             </Route>
           </Route>
           <Route path="/login" element={<Login/>} />
