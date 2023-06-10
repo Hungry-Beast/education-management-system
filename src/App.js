@@ -31,10 +31,10 @@ import EmptyTableMessage from "./settingcomponents/emptytablemessage";
 import SmsModule from "./settingcomponents/smsmodule";
 import WeeklyOff from "./settingcomponents/weeklyoff";
 import LeaveSetting from "./settingcomponents/leavesetting";
-import IntimeOuttime from "./settingcomponents/intimeouttime";
 import MyDetails from "./scenes/details";
 import Home from "./detailscomponents/home";
 import Profile from "./detailscomponents/profile";
+// import OrgProfile from "./settingcomponents/OrgProfile/OrgProfile";
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -66,7 +66,6 @@ function App() {
               <Route path="sms-module" element={ <SmsModule /> } />
               <Route path="weekly-off" element={ <WeeklyOff /> } />
               <Route path="leave-setting" element={ <LeaveSetting /> } />
-              <Route path="intime-outtime" element={ <IntimeOuttime /> } />
             </Route>
           </Route>
           <Route path="/login" element={<Login/>} />

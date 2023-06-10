@@ -30,6 +30,7 @@ import UpperMenuContains from "./UpperMenuContains";
 import { Link} from "react-router-dom";
 // import PersonIcon from '@mui/icons-material/Person';
 import { useNavigate } from "react-router-dom";
+import screenfull from 'screenfull';
 
 const UpperMenuContainer = styled.div`
   width: 95vw;
@@ -81,6 +82,10 @@ const Topbar = () => {
       </UpperMenuIem>
     );
   };
+
+
+
+
   return (
     <Box display="flex" justifyContent="space-between" alignItems="center" p={2}>
       
@@ -120,7 +125,13 @@ const Topbar = () => {
       <Box display="flex">
 
         <IconButton sx={{marginLeft: "10px" }} >
-            <Fullscreen sx={{fontSize: "30px"}} />
+            <Fullscreen onClick={ () => {
+              	if (screenfull.isEnabled) {
+                  screenfull.toggle();
+                } else {
+                  // Ignore or do something else
+                }
+            } } sx={{fontSize: "30px"}} />
         </IconButton>
          <IconButton > 
           <Link sx={{ mt: 2}} to="/admin/settings">
