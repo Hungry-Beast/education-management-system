@@ -27,8 +27,9 @@ import {
 } from "react-pro-sidebar";
 import styled from "styled-components";
 import UpperMenuContains from "./UpperMenuContains";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 // import PersonIcon from '@mui/icons-material/Person';
+import { useNavigate } from "react-router-dom";
 
 const UpperMenuContainer = styled.div`
   width: 95vw;
@@ -45,6 +46,7 @@ const ItemsContainer = styled.div`
 `;
 const Topbar = () => {
   const theme = useTheme();
+  const navigate = useNavigate();
   const colors = tokens(theme.palette.mode);
   const colorMode = useContext(ColorModeContext);
   const [anchorEl, setAnchorEl] = useState(null);
@@ -164,7 +166,10 @@ const Topbar = () => {
           transformOrigin={{ horizontal: "right", vertical: "top" }}
           anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
         >
-          <MenuItem onClick={handleClose}>
+          <MenuItem onClick={ () => {
+          navigate('/profile/staff-home')
+          handleClose()
+          } }>
             <ListItemIcon> <AccountCircle fontSize="small" /> </ListItemIcon>
               My Details
           </MenuItem>
