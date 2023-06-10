@@ -190,6 +190,13 @@ const Sidebar = () => {
               setSelected={setSelected}
             />
             <Item
+              title="Weekly Off"
+              to="weekly-off"
+              icon={<BarChartOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <Item
               title="Leave Setting"
               to="leave-setting"
               icon={<PieChartOutlineOutlinedIcon />}
@@ -203,13 +210,13 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
-            <Item
+            {/* <Item
               title="Geography Chart"
               to="/admin/geography"
               icon={<MapOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
-            />
+            /> */}
           </Box>
         </Menu>
       </ProSidebar>
