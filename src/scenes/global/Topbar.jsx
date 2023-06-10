@@ -19,7 +19,7 @@ import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 import { useState } from "react";
-import { Logout, PersonAdd, Settings } from "@mui/icons-material";
+import { Logout, PersonAdd, Settings, AccountCircle,Fullscreen, ManageAccounts, Mail, Explore } from "@mui/icons-material";
 import {
   ProSidebar,
   MenuItem as UpperMenuIem,
@@ -28,6 +28,7 @@ import {
 import styled from "styled-components";
 import UpperMenuContains from "./UpperMenuContains";
 import { Link } from "react-router-dom";
+// import PersonIcon from '@mui/icons-material/Person';
 
 const UpperMenuContainer = styled.div`
   width: 95vw;
@@ -85,17 +86,15 @@ const Topbar = () => {
         <Link to="/admin">
           <Box
             component="img"
-            sx={{ height: 40}}
+            sx={{ height: 40, mr: "10px"}}
             alt="Logo"
             src="/logo192.png"
           />
         </Link>
-        <IconButton sx={{marginLeft: "10px" }} >
-          <SettingsOutlinedIcon />
+        <IconButton onClick={handleClickMenu}>
+            <Box component="img" sx={{ height: '32px', width: '32px', mr: "10px"}} alt="The house from the offer." src="/assets/megaMenu.svg" />
         </IconButton>
-        <IconButton>
-          <PersonOutlinedIcon />
-        </IconButton>
+
 
         {/* SEARCH BAR */}
         <Box display="flex" backgroundColor={colors.primary[400]} borderRadius="3px">
@@ -117,27 +116,18 @@ const Topbar = () => {
 
       {/* ICONS */}
       <Box display="flex">
-        {/* <IconButton onClick={colorMode.toggleColorMode}>
-          {theme.palette.mode === "dark" ? (
-            <DarkModeOutlinedIcon />
-          ) : (
-            <LightModeOutlinedIcon />
-          )}
-        </IconButton> */}
-        <IconButton onClick={handleClickMenu}>
-          <NotificationsOutlinedIcon />
+
+        <IconButton sx={{marginLeft: "10px" }} >
+            <Fullscreen sx={{fontSize: "30px"}} />
         </IconButton>
-         <IconButton> 
-
-
+         <IconButton > 
           <Link sx={{ mt: 2}} to="/admin/settings">
-            <SettingsOutlinedIcon sx={{ mt: 0.8, color: "#807f7f" }} />                        {/*  Main/ Original settings icon */}
+            <SettingsOutlinedIcon sx={{ mt: 0.8, fontSize: "30px" , color: "#807f7f" }} />                        {/*  Main/ Original settings icon */}
           </Link>
-
-          
         </IconButton>
+
         <IconButton onClick={handleClick}>
-          <PersonOutlinedIcon />
+          <PersonOutlinedIcon sx={{fontSize: "30px"}}  />
         </IconButton>
         <Menu
           anchorEl={anchorEl}
@@ -175,23 +165,33 @@ const Topbar = () => {
           anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
         >
           <MenuItem onClick={handleClose}>
-            <Avatar /> Profile
+            <ListItemIcon> <AccountCircle fontSize="small" /> </ListItemIcon>
+              My Details
           </MenuItem>
           <MenuItem onClick={handleClose}>
-            <Avatar /> My account
+            <ListItemIcon> <Settings fontSize="small" /> </ListItemIcon>
+            Institute Settings
+          </MenuItem>
+          <MenuItem onClick={handleClose}>
+            <ListItemIcon> <ManageAccounts fontSize="small" /> </ListItemIcon>
+            Roles & Permissions
+          </MenuItem>
+          <MenuItem onClick={handleClose}>
+            <ListItemIcon> <Mail fontSize="small" /> </ListItemIcon>
+            Inbox
           </MenuItem>
           <Divider />
           <MenuItem onClick={handleClose}>
             <ListItemIcon>
-              <PersonAdd fontSize="small" />
+              <Explore fontSize="small" />
             </ListItemIcon>
-            Add another account
+            Change Academic Session
           </MenuItem>
           <MenuItem onClick={handleClose}>
             <ListItemIcon>
-              <Settings fontSize="small" />
+              <Explore fontSize="small" />
             </ListItemIcon>
-            Settings
+            Change Password
           </MenuItem>
           <MenuItem onClick={handleClose}>
             <ListItemIcon>
