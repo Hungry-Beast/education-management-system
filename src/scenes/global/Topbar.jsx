@@ -1,3 +1,6 @@
+
+
+
 import {
   Avatar,
   Box,
@@ -19,7 +22,7 @@ import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 import { useState } from "react";
-import { Logout, PersonAdd, Settings } from "@mui/icons-material";
+import { Logout, PersonAdd, Settings, AccountCircle, ManageAccounts, Mail, Explore } from "@mui/icons-material";
 import {
   ProSidebar,
   MenuItem as UpperMenuIem,
@@ -28,6 +31,7 @@ import {
 import styled from "styled-components";
 import UpperMenuContains from "./UpperMenuContains";
 import { Link } from "react-router-dom";
+// import PersonIcon from '@mui/icons-material/Person';
 
 const UpperMenuContainer = styled.div`
   width: 95vw;
@@ -175,23 +179,33 @@ const Topbar = () => {
           anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
         >
           <MenuItem onClick={handleClose}>
-            <Avatar /> Profile
+            <ListItemIcon> <AccountCircle fontSize="small" /> </ListItemIcon>
+              My Details
           </MenuItem>
           <MenuItem onClick={handleClose}>
-            <Avatar /> My account
+            <ListItemIcon> <Settings fontSize="small" /> </ListItemIcon>
+            Institute Settings
+          </MenuItem>
+          <MenuItem onClick={handleClose}>
+            <ListItemIcon> <ManageAccounts fontSize="small" /> </ListItemIcon>
+            Roles & Permissions
+          </MenuItem>
+          <MenuItem onClick={handleClose}>
+            <ListItemIcon> <Mail fontSize="small" /> </ListItemIcon>
+            Inbox
           </MenuItem>
           <Divider />
           <MenuItem onClick={handleClose}>
             <ListItemIcon>
-              <PersonAdd fontSize="small" />
+              <Explore fontSize="small" />
             </ListItemIcon>
-            Add another account
+            Change Academic Session
           </MenuItem>
           <MenuItem onClick={handleClose}>
             <ListItemIcon>
-              <Settings fontSize="small" />
+              <Explore fontSize="small" />
             </ListItemIcon>
-            Settings
+            Change Password
           </MenuItem>
           <MenuItem onClick={handleClose}>
             <ListItemIcon>
