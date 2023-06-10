@@ -27,6 +27,14 @@ import SubCategory from "./scenes/modules/academic/Sections/Subject/SubCategory"
 import NotificationTemplate from "./settingcomponents/notificationtemplate";
 import TermsConditions from "./settingcomponents/termsconditions";
 import TermsDisplayPage from "./settingcomponents/termsconditions/TermsDisplayPage";
+import EmptyTableMessage from "./settingcomponents/emptytablemessage";
+import SmsModule from "./settingcomponents/smsmodule";
+import WeeklyOff from "./settingcomponents/weeklyoff";
+import LeaveSetting from "./settingcomponents/leavesetting";
+import IntimeOuttime from "./settingcomponents/intimeouttime";
+import MyDetails from "./scenes/details";
+import Home from "./detailscomponents/home";
+import Profile from "./detailscomponents/profile";
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -54,6 +62,11 @@ function App() {
               <Route path="holidays" element={ <Holidays/>} />
               <Route path="notification-template" element={ <NotificationTemplate/> } />
               <Route path="terms-conditions" element={ <TermsConditions /> } />
+              <Route path="empty-table-message" element={ <EmptyTableMessage /> } />
+              <Route path="sms-module" element={ <SmsModule /> } />
+              <Route path="weekly-off" element={ <WeeklyOff /> } />
+              <Route path="leave-setting" element={ <LeaveSetting /> } />
+              <Route path="intime-outtime" element={ <IntimeOuttime /> } />
             </Route>
           </Route>
           <Route path="/login" element={<Login/>} />
@@ -62,7 +75,11 @@ function App() {
             <Route path="/modules/academic" element={<Academic />} />
             <Route path="/modules/academic/subject-category" element={<SubCategory />} />
           </Route>
-          <Route path="/profile" element={<Dprofile/>} />
+          {/* <Route path="/profile" element={<Dprofile/>} /> */}
+          <Route element={<MyDetails />} >
+              <Route path="/profile/staff-home" element={ <Home/> } />
+              <Route path="/profile/staff-profile" element={ <Profile/> } />
+          </Route>
         </Routes>
       </ThemeProvider>
     // </ColorModeContext.Provider>
