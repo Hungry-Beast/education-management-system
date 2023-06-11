@@ -204,8 +204,8 @@ const Sidebar = () => {
               setSelected={setSelected}
             />
             <Item
-              title="Line Chart"
-              to="/admin/line"
+              title="Intime Outtime"
+              to="intime-outtime"
               icon={<TimelineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
