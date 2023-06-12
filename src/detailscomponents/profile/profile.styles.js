@@ -122,4 +122,8 @@ export const StyledProfileThirdRightCard = styled.div`
 
 export const StyledPhoto = styled.div`
 margin-top:10px;
+`;
+
+export const StyledRadio = styled.div`
+ 
 `
