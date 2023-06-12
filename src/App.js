@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Topbar from "./scenes/global/Topbar";
 import Sidebar from "./scenes/global/Sidebar";
 import Dashboard from "./scenes/dashboard";
@@ -34,6 +34,7 @@ import LeaveSetting from "./settingcomponents/leavesetting";
 import MyDetails from "./scenes/details";
 import Home from "./detailscomponents/home";
 import Profile from "./detailscomponents/profile";
+import IntimeOuttime from "./settingcomponents/intimeouttime";
 // import OrgProfile from "./settingcomponents/OrgProfile/OrgProfile";
 
 function App() {
@@ -66,6 +67,7 @@ function App() {
               <Route path="sms-module" element={ <SmsModule /> } />
               <Route path="weekly-off" element={ <WeeklyOff /> } />
               <Route path="leave-setting" element={ <LeaveSetting /> } />
+              <Route path="intime-outtime" element={ <IntimeOuttime /> } />
             </Route>
           </Route>
           <Route path="/login" element={<Login/>} />
@@ -74,6 +76,8 @@ function App() {
             <Route path="/modules/academic" element={<Academic />} />
             <Route path="/modules/academic/subject-category" element={<SubCategory />} />
           </Route>
+          <Route path="/profile" element={<Dprofile/>} />
+          <Route path="/" element={<Navigate replace to="/login"/>} />
           {/* <Route path="/profile" element={<Dprofile/>} /> */}
           <Route element={<MyDetails />} >
               <Route path="/profile/staff-home" element={ <Home/> } />

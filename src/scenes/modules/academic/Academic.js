@@ -14,7 +14,7 @@ const Component = styled.div`
   border-radius:10px;
 `;
 const Academic = () => {
-  const [value, setValue] = useState(2);
+  const [value, setValue] = useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
