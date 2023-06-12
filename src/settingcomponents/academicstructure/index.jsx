@@ -1,9 +1,5 @@
 import React from 'react'
-import FormControl from '@mui/material/FormControl';
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Switch from '@mui/material/Switch';
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, FormControl, FormGroup, FormControlLabel, Switch} from '@mui/material';
 
 
 function AcademicStructure() {
