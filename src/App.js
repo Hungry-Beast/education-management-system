@@ -27,6 +27,7 @@ import SubCategory from "./scenes/modules/academic/Sections/Subject/SubCategory"
 import NotificationTemplate from "./settingcomponents/notificationtemplate";
 import TermsConditions from "./settingcomponents/termsconditions";
 import TermsDisplayPage from "./settingcomponents/termsconditions/TermsDisplayPage";
+import Health from "./scenes/HealthRecord/Health";
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -63,6 +64,7 @@ function App() {
             <Route path="/modules/academic/subject-category" element={<SubCategory />} />
           </Route>
           <Route path="/profile" element={<Dprofile/>} />
+          <Route path="/health" element={<Health/>} />
         </Routes>
       </ThemeProvider>
     // </ColorModeContext.Provider>
