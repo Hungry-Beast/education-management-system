@@ -11,7 +11,7 @@ import FAQ from "./scenes/faq";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
 import Calendar from "./scenes/calendar/calendar";
-import Login from './scenes/login/Login'
+import Login from "./scenes/login/Login";
 
 import OrgProfile from "./scenes/OrgProfile/OrgProfile";
 import AdminLayout from "./AdminLayout";
@@ -45,52 +45,64 @@ function App() {
 
   return (
     // <ColorModeContext.Provider value={colorMode}>
-       <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Routes>
-          <Route element={<AdminLayout />}>
-            <Route path="/admin" element={<Dashboard />} />
-            <Route path="/admin/team" element={<Team />} />
-            <Route path="/admin/contacts" element={<Contacts />} />
-            <Route path="/admin/invoices" element={<Invoices />} />
-            {/* <Route path="/admin/orgProfile" element={<OrgProfile />} /> */}
-            <Route path="/admin/faq" element={<FAQ />} />
-            <Route path="/admin/calendar" element={<Calendar />} />
-            <Route path="/admin/form" element={<Form />} />
-            
-            <Route path="/admin/settings" element={<SetSettings />} >
-              <Route path="orgProfile" element={<OrgProfile />} />
-              <Route path="acc-structure" element={ <AcademicStructure/> } />
-              <Route path="set-email-template" element={ <EmailTemplates/> } />
-              <Route path="set-modules" element={ <ModulesOnOff/> } />
-              <Route path="holidays" element={ <Holidays/>} />
-              <Route path="notification-template" element={ <NotificationTemplate/> } />
-              <Route path="terms-conditions" element={ <TermsConditions /> } />
-              <Route path="empty-table-message" element={ <EmptyTableMessage /> } />
-              <Route path="sms-module" element={ <SmsModule /> } />
-              <Route path="weekly-off" element={ <WeeklyOff /> } />
-              <Route path="leave-setting" element={ <LeaveSetting /> } />
-              <Route path="intime-outtime" element={ <IntimeOuttime /> } />
-            </Route>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Routes>
+        <Route element={<AdminLayout />}>
+          <Route path="/admin" element={<Dashboard />} />
+          <Route path="/admin/team" element={<Team />} />
+          <Route path="/admin/contacts" element={<Contacts />} />
+          <Route path="/admin/invoices" element={<Invoices />} />
+          {/* <Route path="/admin/orgProfile" element={<OrgProfile />} /> */}
+          <Route path="/admin/faq" element={<FAQ />} />
+          <Route path="/admin/calendar" element={<Calendar />} />
+          <Route path="/admin/form" element={<Form />} />
+
+          <Route path="/admin/settings" element={<SetSettings />}>
+            <Route path="orgProfile" element={<OrgProfile />} />
+            <Route path="acc-structure" element={<AcademicStructure />} />
+            <Route path="set-email-template" element={<EmailTemplates />} />
+            <Route path="set-modules" element={<ModulesOnOff />} />
+            <Route path="holidays" element={<Holidays />} />
+            <Route
+              path="notification-template"
+              element={<NotificationTemplate />}
+            />
+            <Route path="terms-conditions" element={<TermsConditions />} />
+            <Route path="empty-table-message" element={<EmptyTableMessage />} />
+            <Route path="sms-module" element={<SmsModule />} />
+            <Route path="weekly-off" element={<WeeklyOff />} />
+            <Route path="leave-setting" element={<LeaveSetting />} />
+            <Route path="intime-outtime" element={<IntimeOuttime />} />
           </Route>
-          <Route path="/login" element={<Login/>} />
-          <Route path="/school-terms" element={ <TermsDisplayPage/> } />    {/*Route to Display the terms and conditions */}
-          <Route  element={<ModulesLayout/>} >
-            <Route path="/modules/academic" element={<Academic />} />
-            <Route path="/modules/academic/subject-category" element={<SubCategory />} />
-            <Route path="/modules/academic/class-teacher-mapping" element={<ClassTeacherMapping />} />
-            <Route path="/modules/academic/class-schedule/" element={<ClassSchedule />} />
-          </Route>
-          {/* <Route path="/profile" element={<Dprofile/>} /> */}
-          <Route path="/" element={<Navigate replace to="/login"/>} />
-        
-          <Route element={<MyDetails />} >
-              <Route path="/profile/staff-home" element={ <Home/> } />
-              <Route path="/profile/staff-profile" element={ <Profile/> } />
-              
-          </Route>
-        </Routes>
-      </ThemeProvider>
+        </Route>
+        <Route path="/login" element={<Login />} />
+        <Route path="/school-terms" element={<TermsDisplayPage />} />{" "}
+        {/*Route to Display the terms and conditions */}
+        <Route element={<ModulesLayout />}>
+          <Route path="/modules/academic" element={<Academic />} />
+          <Route
+            path="/modules/academic/subject-category"
+            element={<SubCategory />}
+          />
+          <Route
+            path="/modules/academic/class-teacher-mapping"
+            element={<ClassTeacherMapping />}
+          />
+          <Route
+            path="/modules/academic/class-schedule"
+            element={<ClassSchedule />}
+          />
+        </Route>
+        {/* <Route path="/profile" element={<Dprofile/>} /> */}
+        <Route path="/" element={<Navigate replace to="/login" />} />
+        <Route element={<MyDetails />}>
+          <Route path="/profile/staff-home" element={<Home />} />
+          <Route path="/profile/staff-profile" element={<Profile />} />
+        </Route>
+        <Route path="/profile/staff-health-record" element={<Health />} />
+      </Routes>
+    </ThemeProvider>
     // </ColorModeContext.Provider>
   );
 }
