@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Topbar from "./scenes/global/Topbar";
 import Sidebar from "./scenes/global/Sidebar";
 import Dashboard from "./scenes/dashboard";
@@ -19,15 +19,17 @@ import SetSettings from "./scenes/settings";
 import AcademicStructure from "./settingcomponents/academicstructure";
 import EmailTemplates from "./settingcomponents/emailtemplates";
 import ModulesLayout from "./ModulesLayout";
-import Academic from "./scenes/modules/academic/Academic";
-import Dprofile from "./scenes/detailProfile/Dprofile";
+import Academic from "./scenes/modules/academic/academic/academic-configuration/Academic";
+// import Dprofile from "./scenes/detailProfile/Dprofile";
 import ModulesOnOff from "./settingcomponents/modulesonoff";
 import Holidays from "./settingcomponents/holidays";
-import SubCategory from "./scenes/modules/academic/Sections/Subject/SubCategory";
+
 import Changepassword from "./scenes/changepassword/Changepassword";
+import SubCategory from "./scenes/modules/academic/academic/academic-configuration/Sections/Subject/SubCategory";
 import NotificationTemplate from "./settingcomponents/notificationtemplate";
 import TermsConditions from "./settingcomponents/termsconditions";
 import TermsDisplayPage from "./settingcomponents/termsconditions/TermsDisplayPage";
+import Health from "./scenes/HealthRecord/Health";
 import EmptyTableMessage from "./settingcomponents/emptytablemessage";
 import SmsModule from "./settingcomponents/smsmodule";
 import WeeklyOff from "./settingcomponents/weeklyoff";
@@ -36,6 +38,8 @@ import MyDetails from "./scenes/details";
 import Home from "./detailscomponents/home";
 import Profile from "./detailscomponents/profile";
 import IntimeOuttime from "./settingcomponents/intimeouttime";
+import ClassTeacherMapping from "./scenes/modules/academic/academic/class-teacher-mapping/ClassTeacherMapping";
+import ClassSchedule from "./scenes/modules/academic/class-schedule/class-schedule/ClassSchedule";
 // import OrgProfile from "./settingcomponents/OrgProfile/OrgProfile";
 //>>>>>>> b63988d5e5c115f3840ce513fec25967cdd5c832
 
@@ -81,11 +85,16 @@ function App() {
           <Route  element={<ModulesLayout/>} >
             <Route path="/modules/academic" element={<Academic />} />
             <Route path="/modules/academic/subject-category" element={<SubCategory />} />
+            <Route path="/modules/academic/class-teacher-mapping" element={<ClassTeacherMapping />} />
+            <Route path="/modules/academic/class-schedule/" element={<ClassSchedule />} />
           </Route>
           {/* <Route path="/profile" element={<Dprofile/>} /> */}
+          <Route path="/" element={<Navigate replace to="/login"/>} />
+        
           <Route element={<MyDetails />} >
               <Route path="/profile/staff-home" element={ <Home/> } />
               <Route path="/profile/staff-profile" element={ <Profile/> } />
+              
           </Route>
         </Routes>
       </ThemeProvider>
