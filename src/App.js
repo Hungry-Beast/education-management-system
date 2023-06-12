@@ -20,7 +20,7 @@ import AcademicStructure from "./settingcomponents/academicstructure";
 import EmailTemplates from "./settingcomponents/emailtemplates";
 import ModulesLayout from "./ModulesLayout";
 import Academic from "./scenes/modules/academic/Academic";
-import Dprofile from "./scenes/detailProfile/Dprofile";
+
 import ModulesOnOff from "./settingcomponents/modulesonoff";
 import Holidays from "./settingcomponents/holidays";
 import SubCategory from "./scenes/modules/academic/Sections/Subject/SubCategory";
@@ -76,12 +76,13 @@ function App() {
             <Route path="/modules/academic" element={<Academic />} />
             <Route path="/modules/academic/subject-category" element={<SubCategory />} />
           </Route>
-          <Route path="/profile" element={<Dprofile/>} />
-          <Route path="/" element={<Navigate replace to="/login"/>} />
           {/* <Route path="/profile" element={<Dprofile/>} /> */}
+          <Route path="/" element={<Navigate replace to="/login"/>} />
+        
           <Route element={<MyDetails />} >
               <Route path="/profile/staff-home" element={ <Home/> } />
               <Route path="/profile/staff-profile" element={ <Profile/> } />
+              
           </Route>
         </Routes>
       </ThemeProvider>
