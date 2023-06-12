@@ -73,140 +73,140 @@ export const StyledInputLeftCard= styled.div`
     
 
 
-export const StyledInputFirstCard = styled.div`
-    display: flex;
-    width:800px;
-    margin-top:300px;
-    align-items:end;
-    justify-content:space-between;
+// export const StyledInputFirstCard = styled.div`
+//     display: flex;
+//     width:800px;
+//     margin-top:300px;
+//     align-items:end;
+//     justify-content:space-between;
     
-`
+// `
 
 
-export const StyledSecondInputCard = styled.div`
-    width:800px;
+// export const StyledSecondInputCard = styled.div`
+//     width:800px;
     /* height:100vh;
     border:1px solid red; */
     
   
-`
+// `
 
-export const StyledStaffPersonal = styled.div`
-    width: 800px;
-    font-size: 20px;
-    font-weight:bold;
-    padding: 5px;
-    padding-left:10px;
-    background-color: #E3F2FD;
-    border:none;
+// export const StyledStaffPersonal = styled.div`
+//     width: 800px;
+//     font-size: 20px;
+//     font-weight:bold;
+//     padding: 5px;
+//     padding-left:10px;
+//     background-color: #E3F2FD;
+//     border:none;
 
-`
+// `
 
-export const StyledStaffLeftCard = styled.div`
-    display:flex;
-    align-items:center;
+// export const StyledStaffLeftCard = styled.div`
+//     display:flex;
+//     align-items:center;
     
-    width:380px;
-    padding:0;
+//     width:380px;
+//     padding:0;
     /* justify-content:space-between; */
-    padding-top: 20px;
+//     padding-top: 20px;
 
-    input{
-        width:250px;
-        padding:5px;
-        font-size:16px;
-    }
+//     input{
+//         width:250px;
+//         padding:5px;
+//         font-size:16px;
+//     }
 
-`
+// `
 
-export const StyledStaffCard = styled.div`
-    display:flex;
-    gap:40px;
-    align-items:start;
+// export const StyledStaffCard = styled.div`
+//     display:flex;
+//     gap:40px;
+//     align-items:start;
     
-`
+// `
 
-export const StyledStaffInputLeft =styled.div`
-    width:450px;
+// export const StyledStaffInputLeft =styled.div`
+//     width:450px;
    
-`
+// `
 
-export const StyledPan = styled.div`
-    padding:0 0 100px 0;
+// export const StyledPan = styled.div`
+//     padding:0 0 100px 0;
    
     
-`
+// `
 
 
-export const StyledStaffRightCard = styled.div`
-    display:flex;
-    align-items:center;
+// export const StyledStaffRightCard = styled.div`
+//     display:flex;
+//     align-items:center;
     
-    width:380px;
-    padding:0;
+//     width:380px;
+//     padding:0;
     /* justify-content:space-between; */
-    padding-top: 20px;
+//     padding-top: 20px;
 
-    input{
-        width:250px;
-        padding:5px;
-        font-size:16px;
-    }
+//     input{
+//         width:250px;
+//         padding:5px;
+//         font-size:16px;
+//     }
 
    
-`
+// `
 
-export const StyledStaffInputRight = styled.div`
-    width:380px;
+// export const StyledStaffInputRight = styled.div`
+//     width:380px;
  
     
    
-`
+// `
 
-export const StyledBloodRadio = styled.div`
+// export const StyledBloodRadio = styled.div`
   
-        display:flex;
-        gap:0;
-        width:200px;
-        border:1px solid black;
-`
+//         display:flex;
+//         gap:0;
+//         width:200px;
+//         border:1px solid black;
+// `
 
 
-export const StyledLabelBloodInput = styled.div`
-    width:400px;
-    font-size:17px;
-    font-weight:bold;
-    display:flex;
+// export const StyledLabelBloodInput = styled.div`
+//     width:400px;
+//     font-size:17px;
+//     font-weight:bold;
+//     display:flex;
     
 
-    justify-content:space-between;
-    margin-top:10px;
-    align-items:start;
+//     justify-content:space-between;
+//     margin-top:10px;
+//     align-items:start;
 
-`
+// `
 
 
 
-export const StyledCommunicationLine = styled.div`
-    width: 800px;
-    border:1px solid lightgray;
-    margin-top:30px;
-    margin-bottom: 30px;
-`
+// export const StyledCommunicationLine = styled.div`
+//     width: 800px;
+//     border:1px solid lightgray;
+//     margin-top:30px;
+//     margin-bottom: 30px;
+// `
 
-export const StyledThirdInputCard = styled.div`
-  width:800px;
+// export const StyledThirdInputCard = styled.div`
+//   width:800px;
 
    
-`
+// `
 
-export const StyledCommunicationDetails = styled.div`
-     width: 800px;
-    font-size: 20px;
-    font-weight:bold;
-    padding: 5px;
-    padding-left:10px;
-    background-color: #E3F2FD;
+// export const StyledCommunicationDetails = styled.div`
+//      width: 800px;
+//     font-size: 20px;
+//     font-weight:bold;
+//     padding: 5px;
+//     padding-left:10px;
+//     background-color: #E3F2FD;
     
-`
+// `
 

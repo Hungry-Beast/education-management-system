@@ -1,22 +1,22 @@
-import React from 'react'
-import styled from 'styled-components'
-import InputFieldProfile from './InputFieldProfile'
+// import React from 'react'
+// import styled from 'styled-components'
+// import InputFieldProfile from './InputFieldProfile'
 
-const Container = styled.div`
+// const Container = styled.div`
 
-`
+// `
 
 
-const DetailsContainer = ({value}) => {
+// const DetailsContainer = ({value}) => {
     
-  switch (value) {
+//   switch (value) {
 
-    case 1:
-        return  <InputFieldProfile/>
+//     case 1:
+//         return  <InputFieldProfile/>
   
-    default:
-        break;
-  }
-}
+//     default:
+//         break;
+//   }
+// }
 
-export default DetailsContainer;
+// export default DetailsContainer;

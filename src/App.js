@@ -78,6 +78,7 @@ function App() {
           <Route element={<MyDetails />} >
               <Route path="/profile/staff-home" element={ <Home/> } />
               <Route path="/profile/staff-profile" element={ <Profile/> } />
+              
           </Route>
         </Routes>
       </ThemeProvider>

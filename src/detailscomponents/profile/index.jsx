@@ -1,7 +1,22 @@
-import React from 'react'
+import React from 'react';
+import {StyledProfileCard, StyledProfileBorder,StyledProfileFirtCard, StyledToggle,StyledToggleLabel} from './profile.styles.js';
+
+import TextField from '@mui/material/TextField';
 
 export default function Profile() {
   return (
-    <div style={{backgroundColor: "blue", width: '80%', height: '100%'}} >Home</div>
+  
+   
+<StyledProfileCard>
+    <StyledProfileBorder>
+      <StyledProfileFirtCard>
+      
+      
+      </StyledProfileFirtCard>
+    
+    </StyledProfileBorder>
+
+</StyledProfileCard>
+
   )
 }
