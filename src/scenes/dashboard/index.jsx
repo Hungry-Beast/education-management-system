@@ -11,7 +11,7 @@ import StatBox from "../../components/StatBox";
 import ProgressCircle from "../../components/ProgressCircle";
 import { useState } from "react";
 import BasicTable from "./EventTable";
-
+import PersonIcon from '@mui/icons-material/Person';
 
 const Dashboard = () => {
   const theme = useTheme();
@@ -24,10 +24,9 @@ const Dashboard = () => {
   return (
     <Box m="20px" pb="30px" >
       {/* HEADER */}
-      <Box display="flex" justifyContent="space-between" alignItems="center">
-        <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
-
-
+      <Box display="flex" justifyContent="center" alignItems="center" sx={{mb: "25px"}} >
+        <PersonIcon sx={{fontSize: "30px", mb: "6px", color: "blue"}} />
+        <Typography sx={{fontWeight: "600"}} variant="h3" color="blue" > "Hello SULEKHA PANDIT , Welcome back to Infotute EMS"</Typography>
       </Box>
 
       {/* GRID & CHARTS */}
