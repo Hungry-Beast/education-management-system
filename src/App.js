@@ -36,6 +36,7 @@ import Home from "./detailscomponents/home";
 import Profile from "./detailscomponents/profile";
 import IntimeOuttime from "./settingcomponents/intimeouttime";
 import ClassTeacherMapping from "./scenes/modules/academic/academic/class-teacher-mapping/ClassTeacherMapping";
+import ClassSchedule from "./scenes/modules/academic/class-schedule/class-schedule/ClassSchedule";
 // import OrgProfile from "./settingcomponents/OrgProfile/OrgProfile";
 
 function App() {
@@ -77,7 +78,7 @@ function App() {
             <Route path="/modules/academic" element={<Academic />} />
             <Route path="/modules/academic/subject-category" element={<SubCategory />} />
             <Route path="/modules/academic/class-teacher-mapping" element={<ClassTeacherMapping />} />
-            <Route path="/modules/academic/class-schedule/" element={<ClassTeacherMapping />} />
+            <Route path="/modules/academic/class-schedule/" element={<ClassSchedule />} />
           </Route>
           {/* <Route path="/profile" element={<Dprofile/>} /> */}
           <Route path="/" element={<Navigate replace to="/login"/>} />

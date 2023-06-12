@@ -108,7 +108,7 @@ export default function Profile() {
           <StyledProfileSecondCard>
             <StyledProfileSecondLeftCard>
               <Label>First Name</Label>
-              <TextField fullWidth sx={{ gridColumn: "span 1" }} />
+              <TextField fullWidth sx={{ gridColumn: "span 1" }}  {...register("firstName")}/>
 
               <Label>Last Name</Label>
               <TextField sx={{ gridColumn: "span 1" }} />
@@ -164,7 +164,7 @@ export default function Profile() {
               <FormControlLabel value="male" control={<Radio />} label="AB-" />
 
               <Label>Date of Joining</Label>
-              <TextField sx={{ gridColumn: "span 1" }} />
+              <TextField sx={{ gridColumn: "span 1" }}  />
               <Label>Mother name</Label>
               <TextField sx={{ gridColumn: "span 1" }} />
               <Label>Email ID</Label>

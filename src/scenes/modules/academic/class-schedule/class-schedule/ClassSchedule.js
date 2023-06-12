@@ -13,7 +13,7 @@ const Component = styled.div`
   margin: 15px auto;
   border-radius:10px;
 `;
-const Academic = () => {
+const ClassSchedule = () => {
   const [value, setValue] = useState(0);
 
   const handleChange = (event, newValue) => {
@@ -29,4 +29,4 @@ const Academic = () => {
   );
 };
 
-export default Academic;
+export default ClassSchedule;

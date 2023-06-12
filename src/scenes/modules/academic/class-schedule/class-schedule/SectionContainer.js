@@ -1,8 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import Subjects from './Sections/Subject/Subjects';
-import Courses from './Sections/Courses/Courses';
-import Classes from './Sections/Classes/Classes';
+import TimingSet from './Sections/timing-set/TimingSet'
+import SectionTimngSet from './Sections/section-time-set/SectionTimingSet'
 
 const Container = styled.div`
 
@@ -10,11 +9,11 @@ const Container = styled.div`
 const SectionContainer = ({value}) => {
   switch (value) {
     case 0:
-        return  <Subjects/>
+        return  <TimingSet/>
     case 1:
-        return <Courses/>
-    case 2:
-        return <Classes/>
+        return <SectionTimngSet/>
+    // case 2:
+    //     return <Classes/>
     default:
         break;
   }
