@@ -18,7 +18,6 @@ import FormLabel from "@mui/material/FormLabel";
 import { Box } from "@mui/system";
 import { Controller, useForm } from "react-hook-form";
 import styled from "styled-components";
-
 import Stack from "@mui/material/Stack";
 
 import {
@@ -39,6 +38,7 @@ import {
   StyledToggleEdit,
   StyledCommunicationDetails,
   StyledPhoto,
+  StyledRadio,
 } from "./profile.styles.js";
 
 const Form = styled.form`
@@ -69,7 +69,7 @@ export default function Profile() {
       //   subjectType: 1,
     },
   });
-  const onSubmit = (data) => console.log(data);
+  const onclick = (data) => console.log(data);
   return (
     //  ProfileDetails Wrapper Card starts
     <StyledProfileCard>
@@ -81,7 +81,7 @@ export default function Profile() {
           <Switch {...label} defaultChecked />
         </StyledToggleEdit>
 
-        <Form onSubmit={handleSubmit(onSubmit)}>
+        <Form onSubmit={handleSubmit(onclick)}>
           <StyledProfileFirtCard>
             {/* profile left side card */}
 
@@ -89,15 +89,27 @@ export default function Profile() {
               <StyledRfid>RFID:</StyledRfid>
 
               <Label>Role:</Label>
-              <TextField fullWidth sx={{ gridColumn: "span 1" }} />
+              <TextField
+                fullWidth
+                sx={{ gridColumn: "span 1" }}
+                {...register("Role")}
+              />
             </StyledProfileFirstLeftCard>
 
             {/* profile right side card */}
             <StyledProfileFirstRightCard>
               <Label>Designation:</Label>
-              <TextField fullWidth sx={{ gridColumn: "span 1" }} />
+              <TextField
+                fullWidth
+                sx={{ gridColumn: "span 1" }}
+                {...register("Designation")}
+              />
               <Label>Exp in Year:</Label>
-              <TextField sx={{ gridColumn: "span 1" }} />
+              <TextField
+                fullWidth
+                sx={{ gridColumn: "span 1" }}
+                {...register("ExpYear")}
+              />
             </StyledProfileFirstRightCard>
           </StyledProfileFirtCard>
 
@@ -108,22 +120,50 @@ export default function Profile() {
           <StyledProfileSecondCard>
             <StyledProfileSecondLeftCard>
               <Label>First Name</Label>
-              <TextField fullWidth sx={{ gridColumn: "span 1" }} />
+              <TextField
+                fullWidth
+                sx={{ gridColumn: "span 1" }}
+                {...register("FirstName")}
+              />
 
               <Label>Last Name</Label>
-              <TextField sx={{ gridColumn: "span 1" }} />
+              <TextField
+                fullWidth
+                sx={{ gridColumn: "span 1" }}
+                {...register("LastName")}
+              />
 
               <Label>Date of Birth staff</Label>
-              <TextField sx={{ gridColumn: "span 1" }} />
+              <TextField
+                fullWidth
+                sx={{ gridColumn: "span 1" }}
+                {...register("DateofBirth")}
+              />
 
               <Label>PAN NO</Label>
-              <TextField sx={{ gridColumn: "span 1" }} />
+              <TextField
+                fullWidth
+                sx={{ gridColumn: "span 1" }}
+                {...register("PanNo")}
+              />
               <Label>Designation</Label>
-              <TextField sx={{ gridColumn: "span 1" }} />
+              <TextField
+                fullWidth
+                sx={{ gridColumn: "span 1" }}
+                {...register("Designation")}
+              />
               <Label>Father name</Label>
-              <TextField sx={{ gridColumn: "span 1" }} />
+              <TextField
+                fullWidth
+                sx={{ gridColumn: "span 1" }}
+                {...register("FatherName")}
+              />
               <Label>Mobile No</Label>
-              <TextField sx={{ gridColumn: "span 1" }} />
+              <TextField
+                fullWidth
+                sx={{ gridColumn: "span 1" }}
+                {...register("MobileNo")}
+              />
               {/* <Label>Photo</Label>
             <TextField sx={{ gridColumn: "span 1" }} /> */}
               <StyledPhoto>
@@ -140,35 +180,107 @@ export default function Profile() {
 
             <StyledProfileSecondRightCard>
               <Label>Middle Name</Label>
-              <TextField sx={{ gridColumn: "span 1" }} />
+              <TextField
+                fullWidth
+                sx={{ gridColumn: "span 1" }}
+                {...register("MiddleName")}
+              />
 
               <Label>Gender</Label>
-              <TextField sx={{ gridColumn: "span 1" }} />
+              <TextField
+                fullWidth
+                sx={{ gridColumn: "span 1" }}
+                {...register("Gender")}
+              />
 
               <Label>AADHAR No</Label>
-              <TextField sx={{ gridColumn: "span 1" }} />
+              <TextField
+                fullWidth
+                sx={{ gridColumn: "span 1" }}
+                {...register("AadharNo")}
+              />
 
-              <Label>Blood Group</Label>
+              <StyledRadio>
+                <Label>Blood Group</Label>
+                <Controller
+                  control={control}
+                  name="checkbox"
+                  defaultValue=""
+                  render={({ field }) => (
+                    <RadioGroup {...field}>
+                      <FormControlLabel
+                        value="choice-1"
+                        control={<Radio />}
+                        label="A+"
+                      />
 
-              <FormControlLabel value="female" control={<Radio />} label="A+" />
-              <FormControlLabel value="male" control={<Radio />} label="A-" />
-              <FormControlLabel value="other" control={<Radio />} label="B+" />
-              <FormControlLabel value="female" control={<Radio />} label="B-" />
-              <FormControlLabel value="male" control={<Radio />} label="O-" />
-              <FormControlLabel value="other" control={<Radio />} label="O+" />
+                      <FormControlLabel
+                        value="choice-2"
+                        control={<Radio />}
+                        label="A-"
+                      />
+
+                      <FormControlLabel
+                        value="choice-3"
+                        control={<Radio />}
+                        label="B+"
+                      />
+
+                      <FormControlLabel
+                        value="choice-4"
+                        control={<Radio />}
+                        label="B-"
+                      />
+
+                      <FormControlLabel
+                        value="choice-5"
+                        control={<Radio />}
+                        label="O+"
+                      />
+
+                      <FormControlLabel
+                        value="choice-6"
+                        control={<Radio />}
+                        label="O-"
+                      />
+                    </RadioGroup>
+                  )}
+                />
+              </StyledRadio>
+
+              {/* <Label>Blood Group</Label> */}
+              {/* <FormControlLabel value="choice-1" control={<Radio />} label="A+"  />
+              <FormControlLabel value="choice-2" control={<Radio />} label="A-"   />
+              <FormControlLabel value='choice-3' control={<Radio />} label="B+"   />
+              <FormControlLabel value="choice-4" control={<Radio />} label="B-"  />
+              <FormControlLabel value="choice-5" control={<Radio />} label="O-"   />
+              <FormControlLabel value="choice-6" control={<Radio />} label="O+"  />
               <FormControlLabel
-                value="female"
+                value="choice-7"
                 control={<Radio />}
                 label="AB+"
               />
-              <FormControlLabel value="male" control={<Radio />} label="AB-" />
+              <FormControlLabel value="choice-8" control={<Radio />} label="AB-"   />
+              */}
 
               <Label>Date of Joining</Label>
-              <TextField sx={{ gridColumn: "span 1" }} />
+              <TextField
+                fullWidth
+                sx={{ gridColumn: "span 1" }}
+                {...register("DateOfjoining")}
+              />
               <Label>Mother name</Label>
-              <TextField sx={{ gridColumn: "span 1" }} />
+              <TextField
+                fullWidth
+                sx={{ gridColumn: "span 1" }}
+                {...register("MotherName")}
+              />
               <Label>Email ID</Label>
-              <TextField sx={{ gridColumn: "span 1" }} />
+              <TextField
+                fullWidth
+                sx={{ gridColumn: "span 1" }}
+                {...register("EmailId")}
+              />
             </StyledProfileSecondRightCard>
           </StyledProfileSecondCard>
 
@@ -183,20 +295,44 @@ export default function Profile() {
           <StyledProfileThirdCard>
             <StyledProfileThirdLeftCard>
               <Label>PIN</Label>
-              <TextField sx={{ gridColumn: "span 1" }} />
+              <TextField
+                fullWidth
+                sx={{ gridColumn: "span 1" }}
+                {...register("Pin")}
+              />
               <Label>Vill/Ward</Label>
-              <TextField sx={{ gridColumn: "span 1" }} />
+              <TextField
+                fullWidth
+                sx={{ gridColumn: "span 1" }}
+                {...register("Vill/Ward")}
+              />
               <Label>District</Label>
-              <TextField sx={{ gridColumn: "span 1" }} />
+              <TextField
+                fullWidth
+                sx={{ gridColumn: "span 1" }}
+                {...register("District")}
+              />
             </StyledProfileThirdLeftCard>
 
             <StyledProfileThirdLeftCard>
               <Label>PO</Label>
-              <TextField sx={{ gridColumn: "span 1" }} />
+              <TextField
+                fullWidth
+                sx={{ gridColumn: "span 1" }}
+                {...register("Po")}
+              />
               <Label>PS</Label>
-              <TextField sx={{ gridColumn: "span 1" }} />
+              <TextField
+                fullWidth
+                sx={{ gridColumn: "span 1" }}
+                {...register("Ps")}
+              />
               <Label>State</Label>
-              <TextField sx={{ gridColumn: "span 1" }} />
+              <TextField
+                fullWidth
+                sx={{ gridColumn: "span 1" }}
+                {...register("State")}
+              />
             </StyledProfileThirdLeftCard>
           </StyledProfileThirdCard>
           {/* first detail card section ends */}

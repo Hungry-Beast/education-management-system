@@ -38,8 +38,11 @@ const Image = styled.img`
 `
 
 const TabCont = styled.div`
-  /* background-color: red; */
-  max-width: 600px;
+  /* background-color: white;
+  margin-bottom:20px; */
+  width:100%;
+  /* border-radius: 0.8rem; */
+  max-width: 600px; 
   margin: 0 auto;
 `
 
