@@ -20,6 +20,8 @@ import ModulesLayout from "./ModulesLayout";
 import Academic from "./scenes/modules/academic/Academic";
 import Dprofile from "./scenes/detailProfile/Dprofile";
 import SubCategory from "./scenes/modules/academic/Sections/Subject/SubCategory";
+import Changepassword from "./scenes/changepassword/Changepassword";
+
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -40,6 +42,7 @@ function App() {
             <Route path="/admin/form" element={<Form />} />
           </Route>
           <Route path="/login" element={<Login/>} />
+          <Route path="/changepassword" element={<Changepassword/>}/>
           <Route  element={<ModulesLayout/>} >
             <Route path="/modules/academic" element={<Academic />} />
             <Route path="/modules/academic/subject-category" element={<SubCategory />} />
