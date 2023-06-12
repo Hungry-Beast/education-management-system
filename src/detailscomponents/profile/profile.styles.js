@@ -7,7 +7,7 @@ export const StyledToggleEdit = styled.div`
 // profile wrapper
 export const StyledProfileCard = styled.div`
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   padding: 2rem;
   background-color: white;
   border-radius: 1.25em;
@@ -27,9 +27,8 @@ export const StyledProfileBorder = styled.div`
 export const StyledProfileFirtCard = styled.div`
   /* border:1px solid black; */
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: start;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 
   input {
     padding: 10px 10px;
@@ -46,15 +45,22 @@ export const Label = styled.div`
 
 // first section left and right card
 
-export const StyledProfileFirstLeftCard = styled.div``;
-export const StyledProfileFirstRightCard = styled.div``;
+export const StyledProfileFirstLeftCard = styled.div`
+  width: 90%;
+`;
+export const StyledProfileFirstRightCard = styled.div`
+  width: 90%;
+  /* display: flex;
+  flex-direction: column;
+  align-items:flex-end; */
+`;
 
 // personal heading
 
 export const StyledStaffPersonal = styled.div`
   padding: 0.5px;
   padding-left: 10px;
-  margin-top: -3.5rem;
+  /* margin-top: -3.5rem; */
   /* margin-left:0.7rem;
    margin-right:0.7rem; */
   margin-bottom: 30px;
@@ -80,9 +86,13 @@ export const StyledProfileSecondCard = styled(StyledProfileFirtCard)`
 `;
 
 // second card left and right card
-export const StyledProfileSecondLeftCard = styled.div``;
+export const StyledProfileSecondLeftCard = styled.div`
+  width: 90%;
+`;
 
-export const StyledProfileSecondRightCard = styled.div``;
+export const StyledProfileSecondRightCard = styled.div`
+  width: 90%;
+`;
 
 // Communication partition line
 export const StyledCommunicationDetailsLine = styled.div`
@@ -97,9 +107,13 @@ export const StyledProfileThirdCard = styled(StyledProfileFirtCard)`
 `;
 
 // porfile third left and right card
-export const StyledProfileThirdLeftCard = styled.div``;
+export const StyledProfileThirdLeftCard = styled.div`
+  width: 90%;
+`;
 
-export const StyledProfileThirdRightCard = styled.div``;
+export const StyledProfileThirdRightCard = styled.div`
+  width: 90%;
+`;
 
 
 
