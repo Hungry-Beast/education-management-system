@@ -27,9 +27,6 @@ import SubCategory from "./scenes/modules/academic/academic/academic-configurati
 import NotificationTemplate from "./settingcomponents/notificationtemplate";
 import TermsConditions from "./settingcomponents/termsconditions";
 import TermsDisplayPage from "./settingcomponents/termsconditions/TermsDisplayPage";
-<<<<<<< HEAD
-import Health from "./scenes/HealthRecord/Health";
-=======
 import EmptyTableMessage from "./settingcomponents/emptytablemessage";
 import SmsModule from "./settingcomponents/smsmodule";
 import WeeklyOff from "./settingcomponents/weeklyoff";
@@ -39,8 +36,8 @@ import Home from "./detailscomponents/home";
 import Profile from "./detailscomponents/profile";
 import IntimeOuttime from "./settingcomponents/intimeouttime";
 import ClassTeacherMapping from "./scenes/modules/academic/academic/class-teacher-mapping/ClassTeacherMapping";
+import Health from "./detailscomponents/health";
 // import OrgProfile from "./settingcomponents/OrgProfile/OrgProfile";
->>>>>>> eaf053a70cdaec1e6a46ba0c9e5b8b92322cfd04
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -89,13 +86,9 @@ function App() {
           <Route element={<MyDetails />} >
               <Route path="/profile/staff-home" element={ <Home/> } />
               <Route path="/profile/staff-profile" element={ <Profile/> } />
+              <Route path="/profile/staff-health" element={ <Health/> } />
               
           </Route>
-<<<<<<< HEAD
-          <Route path="/profile" element={<Dprofile/>} />
-          <Route path="/health" element={<Health/>} />
-=======
->>>>>>> eaf053a70cdaec1e6a46ba0c9e5b8b92322cfd04
         </Routes>
       </ThemeProvider>
     // </ColorModeContext.Provider>

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const BodyStyled = styled.div`
     width: 100vw;
     height: 700px;
-    background-color: lightgray;
+ 
     display:flex;
     gap:20px;
 
@@ -43,18 +43,21 @@ export const StyledDEsc=styled.div`
 `
 
 export const StyledNavbar = styled.div`
-width: 900px;
+/* width: 900px;
 height:80px;
 background-color: white;
 border-radius: 10px;
-margin-top: 50px;
+margin-top: 50px; */
 `
 export const StyledContainer = styled.div`
-    width: 900px;
-    height: 800px;
+    width: 100%;
+   height:100%;
+    
     border-radius: 10px;
     background-color: white;
+    padding: 1rem;
 `
+
 export const StyledHeader = styled.div`
     display: flex;
     flex-direction: column;
@@ -65,9 +68,9 @@ export const StyledHeader = styled.div`
 `
 export const StyledDetails = styled.div`
     margin: 15px auto;
-    width: 860px;
-    height: 580px;
-    border: 1px solid darkgray;
+    width: 100%;
+    height: 90%;
+    border: 1px solid lightgray;
     border-radius: 10px;
 `
 export const StyledHeading = styled.div`

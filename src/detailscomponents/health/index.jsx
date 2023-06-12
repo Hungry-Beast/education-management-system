@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { StyledProfileCard,StyledImageCard,StyledDEsc, BodyStyled, StyledContainer, StyledHeader,StyledNavbar,StyledDetails } from './Health.styles';
-import {StyledHeading,StyledFile,StyledSearch,StyledShow,StyledBar,StyledData,StyledWrap,StyledBorder,StyledContent,StyledTwo} from './Health.styles';
-import {StyledRoutine,StyledBlood,StyledCardHeader,StyledEnd,StyledButton,StyledCheckupCard,StyledHealthButton} from './Health.styles';
+import { StyledProfileCard,StyledImageCard,StyledDEsc, BodyStyled, StyledContainer, StyledHeader,StyledNavbar,StyledDetails } from './heath.styles';
+import {StyledHeading,StyledFile,StyledSearch,StyledShow,StyledBar,StyledData,StyledWrap,StyledBorder,StyledContent,StyledTwo} from './heath.styles';
+import {StyledRoutine,StyledBlood,StyledCardHeader,StyledEnd,StyledButton,StyledCheckupCard,StyledHealthButton} from './heath.styles';
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
@@ -35,7 +35,7 @@ function Health(){
 
         <BodyStyled>
 
-    
+{/*     
   <StyledProfileCard>
     <StyledImageCard>
       <img src ='/assets/profilepic.jpg' alt=" "/>
@@ -46,10 +46,10 @@ function Health(){
         </svg>
       </StyledDEsc>
     </StyledImageCard>
-  </StyledProfileCard>
+  </StyledProfileCard> */}
 
     <StyledHeader>
-      <StyledNavbar></StyledNavbar>
+      {/* <StyledNavbar></StyledNavbar> */}
       <StyledContainer>
         <StyledDetails>
             <StyledHeading>
