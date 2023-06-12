@@ -7,8 +7,8 @@ import { Delete, Edit, Link, List, Visibility } from "@mui/icons-material";
 const columns = [
   { field: "id", headerName: "ID", width: 90 },
   {
-    field: "classes",
-    headerName: "Classes",
+    field: "class",
+    headerName: "Class",
     width: 250,
     // editable: true,
     headerAlign: "center",
@@ -23,8 +23,8 @@ const columns = [
     // editable: true,
   },
   {
-    field: "duration",
-    headerName: "Duration (Years)",
+    field: "studentLimit",
+    headerName: "Student (Limit)",
     type: "number",
     width: 180,
     headerAlign: "center",
@@ -32,8 +32,8 @@ const columns = [
   },
 
   {
-    field: "seats",
-    headerName: "Seats",
+    field: "studentAssigned",
+    headerName: "Student (Assigned)",
     type: "number",
     width: 120,
 
@@ -42,12 +42,12 @@ const columns = [
   },
 
   {
-    field: "departments",
-    headerName: "Departments",
+    field: "sections",
+    headerName: "Section(s)",
     renderCell: (data) => {
-      return data?.row?.departments?.map((department) => (
-        <Button sx={{ mx: "5px" }} key={department.id} variant="outlined">
-          {department.value}
+      return data?.row?.sections?.map((section) => (
+        <Button sx={{ mx: "5px" }} key={section.id} variant="outlined">
+          {section.value}
         </Button>
       ));
     },
@@ -77,7 +77,22 @@ const columns = [
           >
             View
           </Button>
-
+          <Button
+            sx={{ mx: "5px" }}
+            variant="outlined"
+            color="success"
+            startIcon={<Link />}
+          >
+            Link
+          </Button>
+          <Button
+            sx={{ mx: "5px" }}
+            variant="outlined"
+            color="success"
+            startIcon={<List />}
+          >
+            Sections
+          </Button>
           <Button
             sx={{ mx: "5px" }}
             variant="outlined"
@@ -98,11 +113,11 @@ const columns = [
 const data = [
   {
     id: 1,
-    classes: "Abc",
+    class: "Abc",
     classCode: "123",
-    duration: 10,
-    seats: 10,
-    departments: [
+    studentLimit: 10,
+    studentAssigned: 10,
+    sections: [
       {
         id: 1,
         value: "Abc",
@@ -110,18 +125,32 @@ const data = [
     ],
   },
   {
-    id: 2,
-    classes: "Abc",
+    id: 1,
+    class: "Abc",
     classCode: "123",
-    duration: 10,
-    seats: 10,
-    departments: [
+    studentLimit: 10,
+    studentAssigned: 10,
+    sections: [
       {
         id: 1,
         value: "Abc",
       },
     ],
   },
+  {
+    id: 1,
+    class: "Abc",
+    classCode: "123",
+    studentLimit: 10,
+    studentAssigned: 10,
+    sections: [
+      {
+        id: 1,
+        value: "Abc",
+      },
+    ],
+  },
+
 ];
 export default function ClassTable() {
   return (

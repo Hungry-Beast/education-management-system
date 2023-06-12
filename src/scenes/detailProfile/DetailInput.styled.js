@@ -2,241 +2,198 @@
 
 import styled from "@emotion/styled";
 
-
-export const  StyledToggle = styled.div`
-  
-    position:absolute;
+export const StyledToggle = styled.div`
+  /* position:absolute;
     top: 300px;
-    left:700px;
-    display:flex;
-    gap:20px;
-    align-items:end;
-   width:200px;
-        
-    
-`
+    left:700px; */
+  display: flex;
+  gap: 20px;
+  align-items: end;
+  /* width:200px; */
+`;
 
 export const StyledLabelRfid = styled.div`
-    margin-bottom: 40px;
-    font-size:17px;
-    font-weight:bold;
-`
+  margin-bottom: 40px;
+  font-size: 17px;
+  font-weight: bold;
+`;
 
 export const StyledLabelInput = styled.div`
-    font-size:17px;
-    font-weight:bold;
-    display:flex;
-    justify-content:space-between;
-    /* gap: 30px; */
-    margin-top:10px;
-    align-items:center;
-    
-`
+  font-size: 17px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  /* gap: 30px; */
+  margin-top: 10px;
+  align-items: center;
+`;
 
 export const StyledRightInput = styled.div`
-       position: "absolute";
-        top: "47%";
-        left: "48%";
-     transform: "translate(-50%, -50%)";
-    width: 400;
-    border-radius: "10px";
-    p: 0;
+  /* position: "absolute";
+  top: "47%";
+  left: "48%"; */
+  transform: "translate(-50%, -50%)";
+  width: 400;
+  border-radius: "10px";
+  /* p: 0; */
 
-    input{
-        width:365px;
-        font-size:16px;
-        padding:5px;
-    }
-`
+  input {
+    /* width: 365px; */
+    font-size: 16px;
+    padding: 5px;
+  }
+`;
 
-export const StyledInputLeftCard= styled.div`
-       position: "absolute";
-        top: "47%";
-        left: "48%";
-     transform: "translate(-50%, -50%)";
-    width: 400;
-    border-radius: "10px";
-    p: 0;
+export const StyledInputLeftCard = styled.div`
+  /* position: "absolute";
+  top: "47%";
+  left: "48%";
+  transform: "translate(-50%, -50%)"; */
+  /* width: 400; */
+  border-radius: "10px";
+  /* p: 0; */
 
-    
-    input{
-        width:370px;
-        padding:5px;
-        font-size:16px;
-    }
-    
-`
+  input {
+    /* width: 370px; */
+    padding: 5px;
+    font-size: 16px;
+  }
+`;
 
 // export const StyledInputDetailLeft = styled.div`
 //     /* padding-left:40px;
 //     padding-top: 100px; */
-    
-
 
 export const StyledInputFirstCard = styled.div`
-    display: flex;
-    width:800px;
-    margin-top:300px;
-    align-items:end;
-    justify-content:space-between;
-    
-`
-
+  display: flex;
+  /* width:800px; */
+  /* margin-top:300px; */
+  /* align-items:end;
+    justify-content:space-between; */
+`;
 
 export const StyledSecondInputCard = styled.div`
-    width:800px;
-    /* height:100vh;
+  /* width:800px; */
+  /* height:100vh;
     border:1px solid red; */
-    
-  
-`
+`;
 
 export const StyledStaffPersonal = styled.div`
-    width: 800px;
-    font-size: 20px;
-    font-weight:bold;
-    padding: 5px;
-    padding-left:10px;
-    background-color: #E3F2FD;
-    border:none;
-
-`
+  /* width: 800px; */
+  font-size: 20px;
+  font-weight: bold;
+  padding: 5px;
+  padding-left: 10px;
+  /* background-color: #E3F2FD; */
+  border: none;
+`;
 
 export const StyledStaffLeftCard = styled.div`
-    display:flex;
-    align-items:center;
-    
-    width:380px;
-    padding:0;
-    /* justify-content:space-between; */
-    padding-top: 20px;
+  display: flex;
+  align-items: center;
 
-    input{
-        width:250px;
-        padding:5px;
-        font-size:16px;
-    }
+  /* width:380px; */
+  padding: 0;
+  /* justify-content:space-between; */
+  padding-top: 20px;
 
-`
+  input {
+    /* width:250px; */
+    padding: 5px;
+    font-size: 16px;
+  }
+`;
 
 export const StyledStaffCard = styled.div`
-    display:flex;
-    gap:40px;
-    align-items:start;
-    
-`
+  display: flex;
+  gap: 40px;
+  /* align-items:start; */
+`;
 
-export const StyledStaffInputLeft =styled.div`
-    width:450px;
-   
-`
+export const StyledStaffInputLeft = styled.div`
+  /* width:450px; */
+`;
 
 export const StyledPan = styled.div`
-    padding:0 0 100px 0;
-   
-    
-`
-
+  /* padding:0 0 100px 0; */
+`;
 
 export const StyledStaffRightCard = styled.div`
-    display:flex;
-    align-items:center;
-    
-    width:380px;
-    padding:0;
-    /* justify-content:space-between; */
-    padding-top: 20px;
+  display: flex;
+  align-items: center;
 
-    input{
-        width:250px;
-        padding:5px;
-        font-size:16px;
-    }
+  /* width:380px; */
+  padding: 0;
+  /* justify-content:space-between; */
+  padding-top: 20px;
 
-   
-`
+  input {
+    /* width: 250px; */
+    padding: 5px;
+    font-size: 16px;
+  }
+`;
 
 export const StyledStaffInputRight = styled.div`
-    width:380px;
- 
-    
-   
-`
+  /* width:380px; */
+`;
 
 export const StyledBloodRadio = styled.div`
-  
-        display:flex;
-        gap:0;
-        width:200px;
-        border:1px solid black;
-`
-
+  display: flex;
+  gap: 0;
+  /* width:200px; */
+  border: 1px solid black;
+`;
 
 export const StyledLabelBloodInput = styled.div`
-    width:400px;
-    font-size:17px;
-    font-weight:bold;
-    display:flex;
-    
+  /* width:400px; */
+  font-size: 17px;
+  font-weight: bold;
+  display: flex;
 
-    justify-content:space-between;
-    margin-top:10px;
-    align-items:start;
+  justify-content: space-between;
+  /* margin-top:10px; */
+  align-items: start;
+`;
 
-`
-
-export const StyledLeftCommunicationInput = styled.div`
- 
-`
+export const StyledLeftCommunicationInput = styled.div``;
 
 export const StyledCommunicationLine = styled.div`
-    width: 800px;
-    border:1px solid lightgray;
-    margin-top:30px;
-    margin-bottom: 30px;
-`
+  /* width: 800px; */
+  border: 1px solid lightgray;
+  /* margin-top:30px;
+    margin-bottom: 30px; */
+`;
 
 export const StyledThirdInputCard = styled.div`
-  width:800px;
-   
-`
+  /* width: 800px; */
+`;
 
 export const StyledCommunicationDetails = styled.div`
-     width: 800px;
-    font-size: 20px;
-    font-weight:bold;
-    padding: 5px;
-    padding-left:10px;
-    background-color: #E3F2FD;
-    /* border:1px solid black; */
-`
-
+  /* width: 800px; */
+  font-size: 20px;
+  font-weight: bold;
+  padding: 5px;
+  padding-left: 10px;
+  background-color: #e3f2fd;
+  /* border:1px solid black; */
+`;
 
 export const StyledCommunicationCard = styled.div`
-    
-    display:flex;
-    gap:40px;
-    align-items:start;
-    
-`
+  display: flex;
+  gap: 40px;
+  align-items: start;
+`;
 
-export  const StyledCommunicationLeft = styled(StyledInputLeftCard)`
-
-`
+export const StyledCommunicationLeft = styled(StyledInputLeftCard)``;
 
 export const StyledComInputLeft = styled(StyledInputLeftCard)`
-    /* input{
+  /* input{
         width:300px;
     } */
-`
-
+`;
 
 // StyledComInputRight
-  export const StyledCommunicationRight  = styled(StyledStaffRightCard)`
-  
-  `
+export const StyledCommunicationRight = styled(StyledStaffRightCard)``;
 
-
-export const StyledComInputRight  = styled(StyledStaffInputRight)`
-  
-`
+export const StyledComInputRight = styled(StyledStaffInputRight)``;

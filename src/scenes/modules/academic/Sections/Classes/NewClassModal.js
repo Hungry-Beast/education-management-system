@@ -46,7 +46,7 @@ const Form = styled.form`
   justify-content: space-between;
 `;
 
-const NewCourseModal = ({ handleClose }) => {
+const NewClassModal = ({ handleClose }) => {
   const {
     register,
     handleSubmit,
@@ -55,11 +55,11 @@ const NewCourseModal = ({ handleClose }) => {
     formState: { errors },
   } = useForm({
     defaultValues: {
-      courseName: "",
-      courseCode: "",
-      courseCredit: "",
+      className: "",
+      classCode: "",
+      classCredit: "",
       isSpecialization: true,
-      //   courseType: 1,
+      //   classType: 1,
     },
   });
 
@@ -68,38 +68,38 @@ const NewCourseModal = ({ handleClose }) => {
   return (
     <Box sx={style}>
       <HeaderContainer>
-        <Typography variant="h3">Add Course</Typography>
+        <Typography variant="h3">Add Class</Typography>
       </HeaderContainer>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <TextField
           fullWidth
-          label="Course Name"
+          label="Class Name"
           required
-          {...register("courseName", { required: "Course name is required" })}
+          {...register("className", { required: "Class name is required" })}
           sx={{ gridColumn: "span 2" }}
         />
 
         <TextField
           fullWidth
-          label="Course Short Code"
+          label="Class Short Code"
           required
-          {...register("courseShortCode", {
-            required: "Course code  is required",
+          {...register("classShortCode", {
+            required: "Class code  is required",
           })}
           sx={{ gridColumn: "span 1" }}
         />
         <TextField
           fullWidth
-          label="Course Duration (in years)"
+          label="Student Limit"
           required
-          {...register("courseDuration", {
-            required: "Course Duration is required",
+          {...register("studentLimi", {
+            required: "Student Limit is required",
           })}
           sx={{ gridColumn: "span 1" }}
         />
 
         <Controller
-          name="isSpecialization"
+          name="isCourse"
           control={control}
           required
           defaultChecked
@@ -108,12 +108,12 @@ const NewCourseModal = ({ handleClose }) => {
             <FormControl fullWidth sx={{ gridColumn: "span 2" }}>
               <FormControlLabel
                 control={<Checkbox {...field} defaultChecked color="success" />}
-                label="Specialization"
+                label="Course"
               />
             </FormControl>
           )}
         />
-        {watch("isSpecialization") ? (
+        {watch("isCourse") ? (
           <Controller
             name="courseType"
             control={control}
@@ -121,7 +121,7 @@ const NewCourseModal = ({ handleClose }) => {
             //   defaultValue={1}
             render={({ field }) => (
               <FormControl fullWidth>
-                <InputLabel required> Department</InputLabel>
+                <InputLabel required>Select Course</InputLabel>
                 <Select
                   {...field}
                   // defaultValue={1}
@@ -136,66 +136,7 @@ const NewCourseModal = ({ handleClose }) => {
             )}
           />
         ) : (
-          <>
-            <TextField
-              fullWidth
-              label="Seats"
-              required
-              {...register("seat", {
-                required: "Seat is required",
-              })}
-              sx={{ gridColumn: "span 1" }}
-            />
-            <Controller
-              name="type"
-              control={control}
-              required
-              //   defaultValue={1}
-              render={({ field }) => (
-                <FormControl fullWidth>
-                  <InputLabel required> Type</InputLabel>
-                  <Select
-                    {...field}
-                    // defaultValue={1}
-                    fullWidth
-                  >
-                    <MenuItem value={1}>Month</MenuItem>
-                    <MenuItem value={2}>Year</MenuItem>
-                  </Select>
-                </FormControl>
-              )}
-            />
-            <TextField
-              fullWidth
-              label="Duration"
-              required
-              {...register("duration", {
-                required: "Duration is required",
-              })}
-              sx={{ gridColumn: "span 1" }}
-            />
-            <Controller
-            name="courseType"
-            control={control}
-            required
-            //   defaultValue={1}
-            render={({ field }) => (
-              <FormControl fullWidth>
-                <InputLabel required> Department</InputLabel>
-                <Select
-                  {...field}
-                  // defaultValue={1}
-                  fullWidth
-                >
-                  <MenuItem value={1}>Physics</MenuItem>
-                  <MenuItem value={2}>Chemistry</MenuItem>
-                  <MenuItem value={3}>Electronics</MenuItem>
-                  <MenuItem value={4}>Maths</MenuItem>
-                </Select>
-              </FormControl>
-            )}
-          />
-          </>
+          <></>
         )}
 
         <TextField
@@ -204,7 +145,7 @@ const NewCourseModal = ({ handleClose }) => {
           rows={4}
           label="Description"
           required
-          {...register("description", { required: "Course type is required" })}
+          {...register("description", { required: "Class type is required" })}
           sx={{ gridColumn: "span 2" }}
         />
         <Button type="submit" variant="contained" color="success">
@@ -218,4 +159,4 @@ const NewCourseModal = ({ handleClose }) => {
   );
 };
 
-export default NewCourseModal;
+export default NewClassModal;

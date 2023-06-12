@@ -65,11 +65,11 @@ const SessionsClassModal = ({ handleClose }) => {
   return (
     <Box sx={style}>
       <HeaderContainer>
-        <Typography variant="h3">Add Class</Typography>
+        <Typography variant="h3">Current Session Class</Typography>
       </HeaderContainer>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Controller
-          name="classType"
+          name="classes"
           control={control}
           required
 
@@ -80,11 +80,11 @@ const SessionsClassModal = ({ handleClose }) => {
 
               {...field}
               multiple
-              id="SessionsClass"
-              name="sessionClasss"
+              id="Classes"
+              name="classes"
               options={top100Films.map((option) => option.title)}
               renderInput={(params) => (
-                <TextField {...params} label="Sessions Class" />
+                <TextField {...params} label="Classes" />
               )}
             />
           )}
