@@ -27,7 +27,7 @@ import SubCategory from "./scenes/modules/academic/academic/academic-configurati
 import NotificationTemplate from "./settingcomponents/notificationtemplate";
 import TermsConditions from "./settingcomponents/termsconditions";
 import TermsDisplayPage from "./settingcomponents/termsconditions/TermsDisplayPage";
-import Health from "./scenes/HealthRecord/Health";
+import Health from "./detailscomponents/health/index";
 import EmptyTableMessage from "./settingcomponents/emptytablemessage";
 import SmsModule from "./settingcomponents/smsmodule";
 import WeeklyOff from "./settingcomponents/weeklyoff";
