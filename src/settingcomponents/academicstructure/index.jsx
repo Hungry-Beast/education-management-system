@@ -1,11 +1,5 @@
 import React from 'react'
-import FormLabel from '@mui/material/FormLabel';
-import FormControl from '@mui/material/FormControl';
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import FormHelperText from '@mui/material/FormHelperText';
-import Switch from '@mui/material/Switch';
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, FormControl, FormGroup, FormControlLabel, Switch} from '@mui/material';
 
 
 function AcademicStructure() {
@@ -23,25 +17,23 @@ function AcademicStructure() {
     });
   };
 
-  console.log(state)
 
   return (
 
-    <Box width={ '100%' }  sx={{lineHeight: "50px"}} >
-       <FormControl  sx={{ mt: '20px'}}  component="fieldset" variant="standard">
-        {/* <FormLabel component="legend">Assign responsibility</FormLabel> */}
+    <Box sx={{lineHeight: "50px", width: "100%"}} >
+       <FormControl  sx={{ width: "100%" ,mt: '20px'}}  component="fieldset" variant="standard">
 
-        <Box display="flex" justifyContent="space-between" >
+        <Box display="flex" justifyContent="space-around" >
           <Typography sx={{lineHeight: "60px"}} >Module</Typography>
           <Typography sx={{ mr: '30px', lineHeight: "60px"}} >Action</Typography>
         </Box>
 
-        <hr style={{ width:"120%", border: '1px solid black'}} />
+        <hr style={{ width:"80%", border: '1px solid black'}} />
 
-        <FormGroup>
+        <FormGroup sx={{width: "100%"}} >
  
-        <Box display="flex" alignItems="center" gap={'400px' } justifyContent="center" >
-          <Typography sx={{ mr: 'auto', lineHeight: "60px"}} >Department</Typography>
+        <Box sx={{display: "flex", justifyContent: "space-around"}} >
+          <Typography sx={{ lineHeight: "60px"}} >Department</Typography>
           <FormControlLabel
               control={
                 <Switch checked={state.department} onChange={handleChange} name="department" />
@@ -49,10 +41,10 @@ function AcademicStructure() {
             />
         </Box>
 
-        <hr style={{ width:"100%", border: '1px solid black'}} />
+        <hr style={{ width:"80%", border: '1/2px solid grey'}} />
 
-        <Box display="flex" alignItems="center" gap={'400px' } justifyContent="center" >
-          <Typography sx={{ mr: 'auto', lineHeight: "60px"}} >Course</Typography>
+        <Box sx={{display: "flex", justifyContent: "space-around"}}  >
+          <Typography sx={{ lineHeight: "60px"}} >Course</Typography>
           <FormControlLabel
             control={
               <Switch checked={state.course} onChange={handleChange} name="course" />
@@ -60,10 +52,10 @@ function AcademicStructure() {
           />
         </Box>
 
-        <hr style={{ width:"100%", border: '1px solid black'}} />
+        <hr style={{ width:"80%", border: '1/2px solid grey'}} />
 
-        <Box display="flex" alignItems="center" gap={'400px' } justifyContent="center" >
-          <Typography sx={{ mr: 'auto', lineHeight: "60px"}} >Specialization</Typography>
+        <Box sx={{display: "flex", justifyContent: "space-around"}} >
+          <Typography sx={{ lineHeight: "60px"}} >Specialization</Typography>
           <FormControlLabel
             control={
               <Switch checked={state.specialization} onChange={handleChange} name="specialization" />
@@ -71,15 +63,18 @@ function AcademicStructure() {
           />
         </Box>
 
-        <hr style={{ width:"100%", border: '1px solid black'}} />
-        <Box display="flex" alignItems="center" gap={'400px' } justifyContent="center" >
-          <Typography sx={{ mr: 'auto', lineHeight: "60px"}} >Course Credit</Typography>
+        <hr style={{ width:"80%", border: '1/2px solid grey'}} />
+
+        <Box sx={{display: "flex", justifyContent: "space-around"}} >
+          <Typography sx={{ lineHeight: "60px"}} >Course Credit</Typography>
           <FormControlLabel
             control={
               <Switch checked={state.subjectCredit} onChange={handleChange} name="subjectCredit" />
             }
           />
         </Box>
+
+        <hr style={{ width:"80%", border: '1/2px solid grey'}} />
 
         </FormGroup>
       </FormControl>
