@@ -17,7 +17,7 @@ export const StyledProfileCard = styled.div`
 export const StyledProfileBorder = styled.div`
   height: 100%;
   border-radius: 1.25em;
-  border: 1px solid red;
+  border: 1px solid lightgray;
   padding: 2rem;
   font-size: 0.9rem;
   font-weight: bold;
