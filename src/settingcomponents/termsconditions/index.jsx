@@ -55,4 +55,4 @@ function TermsConditions() {
   )
 }
 
-export default TermsConditions
+export default TermsConditions;

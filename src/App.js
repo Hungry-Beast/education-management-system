@@ -23,6 +23,8 @@ import Academic from "./scenes/modules/academic/academic/academic-configuration/
 // import Dprofile from "./scenes/detailProfile/Dprofile";
 import ModulesOnOff from "./settingcomponents/modulesonoff";
 import Holidays from "./settingcomponents/holidays";
+
+import Changepassword from "./scenes/changepassword/Changepassword";
 import SubCategory from "./scenes/modules/academic/academic/academic-configuration/Sections/Subject/SubCategory";
 import NotificationTemplate from "./settingcomponents/notificationtemplate";
 import TermsConditions from "./settingcomponents/termsconditions";
@@ -39,6 +41,7 @@ import IntimeOuttime from "./settingcomponents/intimeouttime";
 import ClassTeacherMapping from "./scenes/modules/academic/academic/class-teacher-mapping/ClassTeacherMapping";
 import ClassSchedule from "./scenes/modules/academic/class-schedule/class-schedule/ClassSchedule";
 // import OrgProfile from "./settingcomponents/OrgProfile/OrgProfile";
+//>>>>>>> b63988d5e5c115f3840ce513fec25967cdd5c832
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -74,7 +77,11 @@ function App() {
             </Route>
           </Route>
           <Route path="/login" element={<Login/>} />
+
+          <Route path="/changepassword" element={<Changepassword/>}/>
+
           <Route path="/school-terms" element={ <TermsDisplayPage/> } />    {/*Route to Display the terms and conditions */}
+
           <Route  element={<ModulesLayout/>} >
             <Route path="/modules/academic" element={<Academic />} />
             <Route path="/modules/academic/subject-category" element={<SubCategory />} />
