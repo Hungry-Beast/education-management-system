@@ -120,15 +120,11 @@ export default function Profile() {
           <StyledProfileSecondCard>
             <StyledProfileSecondLeftCard>
               <Label>First Name</Label>
-<<<<<<< HEAD
-              <TextField fullWidth sx={{ gridColumn: "span 1" }}  {...register("firstName")}/>
-=======
               <TextField
                 fullWidth
                 sx={{ gridColumn: "span 1" }}
                 {...register("FirstName")}
               />
->>>>>>> edb15a5f27251399a0352851f8e701731a823b59
 
               <Label>Last Name</Label>
               <TextField
@@ -268,15 +264,11 @@ export default function Profile() {
               */}
 
               <Label>Date of Joining</Label>
-<<<<<<< HEAD
-              <TextField sx={{ gridColumn: "span 1" }}  />
-=======
               <TextField
                 fullWidth
                 sx={{ gridColumn: "span 1" }}
                 {...register("DateOfjoining")}
               />
->>>>>>> edb15a5f27251399a0352851f8e701731a823b59
               <Label>Mother name</Label>
               <TextField
                 fullWidth
