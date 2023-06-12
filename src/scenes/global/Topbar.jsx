@@ -294,7 +294,7 @@ const Topbar = () => {
                     setSelected={setSelected}
                   />
                   <Item
-                    title="User"
+                    title="Users"
                     selected={selected}
                     setSelected={setSelected}
                   />

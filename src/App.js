@@ -23,11 +23,13 @@ import Academic from "./scenes/modules/academic/academic/academic-configuration/
 // import Dprofile from "./scenes/detailProfile/Dprofile";
 import ModulesOnOff from "./settingcomponents/modulesonoff";
 import Holidays from "./settingcomponents/holidays";
+
+import Changepassword from "./scenes/changepassword/Changepassword";
 import SubCategory from "./scenes/modules/academic/academic/academic-configuration/Sections/Subject/SubCategory";
 import NotificationTemplate from "./settingcomponents/notificationtemplate";
 import TermsConditions from "./settingcomponents/termsconditions";
 import TermsDisplayPage from "./settingcomponents/termsconditions/TermsDisplayPage";
-import Health from "./scenes/HealthRecord/Health";
+import Health from "./detailscomponents/health/index";
 import EmptyTableMessage from "./settingcomponents/emptytablemessage";
 import SmsModule from "./settingcomponents/smsmodule";
 import WeeklyOff from "./settingcomponents/weeklyoff";
@@ -39,6 +41,7 @@ import IntimeOuttime from "./settingcomponents/intimeouttime";
 import ClassTeacherMapping from "./scenes/modules/academic/academic/class-teacher-mapping/ClassTeacherMapping";
 import ClassSchedule from "./scenes/modules/academic/class-schedule/class-schedule/ClassSchedule";
 // import OrgProfile from "./settingcomponents/OrgProfile/OrgProfile";
+//>>>>>>> b63988d5e5c115f3840ce513fec25967cdd5c832
 
 function App() {
   const [theme, colorMode] = useMode();

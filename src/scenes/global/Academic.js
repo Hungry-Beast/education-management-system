@@ -3,6 +3,19 @@ import { Divider, Typography } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import ClassIcon from '@mui/icons-material/Class';
+import Iconattendance from '@mui/icons-material/HowToReg';
+import AssignmentIcon from '@mui/icons-material/AssignmentRounded';
+import GraduationIcon from '@mui/icons-material/School';
+import ExamIcon from '@mui/icons-material/AutoStories';
+import BadgeIcon from '@mui/icons-material/WorkspacePremium';
+
+const Resolve = styled.div`
+  display: flex;
+  vertical-align: middle,
+`;
+
+
 
 const Container = styled.div`
   width: 100%;
@@ -42,7 +55,7 @@ const Academic = () => {
           }}
         >
           {" "}
-          <Settings sx={{mx:"5px"}} /> Academic
+          <Settings sx={{fontSize:"30px" ,mx:"5px"}} /> Academic
         </Typography>
         <Divider />
         <Li>
@@ -52,228 +65,212 @@ const Academic = () => {
         </Li>
         <Li>
           <Link to="/admin">
-            <Typography variant="h5">Class Teacher Meeting</Typography>
-          </Link>
-        </Li>
-      </Ul>
-      <Ul>
-        <Typography
-          variant="h3"
-
-          style={{
-            display: "flex",
-            alignItems: "center",
-            marginTop: "5px",
-            marginBottom: "12px",
-
-          }}
-        >
-          {" "}
-          <Settings sx={{mx:"5px"}} /> Academic
-        </Typography>
-        <Divider />
-        <Li>
-          <Link to="/admin">
-            <Typography variant="h5">Academic Configuration</Typography>
-          </Link>
-        </Li>
-        <Li>
-          <Link to="/admin">
-            <Typography variant="h5">Class Teacher Meeting</Typography>
-          </Link>
-        </Li>
-      </Ul>
-      <Ul>
-        <Typography
-          variant="h3"
-
-          style={{
-            display: "flex",
-            alignItems: "center",
-            marginTop: "5px",
-            marginBottom: "12px",
-
-          }}
-        >
-          {" "}
-          <Settings sx={{mx:"5px"}} /> Academic
-        </Typography>
-        <Divider />
-        <Li>
-          <Link to="/admin">
-            <Typography variant="h5">Academic Configuration</Typography>
-          </Link>
-        </Li>
-        <Li>
-          <Link to="/admin">
-            <Typography variant="h5">Class Teacher Meeting</Typography>
-          </Link>
-        </Li>
-      </Ul>
-      <Ul>
-        <Typography
-          variant="h3"
-
-          style={{
-            display: "flex",
-            alignItems: "center",
-            marginTop: "5px",
-            marginBottom: "12px",
-
-          }}
-        >
-          {" "}
-          <Settings sx={{mx:"5px"}} /> Academic
-        </Typography>
-        <Divider />
-        <Li>
-          <Link to="/admin">
-            <Typography variant="h5">Academic Configuration</Typography>
-          </Link>
-        </Li>
-        <Li>
-          <Link to="/admin">
-            <Typography variant="h5">Class Teacher Meeting</Typography>
-          </Link>
-        </Li>
-      </Ul>
-      <Ul>
-        <Typography
-          variant="h3"
-
-          style={{
-            display: "flex",
-            alignItems: "center",
-            marginTop: "5px",
-            marginBottom: "12px",
-
-          }}
-        >
-          {" "}
-          <Settings sx={{mx:"5px"}} /> Academic
-        </Typography>
-        <Divider />
-        <Li>
-          <Link to="/admin">
-            <Typography variant="h5">Academic Configuration</Typography>
-          </Link>
-        </Li>
-        <Li>
-          <Link to="/admin">
-            <Typography variant="h5">Class Teacher Meeting</Typography>
-          </Link>
-        </Li>
-      </Ul>
-      <Ul>
-        <Typography
-          variant="h3"
-
-          style={{
-            display: "flex",
-            alignItems: "center",
-            marginTop: "5px",
-            marginBottom: "12px",
-
-          }}
-        >
-          {" "}
-          <Settings sx={{mx:"5px"}} /> Academic
-        </Typography>
-        <Divider />
-        <Li>
-          <Link to="/admin">
-            <Typography variant="h5">Academic Configuration</Typography>
-          </Link>
-        </Li>
-        <Li>
-          <Link to="/admin">
-            <Typography variant="h5">Class Teacher Meeting</Typography>
-          </Link>
-        </Li>
-      </Ul>
-      <Ul>
-        <Typography
-          variant="h3"
-
-          style={{
-            display: "flex",
-            alignItems: "center",
-            marginTop: "5px",
-            marginBottom: "12px",
-
-          }}
-        >
-          {" "}
-          <Settings sx={{mx:"5px"}} /> Academic
-        </Typography>
-        <Divider />
-        <Li>
-          <Link to="/admin">
-            <Typography variant="h5">Academic Configuration</Typography>
-          </Link>
-        </Li>
-        <Li>
-          <Link to="/admin">
-            <Typography variant="h5">Class Teacher Meeting</Typography>
-          </Link>
-        </Li>
-      </Ul>
-      <Ul>
-        <Typography
-          variant="h3"
-
-          style={{
-            display: "flex",
-            alignItems: "center",
-            marginTop: "5px",
-            marginBottom: "12px",
-
-          }}
-        >
-          {" "}
-          <Settings sx={{mx:"5px"}} /> Academic
-        </Typography>
-        <Divider />
-        <Li>
-          <Link to="/admin">
-            <Typography variant="h5">Academic Configuration</Typography>
-          </Link>
-        </Li>
-        <Li>
-          <Link to="/admin">
-            <Typography variant="h5">Class Teacher Meeting</Typography>
-          </Link>
-        </Li>
-      </Ul>
-      <Ul>
-        <Typography
-          variant="h3"
-
-          style={{
-            display: "flex",
-            alignItems: "center",
-            marginTop: "5px",
-            marginBottom: "12px",
-
-          }}
-        >
-          {" "}
-          <Settings sx={{mx:"5px"}} /> Academic
-        </Typography>
-        <Divider />
-        <Li>
-          <Link to="/admin">
-            <Typography variant="h5">Academic Configuration</Typography>
-          </Link>
-        </Li>
-        <Li>
-          <Link to="/admin">
-            <Typography variant="h5">Class Teacher Meeting</Typography>
+            <Typography variant="h5">Class Teacher Mapping</Typography>
           </Link>
         </Li>
       </Ul>
      
-    </Container>
+
+      <Ul>
+        <Typography
+          variant="h3"
+
+          style={{
+            display: "flex",
+            alignItems: "center",
+            marginTop: "5px",
+            marginBottom: "12px",
+
+          }}
+        >
+          {" "}
+          <ClassIcon sx={{fontSize:"30px" ,mx:"5px"}} /> Class Schedule
+        </Typography>
+        <Divider />
+        <Li>
+          <Link to="/admin">
+            <Typography variant="h5">Class Schedules</Typography>
+          </Link>
+        </Li>
+        <Li>
+          <Link to="/admin">
+            <Typography variant="h5">Class Time Table</Typography>
+          </Link>
+        </Li>
+        <Li>
+          <Link to="/admin">
+            <Typography variant="h5">All Class Time Table</Typography>
+          </Link>
+        </Li>
+        <Li>
+          <Link to="/admin">
+            <Typography variant="h5">All Teacher Time Table</Typography>
+          </Link>
+        </Li>
+      </Ul>
+
+      <Ul>
+        <Typography
+          variant="h3"
+
+          style={{
+            display: "flex",
+            alignItems: "center",
+            marginTop: "5px",
+            marginBottom: "12px",
+
+          }}
+        >
+          {" "}
+          <Iconattendance sx={{fontSize:"30px" ,mx:"5px"}} /> Attendance
+        </Typography>
+        <Divider />
+        <Li>
+          <Link to="/admin">
+            <Typography variant="h5">Student Settings</Typography>
+          </Link>
+        </Li>
+        <Li>
+          <Link to="/admin">
+            <Typography variant="h5">Student Attendance</Typography>
+          </Link>
+        </Li>
+        <Li>
+          <Link to="/admin">
+            <Typography variant="h5">Attendance Dashboard</Typography>
+          </Link>
+        </Li>
+        </Ul>
+
+        <Ul>
+        <Typography
+          variant="h3"
+
+          style={{
+            display: "flex",
+            alignItems: "center",
+            marginTop: "5px",
+            marginBottom: "12px",
+
+          }}
+        >
+          {" "}
+          <Iconattendance sx={{fontSize:"30px" ,mx:"5px"}} /> LMS
+        </Typography>
+        <Divider />
+        <Li>
+          <Link to="/admin">
+            <Typography variant="h5">LMS Dashboard</Typography>
+          </Link>
+        </Li>
+        <Li>
+          <Link to="/admin">
+            <Typography variant="h5">Big Blue Button Link</Typography>
+          </Link>
+        </Li>
+      </Ul>
+
+      <Ul>
+        <Typography
+          variant="h3"
+
+          style={{
+            display: "flex",
+            alignItems: "center",
+            marginTop: "5px",
+            marginBottom: "12px",
+
+          }}
+        >
+          {" "}
+          <Resolve>
+          <AssignmentIcon sx={{fontSize:"30px" ,mx:"5px"}} /> Assessment & Grading
+          </Resolve>
+        </Typography>
+        <Divider />
+        <Li>
+          <Link to="/admin">
+            <Typography variant="h5">Assessment & Gradings</Typography>
+          </Link>
+        </Li>
+        <Li>
+          <Link to="/admin">
+            <Typography variant="h5">Class-Section Grade Book</Typography>
+          </Link>
+        </Li>
+      </Ul>
+
+      <Ul>
+        <Typography
+          variant="h3"
+
+          style={{
+            display: "flex",
+            alignItems: "center",
+            marginTop: "5px",
+            marginBottom: "12px",
+
+          }}
+        >
+          {" "}
+          <Resolve>
+          <GraduationIcon sx={{fontSize:"30px" ,mx:"5px"}} /> Promotion & Graduation
+          </Resolve>
+        </Typography>
+        <Divider />
+        <Li>
+          <Link to="/admin">
+            <Typography variant="h5">Academic Session</Typography>
+          </Link>
+        </Li>
+      </Ul>
+
+      <Ul>
+        <Typography
+          variant="h3"
+
+          style={{
+            display: "flex",
+            alignItems: "center",
+            marginTop: "5px",
+            marginBottom: "12px",
+
+          }}
+        >
+          {" "}
+          <ExamIcon sx={{fontSize:"30px" ,mx:"5px"}} />  Examination
+        </Typography>
+        <Divider />
+        <Li>
+          <Link to="/admin">
+            <Typography variant="h5">Examination</Typography>
+          </Link>
+        </Li>
+      </Ul>
+
+      <Ul>
+        <Typography
+          variant="h3"
+
+          style={{
+            display: "flex",
+            alignItems: "center",
+            marginTop: "5px",
+            marginBottom: "12px",
+
+          }}
+        >
+          {" "}
+          <BadgeIcon sx={{fontSize:"30px" ,mx:"5px"}} />Badges
+        </Typography>
+        <Divider />
+        <Li>
+          <Link to="/admin">
+            <Typography variant="h5">Badges</Typography>
+          </Link>
+        </Li>
+      </Ul>
+  </Container>
   );
 };
 
