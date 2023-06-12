@@ -7,7 +7,7 @@ export const StyledToggleEdit = styled.div`
 // profile wrapper
 export const StyledProfileCard = styled.div`
   width: 100%;
-  height: 1500px;
+  height: 100%;
   padding: 2rem;
   background-color: white;
   border-radius: 1.25em;
@@ -17,7 +17,7 @@ export const StyledProfileCard = styled.div`
 export const StyledProfileBorder = styled.div`
   height: 100%;
   border-radius: 1.25em;
-  border: 1px solid lightgray;
+  border: 1px solid red;
   padding: 2rem;
   font-size: 0.9rem;
   font-weight: bold;
@@ -33,7 +33,7 @@ export const StyledProfileFirtCard = styled.div`
 
   input {
     padding: 10px 10px;
-    width: 400px;
+    width: 100%;
   }
 `;
 
