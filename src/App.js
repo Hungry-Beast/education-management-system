@@ -60,45 +60,9 @@ function App() {
           <Route path="/admin/faq" element={<FAQ />} />
           <Route path="/admin/calendar" element={<Calendar />} />
           <Route path="/admin/form" element={<Form />} />
-
-          <Route path="/school-terms" element={ <TermsDisplayPage/> } />    {/*Route to Display the terms and conditions */}
-
-          <Route  element={<ModulesLayout/>} >
-            <Route path="/modules/academic" element={<Academic />} />
-            <Route path="/modules/academic/subject-category" element={<SubCategory />} />
-            <Route path="/modules/academic/class-teacher-mapping" element={<ClassTeacherMapping />} />
-            <Route path="/modules/academic/class-schedule/" element={<ClassSchedule />} />
-          </Route>
-          {/* <Route path="/profile" element={<Dprofile/>} /> */}
-          <Route path="/" element={<Navigate replace to="/login"/>} />
-        
-          <Route element={<MyDetails />} >
-              <Route path="/profile/staff-home" element={ <Home/> } />
-              <Route path="/profile/staff-profile" element={ <Profile/> } />
-              {/* <Route path="/profile/staff-health" element={ <Health/> } /> */}
-              
-          <Route path="/admin/settings" element={<SetSettings />}>
-            <Route path="orgProfile" element={<OrgProfile />} />
-            <Route path="acc-structure" element={<AcademicStructure />} />
-            <Route path="set-email-template" element={<EmailTemplates />} />
-            <Route path="set-modules" element={<ModulesOnOff />} />
-            <Route path="holidays" element={<Holidays />} />
-            <Route
-              path="notification-template"
-              element={<NotificationTemplate />}
-            />
-            <Route path="terms-conditions" element={<TermsConditions />} />
-            <Route path="empty-table-message" element={<EmptyTableMessage />} />
-            <Route path="sms-module" element={<SmsModule />} />
-            <Route path="weekly-off" element={<WeeklyOff />} />
-            <Route path="leave-setting" element={<LeaveSetting />} />
-            <Route path="intime-outtime" element={<IntimeOuttime />} />
-          </Route>
+          <Route path="/school-terms" element={<TermsDisplayPage />} />{" "}
+          {/*Route to Display the terms and conditions */}
         </Route>
-        <Route path="/login" element={<Login />} />
-        <Route path="/change-password" element={<Changepassword />} />
-        <Route path="/school-terms" element={<TermsDisplayPage />} />{" "}
-        {/*Route to Display the terms and conditions */}
         <Route element={<ModulesLayout />}>
           <Route path="/modules/academic" element={<Academic />} />
           <Route
@@ -119,11 +83,34 @@ function App() {
         <Route element={<MyDetails />}>
           <Route path="/profile/staff-home" element={<Home />} />
           <Route path="/profile/staff-profile" element={<Profile />} />
-        </Route>
-        <Route path="/profile/staff-health-record" element={<Health />} />
+          </Route>
+          {/* <Route path="/profile/staff-health" element={ <Health/> } /> */}
+
+          <Route path="/admin/settings" element={<SetSettings />}>
+            <Route path="orgProfile" element={<OrgProfile />} />
+            <Route path="acc-structure" element={<AcademicStructure />} />
+            <Route path="set-email-template" element={<EmailTemplates />} />
+            <Route path="set-modules" element={<ModulesOnOff />} />
+            <Route path="holidays" element={<Holidays />} />
+            <Route
+              path="notification-template"
+              element={<NotificationTemplate />}
+            />
+            <Route path="terms-conditions" element={<TermsConditions />} />
+            <Route path="empty-table-message" element={<EmptyTableMessage />} />
+            <Route path="sms-module" element={<SmsModule />} />
+            <Route path="weekly-off" element={<WeeklyOff />} />
+            <Route path="leave-setting" element={<LeaveSetting />} />
+            <Route path="intime-outtime" element={<IntimeOuttime />} />
+          </Route>
+        <Route path="/login" element={<Login />} />
+        <Route path="/change-password" element={<Changepassword />} />
+        <Route path="/school-terms" element={<TermsDisplayPage />} />{" "}
+          
       </Routes>
     </ThemeProvider>
-    // </ColorModeContext.Provider>
+
+    
   );
 }
 
