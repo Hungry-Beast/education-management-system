@@ -8,9 +8,14 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { TextField } from "@mui/material";
 import { Controller, useForm } from "react-hook-form";
-import { DatePicker, LocalizationProvider, TimePicker } from "@mui/x-date-pickers";
+import {
+  DatePicker,
+  LocalizationProvider,
+  TimePicker,
+} from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { useState } from "react";
+import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
@@ -27,20 +32,23 @@ const rows = [
 ];
 
 export default function TimingFormTable() {
-  const {
-    register,
-    handleSubmit,
-    watch,
-    control,
-    formState: { errors },
-  } = useForm();
-
-  const onSubmit = (data) => console.log(data);
+  const [formData, setFormData] = useState([
+    {
+      id: 1,
+      name_1: "",
+      startTime_1: new Date(),
+      endTime_1: new Date(),
+      break_1: "",
+    },
+  ]);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
   const [reqDate, setreqDate] = useState(new Date());
   return (
     <form
       style={{ gridColumn: "span 2", marginBottom: "6px" }}
-      onSubmit={handleSubmit(onSubmit)}
+      onSubmit={handleSubmit}
     >
       <TableContainer
         component={Paper}
@@ -57,23 +65,33 @@ export default function TimingFormTable() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {rows.map((row) => (
+            {formData.map((row, i) => (
               <TableRow
                 key={row.name}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
                 <TableCell component="th" scope="row">
                   <TextField
+                    value={row[`name_${row.id}`]}
                     fullWidth
-                    {...register(`${row.id}-name`)}
-                    value={watch(`${row.id}-name`)}
+                    name={"name_" + row.id}
                   />
                 </TableCell>
                 <TableCell align="right">
-                  
+                  <LocalizationProvider dateAdapter={AdapterDayjs}>
+                    <DemoContainer components={["TimePicker"]}>
+                      <TimePicker label="Basic time picker" />
+                    </DemoContainer>
+                  </LocalizationProvider>
                 </TableCell>
-                <TableCell align="right">{row.fat}</TableCell>
-                <TableCell align="right">{row.carbs}</TableCell>
+                <TableCell align="right">
+                  <LocalizationProvider dateAdapter={AdapterDayjs}>
+                    <DemoContainer components={["TimePicker"]}>
+                      <TimePicker label="Basic time picker" />
+                    </DemoContainer>
+                  </LocalizationProvider>
+                </TableCell>
+                <TableCell align="right"></TableCell>
                 <TableCell align="right">{row.protein}</TableCell>
               </TableRow>
             ))}
