@@ -27,6 +27,7 @@
     "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-chartjs-2": "^4.3.1",
+    "react-color-palette": "^6.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.44.3",
     "react-pro-sidebar": "^0.7.1",

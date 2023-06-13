@@ -42,6 +42,7 @@ import ClassTeacherMapping from "./scenes/modules/academic/academic/class-teache
 import ClassSchedule from "./scenes/modules/academic/class-schedule/class-schedule/ClassSchedule";
 import ClassTimeTable from "./scenes/modules/academic/class-schedule/class-time-table/ClassTimeTable";
 import Health from "./detailscomponents/health";
+import StudentSettings from "./scenes/modules/academic/attendence/student-setting/StudentSettings";
 // import OrgProfile from "./settingcomponents/OrgProfile/OrgProfile";
 //>>>>>>> b63988d5e5c115f3840ce513fec25967cdd5c832
 
@@ -82,6 +83,10 @@ function App() {
           <Route
             path="/modules/academic/class-time-table"
             element={<ClassTimeTable />}
+          />
+          <Route
+            path="/modules/academic/attendence-status-settings"
+            element={<StudentSettings />}
           />
         </Route>
         {/* <Route path="/profile" element={<Dprofile/>} /> */}
