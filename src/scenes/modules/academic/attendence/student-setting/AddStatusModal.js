@@ -13,8 +13,8 @@ import {
 } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
-import { ColorPicker, useColor } from "react-color-palette";
-import "react-color-palette/lib/css/styles.css";
+import InputColor from "react-input-color";
+
 import { Controller, useForm } from "react-hook-form";
 import styled from "styled-components";
 
@@ -50,7 +50,7 @@ const Form = styled.form`
 `;
 
 const AddStatusModal = ({ handleClose }) => {
-  const [color, setColor] = useColor("hex", "#121212");
+  const [color, setColor] = React.useState({});
   const {
     register,
     handleSubmit,
@@ -92,13 +92,21 @@ const AddStatusModal = ({ handleClose }) => {
           })}
           sx={{ gridColumn: "span 1" }}
         />
-        <ColorPicker
-          
-          color={color}
-          onChange={setColor}
-          hideHSV
-          dark
-        />
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-evenly",
+            // flexDirection:"column"
+          }}
+        >
+          <InputLabel>Color</InputLabel>
+          <InputColor
+            initialValue="#5e72e4"
+            onChange={setColor}
+            placement="right"
+          />
+        </Box>
 
         <Button
           sx={{ gridColumn: " 2" }}

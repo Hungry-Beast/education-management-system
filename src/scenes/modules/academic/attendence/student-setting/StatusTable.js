@@ -58,14 +58,7 @@ const columns = [
           >
             Edit
           </Button>
-          <Button
-            sx={{ mx: "5px" }}
-            variant="outlined"
-            color="success"
-            startIcon={<Visibility />}
-          >
-            View
-          </Button>
+          
 
           <Button
             sx={{ mx: "5px" }}
@@ -94,6 +87,7 @@ const data = [
  
 ];
 export default function StatusTable() {
+  
   return (
     <Box sx={{ height: 350, width: 1, mt: 5 }}>
       <DataGrid

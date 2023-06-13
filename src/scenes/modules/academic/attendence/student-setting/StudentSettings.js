@@ -5,6 +5,8 @@ import styled from "styled-components";
 import StatusTable from "./StatusTable";
 import AddStatusModal from "./AddStatusModal";
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 const Component = styled.div`
   width: calc(100% - 30px);
@@ -15,6 +17,12 @@ const Component = styled.div`
   border-radius: 10px;
 `;
 const StudentSettings = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+        
+  }, [])
+  
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -23,7 +31,12 @@ const StudentSettings = () => {
       <Component>
         <Box display="flex" justifyContent={"space-between"}>
           <Typography variant="h3">Attendence Status for Students</Typography>
-          <Button variant="contained" color="success" startIcon={<Add />} onClick={handleOpen}>
+          <Button
+            variant="contained"
+            color="success"
+            startIcon={<Add />}
+            onClick={handleOpen}
+          >
             New Status
           </Button>
         </Box>
