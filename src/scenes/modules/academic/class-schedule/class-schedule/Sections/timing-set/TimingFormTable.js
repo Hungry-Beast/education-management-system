@@ -6,7 +6,14 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import { TextField } from "@mui/material";
+import {
+  Button,
+  Checkbox,
+  FormControlLabel,
+  FormGroup,
+  IconButton,
+  TextField,
+} from "@mui/material";
 import { Controller, useForm } from "react-hook-form";
 import {
   DatePicker,
@@ -16,6 +23,7 @@ import {
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { useState } from "react";
 import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
+import { Add, Delete } from "@mui/icons-material";
 
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
@@ -35,10 +43,10 @@ export default function TimingFormTable() {
   const [formData, setFormData] = useState([
     {
       id: 1,
-      name_1: "",
-      startTime_1: new Date(),
-      endTime_1: new Date(),
-      break_1: "",
+      name: "",
+      startTime: undefined,
+      endTime: undefined,
+      break: false,
     },
   ]);
   const handleSubmit = (e) => {
@@ -72,32 +80,49 @@ export default function TimingFormTable() {
               >
                 <TableCell component="th" scope="row">
                   <TextField
-                    value={row[`name_${row.id}`]}
+                    value={row.name}
                     fullWidth
-                    name={"name_" + row.id}
+                    // name={"name"}
                   />
                 </TableCell>
                 <TableCell align="right">
                   <LocalizationProvider dateAdapter={AdapterDayjs}>
                     <DemoContainer components={["TimePicker"]}>
-                      <TimePicker label="Basic time picker" />
+                      <TimePicker
+                        label="Basic time picker"
+                        value={row.startTime}
+                      />
                     </DemoContainer>
                   </LocalizationProvider>
                 </TableCell>
                 <TableCell align="right">
                   <LocalizationProvider dateAdapter={AdapterDayjs}>
                     <DemoContainer components={["TimePicker"]}>
-                      <TimePicker label="Basic time picker" />
+                      <TimePicker
+                        label="Basic time picker"
+                        value={row.endTime}
+                      />
                     </DemoContainer>
                   </LocalizationProvider>
                 </TableCell>
-                <TableCell align="right"></TableCell>
-                <TableCell align="right">{row.protein}</TableCell>
+                <TableCell align="right">
+                  <Checkbox value={row.break} />
+                </TableCell>
+                <TableCell align="right">
+                  {i ? (
+                    <IconButton color="error" children={<Delete />} />
+                  ) : (
+                    <></>
+                  )}
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>
         </Table>
       </TableContainer>
+      <Button variant="contained" color="success" sx={{my:1}} startIcon={<Add />}>
+        Add
+      </Button>
     </form>
   );
 }

@@ -88,7 +88,7 @@ const NewClassModal = ({ handleClose }) => {
         />
 
        
-      <Typography variant="h3" mt={6} sx={{ gridColumn: "span 2" }} >Availale Time Set</Typography>
+      <Typography variant="h3" mt={2} sx={{ gridColumn: "span 2" }} >Availale Time Set</Typography>
       <TimingFormTable/>
        
         <Button type="submit" variant="contained" color="success">
