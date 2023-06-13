@@ -80,10 +80,7 @@ export default function Profile() {
       {/* profile border starts */}
       <StyledProfileBorder>
         {/* first detail card section */}
-{/* 
-        <button onClick={() => setIsDisabled(!isDisabled)}>
-                        {isDisabled ? 'Enable' : 'Disable'}
-                    </button> */}
+
 
 
         <StyledToggleEdit onClick={() => setIsDisabled(!isDisabled)}>

@@ -4,6 +4,7 @@ import TabsSection from "./TabsSection";
 import { useState } from "react";
 import { Divider } from "@mui/material";
 import SectionContainer from "./SectionContainer";
+import { useLocation } from "react-router-dom";
 
 const Component = styled.div`
   width: calc(100% - 30px);
@@ -19,6 +20,7 @@ const ClassSchedule = () => {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+  const location =useLocation();
 
   return (
     <Component>

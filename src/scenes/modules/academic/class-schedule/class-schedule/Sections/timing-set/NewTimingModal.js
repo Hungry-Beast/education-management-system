@@ -15,13 +15,14 @@ import { Box } from "@mui/system";
 import React from "react";
 import { Controller, useForm } from "react-hook-form";
 import styled from "styled-components";
+import TimingFormTable from "./TimingFormTable";
 
 const style = {
   position: "absolute",
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 500,
+  width: 900,
   bgcolor: "background.paper",
   //   border: "2px solid #000",
   boxShadow: 24,
@@ -73,81 +74,23 @@ const NewClassModal = ({ handleClose }) => {
       <Form onSubmit={handleSubmit(onSubmit)}>
         <TextField
           fullWidth
-          label="Class Name"
+          label="Category Name"
           required
-          {...register("className", { required: "Class name is required" })}
+          {...register("categoryName", { required: "Category name is required" })}
           sx={{ gridColumn: "span 2" }}
         />
-
         <TextField
           fullWidth
-          label="Class Short Code"
-          required
-          {...register("classShortCode", {
-            required: "Class code  is required",
-          })}
-          sx={{ gridColumn: "span 1" }}
-        />
-        <TextField
-          fullWidth
-          label="Student Limit"
-          required
-          {...register("studentLimi", {
-            required: "Student Limit is required",
-          })}
-          sx={{ gridColumn: "span 1" }}
-        />
-
-        <Controller
-          name="isCourse"
-          control={control}
-          required
-          defaultChecked
-          //   defaultValue={1}
-          render={({ field }) => (
-            <FormControl fullWidth sx={{ gridColumn: "span 2" }}>
-              <FormControlLabel
-                control={<Checkbox {...field} defaultChecked color="success" />}
-                label="Course"
-              />
-            </FormControl>
-          )}
-        />
-        {watch("isCourse") ? (
-          <Controller
-            name="courseType"
-            control={control}
-            required
-            //   defaultValue={1}
-            render={({ field }) => (
-              <FormControl fullWidth>
-                <InputLabel required>Select Course</InputLabel>
-                <Select
-                  {...field}
-                  // defaultValue={1}
-                  fullWidth
-                >
-                  <MenuItem value={1}>Physics</MenuItem>
-                  <MenuItem value={2}>Chemistry</MenuItem>
-                  <MenuItem value={3}>Electronics</MenuItem>
-                  <MenuItem value={4}>Maths</MenuItem>
-                </Select>
-              </FormControl>
-            )}
-          />
-        ) : (
-          <></>
-        )}
-
-        <TextField
-          fullWidth
-          multiline
-          rows={4}
           label="Description"
           required
-          {...register("description", { required: "Class type is required" })}
+          {...register("description", { required: "Description is required" })}
           sx={{ gridColumn: "span 2" }}
         />
+
+       
+      <Typography variant="h3" mt={6} sx={{ gridColumn: "span 2" }} >Availale Time Set</Typography>
+      <TimingFormTable/>
+       
         <Button type="submit" variant="contained" color="success">
           Save
         </Button>
