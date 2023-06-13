@@ -13,6 +13,7 @@ import {
   FormGroup,
   IconButton,
   TextField,
+  Typography,
 } from "@mui/material";
 import { Controller, useForm } from "react-hook-form";
 import {
@@ -39,48 +40,7 @@ const rows = [
   createData("Gingerbread", 356, 16.0, 49, 3.9),
 ];
 
-export default function TimingFormTable() {
-  const [formData, setFormData] = useState([
-    {
-      id: 1,
-      name: "",
-      startTime: undefined,
-      endTime: undefined,
-      break: false,
-    },
-  ]);
-  const addItem = () => {
-    const newItem = {
-      id: formData.length + 1,
-      name: "",
-      startTime: undefined,
-      endTime: undefined,
-      break: false,
-    };
-    setFormData([...formData, newItem]);
-  };
-  const removeItem = (id) => {
-    const newItems = formData.filter((item, i) => i !== id);
-    setFormData(newItems);
-  };
-  const updateItem = (name, index, value) => {
-    if (name == "endTime") {
-      
-    }
-    const newArray = formData.map((item, i) => {
-      if (index === i) {
-        return { ...item, [name]: value };
-      } else {
-        return item;
-      }
-    });
-    setFormData(newArray);
-  };
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
-  console.log(formData)
-  const [reqDate, setreqDate] = useState(new Date());
+export default function ViewForm({formData}) {
   return (
     <form
       style={{ gridColumn: "span 2", marginBottom: "6px" }}
@@ -97,22 +57,18 @@ export default function TimingFormTable() {
               <TableCell align="right">Start Time</TableCell>
               <TableCell align="right">End Time</TableCell>
               <TableCell align="right">Break</TableCell>
-              <TableCell align="right">Action</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {formData.map((row, i) => (
+            {formData?.map((row, i) => (
               <TableRow
                 key={row.id}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
                 <TableCell component="th" scope="row">
-                  <TextField
-                    value={row.name}
-                    fullWidth
-                    name="name"
-                    onChange={(e) => updateItem("name", i, e.target.value)}
-                  />
+                  <Typography variant="h4">
+                    {row.name}
+                  </Typography>
                 </TableCell>
                 <TableCell align="right">
                   <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -121,7 +77,7 @@ export default function TimingFormTable() {
                         label="Basic time picker"
                         name="startTime"
                         value={row.startTime}
-                        onChange={(value) => updateItem("startTime", i, value)}
+                        disabled
                       />
                     </DemoContainer>
                   </LocalizationProvider>
@@ -133,8 +89,7 @@ export default function TimingFormTable() {
                         label="Basic time picker"
                         value={row.endTime}
                         name="endTime"
-                        onChange={(value) => updateItem("endTime", i, value)}
-                        minTime={row?.startTime}
+                        disabled
                       />
                     </DemoContainer>
                   </LocalizationProvider>
@@ -143,19 +98,8 @@ export default function TimingFormTable() {
                   <Checkbox
                     value={row.break}
                     name="break"
-                    onChange={(e) => updateItem("break", i, e.target.checked)}
+                    disabled
                   />
-                </TableCell>
-                <TableCell align="right">
-                  {i ? (
-                    <IconButton
-                      color="error"
-                      onClick={() => removeItem(i)}
-                      children={<Delete />}
-                    />
-                  ) : (
-                    <></>
-                  )}
                 </TableCell>
               </TableRow>
             ))}

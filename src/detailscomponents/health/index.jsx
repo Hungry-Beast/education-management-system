@@ -10,7 +10,7 @@ import {
   StyledHeader,
   StyledNavbar,
   StyledDetails,
-} from "./heath.styles";
+} from "./health.styles";
 import {
   StyledHeading,
   StyledFile,
@@ -22,7 +22,7 @@ import {
   StyledBorder,
   StyledContent,
   StyledTwo,
-} from "./heath.styles";
+} from "./health.styles";
 import {
   StyledRoutine,
   StyledBlood,
@@ -31,7 +31,7 @@ import {
   StyledButton,
   StyledCheckupCard,
   StyledHealthButton,
-} from "./heath.styles";
+} from "./health.styles";
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";

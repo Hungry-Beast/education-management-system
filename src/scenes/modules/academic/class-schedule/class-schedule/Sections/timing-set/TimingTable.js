@@ -76,6 +76,7 @@ export default function ClassTable() {
         }}
         pageSizeOptions={[10]}
       />
+      
     </Box>
   );
 }

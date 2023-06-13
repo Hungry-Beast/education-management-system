@@ -1,112 +1,55 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
-import { Button, ButtonGroup, IconButton, colors } from "@mui/material";
+import {
+  Button,
+  ButtonGroup,
+  FormControl,
+  IconButton,
+  InputLabel,
+  Select,
+  colors,
+} from "@mui/material";
 import { Delete, Edit, Link, List, Visibility } from "@mui/icons-material";
-
+import MenuItem from "@mui/material/MenuItem";
 const columns = [
   { field: "id", headerName: "ID", width: 90 },
   {
+    field: "section",
+    headerName: "Section",
+    width: 350,
+    // editable: true,
+    headerAlign: "center",
+    align: "center",
+  },
+  {
     field: "class",
     headerName: "Class",
-    width: 250,
+    width: 350,
     // editable: true,
     headerAlign: "center",
     align: "center",
   },
   {
-    field: "classCode",
-    headerName: "Code",
-    width: 150,
-    headerAlign: "center",
-    align: "center",
+    field: "schedule",
+    headerName: "Schedule",
+    width: 350,
     // editable: true,
-  },
-  {
-    field: "studentLimit",
-    headerName: "Student (Limit)",
-    type: "number",
-    width: 180,
     headerAlign: "center",
     align: "center",
-  },
-
-  {
-    field: "studentAssigned",
-    headerName: "Student (Assigned)",
-    type: "number",
-    width: 120,
-
-    headerAlign: "center",
-    align: "center",
-  },
-
-  {
-    field: "sections",
-    headerName: "Section(s)",
-    renderCell: (data) => {
-      return data?.row?.sections?.map((section) => (
-        <Button sx={{ mx: "5px" }} key={section.id} variant="outlined">
-          {section.value}
-        </Button>
-      ));
-    },
-    width: 250,
-    headerAlign: "center",
-    align: "center",
-  },
-  {
-    field: "actions",
-    headerName: "Actions",
-    renderCell: (data) => {
+    renderCell: (e) => {
       return (
-        <>
-          <Button
-            sx={{ mx: "5px" }}
-            variant="outlined"
-            color="secondary"
-            startIcon={<Edit />}
-          >
-            Edit
-          </Button>
-          <Button
-            sx={{ mx: "5px" }}
-            variant="outlined"
-            color="success"
-            startIcon={<Visibility />}
-          >
-            View
-          </Button>
-          <Button
-            sx={{ mx: "5px" }}
-            variant="outlined"
-            color="success"
-            startIcon={<Link />}
-          >
-            Link
-          </Button>
-          <Button
-            sx={{ mx: "5px" }}
-            variant="outlined"
-            color="success"
-            startIcon={<List />}
-          >
-            Sections
-          </Button>
-          <Button
-            sx={{ mx: "5px" }}
-            variant="outlined"
-            color="error"
-            startIcon={<Delete />}
-          >
-            Delete
-          </Button>
-        </>
+        <Box sx={{ width: "80%" }}>
+        <FormControl fullWidth size="small">
+
+          <Select   defaultValue={1}>
+            <MenuItem value={1}>Primary School</MenuItem>
+            <MenuItem value={2}>High School</MenuItem>
+          </Select>
+        </FormControl>
+        </Box>
       );
     },
-    width: 500,
-    headerAlign: "center",
-    align: "center",
   },
 ];
 
@@ -150,7 +93,6 @@ const data = [
       },
     ],
   },
-
 ];
 export default function SectionTimingTable() {
   return (
