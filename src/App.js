@@ -29,7 +29,7 @@ import SubCategory from "./scenes/modules/academic/academic/academic-configurati
 import NotificationTemplate from "./settingcomponents/notificationtemplate";
 import TermsConditions from "./settingcomponents/termsconditions";
 import TermsDisplayPage from "./settingcomponents/termsconditions/TermsDisplayPage";
-import Health from "./detailscomponents/health/index";
+// import Health from "./detailscomponents/health/index";
 import EmptyTableMessage from "./settingcomponents/emptytablemessage";
 import SmsModule from "./settingcomponents/smsmodule";
 import WeeklyOff from "./settingcomponents/weeklyoff";
@@ -61,6 +61,22 @@ function App() {
           <Route path="/admin/calendar" element={<Calendar />} />
           <Route path="/admin/form" element={<Form />} />
 
+          <Route path="/school-terms" element={ <TermsDisplayPage/> } />    {/*Route to Display the terms and conditions */}
+
+          <Route  element={<ModulesLayout/>} >
+            <Route path="/modules/academic" element={<Academic />} />
+            <Route path="/modules/academic/subject-category" element={<SubCategory />} />
+            <Route path="/modules/academic/class-teacher-mapping" element={<ClassTeacherMapping />} />
+            <Route path="/modules/academic/class-schedule/" element={<ClassSchedule />} />
+          </Route>
+          {/* <Route path="/profile" element={<Dprofile/>} /> */}
+          <Route path="/" element={<Navigate replace to="/login"/>} />
+        
+          <Route element={<MyDetails />} >
+              <Route path="/profile/staff-home" element={ <Home/> } />
+              <Route path="/profile/staff-profile" element={ <Profile/> } />
+              {/* <Route path="/profile/staff-health" element={ <Health/> } /> */}
+              
           <Route path="/admin/settings" element={<SetSettings />}>
             <Route path="orgProfile" element={<OrgProfile />} />
             <Route path="acc-structure" element={<AcademicStructure />} />
