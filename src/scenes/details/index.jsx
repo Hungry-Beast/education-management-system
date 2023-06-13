@@ -75,7 +75,7 @@ function MyDetails() {
     setValue(newValue);
     if(newValue == "0") navigate('/profile/staff-home')
     if(newValue == "1") navigate('/profile/staff-profile')
-    if(newValue == "2") navigate('/profile/staff-health')
+    if(newValue == "2") navigate('/profile/staff-health-record')
   };
 
 

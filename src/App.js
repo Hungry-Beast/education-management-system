@@ -103,8 +103,9 @@ function App() {
         <Route element={<MyDetails />}>
           <Route path="/profile/staff-home" element={<Home />} />
           <Route path="/profile/staff-profile" element={<Profile />} />
+          <Route path="/profile/staff-health-record" element={<Health />} />
         </Route>
-        <Route path="/profile/staff-health-record" element={<Health />} />
+       
       </Routes>
     </ThemeProvider>
     // </ColorModeContext.Provider>
