@@ -229,7 +229,7 @@ export default function Profile() {
                   name="checkbox"
                   defaultValue=""
                   render={({ field }) => (
-                    <RadioGroup {...field}>
+                    <RadioGroup sx={{display:"flex",flexDirection:"row"}} {...field}>
                       <FormControlLabel
                         value="choice-1"
                         control={<Radio />}
