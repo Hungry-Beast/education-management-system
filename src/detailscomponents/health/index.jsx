@@ -1,5 +1,5 @@
-import React from "react";
-import { DataGrid } from "@mui/x-data-grid";
+import React from 'react'
+import { DataGrid } from '@mui/x-data-grid';
 
 import {
   StyledProfileCard,
@@ -115,14 +115,14 @@ function Health() {
               </StyledBar>
             </StyledSearch>
             <StyledData>
-              <StyledWrap>
-                {/* <TableHealth /> */}
+                <StyledWrap>
+              <TableHealth/>
                 {/* <h4>Sr.No</h4>
                 <h4>Title</h4>
                 <h4>Description</h4>
                 <h4>Attachment</h4>
                 <h4>Actions</h4> */}
-              </StyledWrap>
+                </StyledWrap>
             </StyledData>
             <StyledBorder>
               <p>No data available in table</p>
