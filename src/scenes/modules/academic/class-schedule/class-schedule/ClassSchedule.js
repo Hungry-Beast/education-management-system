@@ -4,6 +4,7 @@ import TabsSection from "./TabsSection";
 import { useState } from "react";
 import { Divider } from "@mui/material";
 import SectionContainer from "./SectionContainer";
+import { useLocation } from "react-router-dom";
 
 const Component = styled.div`
   width: calc(100% - 30px);
@@ -13,12 +14,13 @@ const Component = styled.div`
   margin: 15px auto;
   border-radius:10px;
 `;
-const Academic = () => {
-  const [value, setValue] = useState(2);
+const ClassSchedule = () => {
+  const [value, setValue] = useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+  const location =useLocation();
 
   return (
     <Component>
@@ -29,4 +31,4 @@ const Academic = () => {
   );
 };
 
-export default Academic;
+export default ClassSchedule;

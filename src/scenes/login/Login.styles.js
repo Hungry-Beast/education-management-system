@@ -10,7 +10,7 @@ import { devices } from "../../devices";
 // `;
 
 export const StyledDesc = styled.div`
-  line-height: 0.3cm;
+  line-height: 0.7cm;
 
   h1 {
     font-size: 25px;

@@ -1,6 +1,10 @@
 import React from "react";
 import Academic from "./Academic";
 import Administration from "./Administration";
+import Users from "./Users";
+import Communication from "./Communication";
+import Finance from "./Finance";
+import Others from "./Others";
 
 const UpperMenuContains = ({ selected }) => {
  console.log(selected);
@@ -10,13 +14,13 @@ const UpperMenuContains = ({ selected }) => {
     case "Administration":
             return <Administration/>;
     case "Users":
-        return <div></div>;
-    case "Communications":
-        return <div></div>;
+        return <Users/>;
+    case "Communication":
+        return <Communication/>;
     case "Finance":
-        return <div></div>;
-    case "Other":
-        return <div></div>;
+        return <Finance/>;
+    case "Others":
+        return <Others/>;
     default:
       break;
   }

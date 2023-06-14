@@ -51,7 +51,10 @@ export const StyledInput = styled.input`
   outline: 0;
   border-width: 0 0 2px;
   border-color: black;
-
+  border-bottom: 1px solid black;
+  input{
+    background-color:white;
+  }
 `
 
 export const StyledButton = styled.button`
@@ -92,7 +95,7 @@ text-align: center;
 export const StyledVersion = styled.div`
     text-align:center;
     padding-top:10px;
-    line-height: 0.2cm;
+    line-height: 1.4rem;
 
     h2{
       font-weight:bold;

@@ -5,6 +5,7 @@ import { Outlet } from "react-router-dom";
 import StatusBar from "./scenes/global/StatusBar";
 import styled from "styled-components";
 import { tokens } from "./theme";
+import { useEffect } from "react";
 
 const colors = tokens("light");
 const Container=styled.div`
@@ -13,6 +14,7 @@ const Container=styled.div`
 `
 const ModulesLayout = ({ children }) => {
   const [isSidebar, setIsSidebar] = useState(true);
+ 
 
   return (
     <Container className="app">
