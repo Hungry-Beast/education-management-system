@@ -1,14 +1,14 @@
-import React from 'react'
+import React from "react";
 import StatusBar from "../global/StatusBar";
-import { Outlet } from 'react-router-dom';
-import { Box} from '@mui/material'
+import { Outlet, useLocation } from "react-router-dom";
+import { Box } from "@mui/material";
 import styled from "styled-components";
-import Topbar from '../global/Topbar';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Typography from '@mui/material/Typography';
+import Topbar from "../global/Topbar";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import Typography from "@mui/material/Typography";
 import { useNavigate } from "react-router-dom";
-import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
+import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 
 const Container = styled.div`
   padding: 16px;
@@ -23,29 +23,28 @@ const PictureDiv = styled.div`
   width: 25%;
   background-color: #ffffff;
   height: 330px;
-`
+`;
 
 const ImageCont = styled.div`
   width: 200px;
   height: 210px;
   margin: 0 auto;
-`
+`;
 
 const Image = styled.img`
   width: 100%;
   height: 100%;
   border-radius: 100%;
-`
+`;
 
 const TabCont = styled.div`
   /* background-color: white;
   margin-bottom:20px; */
-  width:100%;
+  width: 100%;
   /* border-radius: 0.8rem; */
-  max-width: 600px; 
+  max-width: 600px;
   margin: 0 auto;
-`
-
+`;
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -68,76 +67,72 @@ function TabPanel(props) {
 }
 
 function MyDetails() {
-  const [value, setValue] = React.useState(0);
+  const location = useLocation();
+  const pathValue=location.pathname.split('/').at(-1);
+  console.log(pathValue)
+  const [value, setValue] = React.useState(pathValue);
   const navigate = useNavigate();
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
-    if(newValue == "0") navigate('/profile/staff-home')
-    if(newValue == "1") navigate('/profile/staff-profile')
-    if(newValue == "2") navigate('/profile/staff-health-record')
+    if (newValue == "staff-home") navigate("/profile/staff-home");
+    if (newValue == "staff-profile") navigate("/profile/staff-profile");
+    if (newValue == "staff-health") navigate("/profile/staff-health");
   };
-
 
   return (
     <>
-    <Topbar/>
-      <StatusBar/>
+      <Topbar />
+      <StatusBar />
       <br />
       <Container>
-      <Box sx={{ width: '100%', display: 'flex', gap: '30px'}}  >
+        <Box sx={{ width: "100%", display: "flex", gap: "30px" }}>
+          <PictureDiv>
+            <ImageCont>
+              <Image src="/assets/womenProfile.jpeg" />
+            </ImageCont>
 
-        <PictureDiv>
-          <ImageCont>
-            <Image src='/assets/womenProfile.jpeg' />
-          </ImageCont>
-
-          <Typography variant='h3' sx={{textAlign: 'center', mt: '15px'}} >SULEKHA PANDIT</Typography>
-          <Typography sx={{textAlign: 'center'}} >Unique ID 3943</Typography>
-          <Box sx={{display: "flex", justifyContent: "center"}} >
-            <NotificationsNoneIcon sx={{  fontSize: "26px"}} />
-          </Box>
-        </PictureDiv>
-
-
-      <Box style={{width: "100%"}}  >
-          <TabCont>
-            <Box sx={{ width: '100%' }}>
-              <Box sx={{ borderBottom: 1 }}>
-                <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-                  <Tab label="Home"  />
-                  <Tab label="Profile"  />
-                  <Tab label="Health Record" />
-                  <Tab label="Fees & Invoices" />
-                  <Tab label="My Leaves" />
-                  <Tab label="Advance Payment" />
-                </Tabs>
-              </Box>
-              <TabPanel value={value} index={0}>
-              </TabPanel>
-              <TabPanel value={value} index={1}>
-              </TabPanel>
-              <TabPanel value={value} index={2}>
-              </TabPanel>
-              <TabPanel value={value} index={3}>
-              </TabPanel>
-              <TabPanel value={value} index={4}>
-              </TabPanel>
-              <TabPanel value={value} index={5}>
-              </TabPanel>
+            <Typography variant="h3" sx={{ textAlign: "center", mt: "15px" }}>
+              SULEKHA PANDIT
+            </Typography>
+            <Typography sx={{ textAlign: "center" }}>Unique ID 3943</Typography>
+            <Box sx={{ display: "flex", justifyContent: "center" }}>
+              <NotificationsNoneIcon sx={{ fontSize: "26px" }} />
             </Box>
-          </TabCont>
+          </PictureDiv>
 
+          <Box style={{ width: "100%" }}>
+            <TabCont>
+              <Box sx={{ width: "100%" }}>
+                <Box sx={{ borderBottom: 1 }}>
+                  <Tabs
+                    value={value}
+                    onChange={handleChange}
+                    aria-label="basic tabs example"
+                  >
+                    <Tab label="Home" value={"staff-home"} />
+                    <Tab label="Profile" value={"staff-profile"} />
+                    <Tab label="Health Record" value={"staff-health"} />
+                    <Tab label="Fees & Invoices" value={"staff-fee"} />
+                    <Tab label="My Leaves" value={"staff-leave"} />
+                    <Tab label="Advance Payment" value={"staff-adpayment"} />
+                  </Tabs>
+                </Box>
+                <TabPanel value={value} index={0}></TabPanel>
+                <TabPanel value={value} index={1}></TabPanel>
+                <TabPanel value={value} index={2}></TabPanel>
+                <TabPanel value={value} index={3}></TabPanel>
+                <TabPanel value={value} index={4}></TabPanel>
+                <TabPanel value={value} index={5}></TabPanel>
+              </Box>
+            </TabCont>
 
-        <Outlet  />
-      </Box>
-
-        
-      </Box>
-
+            <Outlet />
+          </Box>
+        </Box>
       </Container>
     </>
-  )
+  );
 }
 
-export default MyDetails
+export default MyDetails;
