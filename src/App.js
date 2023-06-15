@@ -43,61 +43,63 @@ import ClassSchedule from "./scenes/modules/academic/class-schedule/class-schedu
 import ClassTimeTable from "./scenes/modules/academic/class-schedule/class-time-table/ClassTimeTable";
 import Health from "./detailscomponents/health";
 import StudentSettings from "./scenes/modules/academic/attendence/student-setting/StudentSettings";
+import { ImageContext } from "./context/Context";
 // import OrgProfile from "./settingcomponents/OrgProfile/OrgProfile";
 //>>>>>>> b63988d5e5c115f3840ce513fec25967cdd5c832
 
 function App() {
   const [theme, colorMode] = useMode();
+  const [context, setContext] = useState("")
 
   return (
     // <ColorModeContext.Provider value={colorMode}>
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Routes>
-        <Route element={<AdminLayout />}>
-          <Route path="/admin" element={<Dashboard />} />
-          <Route path="/admin/team" element={<Team />} />
-          <Route path="/admin/contacts" element={<Contacts />} />
-          <Route path="/admin/invoices" element={<Invoices />} />
-          {/* <Route path="/admin/orgProfile" element={<OrgProfile />} /> */}
-          <Route path="/admin/faq" element={<FAQ />} />
-          <Route path="/admin/calendar" element={<Calendar />} />
-          <Route path="/admin/form" element={<Form />} />
-          <Route path="/school-terms" element={<TermsDisplayPage />} />{" "}
-          {/*Route to Display the terms and conditions */}
-        </Route>
-        <Route element={<ModulesLayout />}>
-          <Route path="/modules/academic" element={<Academic />} />
-          <Route
-            path="/modules/academic/subject-category"
-            element={<SubCategory />}
-          />
-          <Route
-            path="/modules/academic/class-teacher-mapping"
-            element={<ClassTeacherMapping />}
-          />
-          <Route
-            path="/modules/academic/class-schedule"
-            element={<ClassSchedule />}
-          />
-          <Route
-            path="/modules/academic/class-time-table"
-            element={<ClassTimeTable />}
-          />
-          <Route
-            path="/modules/academic/attendence-status-settings"
-            element={<StudentSettings />}
-          />
-        </Route>
-        {/* <Route path="/profile" element={<Dprofile/>} /> */}
-        <Route path="/" element={<Navigate replace to="/login" />} />
-        <Route element={<MyDetails />}>
-          <Route path="/profile/staff-home" element={<Home />} />
-          <Route path="/profile/staff-profile" element={<Profile />} />
-          <Route path="/profile/staff-health" element={<Health />} />
+    <ImageContext.Provider value={[context, setContext]}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Routes>
+          <Route element={<AdminLayout />}>
+            <Route path="/admin" element={<Dashboard />} />
+            <Route path="/admin/team" element={<Team />} />
+            <Route path="/admin/contacts" element={<Contacts />} />
+            <Route path="/admin/invoices" element={<Invoices />} />
+            {/* <Route path="/admin/orgProfile" element={<OrgProfile />} /> */}
+            <Route path="/admin/faq" element={<FAQ />} />
+            <Route path="/admin/calendar" element={<Calendar />} />
+            <Route path="/admin/form" element={<Form />} />
+            <Route path="/school-terms" element={<TermsDisplayPage />} />{" "}
+            {/*Route to Display the terms and conditions */}
+          </Route>
+          <Route element={<ModulesLayout />}>
+            <Route path="/modules/academic" element={<Academic />} />
+            <Route
+              path="/modules/academic/subject-category"
+              element={<SubCategory />}
+            />
+            <Route
+              path="/modules/academic/class-teacher-mapping"
+              element={<ClassTeacherMapping />}
+            />
+            <Route
+              path="/modules/academic/class-schedule"
+              element={<ClassSchedule />}
+            />
+            <Route
+              path="/modules/academic/class-time-table"
+              element={<ClassTimeTable />}
+            />
+            <Route
+              path="/modules/academic/attendence-status-settings"
+              element={<StudentSettings />}
+            />
+          </Route>
+          {/* <Route path="/profile" element={<Dprofile/>} /> */}
+          <Route path="/" element={<Navigate replace to="/login" />} />
+          <Route element={<MyDetails />}>
+            <Route path="/profile/staff-home" element={<Home />} />
+            <Route path="/profile/staff-profile" element={<Profile />} />
+            <Route path="/profile/staff-health" element={<Health />} />
           </Route>
           {/* <Route path="/profile/staff-health" element={ <Health/> } /> */}
-
           <Route path="/admin/settings" element={<SetSettings />}>
             <Route path="orgProfile" element={<OrgProfile />} />
             <Route path="acc-structure" element={<AcademicStructure />} />
@@ -115,37 +117,35 @@ function App() {
             <Route path="leave-setting" element={<LeaveSetting />} />
             <Route path="intime-outtime" element={<IntimeOuttime />} />
           </Route>
-        <Route path="/login" element={<Login />} />
-        <Route path="/change-password" element={<Changepassword />} />
-        <Route path="/school-terms" element={<TermsDisplayPage />} />{" "}
-        {/*Route to Display the terms and conditions */}
-        <Route element={<ModulesLayout />}>
-          <Route path="/modules/academic" element={<Academic />} />
-          <Route
-            path="/modules/academic/subject-category"
-            element={<SubCategory />}
-          />
-          <Route
-            path="/modules/academic/class-teacher-mapping"
-            element={<ClassTeacherMapping />}
-          />
-          <Route
-            path="/modules/academic/class-schedule"
-            element={<ClassSchedule />}
-          />
-        </Route>
-        {/* <Route path="/profile" element={<Dprofile/>} /> */}
-        <Route path="/" element={<Navigate replace to="/login" />} />
-        <Route element={<MyDetails />}>
-          <Route path="/profile/staff-home" element={<Home />} />
-          <Route path="/profile/staff-profile" element={<Profile />} />
-          <Route path="/profile/staff-health-record" element={<Health />} />
-        </Route>
-       
-      </Routes>
-    </ThemeProvider>
-
-    
+          <Route path="/login" element={<Login />} />
+          <Route path="/change-password" element={<Changepassword />} />
+          <Route path="/school-terms" element={<TermsDisplayPage />} />{" "}
+          {/*Route to Display the terms and conditions */}
+          <Route element={<ModulesLayout />}>
+            <Route path="/modules/academic" element={<Academic />} />
+            <Route
+              path="/modules/academic/subject-category"
+              element={<SubCategory />}
+            />
+            <Route
+              path="/modules/academic/class-teacher-mapping"
+              element={<ClassTeacherMapping />}
+            />
+            <Route
+              path="/modules/academic/class-schedule"
+              element={<ClassSchedule />}
+            />
+          </Route>
+          {/* <Route path="/profile" element={<Dprofile/>} /> */}
+          <Route path="/" element={<Navigate replace to="/login" />} />
+          <Route element={<MyDetails />}>
+            <Route path="/profile/staff-home" element={<Home />} />
+            <Route path="/profile/staff-profile" element={<Profile />} />
+            <Route path="/profile/staff-health-record" element={<Health />} />
+          </Route>
+        </Routes>
+      </ThemeProvider>
+    </ImageContext.Provider>
   );
 }
 

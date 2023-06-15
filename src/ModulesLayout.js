@@ -15,9 +15,8 @@ const Container = styled.div`
 const ModulesLayout = ({ children }) => {
   const [isSidebar, setIsSidebar] = useState(true);
   const [context, setContext] = useState("academic.png");
-  
+
   return (
-    <ImageContext.Provider value={[context, setContext]}>
       <Container className="app"> 
         <main className="content">
           <Topbar setIsSidebar={setIsSidebar} />
@@ -25,7 +24,6 @@ const ModulesLayout = ({ children }) => {
           <Outlet />
         </main>
       </Container>
-    </ImageContext.Provider>
   );
 };
 

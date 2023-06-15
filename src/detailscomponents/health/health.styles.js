@@ -4,6 +4,7 @@ export const BodyStyled = styled.div`
   width: 100%;
   display: flex;
   gap: 4rem;
+  flex-direction: column;
 `;
 export const StyledProfileCard = styled.div`
   width: 280px;
@@ -47,8 +48,8 @@ margin-top: 50px; */
 `;
 export const StyledContainer = styled.div`
   width: 100%;
-  height:100%;
-  border:none;
+  height: 100%;
+  border: none;
   border-radius: 0.4rem;
   background-color: white;
   padding: 3rem;
@@ -62,7 +63,7 @@ export const StyledHeader = styled.div`
 `;
 export const StyledDetails = styled.div`
   margin: 2rem auto;
-  padding:1rem;
+  padding: 1rem;
   width: 100%;
   height: 100%;
   border: 1px solid lightgray;
@@ -71,44 +72,45 @@ export const StyledDetails = styled.div`
 export const StyledHeading = styled.div`
   h2 {
     color: black;
-  
+
     font-weight: bolder;
     color: #172b4c;
-    
   }
   h3 {
     color: black;
-   
+
     color: #172b4c;
   }
   h4 {
     color: black;
-    
-   
+
     color: #172b4c;
   }
 `;
 
-
 export const StyledHeadingDesc = styled.div`
-  line-height:0.1rem;
+  line-height: 0.1rem;
 `;
 export const StyledFile = styled.div`
-  button {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  /* button {
     background-color: #169395;
     color: white;
     padding: 0.7rem;
     border: none;
     border-radius: 0.4rem;
     margin-left: 77%;
-  }
+  } */
 `;
 export const StyledAttachment = styled.div`
   width: 40%;
   margin: 7rem auto;
   background-color: white;
   padding: 2rem;
-  input{
+  input {
     width: 100%;
     box-sizing: border-box;
     padding: 0.4rem;
@@ -116,15 +118,13 @@ export const StyledAttachment = styled.div`
   }
 `;
 export const StyledAttachButton = styled.div`
-display: flex;
-gap: 0.8rem;
-margin-left: 75%;
-    button{
-      padding: 0.4rem;
-    }
-
+  display: flex;
+  gap: 0.8rem;
+  margin-left: 75%;
+  button {
+    padding: 0.4rem;
+  }
 `;
-
 
 export const StyledSearch = styled.div`
   display: flex;
@@ -161,12 +161,12 @@ export const StyledBar = styled.div`
 `;
 export const StyledData = styled.div`
   width: 100%;
-  box-sizing:border-box;
+  box-sizing: border-box;
   height: 3rem;
   background-color: lightgray;
   /* margin-left: 1rem;
   margin-right: 1rem; */
-  
+
   border: 1px solid darkgray;
   margin-top: 2rem;
 `;
@@ -188,9 +188,7 @@ export const StyledWrap = styled.div`
 `;
 export const StyledBorder = styled.div`
   /* width: 98%; */
-  
- 
-  
+
   /* margin-top: -19px; */
   display: flex;
   align-items: center;
@@ -221,14 +219,16 @@ export const StyledTwo = styled.div`
   }
 `;
 export const StyledRoutine = styled.div`
- 
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-between;
+  align-items: center;
   /* margin-top: -15px; */
   h3 {
     color: #172b4c;
   }
 `;
 export const StyledBlood = styled.div`
-  
   h4 {
     color: #172b4c;
   }
@@ -238,22 +238,21 @@ export const StyledCardHeader = styled.div``;
 export const StyledEnd = styled.div``;
 
 export const StyledButton = styled.div`
-  button {
+  /* button {
     background-color: #169395;
     color: white;
     padding: 0.4rem;
-   
+
     border-radius: 0.4rem;
-    margin-left: 40rem;
-  }
+    /* margin-left: 40rem; */
 `;
 export const StyledCheckupCard = styled.div`
   width: 50%;
-  margin:7rem auto;
-  padding:2rem;
+  margin: 7rem auto;
+  padding: 2rem;
   /* border:1px solid black; */
 
-  background-color:white;
+  background-color: white;
 
   line-height: 0.1rem;
 
