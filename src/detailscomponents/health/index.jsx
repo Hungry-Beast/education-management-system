@@ -1,5 +1,6 @@
 import React from 'react'
 import { DataGrid } from '@mui/x-data-grid';
+import Stack from "@mui/material/Stack";
 
 import {
   StyledProfileCard,
@@ -22,6 +23,7 @@ import {
   StyledBorder,
   StyledContent,
   StyledTwo,
+ 
 } from "./health.styles";
 import {
   StyledRoutine,
@@ -31,6 +33,9 @@ import {
   StyledButton,
   StyledCheckupCard,
   StyledHealthButton,
+  StyledHeadingDesc,
+  StyledAttachment,
+  StyledAttachButton,
 } from "./health.styles";
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
@@ -43,28 +48,33 @@ import Modal from "@mui/material/Modal";
 import TableHealth from "./HealthTable";
 
 const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 400,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
+  // position: "absolute",
+  // top: "50%",
+  // left: "50%",
+  // transform: "translate(-50%, -50%)",
+  // width: 400,
+  // bgcolor: "background.paper",
+  // border: "2px solid #000",
+  // boxShadow: 24,
+  // p: 4,
+ 
 };
 function Health() {
-  const [setNumber] = React.useState("");
+  // const [setNumber] = React.useState("");
   const handleChange = (event) => {
-    setNumber(event.target.value);
+  // setNumber(event.target.value);
   };
   const [open, setOpen] = React.useState(false);
+  const [ButtonOpen, setButtonOpen] = React.useState(false);
+  const handleButtonOpen = () => setButtonOpen(true);
+  const handleButtonClose = () => setButtonOpen(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  
 
   return (
     <BodyStyled>
-      {/*     
+{/*           
   <StyledProfileCard>
     <StyledImageCard>
       <img src ='/assets/profilepic.jpg' alt=" "/>
@@ -77,17 +87,56 @@ function Health() {
     </StyledImageCard>
   </StyledProfileCard> */}
 
-      <StyledHeader>
-        {/* <StyledNavbar></StyledNavbar> */}
+       <StyledHeader>
+         {/* <StyledNavbar></StyledNavbar> */}
+
         <StyledContainer>
           <StyledDetails>
             <StyledHeading>
               <h2>Teacher Health Details</h2>
+              <StyledHeadingDesc>
               <h3>Medical Records</h3>
               <h4>Document Attachments</h4>
+              </StyledHeadingDesc>
+             
             </StyledHeading>
             <StyledFile>
-              <button>+ Add New Attachment </button>
+              
+              <Button onClick={handleButtonOpen}>+ Add New Attachment</Button>
+<Modal
+  open={ButtonOpen}
+  onClose={handleButtonClose}
+  aria-labelledby="modal-modal-title"
+  aria-describedby="modal-modal-description"
+>
+  <Box sx={style}>
+    <Typography id="modal-modal-title" variant="h6" component="h2">
+      <StyledAttachment>
+        <h2>Add New Attachment</h2>
+        <p>Title</p>
+        <input type='text'></input>
+        <p>Description</p>
+        <input type='text'></input>
+        <p>Attachment</p>
+        <Stack direction="row" alignItems="center" spacing={2}>
+                  <Button variant="contained" component="label">
+                    Choose File
+                    <input hidden accept="image/*" multiple type="file"  />
+                  </Button>
+                </Stack>
+        <StyledAttachButton>
+        <button>Save</button>
+        <button>Close</button>
+        </StyledAttachButton>
+        
+      </StyledAttachment>
+    </Typography>
+    <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+      Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+    </Typography>
+  </Box>
+</Modal>
+              
             </StyledFile>
             <StyledSearch>
               <StyledShow>
@@ -115,14 +164,14 @@ function Health() {
               </StyledBar>
             </StyledSearch>
             <StyledData>
-                <StyledWrap>
+                {/* <StyledWrap> */}
               <TableHealth/>
                 {/* <h4>Sr.No</h4>
                 <h4>Title</h4>
                 <h4>Description</h4>
                 <h4>Attachment</h4>
                 <h4>Actions</h4> */}
-                </StyledWrap>
+                {/* </StyledWrap> */}
             </StyledData>
             <StyledBorder>
               <p>No data available in table</p>

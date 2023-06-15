@@ -1,11 +1,9 @@
 import styled from "styled-components";
 
 export const BodyStyled = styled.div`
-  width: 100vw;
-  height: 700px;
-
+  width: 100%;
   display: flex;
-  gap: 20px;
+  gap: 4rem;
 `;
 export const StyledProfileCard = styled.div`
   width: 280px;
@@ -34,7 +32,7 @@ export const StyledImageCard = styled.div`
   }
 `;
 export const StyledDEsc = styled.div`
-  line-height: 0.2cm;
+  line-height: 0.12rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -49,11 +47,11 @@ margin-top: 50px; */
 `;
 export const StyledContainer = styled.div`
   width: 100%;
-  height: 100%;
-
-  border-radius: 10px;
+  height:100%;
+  border:none;
+  border-radius: 0.4rem;
   background-color: white;
-  padding: 1rem;
+  padding: 3rem;
 `;
 
 export const StyledHeader = styled.div`
@@ -63,43 +61,71 @@ export const StyledHeader = styled.div`
   gap: 12px;
 `;
 export const StyledDetails = styled.div`
-  margin: 15px auto;
+  margin: 2rem auto;
+  padding:1rem;
   width: 100%;
-  height: 90%;
+  height: 100%;
   border: 1px solid lightgray;
-  border-radius: 10px;
+  border-radius: 1rem;
 `;
 export const StyledHeading = styled.div`
   h2 {
     color: black;
-    margin-top: 12px;
-    margin-left: 15px;
+  
     font-weight: bolder;
     color: #172b4c;
+    
   }
   h3 {
     color: black;
-    margin-top: -8px;
-    margin-left: 15px;
+   
     color: #172b4c;
   }
   h4 {
     color: black;
-    margin-top: -20px;
-    margin-left: 15px;
+    
+   
     color: #172b4c;
   }
+`;
+
+
+export const StyledHeadingDesc = styled.div`
+  line-height:0.1rem;
 `;
 export const StyledFile = styled.div`
   button {
     background-color: #169395;
     color: white;
-    padding: 8px;
+    padding: 0.7rem;
     border: none;
-    border-radius: 5px;
-    margin-left: 690px;
+    border-radius: 0.4rem;
+    margin-left: 77%;
   }
 `;
+export const StyledAttachment = styled.div`
+  width: 40%;
+  margin: 7rem auto;
+  background-color: white;
+  padding: 2rem;
+  input{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.4rem;
+    border-radius: 0.3rem;
+  }
+`;
+export const StyledAttachButton = styled.div`
+display: flex;
+gap: 0.8rem;
+margin-left: 75%;
+    button{
+      padding: 0.4rem;
+    }
+
+`;
+
+
 export const StyledSearch = styled.div`
   display: flex;
   justify-content: space-between;
@@ -134,17 +160,22 @@ export const StyledBar = styled.div`
   }
 `;
 export const StyledData = styled.div`
-  width: 830px;
-  height: 50px;
+  width: 100%;
+  box-sizing:border-box;
+  height: 3rem;
   background-color: lightgray;
-  margin-left: 15px;
+  /* margin-left: 1rem;
+  margin-right: 1rem; */
+  
   border: 1px solid darkgray;
-  margin-top: -10px;
+  margin-top: 2rem;
 `;
 export const StyledWrap = styled.div`
-  display: flex;
+  /* display: flex;
   align-items: center;
   justify-content: space-around;
+  border:1px solid red;
+  
 
   h4 {
     margin-top: 5px auto;
@@ -153,19 +184,18 @@ export const StyledWrap = styled.div`
   h4::after {
     border-right: 1px solid black;
     height: 50px;
-  }
+  } */
 `;
 export const StyledBorder = styled.div`
-  width: 830px;
-  height: 50px;
-  margin-left: 15px;
-  border: 1px solid darkgray;
-  border-top: none;
+  /* width: 98%; */
+  
+ 
+  
   /* margin-top: -19px; */
   display: flex;
   align-items: center;
   p {
-    margin-left: 320px;
+    margin-left: 40%;
   }
   &:hover {
     background-color: lightgray;
@@ -175,61 +205,64 @@ export const StyledContent = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-left: 23px;
+  /* margin-left: 23px;
   margin-right: 20px;
-  margin-top: 10px;
+  margin-top: 10px; */
 `;
 export const StyledTwo = styled.div`
   display: flex;
-  gap: 18px;
+  gap: 1rem;
   p:hover {
     background-color: #169395;
-    padding: 5px 6px;
-    border-radius: 3px;
+    padding: 0.4rem 0.6rem;
+    border-radius: 0.4rem;
     color: white;
     cursor: not-allowed;
   }
 `;
 export const StyledRoutine = styled.div`
-  margin-left: 20px;
+ 
   /* margin-top: -15px; */
   h3 {
     color: #172b4c;
   }
 `;
 export const StyledBlood = styled.div`
-  margin-left: 20px;
+  
   h4 {
     color: #172b4c;
   }
 `;
 export const StyledCardHeader = styled.div``;
-export const StyledEnd = styled.div`
-  margin-left: 20px;
-`;
+
+export const StyledEnd = styled.div``;
+
 export const StyledButton = styled.div`
   button {
     background-color: #169395;
     color: white;
-    padding: 8px;
-    border: none;
-    border-radius: 5px;
-    margin-left: 700px;
+    padding: 0.4rem;
+   
+    border-radius: 0.4rem;
+    margin-left: 40rem;
   }
 `;
 export const StyledCheckupCard = styled.div`
-  width: 100%;
+  width: 50%;
+  margin:7rem auto;
+  padding:2rem;
   /* border:1px solid black; */
-  align-items: center;
+
+  background-color:white;
 
   line-height: 0.1rem;
 
   h4 {
-    font-size: 18px;
+    font-size: 1.6rem;
   }
 
   p {
-    font-size: 14px;
+    font-size: 1rem;
   }
 
   input {
