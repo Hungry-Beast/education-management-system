@@ -8,13 +8,14 @@ import {
   MenuItem,
   Select,
 } from "@mui/material";
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import styled from "styled-components";
 import { Controller, useForm } from "react-hook-form";
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { Button } from "@mui/material";
+import { ImageContext } from "../../../../../context/Context";
 
 const Component = styled.div`
   width: calc(100% - 30px);
@@ -37,6 +38,10 @@ const ClassTimeTable = () => {
     control,
     formState: { errors },
   } = useForm();
+  const [context, setContext] = useContext(ImageContext);
+  useEffect(() => {
+    setContext("classSchedule.svg");
+  }, []);
   return (
     <Component>
       <Form>
@@ -44,14 +49,14 @@ const ClassTimeTable = () => {
           <Controller
             name="isCourse"
             control={control}
-            required
-            defaultChecked
+            
+            
             //   defaultValue={1}
             render={({ field }) => (
               <FormControl fullWidth>
                 <FormControlLabel
                   control={
-                    <Checkbox {...field} defaultChecked color="success" />
+                    <Checkbox {...field}  color="success" />
                   }
                   label="Course"
                 />

@@ -89,7 +89,7 @@ export const StyledStudent = styled.div`
   display: flex;
   gap: 20px;
   align-items: end;
-  margin-top: 70px;
+  margin-top: 60px;
   margin-left: 100px;
   img {
     width: 60px;

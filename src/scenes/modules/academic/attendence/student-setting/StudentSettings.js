@@ -1,12 +1,13 @@
 import { Add } from "@mui/icons-material";
 import { Box, Button, Modal, Typography } from "@mui/material";
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import StatusTable from "./StatusTable";
 import AddStatusModal from "./AddStatusModal";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { ImageContext } from "../../../../../context/Context";
 
 const Component = styled.div`
   width: calc(100% - 30px);
@@ -19,13 +20,15 @@ const Component = styled.div`
 const StudentSettings = () => {
   const location = useLocation();
 
-  useEffect(() => {
-        
-  }, [])
-  
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  const [context, setContext] = useContext(ImageContext);
+  useEffect(() => {
+    setContext("attendance.png");
+  }, []);
+
   return (
     <div>
       <Component>

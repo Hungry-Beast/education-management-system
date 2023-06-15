@@ -118,7 +118,30 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/change-password" element={<Changepassword />} />
         <Route path="/school-terms" element={<TermsDisplayPage />} />{" "}
-          
+        {/*Route to Display the terms and conditions */}
+        <Route element={<ModulesLayout />}>
+          <Route path="/modules/academic" element={<Academic />} />
+          <Route
+            path="/modules/academic/subject-category"
+            element={<SubCategory />}
+          />
+          <Route
+            path="/modules/academic/class-teacher-mapping"
+            element={<ClassTeacherMapping />}
+          />
+          <Route
+            path="/modules/academic/class-schedule"
+            element={<ClassSchedule />}
+          />
+        </Route>
+        {/* <Route path="/profile" element={<Dprofile/>} /> */}
+        <Route path="/" element={<Navigate replace to="/login" />} />
+        <Route element={<MyDetails />}>
+          <Route path="/profile/staff-home" element={<Home />} />
+          <Route path="/profile/staff-profile" element={<Profile />} />
+          <Route path="/profile/staff-health-record" element={<Health />} />
+        </Route>
+       
       </Routes>
     </ThemeProvider>
 

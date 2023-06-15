@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 
 const AdminLayout = ({ children }) => {
   const [isSidebar, setIsSidebar] = useState(true);
-
+  
   return (
     <div className="app">
       {/* <Sidebar isSidebar={isSidebar} /> */}

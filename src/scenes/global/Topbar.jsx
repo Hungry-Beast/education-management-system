@@ -19,7 +19,16 @@ import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 import { useState } from "react";
-import { Logout, PersonAdd, Settings, AccountCircle,Fullscreen, ManageAccounts, Mail, Explore } from "@mui/icons-material";
+import {
+  Logout,
+  PersonAdd,
+  Settings,
+  AccountCircle,
+  Fullscreen,
+  ManageAccounts,
+  Mail,
+  Explore,
+} from "@mui/icons-material";
 import {
   ProSidebar,
   MenuItem as UpperMenuIem,
@@ -27,10 +36,10 @@ import {
 } from "react-pro-sidebar";
 import styled from "styled-components";
 import UpperMenuContains from "./UpperMenuContains";
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 // import PersonIcon from '@mui/icons-material/Person';
 import { useNavigate } from "react-router-dom";
-import screenfull from 'screenfull';
+import screenfull from "screenfull";
 
 const UpperMenuContainer = styled.div`
   width: 95vw;
@@ -40,7 +49,7 @@ const UpperMenuContainer = styled.div`
 `;
 const UpperMenu = styled(Box)`
   display: flex;
-  height:100%;
+  height: 100%;
 `;
 const ItemsContainer = styled.div`
   flex: 5;
@@ -83,28 +92,37 @@ const Topbar = () => {
     );
   };
 
-
-
-
   return (
-    <Box display="flex" justifyContent="space-between" alignItems="center" p={2}>
-      
+    <Box
+      display="flex"
+      justifyContent="space-between"
+      alignItems="center"
+      p={2}
+    >
       <Box display="flex">
         <Link to="/admin">
           <Box
             component="img"
-            sx={{ height: 40, mr: "10px"}}
+            sx={{ height: 40, mr: "10px" }}
             alt="Logo"
             src="/logo192.png"
           />
         </Link>
         <IconButton onClick={handleClickMenu}>
-            <Box component="img" sx={{ height: '32px', width: '32px', mr: "10px"}} alt="The house from the offer." src="/assets/megaMenu.svg" />
+          <Box
+            component="img"
+            sx={{ height: "32px", width: "32px", mr: "10px" }}
+            alt="The house from the offer."
+            src="/assets/megaMenu.svg"
+          />
         </IconButton>
 
-
         {/* SEARCH BAR */}
-        <Box display="flex" backgroundColor={colors.primary[400]} borderRadius="3px">
+        <Box
+          display="flex"
+          backgroundColor={colors.primary[400]}
+          borderRadius="3px"
+        >
           <InputBase sx={{ ml: 2, flex: 1 }} placeholder="Search" />
           <IconButton type="button" sx={{ p: 1 }}>
             <SearchIcon />
@@ -113,34 +131,44 @@ const Topbar = () => {
       </Box>
 
       <Box>
-        <Typography variant="h3" color={colors.grey[100]} fontWeight="bold" > Infotute EMS </Typography>
+        <Typography variant="h3" color={colors.grey[100]} fontWeight="bold">
+          {" "}
+          Infotute EMS{" "}
+        </Typography>
       </Box>
 
       <Box>
-        <Typography variant="h4" fontWeight="bold" color="#ae261d" > Academic Year 2022-23 </Typography>
+        <Typography variant="h4" fontWeight="bold" color="#ae261d">
+          {" "}
+          Academic Year 2022-23{" "}
+        </Typography>
       </Box>
-
 
       {/* ICONS */}
       <Box display="flex">
-
-        <IconButton sx={{marginLeft: "10px" }} >
-            <Fullscreen onClick={ () => {
-              	if (screenfull.isEnabled) {
-                  screenfull.toggle();
-                } else {
-                  // Ignore or do something else
-                }
-            } } sx={{fontSize: "30px"}} />
+        <IconButton sx={{ marginLeft: "10px" }}>
+          <Fullscreen
+            onClick={() => {
+              if (screenfull.isEnabled) {
+                screenfull.toggle();
+              } else {
+                // Ignore or do something else
+              }
+            }}
+            sx={{ fontSize: "30px" }}
+          />
         </IconButton>
-         <IconButton > 
-          <Link sx={{ mt: 2}} to="/admin/settings">
-            <SettingsOutlinedIcon sx={{ mt: 0.8, fontSize: "30px" , color: "#807f7f" }} />                        {/*  Main/ Original settings icon */}
+        <IconButton>
+          <Link sx={{ mt: 2 }} to="/admin/settings">
+            <SettingsOutlinedIcon
+              sx={{ mt: 0.8, fontSize: "30px", color: "#807f7f" }}
+            />{" "}
+            {/*  Main/ Original settings icon */}
           </Link>
         </IconButton>
 
         <IconButton onClick={handleClick}>
-          <PersonOutlinedIcon sx={{fontSize: "30px"}}  />
+          <PersonOutlinedIcon sx={{ fontSize: "30px" }} />
         </IconButton>
         <Menu
           anchorEl={anchorEl}
@@ -177,23 +205,37 @@ const Topbar = () => {
           transformOrigin={{ horizontal: "right", vertical: "top" }}
           anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
         >
-          <MenuItem onClick={ () => {
-          navigate('/profile/staff-home')
-          handleClose()
-          } }>
-            <ListItemIcon> <AccountCircle fontSize="small" /> </ListItemIcon>
-              My Details
+          <MenuItem
+            onClick={() => {
+              navigate("/profile/staff-home");
+              handleClose();
+            }}
+          >
+            <ListItemIcon>
+              {" "}
+              <AccountCircle fontSize="small" />{" "}
+            </ListItemIcon>
+            My Details
           </MenuItem>
           <MenuItem onClick={handleClose}>
-            <ListItemIcon> <Settings fontSize="small" /> </ListItemIcon>
+            <ListItemIcon>
+              {" "}
+              <Settings fontSize="small" />{" "}
+            </ListItemIcon>
             Institute Settings
           </MenuItem>
           <MenuItem onClick={handleClose}>
-            <ListItemIcon> <ManageAccounts fontSize="small" /> </ListItemIcon>
+            <ListItemIcon>
+              {" "}
+              <ManageAccounts fontSize="small" />{" "}
+            </ListItemIcon>
             Roles & Permissions
           </MenuItem>
           <MenuItem onClick={handleClose}>
-            <ListItemIcon> <Mail fontSize="small" /> </ListItemIcon>
+            <ListItemIcon>
+              {" "}
+              <Mail fontSize="small" />{" "}
+            </ListItemIcon>
             Inbox
           </MenuItem>
           <Divider />
@@ -222,7 +264,6 @@ const Topbar = () => {
           id="account-menu"
           open={openMenu}
           onClose={handleCloseMenu}
-          // onClick={handleCloseMenu}
           PaperProps={{
             elevation: 0,
             sx: {
@@ -315,8 +356,8 @@ const Topbar = () => {
                   />
                 </SidebarMenu>
               </ProSidebar>
-              <ItemsContainer>
-                <UpperMenuContains selected={selected}/>
+              <ItemsContainer onClick={handleCloseMenu}>
+                <UpperMenuContains selected={selected} />
               </ItemsContainer>
             </UpperMenu>
           </UpperMenuContainer>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import styled from "styled-components";
 import { useState } from "react";
 import {
@@ -14,6 +14,7 @@ import {
 } from "@mui/material";
 import { Box, display } from "@mui/system";
 import { Controller, useForm } from "react-hook-form";
+import { ImageContext } from "../../../../../context/Context";
 
 const Component = styled.div`
   width: calc(100% - 30px);
@@ -41,7 +42,10 @@ const ClassTeacherMapping = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => console.log(data);
-
+  const [context, setContext] = useContext(ImageContext);
+  useEffect(() => {
+    setContext("academic.svg");
+  }, []);
   return (
     <Component>
       <Box sx={{ display: "flex", alignItems: "center" }}>
@@ -119,8 +123,14 @@ const ClassTeacherMapping = () => {
             />
           )}
         />
-        <Box sx={{ gridColumn: "1",display:"flex",justifyContent:"flex-start" }}>
-          <Button variant="contained" color="success" sx={{width:"40%"}}  >
+        <Box
+          sx={{
+            gridColumn: "1",
+            display: "flex",
+            justifyContent: "flex-start",
+          }}
+        >
+          <Button variant="contained" color="success" sx={{ width: "40%" }}>
             Save
           </Button>
         </Box>
