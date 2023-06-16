@@ -40,6 +40,9 @@ import Profile from "./detailscomponents/profile";
 import IntimeOuttime from "./settingcomponents/intimeouttime";
 import ClassTeacherMapping from "./scenes/modules/academic/academic/class-teacher-mapping/ClassTeacherMapping";
 import ClassSchedule from "./scenes/modules/academic/class-schedule/class-schedule/ClassSchedule";
+import ClassTimeTable from "./scenes/modules/academic/class-schedule/class-time-table/ClassTimeTable";
+import Health from "./detailscomponents/health";
+import StudentSettings from "./scenes/modules/academic/attendence/student-setting/StudentSettings";
 // import OrgProfile from "./settingcomponents/OrgProfile/OrgProfile";
 //>>>>>>> b63988d5e5c115f3840ce513fec25967cdd5c832
 
@@ -77,12 +80,21 @@ function App() {
             path="/modules/academic/class-schedule"
             element={<ClassSchedule />}
           />
+          <Route
+            path="/modules/academic/class-time-table"
+            element={<ClassTimeTable />}
+          />
+          <Route
+            path="/modules/academic/attendence-status-settings"
+            element={<StudentSettings />}
+          />
         </Route>
         {/* <Route path="/profile" element={<Dprofile/>} /> */}
         <Route path="/" element={<Navigate replace to="/login" />} />
         <Route element={<MyDetails />}>
           <Route path="/profile/staff-home" element={<Home />} />
           <Route path="/profile/staff-profile" element={<Profile />} />
+          <Route path="/profile/staff-health" element={<Health />} />
           </Route>
           {/* <Route path="/profile/staff-health" element={ <Health/> } /> */}
 
@@ -106,7 +118,30 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/change-password" element={<Changepassword />} />
         <Route path="/school-terms" element={<TermsDisplayPage />} />{" "}
-          
+        {/*Route to Display the terms and conditions */}
+        <Route element={<ModulesLayout />}>
+          <Route path="/modules/academic" element={<Academic />} />
+          <Route
+            path="/modules/academic/subject-category"
+            element={<SubCategory />}
+          />
+          <Route
+            path="/modules/academic/class-teacher-mapping"
+            element={<ClassTeacherMapping />}
+          />
+          <Route
+            path="/modules/academic/class-schedule"
+            element={<ClassSchedule />}
+          />
+        </Route>
+        {/* <Route path="/profile" element={<Dprofile/>} /> */}
+        <Route path="/" element={<Navigate replace to="/login" />} />
+        <Route element={<MyDetails />}>
+          <Route path="/profile/staff-home" element={<Home />} />
+          <Route path="/profile/staff-profile" element={<Profile />} />
+          <Route path="/profile/staff-health-record" element={<Health />} />
+        </Route>
+       
       </Routes>
     </ThemeProvider>
 
