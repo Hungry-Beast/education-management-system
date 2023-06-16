@@ -44,6 +44,8 @@ import ClassTimeTable from "./scenes/modules/academic/class-schedule/class-time-
 import Health from "./detailscomponents/health";
 import StudentSettings from "./scenes/modules/academic/attendence/student-setting/StudentSettings";
 import { ImageContext } from "./context/Context";
+import StudentAttendence from "./scenes/modules/academic/attendence/student-attendence/StudentAttendence";
+import AttendenceDashboard from "./scenes/modules/academic/attendence/attendence-dashboard/AttendenceDashboard";
 // import OrgProfile from "./settingcomponents/OrgProfile/OrgProfile";
 //>>>>>>> b63988d5e5c115f3840ce513fec25967cdd5c832
 
@@ -91,6 +93,14 @@ function App() {
               path="/modules/academic/attendence-status-settings"
               element={<StudentSettings />}
             />
+            <Route
+              path="/modules/academic/student-attendence"
+              element={<StudentAttendence />}
+            />
+            <Route
+              path="/modules/academic/attendence-dashboard"
+              element={<AttendenceDashboard />}
+            />
           </Route>
           {/* <Route path="/profile" element={<Dprofile/>} /> */}
           <Route path="/" element={<Navigate replace to="/login" />} />
@@ -121,21 +131,7 @@ function App() {
           <Route path="/change-password" element={<Changepassword />} />
           <Route path="/school-terms" element={<TermsDisplayPage />} />{" "}
           {/*Route to Display the terms and conditions */}
-          <Route element={<ModulesLayout />}>
-            <Route path="/modules/academic" element={<Academic />} />
-            <Route
-              path="/modules/academic/subject-category"
-              element={<SubCategory />}
-            />
-            <Route
-              path="/modules/academic/class-teacher-mapping"
-              element={<ClassTeacherMapping />}
-            />
-            <Route
-              path="/modules/academic/class-schedule"
-              element={<ClassSchedule />}
-            />
-          </Route>
+          
           {/* <Route path="/profile" element={<Dprofile/>} /> */}
           <Route path="/" element={<Navigate replace to="/login" />} />
           <Route element={<MyDetails />}>

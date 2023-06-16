@@ -126,12 +126,12 @@ const Academic = () => {
           </Link>
         </Li>
         <Li>
-          <Link to="/admin">
+          <Link to="/modules/academic/student-attendence">
             <Typography variant="h5">Student Attendance</Typography>
           </Link>
         </Li>
         <Li>
-          <Link to="/admin">
+          <Link to="/modules/academic/attendence-dashboard">
             <Typography variant="h5">Attendance Dashboard</Typography>
           </Link>
         </Li>

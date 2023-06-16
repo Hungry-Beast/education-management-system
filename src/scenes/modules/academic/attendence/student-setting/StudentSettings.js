@@ -1,5 +1,5 @@
 import { Add } from "@mui/icons-material";
-import { Box, Button, Modal, Typography } from "@mui/material";
+import { Box, Button, Divider, Modal, Typography } from "@mui/material";
 import React, { useContext } from "react";
 import styled from "styled-components";
 import StatusTable from "./StatusTable";
@@ -8,6 +8,7 @@ import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { ImageContext } from "../../../../../context/Context";
+import SettingsTable from "./SettingsTable";
 
 const Component = styled.div`
   width: calc(100% - 30px);
@@ -57,7 +58,17 @@ const StudentSettings = () => {
           <AddStatusModal handleClose={handleClose} />
         </Modal>
       </Component>
-      <Component></Component>
+      <Component>
+        <Typography variant="h3" my={2}>
+          Attendance Sessions/Meetings
+        </Typography>
+        <Divider />
+        <Typography variant="h5" mt={2} mb={1}>
+          Manage settings like whether you want Subjects wise attendance or not
+          and set sessions if you need attendance for multiple times each day
+        </Typography>
+        <SettingsTable/>
+      </Component>
     </div>
   );
 };
