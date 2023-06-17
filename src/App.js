@@ -116,7 +116,7 @@ function App() {
             <Route path="intime-outtime" element={<IntimeOuttime />} />
           </Route>
         <Route path="/login" element={<Login />} />
-        <Route path="/change-password" element={<Changepassword />} />
+        <Route path="/changepassword" element={<Changepassword />} />
         <Route path="/school-terms" element={<TermsDisplayPage />} />{" "}
         {/*Route to Display the terms and conditions */}
         <Route element={<ModulesLayout />}>
