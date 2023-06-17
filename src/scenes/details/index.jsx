@@ -78,6 +78,7 @@ function MyDetails() {
     if (newValue == "staff-home") navigate("/profile/staff-home");
     if (newValue == "staff-profile") navigate("/profile/staff-profile");
     if (newValue == "staff-health") navigate("/profile/staff-health");
+    if (newValue == "staff-subject") navigate("/profile/staff-subject");
   };
 
   return (
@@ -124,6 +125,7 @@ function MyDetails() {
                 <TabPanel value={value} index={3}></TabPanel>
                 <TabPanel value={value} index={4}></TabPanel>
                 <TabPanel value={value} index={5}></TabPanel>
+                <TabPanel value={value} index={6}></TabPanel>
               </Box>
             </TabCont>
 

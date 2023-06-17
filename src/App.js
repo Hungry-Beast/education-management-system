@@ -42,6 +42,7 @@ import ClassTeacherMapping from "./scenes/modules/academic/academic/class-teache
 import ClassSchedule from "./scenes/modules/academic/class-schedule/class-schedule/ClassSchedule";
 import ClassTimeTable from "./scenes/modules/academic/class-schedule/class-time-table/ClassTimeTable";
 import Health from "./detailscomponents/health";
+import Subject from './detailscomponents/subjectMapping'
 import StudentSettings from "./scenes/modules/academic/attendence/student-setting/StudentSettings";
 import { ImageContext } from "./context/Context";
 import StudentAttendence from "./scenes/modules/academic/attendence/student-attendence/StudentAttendence";
@@ -138,6 +139,7 @@ function App() {
             <Route path="/profile/staff-home" element={<Home />} />
             <Route path="/profile/staff-profile" element={<Profile />} />
             <Route path="/profile/staff-health-record" element={<Health />} />
+            <Route path="/profile/staff-subject" element={<Subject />} />
           </Route>
         </Routes>
       </ThemeProvider>
