@@ -7,7 +7,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-import NewAssetModal from './AssetCategoryModal';
+import NewAssetModal from './AssetCommonModal';
 
 const EditDeleteButton = () => {
     return (
@@ -69,7 +69,7 @@ function AssetCategory() {
           aria-labelledby="modal-modal-title"
           aria-describedby="modal-modal-description"
         >
-        <NewAssetModal handleClose={handleClose} />
+        <NewAssetModal title="Add Asset Category" handleClose={handleClose} />
       </Modal>
 
     </Box>
