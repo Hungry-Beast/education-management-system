@@ -58,7 +58,7 @@ export const StyledProfileFirstRightCard = styled.div`
 // personal heading
 
 export const StyledStaffPersonal = styled.div`
-  padding: 0.8rem;
+  padding: 0.1rem;
   padding-left: 0.7rem;
   /* margin-top: -3.5rem; */
   /* margin-left:0.7rem;
