@@ -139,7 +139,7 @@ function App() {
             <Route path="/profile/staff-home" element={<Home />} />
             <Route path="/profile/staff-profile" element={<Profile />} />
             <Route path="/profile/staff-health-record" element={<Health />} />
-            <Route path="/profile/staff-subject" element={<Subject />} />
+            <Route path="/profile/staff-subjectMapping" element={<Subject />} />
           </Route>
         </Routes>
       </ThemeProvider>

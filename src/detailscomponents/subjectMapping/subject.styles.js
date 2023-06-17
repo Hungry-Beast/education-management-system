@@ -33,6 +33,7 @@ export const StyledDetails=styled.div`
         }
         
     }
+    
     button{
         margin-left: 43.7rem;
         padding:  0.8rem 1rem;
