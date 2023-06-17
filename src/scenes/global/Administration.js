@@ -63,7 +63,7 @@ const Administration = () => {
           </Link>
         </Li>
         <Li>
-          <Link to="/admin">
+          <Link to="/modules/administration/vendor">
             <Typography variant="h5">vendor</Typography>
           </Link>
         </Li>

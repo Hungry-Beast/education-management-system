@@ -47,6 +47,7 @@ import { ImageContext } from "./context/Context";
 import StudentAttendence from "./scenes/modules/academic/attendence/student-attendence/StudentAttendence";
 import AttendenceDashboard from "./scenes/modules/academic/attendence/attendence-dashboard/AttendenceDashboard";
 import CategoryLocation from "./scenes/modules/administration/asset/categorylocation";
+import Vendor from "./scenes/modules/administration/asset/vendor";
 // import OrgProfile from "./settingcomponents/OrgProfile/OrgProfile";
 //>>>>>>> b63988d5e5c115f3840ce513fec25967cdd5c832
 
@@ -103,6 +104,7 @@ function App() {
               element={<AttendenceDashboard />}
             />
             <Route path="/modules/administration/location-category" element={<CategoryLocation/>} />
+            <Route path="/modules/administration/vendor" element={<Vendor/>} />
           </Route>
           {/* <Route path="/profile" element={<Dprofile/>} /> */}
           <Route path="/" element={<Navigate replace to="/login" />} />
