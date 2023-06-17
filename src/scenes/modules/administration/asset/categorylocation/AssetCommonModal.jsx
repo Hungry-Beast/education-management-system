@@ -45,7 +45,7 @@ import {
     justify-content: space-between;
   `;
   
-  const NewAssetModal = ({ handleClose}) => {
+  const NewAssetModal = ({ handleClose, title}) => {
     const {
       register,
       handleSubmit,
@@ -61,7 +61,7 @@ import {
     return (
       <Box sx={style}>
         <HeaderContainer>
-          <Typography variant="h3">Add Asset Category</Typography>
+          <Typography variant="h3">{title}</Typography>
         </HeaderContainer>
         <Form onSubmit={handleSubmit(onSubmit)}>
           <TextField
