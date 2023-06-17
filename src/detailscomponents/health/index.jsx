@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react'
 // import { DataGrid } from '@mui/x-data-grid';
 
@@ -15,31 +16,82 @@ import Modal from '@mui/material/Modal';
 // import TableHead from '../health/HealthTable';
 
 
+=======
+import React from "react";
+import { DataGrid } from "@mui/x-data-grid";
+import Stack from "@mui/material/Stack";
+>>>>>>> f8060d492a306434678af6ef883d7a0cce8125cc
 
+import {
+  StyledProfileCard,
+  StyledImageCard,
+  StyledDEsc,
+  BodyStyled,
+  StyledContainer,
+  StyledHeader,
+  StyledNavbar,
+  StyledDetails,
+} from "./health.styles";
+import {
+  StyledHeading,
+  StyledFile,
+  StyledSearch,
+  StyledShow,
+  StyledBar,
+  StyledData,
+  StyledWrap,
+  StyledBorder,
+  StyledContent,
+  StyledTwo,
+} from "./health.styles";
+import {
+  StyledRoutine,
+  StyledBlood,
+  StyledCardHeader,
+  StyledEnd,
+  StyledButton,
+  StyledCheckupCard,
+  StyledHealthButton,
+  StyledHeadingDesc,
+  StyledAttachment,
+  StyledAttachButton,
+} from "./health.styles";
+import Box from "@mui/material/Box";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import Modal from "@mui/material/Modal";
+import TableHealth from "./HealthTable";
 
 const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
   width: 400,
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
+  bgcolor: "background.paper",
+  border: "2px solid #000",
   boxShadow: 24,
   p: 4,
 };
-function Health(){
-    const [setNumber] = React.useState('');
-    const handleChange = (event) => {setNumber(event.target.value)};
-    const [open, setOpen] = React.useState(false);
-    const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
+function Health() {
+  // const [setNumber] = React.useState("");
+  const handleChange = (event) => {
+    // setNumber(event.target.value);
+  };
+  const [open, setOpen] = React.useState(false);
+  const [ButtonOpen, setButtonOpen] = React.useState(false);
+  const handleButtonOpen = () => setButtonOpen(true);
+  const handleButtonClose = () => setButtonOpen(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
-    return(
-
-        <BodyStyled>
-
-{/*     
+  return (
+    <BodyStyled>
+      {/*           
   <StyledProfileCard>
     <StyledImageCard>
       <img src ='/assets/profilepic.jpg' alt=" "/>
@@ -52,15 +104,19 @@ function Health(){
     </StyledImageCard>
   </StyledProfileCard> */}
 
-    <StyledHeader>
-      {/* <StyledNavbar></StyledNavbar> */}
-      <StyledContainer>
-        <StyledDetails>
+      <StyledHeader>
+        {/* <StyledNavbar></StyledNavbar> */}
+
+        <StyledContainer>
+          <StyledDetails>
             <StyledHeading>
-                <h2>Teacher Health Details</h2>
+              <h2>Teacher Health Details</h2>
+              <StyledHeadingDesc>
                 <h3>Medical Records</h3>
                 <h4>Document Attachments</h4>
+              </StyledHeadingDesc>
             </StyledHeading>
+<<<<<<< HEAD
            <StyledFile>
                
                 {/* <Button onClick={handleOpen}>+ Routine Check-ups</Button>
@@ -124,76 +180,133 @@ function Health(){
             <Modal
                 open={open}
                 onClose={handleClose}
+=======
+
+            <StyledFile>
+              <Button
+                color="success"
+                variant="contained"
+                onClick={handleButtonOpen}
+              >
+                + Add New Attachment
+              </Button>
+              <Modal
+                open={ButtonOpen}
+                onClose={handleButtonClose}
+>>>>>>> f8060d492a306434678af6ef883d7a0cce8125cc
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
->
-  <Box sx={style}>
-    <Typography id="modal-modal-title" variant="h3" component="h2">
-        <StyledCheckupCard>
-            <h4>Routine Check-ups</h4>
-            <p>Date</p>
-            <input type='datetime-local'/>
-            <p>Height(cms)</p>
-            <input type='text' />
-            <p>Weight(kgs)</p>
-            <input type='text' />
-            <p>Comment</p>
-            <input type='text' />
-            <StyledHealthButton>
-            <button>Save</button>
-            <button>Close</button>
-            </StyledHealthButton>
-            
+              >
+                <Box>
+                  <Typography
+                    id="modal-modal-title"
+                    variant="h6"
+                    component="h2"
+                  >
+                    <StyledAttachment>
+                      <h2>Add New Attachment</h2>
+                      <p>Title</p>
+                      <input type="text"></input>
+                      <p>Description</p>
+                      <input type="text"></input>
+                      <p>Attachment</p>
+                      <Stack direction="row" alignItems="center" spacing={2}>
+                        <Button variant="contained" component="label">
+                          Choose File
+                          <input hidden accept="image/*" multiple type="file" />
+                        </Button>
+                      </Stack>
+                      <StyledAttachButton>
+                        <button>Save</button>
+                        <button>Close</button>
+                      </StyledAttachButton>
+                    </StyledAttachment>
+                  </Typography>
+                  <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                    Duis mollis, est non commodo luctus, nisi erat porttitor
+                    ligula.
+                  </Typography>
+                </Box>
+              </Modal>
+            </StyledFile>
+            {/* <TableHealth /> */}
+            <TableHealth />
 
-        </StyledCheckupCard>
-     </Typography>
-    <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-      
-    </Typography>
-  </Box>
-</Modal>
-            </StyledButton>
+            <StyledRoutine>
+              <h3>Routine check-ups & Incidents</h3>
+              <StyledButton>
+                <Button variant="contained" color="success" onClick={handleOpen}>+ Routine Check-ups</Button>
+                <Modal
+                  open={open}
+                  onClose={handleClose}
+                  aria-labelledby="modal-modal-title"
+                  aria-describedby="modal-modal-description"
+                >
+                  <Box>
+                    <Typography
+                      id="modal-modal-title"
+                      variant="h3"
+                      component="h2"
+                    >
+                      <StyledCheckupCard>
+                        <h4>Routine Check-ups</h4>
+                        <p>Date</p>
+                        <input type="datetime-local" />
+                        <p>Height(cms)</p>
+                        <input type="text" />
+                        <p>Weight(kgs)</p>
+                        <input type="text" />
+                        <p>Comment</p>
+                        <input type="text" />
+                        <StyledHealthButton>
+                          <button>Save</button>
+                          <button>Close</button>
+                        </StyledHealthButton>
+                      </StyledCheckupCard>
+                    </Typography>
+                    <Typography
+                      id="modal-modal-description"
+                      sx={{ mt: 2 }}
+                    ></Typography>
+                  </Box>
+                </Modal>
+              </StyledButton>
+            </StyledRoutine>
+
             <StyledBlood>
-                <h4>Blood Group</h4>
+              <h4>Blood Group</h4>
             </StyledBlood>
             <StyledCardHeader>
-                {/* <p>Select Blood Group</p> */}
-                <Box sx={{ minWidth: 700 }}>
-      <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label"></InputLabel>
-        <Select  defaultValue={0} label="Select Blood Group" onChange={handleChange} >
-          <MenuItem value={0}>Select Blood Group</MenuItem>
-          <MenuItem value={1}>O-</MenuItem>
-          <MenuItem value={2}>O+</MenuItem>
-          <MenuItem value={3}>A-</MenuItem>
-          <MenuItem value={4}>A+</MenuItem>
-          <MenuItem value={5}>B-</MenuItem>
-          <MenuItem value={6}>B+</MenuItem>
-          <MenuItem value={7}>AB-</MenuItem>
-          <MenuItem value={8}>AB+</MenuItem>
-        </Select>
-      </FormControl>
-    </Box>
+              {/* <p>Select Blood Group</p> */}
+              <Box sx={{ minWidth: 700 }}>
+                <FormControl fullWidth>
+                  <InputLabel id="demo-simple-select-label"></InputLabel>
+                  <Select
+                    defaultValue={0}
+                    label="Select Blood Group"
+                    onChange={handleChange}
+                  >
+                    <MenuItem value={0}>Select Blood Group</MenuItem>
+                    <MenuItem value={1}>O-</MenuItem>
+                    <MenuItem value={2}>O+</MenuItem>
+                    <MenuItem value={3}>A-</MenuItem>
+                    <MenuItem value={4}>A+</MenuItem>
+                    <MenuItem value={5}>B-</MenuItem>
+                    <MenuItem value={6}>B+</MenuItem>
+                    <MenuItem value={7}>AB-</MenuItem>
+                    <MenuItem value={8}>AB+</MenuItem>
+                  </Select>
+                </FormControl>
+              </Box>
             </StyledCardHeader>
             <StyledEnd>
-                <h3>Medical Logs</h3>
+              <h3>Medical Logs</h3>
             </StyledEnd>
-        </StyledDetails>
-      </StyledContainer>
-    </StyledHeader>
-  
-
-  </BodyStyled>
-
-
-
-       
-       
-       
-    
-    )
+          </StyledDetails>
+        </StyledContainer>
+      </StyledHeader>
+    </BodyStyled>
+  );
 }
 
-
 export default Health;
-    

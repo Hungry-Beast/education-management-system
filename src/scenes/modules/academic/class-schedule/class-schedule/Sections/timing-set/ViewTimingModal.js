@@ -16,6 +16,7 @@ import React from "react";
 import { Controller, useForm } from "react-hook-form";
 import styled from "styled-components";
 import TimingFormTable from "./TimingFormTable";
+import ViewForm from "./ViewForm";
 
 const style = {
   position: "absolute",
@@ -47,7 +48,7 @@ const Form = styled.form`
   justify-content: space-between;
 `;
 
-const NewClassModal = ({ handleClose }) => {
+const ViewTimingModal = ({ handleClose, data }) => {
   const {
     register,
     handleSubmit,
@@ -69,37 +70,22 @@ const NewClassModal = ({ handleClose }) => {
   return (
     <Box sx={style}>
       <HeaderContainer>
-        <Typography variant="h3">Add Class</Typography>
+        <Typography variant="h3">View</Typography>
       </HeaderContainer>
-      <Form onSubmit={handleSubmit(onSubmit)}>
-        <TextField
-          fullWidth
-          label="Category Name"
-          required
-          {...register("categoryName", { required: "Category name is required" })}
-          sx={{ gridColumn: "span 2" }}
-        />
-        <TextField
-          fullWidth
-          label="Description"
-          required
-          {...register("description", { required: "Description is required" })}
-          sx={{ gridColumn: "span 2" }}
-        />
+      <Typography variant="h3" mt={2} sx={{ gridColumn: "span 2" }}>
+        Category Name : {data.categoryName}
+      </Typography>
 
-       
-      <Typography variant="h3" mt={2} sx={{ gridColumn: "span 2" }} >Availale Time Set</Typography>
-      <TimingFormTable/>
-       
-        <Button type="submit" variant="contained" color="success">
-          Save
-        </Button>
-        <Button onClick={handleClose} variant="contained" color="warning">
-          Close
-        </Button>
-      </Form>
+      <Typography variant="h3" mt={2} sx={{ gridColumn: "span 2" }}>
+        Description: {data.description}
+      </Typography>
+      <ViewForm formData={data} />
+
+      <Button onClick={handleClose} variant="contained" color="warning">
+        Close
+      </Button>
     </Box>
   );
 };
 
-export default NewClassModal;
+export default ViewTimingModal;

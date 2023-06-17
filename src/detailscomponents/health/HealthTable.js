@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
@@ -33,6 +34,56 @@ const columns = [
       `${params.row.firstName || ''} ${params.row.lastName || ''}`,
   },
 ];
+=======
+import * as React from "react";
+import Box from "@mui/material/Box";
+import { DataGrid } from "@mui/x-data-grid";
+import DeleteIcon from "@mui/icons-material/Delete";
+import EditIcon from "@mui/icons-material/Edit";
+
+const EditDeleteButton = () => {
+  return (
+    <>
+      <EditIcon /> <DeleteIcon />
+    </>
+  );
+};
+
+// const columns = [
+
+//   {
+//     field: 'SrNo.',
+//     headerName: 'Sr.No.',
+//     width: 120,
+//     editable: true,
+//   },
+//   {
+//     field: 'Title',
+//     headerName: 'Title',
+//     width: 140,
+//     editable: true,
+//   },
+//   {
+//     field: 'Description',
+//     headerName: 'Description',
+//     type: 'number',
+//     width: 150,
+//     editable: true,
+//   },
+//   {
+//     field: 'Attachment',
+//     headerName: 'Attachment',
+//     width: 180,
+//     editable: true,
+//   },
+//   {
+//     field: 'Action',
+//     headerName: 'Action',
+//     width: 150,
+//     editable: true,
+//   },
+// ];
+>>>>>>> f8060d492a306434678af6ef883d7a0cce8125cc
 
 const rows = [
   { id: 1, lastName: 'Snow', firstName: 'Jon', age: 35 },
@@ -46,6 +97,7 @@ const rows = [
   { id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
 ];
 
+<<<<<<< HEAD
 export default function HealthTable() {
   return (
     <Box sx={{ height: 400, width: '100%' }}>
@@ -66,3 +118,80 @@ export default function HealthTable() {
     </Box>
   );
 }
+=======
+const columns = [
+  { field: "id", headerName: "Sl No", flex: 1 },
+  { field: "mindays", headerName: "Min Days", flex: 1 },
+  { field: "maxdays", headerName: "Max Days", flex: 1 },
+  { field: "type", headerName: "Type", flex: 1 },
+  { field: "typename", headerName: "Type Name", flex: 1 },
+  { field: "verifyby", headerName: "Verify By", flex: 1 },
+  {
+    field: "reverify",
+    headerName: "Re-verify for Students/Verify By for Others",
+    flex: 3,
+  },
+  {
+    field: "action",
+    headerName: "Action",
+    flex: 1,
+    renderCell: (params) => <EditDeleteButton />,
+  },
+];
+
+const rows = [
+  {
+    id: 1,
+    mindays: "OTP registration",
+    maxdays: "Snow",
+    type: "teacher",
+    typename: "",
+    verifyby: "",
+    reverify: "RAJNISH KUMAR[teacher]",
+  },
+  {
+    id: 2,
+    mindays: "Fees Paid",
+    maxdays: "Lannister",
+    type: "teacher",
+    typename: "",
+    verifyby: "",
+    reverify: "PRANAB GOSWAMI[staff]",
+  },
+  {
+    id: 3,
+    mindays: "OTP Testing",
+    maxdays: "Lannister",
+    type: "staff",
+    typename: "",
+    verifyby: "",
+    reverify: "PRANAB GOSWAMI[staff]",
+  },
+  {
+    id: 4,
+    mindays: "OTP Testing",
+    maxdays: "Lannister",
+    type: "class",
+    typename: "",
+    verifyby: "",
+    reverify: "	ARINDOM CHATTERJEE[teacher]",
+  },
+];
+
+export default function HealthTable() {
+  return (
+      <div style={{ height: 400, width: "100%", marginTop: "40px" }}>
+        <DataGrid
+          rows={rows}
+          columns={columns}
+          initialState={{
+            pagination: {
+              paginationModel: { page: 0, pageSize: 5 },
+            },
+          }}
+          pageSizeOptions={[5, 10]}
+        />
+      </div>
+  );
+}
+>>>>>>> f8060d492a306434678af6ef883d7a0cce8125cc

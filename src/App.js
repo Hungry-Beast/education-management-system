@@ -11,7 +11,7 @@ import FAQ from "./scenes/faq";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
 import Calendar from "./scenes/calendar/calendar";
-import Login from './scenes/login/Login'
+import Login from "./scenes/login/Login";
 
 import OrgProfile from "./scenes/OrgProfile/OrgProfile";
 import AdminLayout from "./AdminLayout";
@@ -23,11 +23,13 @@ import Academic from "./scenes/modules/academic/academic/academic-configuration/
 // import Dprofile from "./scenes/detailProfile/Dprofile";
 import ModulesOnOff from "./settingcomponents/modulesonoff";
 import Holidays from "./settingcomponents/holidays";
+
+import Changepassword from "./scenes/changepassword/Changepassword";
 import SubCategory from "./scenes/modules/academic/academic/academic-configuration/Sections/Subject/SubCategory";
 import NotificationTemplate from "./settingcomponents/notificationtemplate";
 import TermsConditions from "./settingcomponents/termsconditions";
 import TermsDisplayPage from "./settingcomponents/termsconditions/TermsDisplayPage";
-import Health from "./detailscomponents/health/index";
+// import Health from "./detailscomponents/health/index";
 import EmptyTableMessage from "./settingcomponents/emptytablemessage";
 import SmsModule from "./settingcomponents/smsmodule";
 import WeeklyOff from "./settingcomponents/weeklyoff";
@@ -38,16 +40,23 @@ import Profile from "./detailscomponents/profile";
 import IntimeOuttime from "./settingcomponents/intimeouttime";
 import ClassTeacherMapping from "./scenes/modules/academic/academic/class-teacher-mapping/ClassTeacherMapping";
 import ClassSchedule from "./scenes/modules/academic/class-schedule/class-schedule/ClassSchedule";
-// import { Subject } from "@mui/icons-material";
-import Subject from './detailscomponents/subjectMapping';
+import ClassTimeTable from "./scenes/modules/academic/class-schedule/class-time-table/ClassTimeTable";
+import Health from "./detailscomponents/health";
+import StudentSettings from "./scenes/modules/academic/attendence/student-setting/StudentSettings";
+import { ImageContext } from "./context/Context";
+import StudentAttendence from "./scenes/modules/academic/attendence/student-attendence/StudentAttendence";
+import AttendenceDashboard from "./scenes/modules/academic/attendence/attendence-dashboard/AttendenceDashboard";
 // import OrgProfile from "./settingcomponents/OrgProfile/OrgProfile";
+//>>>>>>> b63988d5e5c115f3840ce513fec25967cdd5c832
 
 function App() {
   const [theme, colorMode] = useMode();
+  const [context, setContext] = useState("")
 
   return (
     // <ColorModeContext.Provider value={colorMode}>
-       <ThemeProvider theme={theme}>
+    <ImageContext.Provider value={[context, setContext]}>
+      <ThemeProvider theme={theme}>
         <CssBaseline />
         <Routes>
           <Route element={<AdminLayout />}>
@@ -59,43 +68,80 @@ function App() {
             <Route path="/admin/faq" element={<FAQ />} />
             <Route path="/admin/calendar" element={<Calendar />} />
             <Route path="/admin/form" element={<Form />} />
-            
-            <Route path="/admin/settings" element={<SetSettings />} >
-              <Route path="orgProfile" element={<OrgProfile />} />
-              <Route path="acc-structure" element={ <AcademicStructure/> } />
-              <Route path="set-email-template" element={ <EmailTemplates/> } />
-              <Route path="set-modules" element={ <ModulesOnOff/> } />
-              <Route path="holidays" element={ <Holidays/>} />
-              <Route path="notification-template" element={ <NotificationTemplate/> } />
-              <Route path="terms-conditions" element={ <TermsConditions /> } />
-              <Route path="empty-table-message" element={ <EmptyTableMessage /> } />
-              <Route path="sms-module" element={ <SmsModule /> } />
-              <Route path="weekly-off" element={ <WeeklyOff /> } />
-              <Route path="leave-setting" element={ <LeaveSetting /> } />
-              <Route path="intime-outtime" element={ <IntimeOuttime /> } />
-            </Route>
+            <Route path="/school-terms" element={<TermsDisplayPage />} />{" "}
+            {/*Route to Display the terms and conditions */}
           </Route>
-          <Route path="/login" element={<Login/>} />
-          <Route path="/school-terms" element={ <TermsDisplayPage/> } />    {/*Route to Display the terms and conditions */}
-          <Route  element={<ModulesLayout/>} >
+          <Route element={<ModulesLayout />}>
             <Route path="/modules/academic" element={<Academic />} />
-            <Route path="/modules/academic/subject-category" element={<SubCategory />} />
-            <Route path="/modules/academic/class-teacher-mapping" element={<ClassTeacherMapping />} />
-            <Route path="/modules/academic/class-schedule/" element={<ClassSchedule />} />
+            <Route
+              path="/modules/academic/subject-category"
+              element={<SubCategory />}
+            />
+            <Route
+              path="/modules/academic/class-teacher-mapping"
+              element={<ClassTeacherMapping />}
+            />
+            <Route
+              path="/modules/academic/class-schedule"
+              element={<ClassSchedule />}
+            />
+            <Route
+              path="/modules/academic/class-time-table"
+              element={<ClassTimeTable />}
+            />
+            <Route
+              path="/modules/academic/attendence-status-settings"
+              element={<StudentSettings />}
+            />
+            <Route
+              path="/modules/academic/student-attendence"
+              element={<StudentAttendence />}
+            />
+            <Route
+              path="/modules/academic/attendence-dashboard"
+              element={<AttendenceDashboard />}
+            />
           </Route>
           {/* <Route path="/profile" element={<Dprofile/>} /> */}
-          <Route path="/" element={<Navigate replace to="/login"/>} />
-        
-          <Route element={<MyDetails />} >
-              <Route path="/profile/staff-home" element={ <Home/> } />
-              <Route path="/profile/staff-profile" element={ <Profile/> } />
-              <Route path="/profile/staff-health" element={ <Health/> } />
-              <Route path="/profile/staff-subject" element={ <Subject/> } />
-              
+          <Route path="/" element={<Navigate replace to="/login" />} />
+          <Route element={<MyDetails />}>
+            <Route path="/profile/staff-home" element={<Home />} />
+            <Route path="/profile/staff-profile" element={<Profile />} />
+            <Route path="/profile/staff-health" element={<Health />} />
+          </Route>
+          {/* <Route path="/profile/staff-health" element={ <Health/> } /> */}
+          <Route path="/admin/settings" element={<SetSettings />}>
+            <Route path="orgProfile" element={<OrgProfile />} />
+            <Route path="acc-structure" element={<AcademicStructure />} />
+            <Route path="set-email-template" element={<EmailTemplates />} />
+            <Route path="set-modules" element={<ModulesOnOff />} />
+            <Route path="holidays" element={<Holidays />} />
+            <Route
+              path="notification-template"
+              element={<NotificationTemplate />}
+            />
+            <Route path="terms-conditions" element={<TermsConditions />} />
+            <Route path="empty-table-message" element={<EmptyTableMessage />} />
+            <Route path="sms-module" element={<SmsModule />} />
+            <Route path="weekly-off" element={<WeeklyOff />} />
+            <Route path="leave-setting" element={<LeaveSetting />} />
+            <Route path="intime-outtime" element={<IntimeOuttime />} />
+          </Route>
+          <Route path="/login" element={<Login />} />
+          <Route path="/change-password" element={<Changepassword />} />
+          <Route path="/school-terms" element={<TermsDisplayPage />} />{" "}
+          {/*Route to Display the terms and conditions */}
+          
+          {/* <Route path="/profile" element={<Dprofile/>} /> */}
+          <Route path="/" element={<Navigate replace to="/login" />} />
+          <Route element={<MyDetails />}>
+            <Route path="/profile/staff-home" element={<Home />} />
+            <Route path="/profile/staff-profile" element={<Profile />} />
+            <Route path="/profile/staff-health-record" element={<Health />} />
           </Route>
         </Routes>
       </ThemeProvider>
-    // </ColorModeContext.Provider>
+    </ImageContext.Provider>
   );
 }
 

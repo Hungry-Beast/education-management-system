@@ -1,8 +1,9 @@
 import { ChevronRight, NavigateNext } from "@mui/icons-material";
 import { Breadcrumbs, Typography } from "@mui/material";
-import React from "react";
+import React, { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
+import { ImageContext } from "../../context/Context";
 
 const Container = styled.div`
   padding: 16px;
@@ -62,6 +63,7 @@ const getCamelCase = (title) => {
 };
 
 const StatusBar = () => {
+  const [context, setContext] = useContext(ImageContext);
   const location = useLocation();
   const { pathname } = location;
 
@@ -90,7 +92,7 @@ const StatusBar = () => {
   return (
     <Container>
       <LeftContainer>
-        <LeftIconContainer src={`/assets/${imgTitle}.svg`} />
+        <LeftIconContainer src={`/assets/${context}`} />
         <LeftTitleContainer>
           <Typography variant="h3" color="primary">
             {title}

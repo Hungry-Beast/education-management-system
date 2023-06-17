@@ -10,7 +10,7 @@ import { devices } from "../../devices";
 // `;
 
 export const StyledDesc = styled.div`
-  line-height: 0.3cm;
+  line-height: 0.7cm;
 
   h1 {
     font-size: 25px;
@@ -89,7 +89,7 @@ export const StyledStudent = styled.div`
   display: flex;
   gap: 20px;
   align-items: end;
-  margin-top: 70px;
+  margin-top: 60px;
   margin-left: 100px;
   img {
     width: 60px;

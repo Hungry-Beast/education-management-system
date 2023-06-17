@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Button,
   FormControl,
@@ -55,6 +55,8 @@ const Form = styled.form`
 const label = { inputProps: { "aria-label": "Switch demo" } };
 
 export default function Profile() {
+
+  const [isDisabled, setIsDisabled] = useState(false);
   const {
     register,
     handleSubmit,
@@ -70,15 +72,21 @@ export default function Profile() {
     },
   });
   const onclick = (data) => console.log(data);
+
+
   return (
     //  ProfileDetails Wrapper Card starts
     <StyledProfileCard>
       {/* profile border starts */}
       <StyledProfileBorder>
         {/* first detail card section */}
-        <StyledToggleEdit>
-          Edit Data
-          <Switch {...label} defaultChecked />
+
+
+
+        <StyledToggleEdit onClick={() => setIsDisabled(!isDisabled)}>
+                        {isDisabled ? 'Edit Data' : 'Edit Data'}
+          
+          <Switch {...label} defaultChecked  />
         </StyledToggleEdit>
 
         <Form onSubmit={handleSubmit(onclick)}>
@@ -90,6 +98,7 @@ export default function Profile() {
 
               <Label>Role:</Label>
               <TextField
+               disabled={isDisabled}
                 fullWidth
                 sx={{ gridColumn: "span 1" }}
                 {...register("Role")}
@@ -100,12 +109,14 @@ export default function Profile() {
             <StyledProfileFirstRightCard>
               <Label>Designation:</Label>
               <TextField
+               disabled={isDisabled}
                 fullWidth
                 sx={{ gridColumn: "span 1" }}
                 {...register("Designation")}
               />
               <Label>Exp in Year:</Label>
               <TextField
+              disabled={isDisabled}
                 fullWidth
                 sx={{ gridColumn: "span 1" }}
                 {...register("ExpYear")}
@@ -121,6 +132,7 @@ export default function Profile() {
             <StyledProfileSecondLeftCard>
               <Label>First Name</Label>
               <TextField
+              disabled={isDisabled}
                 fullWidth
                 sx={{ gridColumn: "span 1" }}
                 {...register("FirstName")}
@@ -128,6 +140,7 @@ export default function Profile() {
 
               <Label>Last Name</Label>
               <TextField
+              disabled={isDisabled}
                 fullWidth
                 sx={{ gridColumn: "span 1" }}
                 {...register("LastName")}
@@ -135,6 +148,7 @@ export default function Profile() {
 
               <Label>Date of Birth staff</Label>
               <TextField
+              disabled={isDisabled}
                 fullWidth
                 sx={{ gridColumn: "span 1" }}
                 {...register("DateofBirth")}
@@ -142,24 +156,28 @@ export default function Profile() {
 
               <Label>PAN NO</Label>
               <TextField
+              disabled={isDisabled}
                 fullWidth
                 sx={{ gridColumn: "span 1" }}
                 {...register("PanNo")}
               />
               <Label>Designation</Label>
               <TextField
+              disabled={isDisabled}
                 fullWidth
                 sx={{ gridColumn: "span 1" }}
                 {...register("Designation")}
               />
               <Label>Father name</Label>
               <TextField
+              disabled={isDisabled}
                 fullWidth
                 sx={{ gridColumn: "span 1" }}
                 {...register("FatherName")}
               />
               <Label>Mobile No</Label>
               <TextField
+              disabled={isDisabled}
                 fullWidth
                 sx={{ gridColumn: "span 1" }}
                 {...register("MobileNo")}
@@ -172,7 +190,7 @@ export default function Profile() {
                 <Stack direction="row" alignItems="center" spacing={2}>
                   <Button variant="contained" component="label">
                     Choose File
-                    <input hidden accept="image/*" multiple type="file" />
+                    <input hidden accept="image/*" multiple type="file" disabled={isDisabled} />
                   </Button>
                 </Stack>
               </StyledPhoto>
@@ -181,6 +199,7 @@ export default function Profile() {
             <StyledProfileSecondRightCard>
               <Label>Middle Name</Label>
               <TextField
+              disabled={isDisabled}
                 fullWidth
                 sx={{ gridColumn: "span 1" }}
                 {...register("MiddleName")}
@@ -188,6 +207,7 @@ export default function Profile() {
 
               <Label>Gender</Label>
               <TextField
+              disabled={isDisabled}
                 fullWidth
                 sx={{ gridColumn: "span 1" }}
                 {...register("Gender")}
@@ -195,6 +215,7 @@ export default function Profile() {
 
               <Label>AADHAR No</Label>
               <TextField
+              disabled={isDisabled}
                 fullWidth
                 sx={{ gridColumn: "span 1" }}
                 {...register("AadharNo")}
@@ -203,42 +224,49 @@ export default function Profile() {
               <StyledRadio>
                 <Label>Blood Group</Label>
                 <Controller
+               
                   control={control}
                   name="checkbox"
                   defaultValue=""
                   render={({ field }) => (
-                    <RadioGroup {...field}>
+                    <RadioGroup sx={{display:"flex",flexDirection:"row"}} {...field}>
                       <FormControlLabel
+                       disabled={isDisabled}
                         value="choice-1"
                         control={<Radio />}
                         label="A+"
                       />
 
                       <FormControlLabel
+                       disabled={isDisabled}
                         value="choice-2"
                         control={<Radio />}
                         label="A-"
                       />
 
                       <FormControlLabel
+                       disabled={isDisabled}
                         value="choice-3"
                         control={<Radio />}
                         label="B+"
                       />
 
                       <FormControlLabel
+                       disabled={isDisabled}
                         value="choice-4"
                         control={<Radio />}
                         label="B-"
                       />
 
                       <FormControlLabel
+                       disabled={isDisabled}
                         value="choice-5"
                         control={<Radio />}
                         label="O+"
                       />
 
                       <FormControlLabel
+                       disabled={isDisabled}
                         value="choice-6"
                         control={<Radio />}
                         label="O-"
@@ -248,35 +276,25 @@ export default function Profile() {
                 />
               </StyledRadio>
 
-              {/* <Label>Blood Group</Label> */}
-              {/* <FormControlLabel value="choice-1" control={<Radio />} label="A+"  />
-              <FormControlLabel value="choice-2" control={<Radio />} label="A-"   />
-              <FormControlLabel value='choice-3' control={<Radio />} label="B+"   />
-              <FormControlLabel value="choice-4" control={<Radio />} label="B-"  />
-              <FormControlLabel value="choice-5" control={<Radio />} label="O-"   />
-              <FormControlLabel value="choice-6" control={<Radio />} label="O+"  />
-              <FormControlLabel
-                value="choice-7"
-                control={<Radio />}
-                label="AB+"
-              />
-              <FormControlLabel value="choice-8" control={<Radio />} label="AB-"   />
-              */}
+        
 
               <Label>Date of Joining</Label>
               <TextField
+              disabled={isDisabled}
                 fullWidth
                 sx={{ gridColumn: "span 1" }}
                 {...register("DateOfjoining")}
               />
               <Label>Mother name</Label>
               <TextField
+              disabled={isDisabled}
                 fullWidth
                 sx={{ gridColumn: "span 1" }}
                 {...register("MotherName")}
               />
               <Label>Email ID</Label>
               <TextField
+              disabled={isDisabled}
                 fullWidth
                 sx={{ gridColumn: "span 1" }}
                 {...register("EmailId")}
@@ -296,18 +314,21 @@ export default function Profile() {
             <StyledProfileThirdLeftCard>
               <Label>PIN</Label>
               <TextField
+              disabled={isDisabled}
                 fullWidth
                 sx={{ gridColumn: "span 1" }}
                 {...register("Pin")}
               />
               <Label>Vill/Ward</Label>
               <TextField
+              disabled={isDisabled}
                 fullWidth
                 sx={{ gridColumn: "span 1" }}
                 {...register("Vill/Ward")}
               />
               <Label>District</Label>
               <TextField
+              disabled={isDisabled}
                 fullWidth
                 sx={{ gridColumn: "span 1" }}
                 {...register("District")}
@@ -317,18 +338,21 @@ export default function Profile() {
             <StyledProfileThirdLeftCard>
               <Label>PO</Label>
               <TextField
+              disabled={isDisabled}
                 fullWidth
                 sx={{ gridColumn: "span 1" }}
                 {...register("Po")}
               />
               <Label>PS</Label>
               <TextField
+              disabled={isDisabled}
                 fullWidth
                 sx={{ gridColumn: "span 1" }}
                 {...register("Ps")}
               />
               <Label>State</Label>
               <TextField
+              disabled={isDisabled}
                 fullWidth
                 sx={{ gridColumn: "span 1" }}
                 {...register("State")}

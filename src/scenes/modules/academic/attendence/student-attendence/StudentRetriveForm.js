@@ -1,39 +1,30 @@
-import React, { useContext, useEffect } from "react";
-import styled from "styled-components";
-import { useState } from "react";
 import {
-  Autocomplete,
-  Button,
-  Divider,
+  Box,
+  Checkbox,
   FormControl,
+  FormControlLabel,
+  FormGroup,
   InputLabel,
   MenuItem,
   Select,
   TextField,
-  Typography,
 } from "@mui/material";
-import { Box, display } from "@mui/system";
+import React, { useContext, useEffect } from "react";
+import styled from "styled-components";
 import { Controller, useForm } from "react-hook-form";
-import { ImageContext } from "../../../../../context/Context";
-
-const Component = styled.div`
-  width: calc(100% - 30px);
-  height: fit-content;
-  padding: 16px;
-  background-color: #fff;
-  margin: 15px auto;
-  border-radius: 10px;
-`;
-const Container = styled.form`
-  width: 100%;
-  height: 100%;
+import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
+import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { Button } from "@mui/material";
+import { Autocomplete } from "@mui/material";
+const Form = styled.form`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px;
-  margin: 20px 0;
+  grid-template-columns: 1fr 1fr 0.5fr;
+  gap: 30px;
+  margin-top: 40px;
+  width: 60%;
 `;
-const ClassTeacherMapping = () => {
-  const [value, setValue] = useState(0);
+const StudentRetriveForm = () => {
   const {
     register,
     handleSubmit,
@@ -42,105 +33,62 @@ const ClassTeacherMapping = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => console.log(data);
-  const [context, setContext] = useContext(ImageContext);
-  useEffect(() => {
-    setContext("academic.svg");
-  }, []);
   return (
-    <Component>
-      <Box sx={{ display: "flex", alignItems: "center" }}>
-        <Typography variant="h5" color="primary" fontWeight={800} mx={2}>
-          Primary Teacher :
-        </Typography>
-        <Typography variant="h5" color="primary">
-          MILANJIT BHATTACHARJEE
-        </Typography>
-      </Box>
-      <Box sx={{ display: "flex", alignItems: "center" }}>
-        <Typography variant="h5" color="primary" fontWeight={800} mx={2}>
-          Secondary Teacher :
-        </Typography>
-        <Typography variant="h5" color="primary">
-          MILANJIT BHATTACHARJEE
-        </Typography>
-      </Box>
-      <Container>
+    <Form onSubmit={handleSubmit(onSubmit)}>
+      <Box>
+        <InputLabel sx={{ p: "9px", pb: "1px" }} required>
+          Select Date
+        </InputLabel>
         <Controller
-          name="subjectType"
+          name="date"
           control={control}
           required
           //   defaultValue={1}
           render={({ field }) => (
-            <FormControl fullWidth sx={{ gridColumn: "span 1", my: "30px" }}>
-              <InputLabel required> Subject Type</InputLabel>
-              <Select
-                {...field}
-                // defaultValue={1}
-                fullWidth
-              >
-                <MenuItem value={1}>Core</MenuItem>
-                <MenuItem value={2}>Elective</MenuItem>
-                <MenuItem value={3}>MIL</MenuItem>
-              </Select>
-            </FormControl>
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+              <DemoContainer components={["DatePicker"]}>
+                <DatePicker {...field} label="Select Date" />
+              </DemoContainer>
+            </LocalizationProvider>
           )}
         />
+      </Box>
+      <Box>
+        <InputLabel sx={{ p: "9px" }} required>
+        Student Name / Unique ID 
+        </InputLabel>
         <Controller
-          name="primaryTeacher"
+          name="student"
           control={control}
           required
           //   defaultValue={1}
           render={({ field }) => (
             <Autocomplete
-              sx={{ gridColumn: "span 1", my: "30px" }}
               {...field}
-              multiple
-              id="primaryTeacher"
-              name="primaryTeacher"
+              id="student"
+              name="student"
               options={top100Films.map((option) => option.title)}
               renderInput={(params) => (
-                <TextField {...params} label="Primary Teacher" />
+                <TextField {...params} label="Student Name / Unique ID " />
               )}
             />
           )}
         />
-        <Controller
-          name="secondaryTeacher"
-          control={control}
-          required
-          //   defaultValue={1}
-          render={({ field }) => (
-            <Autocomplete
-              sx={{ gridColumn: "span 1", my: "30px" }}
-              {...field}
-              multiple
-              id="secondaryTeacher"
-              name="secondaryTeacher"
-              options={top100Films.map((option) => option.title)}
-              renderInput={(params) => (
-                <TextField {...params} label="Secondary Teacher" />
-              )}
-            />
-          )}
-        />
-        <Box
-          sx={{
-            gridColumn: "1",
-            display: "flex",
-            justifyContent: "flex-start",
-          }}
+      </Box>
+      <Box sx={{ display: "flex", alignItems: "flex-end" }}>
+        <Button
+          variant="contained"
+          color="success"
+          sx={{ px: 10, py: "15px", marginBottom: "3px" }}
         >
-          <Button variant="contained" color="success" sx={{ width: "40%" }}>
-            Save
-          </Button>
-        </Box>
-      </Container>
-    </Component>
+          Search
+        </Button>
+      </Box>
+    </Form>
   );
 };
 
-export default ClassTeacherMapping;
-
+export default StudentRetriveForm;
 const top100Films = [
   { title: "The Shawshank Redemption", year: 1994 },
   { title: "The Godfather", year: 1972 },

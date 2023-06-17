@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import styled from "styled-components";
 import TabsSection from "./TabsSection";
 import { useState } from "react";
 import { Divider } from "@mui/material";
 import SectionContainer from "./SectionContainer";
+import { ImageContext } from "../../../../../context/Context";
 
 const Component = styled.div`
   width: calc(100% - 30px);
@@ -19,6 +20,10 @@ const Academic = () => {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+  const [context, setContext] = useContext(ImageContext);
+  useEffect(() => {
+    setContext("academic.svg");
+  }, []);
 
   return (
     <Component>

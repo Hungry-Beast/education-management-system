@@ -29,7 +29,9 @@ export const StyledDetails=styled.div`
         &:hover{
             border: 1px solid #169395;
             cursor: pointer;
+         
         }
+        
     }
     button{
         margin-left: 43.7rem;

@@ -13,16 +13,17 @@ import {
 } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
+import InputColor from "react-input-color";
+
 import { Controller, useForm } from "react-hook-form";
 import styled from "styled-components";
-import TimingFormTable from "./TimingFormTable";
 
 const style = {
   position: "absolute",
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 900,
+  width: 600,
   bgcolor: "background.paper",
   //   border: "2px solid #000",
   boxShadow: 24,
@@ -42,12 +43,14 @@ const Form = styled.form`
   margin: 20px 0;
   padding: 15px 20px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 15px;
+  row-gap: 60px;
   justify-content: space-between;
 `;
 
-const NewClassModal = ({ handleClose }) => {
+const AddStatusModal = ({ handleClose }) => {
+  const [color, setColor] = React.useState({});
   const {
     register,
     handleSubmit,
@@ -74,24 +77,43 @@ const NewClassModal = ({ handleClose }) => {
       <Form onSubmit={handleSubmit(onSubmit)}>
         <TextField
           fullWidth
-          label="Category Name"
+          label="Status"
           required
-          {...register("categoryName", { required: "Category name is required" })}
-          sx={{ gridColumn: "span 2" }}
-        />
-        <TextField
-          fullWidth
-          label="Description"
-          required
-          {...register("description", { required: "Description is required" })}
-          sx={{ gridColumn: "span 2" }}
+          {...register("status", { required: "Status is required" })}
+          sx={{ gridColumn: "span 1" }}
         />
 
-       
-      <Typography variant="h3" mt={2} sx={{ gridColumn: "span 2" }} >Availale Time Set</Typography>
-      <TimingFormTable/>
-       
-        <Button type="submit" variant="contained" color="success">
+        <TextField
+          fullWidth
+          label="StatusCode"
+          required
+          {...register("statusCode", {
+            required: "Status code  is required",
+          })}
+          sx={{ gridColumn: "span 1" }}
+        />
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-evenly",
+            // flexDirection:"column"
+          }}
+        >
+          <InputLabel>Color</InputLabel>
+          <InputColor
+            initialValue="#5e72e4"
+            onChange={setColor}
+            placement="right"
+          />
+        </Box>
+
+        <Button
+          sx={{ gridColumn: " 2" }}
+          type="submit"
+          variant="contained"
+          color="success"
+        >
           Save
         </Button>
         <Button onClick={handleClose} variant="contained" color="warning">
@@ -102,4 +124,4 @@ const NewClassModal = ({ handleClose }) => {
   );
 };
 
-export default NewClassModal;
+export default AddStatusModal;
