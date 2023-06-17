@@ -58,7 +58,7 @@ const Administration = () => {
         </Typography>
         <Divider />
         <Li>
-          <Link to="/admin">
+          <Link to="/modules/administration/location-category">
             <Typography variant="h5">Category & Location</Typography>
           </Link>
         </Li>
