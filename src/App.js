@@ -38,6 +38,8 @@ import Profile from "./detailscomponents/profile";
 import IntimeOuttime from "./settingcomponents/intimeouttime";
 import ClassTeacherMapping from "./scenes/modules/academic/academic/class-teacher-mapping/ClassTeacherMapping";
 import ClassSchedule from "./scenes/modules/academic/class-schedule/class-schedule/ClassSchedule";
+// import { Subject } from "@mui/icons-material";
+import Subject from './detailscomponents/subjectMapping';
 // import OrgProfile from "./settingcomponents/OrgProfile/OrgProfile";
 
 function App() {
@@ -88,6 +90,7 @@ function App() {
               <Route path="/profile/staff-home" element={ <Home/> } />
               <Route path="/profile/staff-profile" element={ <Profile/> } />
               <Route path="/profile/staff-health" element={ <Health/> } />
+              <Route path="/profile/staff-subject" element={ <Subject/> } />
               
           </Route>
         </Routes>

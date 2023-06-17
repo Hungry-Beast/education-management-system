@@ -1,5 +1,5 @@
 import React from 'react'
-import { DataGrid } from '@mui/x-data-grid';
+// import { DataGrid } from '@mui/x-data-grid';
 
 import { StyledProfileCard,StyledImageCard,StyledDEsc, BodyStyled, StyledContainer, StyledHeader,StyledNavbar,StyledDetails } from './heath.styles';
 import {StyledHeading,StyledFile,StyledSearch,StyledShow,StyledBar,StyledData,StyledWrap,StyledBorder,StyledContent,StyledTwo} from './heath.styles';
@@ -12,7 +12,7 @@ import Select from '@mui/material/Select';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import TableHealth from '../health/HealthTable';
+// import TableHead from '../health/HealthTable';
 
 
 
@@ -61,9 +61,19 @@ function Health(){
                 <h3>Medical Records</h3>
                 <h4>Document Attachments</h4>
             </StyledHeading>
-            <StyledFile>
-                <button>+ Add New Attachment </button>
-            </StyledFile>
+           <StyledFile>
+               
+                {/* <Button onClick={handleOpen}>+ Routine Check-ups</Button>
+            <Modal
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+>
+              <Box sx={style}>
+              <Typography id="modal-modal-title" variant="h3" component="h2">
+              <StyledCheckupCard></StyledCheckupCard> */}
+             </StyledFile>
             <StyledSearch>
                 <StyledShow>
                     <p>Show</p>
@@ -88,7 +98,7 @@ function Health(){
             </StyledSearch>
             <StyledData>
                 <StyledWrap>
-              <TableHealth/>
+              {/* <TableHealth/> */}
                 {/* <h4>Sr.No</h4>
                 <h4>Title</h4>
                 <h4>Description</h4>
