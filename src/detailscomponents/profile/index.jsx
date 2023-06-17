@@ -224,43 +224,49 @@ export default function Profile() {
               <StyledRadio>
                 <Label>Blood Group</Label>
                 <Controller
-                disabled={isDisabled}
+               
                   control={control}
                   name="checkbox"
                   defaultValue=""
                   render={({ field }) => (
                     <RadioGroup sx={{display:"flex",flexDirection:"row"}} {...field}>
                       <FormControlLabel
+                       disabled={isDisabled}
                         value="choice-1"
                         control={<Radio />}
                         label="A+"
                       />
 
                       <FormControlLabel
+                       disabled={isDisabled}
                         value="choice-2"
                         control={<Radio />}
                         label="A-"
                       />
 
                       <FormControlLabel
+                       disabled={isDisabled}
                         value="choice-3"
                         control={<Radio />}
                         label="B+"
                       />
 
                       <FormControlLabel
+                       disabled={isDisabled}
                         value="choice-4"
                         control={<Radio />}
                         label="B-"
                       />
 
                       <FormControlLabel
+                       disabled={isDisabled}
                         value="choice-5"
                         control={<Radio />}
                         label="O+"
                       />
 
                       <FormControlLabel
+                       disabled={isDisabled}
                         value="choice-6"
                         control={<Radio />}
                         label="O-"
