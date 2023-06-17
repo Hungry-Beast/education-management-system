@@ -1,26 +1,6 @@
-<<<<<<< HEAD
-import React from 'react'
-// import { DataGrid } from '@mui/x-data-grid';
-
-import { StyledProfileCard,StyledImageCard,StyledDEsc, BodyStyled, StyledContainer, StyledHeader,StyledNavbar,StyledDetails } from './heath.styles';
-import {StyledHeading,StyledFile,StyledSearch,StyledShow,StyledBar,StyledData,StyledWrap,StyledBorder,StyledContent,StyledTwo} from './heath.styles';
-import {StyledRoutine,StyledBlood,StyledCardHeader,StyledEnd,StyledButton,StyledCheckupCard,StyledHealthButton} from './heath.styles';
-import Box from '@mui/material/Box';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import Modal from '@mui/material/Modal';
-// import TableHead from '../health/HealthTable';
-
-
-=======
 import React from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import Stack from "@mui/material/Stack";
->>>>>>> f8060d492a306434678af6ef883d7a0cce8125cc
 
 import {
   StyledProfileCard,
@@ -116,71 +96,6 @@ function Health() {
                 <h4>Document Attachments</h4>
               </StyledHeadingDesc>
             </StyledHeading>
-<<<<<<< HEAD
-           <StyledFile>
-               
-                {/* <Button onClick={handleOpen}>+ Routine Check-ups</Button>
-            <Modal
-                open={open}
-                onClose={handleClose}
-                aria-labelledby="modal-modal-title"
-                aria-describedby="modal-modal-description"
->
-              <Box sx={style}>
-              <Typography id="modal-modal-title" variant="h3" component="h2">
-              <StyledCheckupCard></StyledCheckupCard> */}
-             </StyledFile>
-            <StyledSearch>
-                <StyledShow>
-                    <p>Show</p>
-                    <Box sx={{ minWidth: 80 }}>
-      <FormControl fullWidth>
-            <InputLabel id="demo-simple-select-label"></InputLabel>
-          <Select label="10" defaultValue={10 } onChange={handleChange}>
-            <MenuItem value={10}>10</MenuItem>
-            <MenuItem value={25}>25</MenuItem>
-            <MenuItem value={50}>50</MenuItem>
-            <MenuItem value={100}>100</MenuItem>
-          </Select>
-      </FormControl>
-    </Box>
-                    <p>entries</p>
-                </StyledShow>
-                <StyledBar>
-                    <p>Search: </p>
-                    <input type='text'/>
-                </StyledBar>
-                
-            </StyledSearch>
-            <StyledData>
-                <StyledWrap>
-              {/* <TableHealth/> */}
-                {/* <h4>Sr.No</h4>
-                <h4>Title</h4>
-                <h4>Description</h4>
-                <h4>Attachment</h4>
-                <h4>Actions</h4> */}
-                </StyledWrap>
-            </StyledData>
-            <StyledBorder>
-                <p>No data available in table</p>
-            </StyledBorder>
-            <StyledContent>
-                <p>Showing 0 to 0 of 0 entries</p>
-                <StyledTwo>
-                    <p>Previous</p>
-                    <p>Next</p>
-                </StyledTwo>
-            </StyledContent>
-            <StyledRoutine>
-                <h3>Routine check-ups & Incidents</h3>
-            </StyledRoutine>
-            <StyledButton>
-                <Button onClick={handleOpen}>+ Routine Check-ups</Button>
-            <Modal
-                open={open}
-                onClose={handleClose}
-=======
 
             <StyledFile>
               <Button
@@ -193,7 +108,6 @@ function Health() {
               <Modal
                 open={ButtonOpen}
                 onClose={handleButtonClose}
->>>>>>> f8060d492a306434678af6ef883d7a0cce8125cc
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
               >
