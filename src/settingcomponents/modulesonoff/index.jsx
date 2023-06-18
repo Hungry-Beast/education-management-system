@@ -2,11 +2,7 @@ import React from 'react'
 import { Box, Typography } from '@mui/material';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
-import FormLabel from '@mui/material/FormLabel';
-import FormControl from '@mui/material/FormControl';
 import FormGroup from '@mui/material/FormGroup';
-// import FormControlLabel from '@mui/material/FormControlLabel';
-import FormHelperText from '@mui/material/FormHelperText';
 import Checkbox from '@mui/material/Checkbox';
 
 const allModules = [
@@ -40,7 +36,6 @@ const allModules = [
   'Visitor',
 ]
 
-
 function ModulesOnOff() {
 
   const [state, setState] = React.useState({
@@ -57,13 +52,10 @@ function ModulesOnOff() {
       [event.target.name]: event.target.checked,
     });
   };
-
   const { admin, teacher, student, parent, staff } = state;
 
-  console.log(state)
-
   return (
-    <Box width={ '100%' } >
+    <Box width={ '100%' } sx={{px: "18px", py: "18px", borderRadius: "10px", bgcolor: "#f2f0f0"}} >
       <Box sx={{display: "flex", justifyContent: "space-between"}} >
         <Typography>Modules</Typography>
         <Typography sx={{mr: "20%"}} >Applicable For</Typography>
