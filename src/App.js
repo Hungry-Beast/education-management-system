@@ -48,6 +48,7 @@ import StudentAttendence from "./scenes/modules/academic/attendence/student-atte
 import AttendenceDashboard from "./scenes/modules/academic/attendence/attendence-dashboard/AttendenceDashboard";
 import CategoryLocation from "./scenes/modules/administration/asset/categorylocation";
 import Vendor from "./scenes/modules/administration/asset/vendor";
+import Assets from "./scenes/modules/administration/asset/assets";
 // import OrgProfile from "./settingcomponents/OrgProfile/OrgProfile";
 //>>>>>>> b63988d5e5c115f3840ce513fec25967cdd5c832
 
@@ -105,6 +106,7 @@ function App() {
             />
             <Route path="/modules/administration/location-category" element={<CategoryLocation/>} />
             <Route path="/modules/administration/vendor" element={<Vendor/>} />
+            <Route path="/modules/administration/assets" element={<Assets/>} />
           </Route>
           {/* <Route path="/profile" element={<Dprofile/>} /> */}
           <Route path="/" element={<Navigate replace to="/login" />} />
