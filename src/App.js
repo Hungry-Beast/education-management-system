@@ -51,6 +51,7 @@ import Vendor from "./scenes/modules/administration/asset/vendor";
 import Assets from "./scenes/modules/administration/asset/assets";
 import AssetPurchase from "./scenes/modules/administration/asset/assetpurchase/AssetPurchase";
 import SchoolStructure from "./scenes/modules/administration/school structure/schoolstructure";
+import SchoolStructureUI from "./scenes/modules/administration/school structure/schoolstructureUI";
 // import OrgProfile from "./settingcomponents/OrgProfile/OrgProfile";
 //>>>>>>> b63988d5e5c115f3840ce513fec25967cdd5c832
 
@@ -111,6 +112,7 @@ function App() {
             <Route path="/modules/administration/assets" element={<Assets/>} />
             <Route path="/modules/administration/asset-purchase" element={<AssetPurchase/>} />
             <Route path="/modules/administration/school-structure" element={<SchoolStructure/>} />
+            <Route path="/modules/administration/school-structure-blocks" element={<SchoolStructureUI/>} />
           </Route>
           {/* <Route path="/profile" element={<Dprofile/>} /> */}
           <Route path="/" element={<Navigate replace to="/login" />} />
