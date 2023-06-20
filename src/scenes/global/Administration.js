@@ -101,7 +101,7 @@ const Administration = () => {
         </Typography>
         <Divider />
         <Li>
-          <Link to="/admin">
+          <Link to="/modules/administration/school-structure">
             <Typography variant="h5">School Structure</Typography>
           </Link>
         </Li>
