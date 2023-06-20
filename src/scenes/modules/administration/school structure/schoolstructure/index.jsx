@@ -3,8 +3,12 @@ import { Box, Typography } from '@mui/material';
 import styled from "styled-components";
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-import AssetLocation from './AssetLocation';
-import AssetCategory from './AssetCategory';
+import SchoolRooms from './school rooms/SchoolRooms';
+import BooksRoomTypeCommonModal from './BlocksRoomTypeCommonModal';
+import Blocks from './blocks/Blocks';
+import RoomType from './room type/RoomType';
+// import AssetLocation from './AssetLocation';
+// import AssetCategory from './AssetCategory';
 
 const Component = styled.div`
   width: calc(100% - 30px);
@@ -35,7 +39,7 @@ function TabPanel(props) {
   );
 }
 
-export default function CategoryLocation() {
+export default function SchoolStructure() {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -47,18 +51,22 @@ export default function CategoryLocation() {
 
     <Box sx={{ display: "flex", justifyContent: "center"}} >
           <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-                <Tab label="Asset Location" />
-                <Tab label="Asset Category"  />
+                <Tab label="School Rooms" />
+                <Tab label="Blocks"  />
+                <Tab label="Room Type"  />
           </Tabs>
     </Box>
 
     <hr style={{ width:"100%", border: '1px solid orange'}} />
 
       <TabPanel value={value} index={0}>
-        <AssetLocation/>
+        <SchoolRooms/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-          <AssetCategory/>
+         <Blocks/>
+      </TabPanel>
+      <TabPanel value={value} index={2}>
+        <RoomType/>
       </TabPanel>
 
   </Component>
