@@ -106,15 +106,19 @@ export const StyledFile = styled.div`
   } */
 `;
 export const StyledAttachment = styled.div`
-  width: 40%;
-  margin: 7rem auto;
+  width: 95%;
+  /* margin: 2rem auto; */
   background-color: white;
-  padding: 2rem;
+  padding: 1rem;
   input {
     width: 100%;
     box-sizing: border-box;
     padding: 0.4rem;
     border-radius: 0.3rem;
+    border: 1px solid #169395;
+  }
+  p{
+    color: #169395;
   }
 `;
 export const StyledAttachButton = styled.div`
@@ -194,6 +198,7 @@ export const StyledBorder = styled.div`
   align-items: center;
   p {
     margin-left: 40%;
+    color: #169395;
   }
   &:hover {
     background-color: lightgray;
@@ -246,10 +251,15 @@ export const StyledButton = styled.div`
     border-radius: 0.4rem;
     /* margin-left: 40rem; */
 `;
+export const StyledButtons = styled.div`
+  margin-left: 20rem;
+  display: flex;
+  gap: 1rem;
+`;
 export const StyledCheckupCard = styled.div`
-  width: 50%;
-  margin: 7rem auto;
-  padding: 2rem;
+  width: 95%;
+  /* margin: 1rem auto; */
+  padding: 1rem;
   /* border:1px solid black; */
 
   background-color: white;
@@ -258,15 +268,19 @@ export const StyledCheckupCard = styled.div`
 
   h4 {
     font-size: 1.6rem;
+    color: #169395;
   }
 
   p {
     font-size: 1rem;
+    color: #169395;
   }
 
   input {
     width: 100%;
     padding: 0.4rem;
+    border: 1px solid #169395;
+    border-radius: 0.2rem;
   }
 `;
 

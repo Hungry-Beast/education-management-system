@@ -45,6 +45,8 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import TableHealth from "./HealthTable";
+import HealthModal from "./HealthModal";
+import RoutineModal from "./RoutineModal";
 
 const style = {
   position: "absolute",
@@ -105,13 +107,15 @@ function Health() {
               >
                 + Add New Attachment
               </Button>
+
               <Modal
                 open={ButtonOpen}
                 onClose={handleButtonClose}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
               >
-                <Box>
+                  <HealthModal/>
+                {/* <Box>
                   <Typography
                     id="modal-modal-title"
                     variant="h6"
@@ -137,10 +141,8 @@ function Health() {
                     </StyledAttachment>
                   </Typography>
                   <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                    Duis mollis, est non commodo luctus, nisi erat porttitor
-                    ligula.
                   </Typography>
-                </Box>
+                </Box> */}
               </Modal>
             </StyledFile>
             {/* <TableHealth /> */}
@@ -162,21 +164,7 @@ function Health() {
                       variant="h3"
                       component="h2"
                     >
-                      <StyledCheckupCard>
-                        <h4>Routine Check-ups</h4>
-                        <p>Date</p>
-                        <input type="datetime-local" />
-                        <p>Height(cms)</p>
-                        <input type="text" />
-                        <p>Weight(kgs)</p>
-                        <input type="text" />
-                        <p>Comment</p>
-                        <input type="text" />
-                        <StyledHealthButton>
-                          <button>Save</button>
-                          <button>Close</button>
-                        </StyledHealthButton>
-                      </StyledCheckupCard>
+                      <RoutineModal/>
                     </Typography>
                     <Typography
                       id="modal-modal-description"

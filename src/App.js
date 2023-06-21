@@ -47,6 +47,7 @@ import StudentSettings from "./scenes/modules/academic/attendence/student-settin
 import { ImageContext } from "./context/Context";
 import StudentAttendence from "./scenes/modules/academic/attendence/student-attendence/StudentAttendence";
 import AttendenceDashboard from "./scenes/modules/academic/attendence/attendence-dashboard/AttendenceDashboard";
+import Advance from "./detailscomponents/advance";
 // import OrgProfile from "./settingcomponents/OrgProfile/OrgProfile";
 //>>>>>>> b63988d5e5c115f3840ce513fec25967cdd5c832
 
@@ -140,6 +141,7 @@ function App() {
             <Route path="/profile/staff-profile" element={<Profile />} />
             <Route path="/profile/staff-health-record" element={<Health />} />
             <Route path="/profile/staff-subjectMapping" element={<Subject />} />
+            <Route path="/profile/staff-advance" element={<Advance />} />
           </Route>
         </Routes>
       </ThemeProvider>
