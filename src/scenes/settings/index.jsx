@@ -10,12 +10,15 @@ function SetSettings() {
       <StatusBar/>
     <br />
 
-    <Box display="flex"  >
-      <Sidebar/>
+    <Box sx={{display: "flex", width :"100%"}}  >
+      <div style={{width: "26%"}} >
+          <Sidebar sx={{width: "100%"}} />
+      </div>
 
-      <Outlet/>
-    
-      
+      <div style={{ width: "74%", marginRight: "18px"}} >
+        <Outlet/>
+      </div>
+
     </Box>
 
     </>

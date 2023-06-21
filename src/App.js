@@ -46,7 +46,17 @@ import StudentSettings from "./scenes/modules/academic/attendence/student-settin
 import { ImageContext } from "./context/Context";
 import StudentAttendence from "./scenes/modules/academic/attendence/student-attendence/StudentAttendence";
 import AttendenceDashboard from "./scenes/modules/academic/attendence/attendence-dashboard/AttendenceDashboard";
+<<<<<<< HEAD
 import Myleaves from "./detailscomponents/myleaves";
+=======
+import CategoryLocation from "./scenes/modules/administration/asset/categorylocation";
+import Vendor from "./scenes/modules/administration/asset/vendor";
+import Assets from "./scenes/modules/administration/asset/assets";
+import AssetPurchase from "./scenes/modules/administration/asset/assetpurchase/AssetPurchase";
+import SchoolStructure from "./scenes/modules/administration/school structure/schoolstructure";
+import SchoolStructureUI from "./scenes/modules/administration/school structure/schoolstructureUI";
+import TeacherSetting from "./scenes/modules/administration/teacher attendance/teachersetting";
+>>>>>>> 846ec0782196d3107460a40a1cbadb5842a1d4b0
 // import OrgProfile from "./settingcomponents/OrgProfile/OrgProfile";
 //>>>>>>> b63988d5e5c115f3840ce513fec25967cdd5c832
 
@@ -102,6 +112,13 @@ function App() {
               path="/modules/academic/attendence-dashboard"
               element={<AttendenceDashboard />}
             />
+            <Route path="/modules/administration/location-category" element={<CategoryLocation/>} />
+            <Route path="/modules/administration/vendor" element={<Vendor/>} />
+            <Route path="/modules/administration/assets" element={<Assets/>} />
+            <Route path="/modules/administration/asset-purchase" element={<AssetPurchase/>} />
+            <Route path="/modules/administration/school-structure" element={<SchoolStructure/>} />
+            <Route path="/modules/administration/school-structure-blocks" element={<SchoolStructureUI/>} />
+            <Route path="/modules/administration/attendance-status/teacher" element={<TeacherSetting/>} />
           </Route>
           {/* <Route path="/profile" element={<Dprofile/>} /> */}
           <Route path="/" element={<Navigate replace to="/login" />} />
