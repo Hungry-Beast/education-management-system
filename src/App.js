@@ -54,6 +54,8 @@ import SchoolStructure from "./scenes/modules/administration/school structure/sc
 import SchoolStructureUI from "./scenes/modules/administration/school structure/schoolstructureUI";
 import TeacherSetting from "./scenes/modules/administration/teacher attendance/teachersetting";
 import Myleaves from "./detailscomponents/myleaves";
+import RolesPermision from "./scenes/roles&permision/roles-permision";
+import RolesPermissions from "./scenes/roles&permision/roles-permision";
 // import OrgProfile from "./settingcomponents/OrgProfile/OrgProfile";
 //>>>>>>> b63988d5e5c115f3840ce513fec25967cdd5c832
 
@@ -119,6 +121,7 @@ function App() {
           </Route>
           {/* <Route path="/profile" element={<Dprofile/>} /> */}
           <Route path="/" element={<Navigate replace to="/login" />} />
+
           <Route element={<MyDetails />}>
             <Route path="/profile/staff-home" element={<Home />} />
             <Route path="/profile/staff-profile" element={<Profile />} />
@@ -143,6 +146,8 @@ function App() {
             <Route path="intime-outtime" element={<IntimeOuttime />} />
           </Route>
           <Route path="/login" element={<Login />} />
+          <Route path="/roles-permissions" element={<RolesPermissions />} />
+
           <Route path="/change-password" element={<Changepassword />} />
           <Route path="/school-terms" element={<TermsDisplayPage />} />{" "}
           {/*Route to Display the terms and conditions */}
@@ -155,6 +160,9 @@ function App() {
             <Route path="/profile/staff-health-record" element={<Health />} />
             <Route path="/profile/staff-myleaves" element={<Myleaves />} />
           </Route>
+          
+
+
         </Routes>
       </ThemeProvider>
     </ImageContext.Provider>

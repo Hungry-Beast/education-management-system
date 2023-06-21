@@ -225,12 +225,16 @@ const Topbar = () => {
             </ListItemIcon>
             Institute Settings
           </MenuItem>
-          <MenuItem onClick={handleClose}>
+          <MenuItem   onClick={() => {
+              navigate("/roles-permissions");
+              handleClose();
+            }}>
             <ListItemIcon>
               {" "}
               <ManageAccounts fontSize="small" />{" "}
             </ListItemIcon>
             Roles & Permissions
+
           </MenuItem>
           <MenuItem onClick={handleClose}>
             <ListItemIcon>

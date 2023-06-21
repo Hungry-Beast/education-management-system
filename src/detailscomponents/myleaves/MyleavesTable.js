@@ -142,45 +142,17 @@ const ModalButton = () => {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        {/* <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            <StyledHeadingModal>
-              <h1>Leaves Apply</h1>
-            </StyledHeadingModal>
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            <StyledDate>
-              <StyledFrom>
-                <h1>From</h1>
-                <input type="date" />
-              </StyledFrom>
-
-              <StyledTill>
-                <h1>Till</h1>
-                <input type="date" />
-              </StyledTill>
-            </StyledDate>
-
-            <StyledReason>
-              <h1>Reason</h1>
-              <input type="text" />
-            </StyledReason>
-
-            <StyledButtons>
-              <StyledSaveButton>
-                <button>Save</button>
-              </StyledSaveButton>
-
-              <StyledCloseButton>
-                <button onClick={handleClose}>Close</button>
-              </StyledCloseButton>
-            </StyledButtons>
-          </Typography>
-        </Box> */}
-           <MyLeavesModal/>
+           <MyLeavesModal handleClose={handleClose}/>
       </Modal  >
-
-   
+      {/* <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-type"
+        >
+        <VendorModal handleClose={handleClose} />
+      </Modal>
+    */}
     </StyledModal >
   );
 };
