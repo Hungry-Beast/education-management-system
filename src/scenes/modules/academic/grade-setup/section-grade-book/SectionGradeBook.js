@@ -27,10 +27,10 @@ const Component = styled.div`
 `;
 const Form = styled.form`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 0.5fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 0.5fr;
   gap: 30px;
 `;
-const ClassTimeTable = () => {
+const SectionGradeBook = () => {
   const {
     register,
     handleSubmit,
@@ -39,8 +39,9 @@ const ClassTimeTable = () => {
     formState: { errors },
   } = useForm();
   const [context, setContext] = useContext(ImageContext);
+ 
   useEffect(() => {
-    setContext("classSchedule.svg");
+    setContext("assesment.svg");
   }, []);
   return (
     <Component>
@@ -49,15 +50,11 @@ const ClassTimeTable = () => {
           <Controller
             name="isCourse"
             control={control}
-            
-            
             //   defaultValue={1}
             render={({ field }) => (
-              <FormControl fullWidth>
+              <FormControl  fullWidth>
                 <FormControlLabel
-                  control={
-                    <Checkbox {...field}  color="success" />
-                  }
+                  control={<Checkbox {...field} color="success" />}
                   label="Course"
                 />
               </FormControl>
@@ -70,12 +67,13 @@ const ClassTimeTable = () => {
               required
               //   defaultValue={1}
               render={({ field }) => (
-                <FormControl fullWidth>
+                <FormControl sx={{mt:1}}  fullWidth>
                   <InputLabel required>Select Course</InputLabel>
                   <Select
                     {...field}
                     // defaultValue={1}
                     fullWidth
+
                   >
                     <MenuItem value={1}>Physics</MenuItem>
                     <MenuItem value={2}>Chemistry</MenuItem>
@@ -99,10 +97,12 @@ const ClassTimeTable = () => {
             required
             //   defaultValue={1}
             render={({ field }) => (
-              <FormControl fullWidth>
+              <FormControl 
+              sx={{mt:1}} fullWidth>
                 <InputLabel required>Select Class</InputLabel>
                 <Select
                   {...field}
+                  
                   // defaultValue={1}
                   fullWidth
                 >
@@ -125,7 +125,9 @@ const ClassTimeTable = () => {
             required
             //   defaultValue={1}
             render={({ field }) => (
-              <FormControl fullWidth>
+                  
+              <FormControl 
+              sx={{mt:1}} fullWidth >
                 <InputLabel required>Select Section</InputLabel>
                 <Select
                   {...field}
@@ -142,23 +144,34 @@ const ClassTimeTable = () => {
           />
         </Box>
         <Box>
-          <InputLabel sx={{ p: "9px", pb: "1px" }} required>
-            Select Date
+          <InputLabel sx={{ p: "9px" }} required>
+            Academic Session
           </InputLabel>
+
           <Controller
-            name="date"
+            name="academicSession"
             control={control}
             required
             //   defaultValue={1}
             render={({ field }) => (
               <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <DemoContainer components={["DatePicker"]}>
-                  <DatePicker {...field} label="Select Date" />
+                  <DatePicker
+                    slotProps={{
+                      textField: {
+                        required: true,
+                        fullWidth: true,
+                      },
+                    }}
+                    {...field}
+                    label="Academic Section"
+                  />
                 </DemoContainer>
               </LocalizationProvider>
             )}
           />
         </Box>
+
         <Box sx={{ display: "flex", alignItems: "flex-end" }}>
           <Button
             variant="contained"
@@ -173,4 +186,4 @@ const ClassTimeTable = () => {
   );
 };
 
-export default ClassTimeTable;
+export default SectionGradeBook;

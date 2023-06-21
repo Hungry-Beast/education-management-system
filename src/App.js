@@ -46,12 +46,18 @@ import StudentSettings from "./scenes/modules/academic/attendence/student-settin
 import { ImageContext } from "./context/Context";
 import StudentAttendence from "./scenes/modules/academic/attendence/student-attendence/StudentAttendence";
 import AttendenceDashboard from "./scenes/modules/academic/attendence/attendence-dashboard/AttendenceDashboard";
+import LMS from "./scenes/modules/academic/lms/LMS";
+import LMSLink from "./scenes/modules/academic/lms/LMS";
+import SectionLinkId from "./scenes/modules/academic/lms/SectionLinkId";
+import AssessmentAndGrade from "./scenes/modules/academic/grade-setup/assessment-and-grade/AssessmentAndGrade";
+import AssessmentLink from "./scenes/modules/academic/grade-setup/assessment-and-grade/Sections/Assessment/assessment-link/AssessmentLink";
+import SectionGradeBook from "./scenes/modules/academic/grade-setup/section-grade-book/SectionGradeBook";
 // import OrgProfile from "./settingcomponents/OrgProfile/OrgProfile";
 //>>>>>>> b63988d5e5c115f3840ce513fec25967cdd5c832
 
 function App() {
   const [theme, colorMode] = useMode();
-  const [context, setContext] = useState("")
+  const [context, setContext] = useState("");
 
   return (
     // <ColorModeContext.Provider value={colorMode}>
@@ -101,6 +107,27 @@ function App() {
               path="/modules/academic/attendence-dashboard"
               element={<AttendenceDashboard />}
             />
+            <Route
+              path="/modules/academic/learning-management-system/link"
+              element={<LMSLink />}
+            />
+            <Route
+              path="/modules/academic/learning-management-system/link/:id"
+              element={<SectionLinkId />}
+            />
+            <Route
+              path="/modules/academic/assessment-and-grade"
+              element={<AssessmentAndGrade />}
+            />
+            <Route
+              path="/modules/academic/assessment-and-grade/assessment/:link"
+              element={<AssessmentLink />}
+            />
+            <Route
+              path="/modules/academic/section-grade-book"
+              element={<SectionGradeBook />}
+            />
+
           </Route>
           {/* <Route path="/profile" element={<Dprofile/>} /> */}
           <Route path="/" element={<Navigate replace to="/login" />} />
@@ -131,7 +158,6 @@ function App() {
           <Route path="/change-password" element={<Changepassword />} />
           <Route path="/school-terms" element={<TermsDisplayPage />} />{" "}
           {/*Route to Display the terms and conditions */}
-          
           {/* <Route path="/profile" element={<Dprofile/>} /> */}
           <Route path="/" element={<Navigate replace to="/login" />} />
           <Route element={<MyDetails />}>

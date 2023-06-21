@@ -157,7 +157,7 @@ const Academic = () => {
           </Link>
         </Li>
         <Li>
-          <Link to="/admin">
+          <Link to="/modules/academic/learning-management-system/link">
             <Typography variant="h5">Big Blue Button Link</Typography>
           </Link>
         </Li>
@@ -181,12 +181,12 @@ const Academic = () => {
         </Typography>
         <Divider />
         <Li>
-          <Link to="/admin">
+          <Link to="/modules/academic/assessment-and-grade">
             <Typography variant="h5">Assessment & Gradings</Typography>
           </Link>
         </Li>
         <Li>
-          <Link to="/admin">
+          <Link to="/modules/academic/section-grade-book">
             <Typography variant="h5">Class-Section Grade Book</Typography>
           </Link>
         </Li>

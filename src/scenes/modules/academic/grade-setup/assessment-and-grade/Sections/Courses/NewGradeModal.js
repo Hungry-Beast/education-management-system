@@ -12,17 +12,16 @@ import {
   colors,
 } from "@mui/material";
 import { Box } from "@mui/system";
-import React, { useState } from "react";
+import React from "react";
 import { Controller, useForm } from "react-hook-form";
 import styled from "styled-components";
-import TimingFormTable from "./TimingFormTable";
 
 const style = {
   position: "absolute",
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 900,
+  width: 500,
   bgcolor: "background.paper",
   //   border: "2px solid #000",
   boxShadow: 24,
@@ -47,7 +46,7 @@ const Form = styled.form`
   justify-content: space-between;
 `;
 
-const NewClassModal = ({ handleClose }) => {
+const NewGradeModal = ({ handleClose }) => {
   const {
     register,
     handleSubmit,
@@ -56,59 +55,41 @@ const NewClassModal = ({ handleClose }) => {
     formState: { errors },
   } = useForm({
     defaultValues: {
-      className: "",
-      classCode: "",
-      classCredit: "",
+      courseName: "",
+      courseCode: "",
+      courseCredit: "",
       isSpecialization: true,
-      //   classType: 1,
+      //   courseType: 1,
     },
   });
-  const [formData, setFormData] = useState([
-    {
-      id: 1,
-      name: "",
-      startTime: undefined,
-      endTime: undefined,
-      break: false,
-    },
-  ]);
 
   const onSubmit = (data) => console.log(data);
   console.log(watch("isSpecialization"));
   return (
     <Box sx={style}>
       <HeaderContainer>
-        <Typography variant="h3">Add Class</Typography>
+        <Typography variant="h3">Add Grade</Typography>
       </HeaderContainer>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <TextField
           fullWidth
-          label="Category Name"
+          label="Grade Name"
           required
-          {...register("categoryName", { required: "Category name is required" })}
-          sx={{ gridColumn: "span 2" }}
-        />
-        <TextField
-          fullWidth
-          label="Description"
-          required
-          {...register("description", { required: "Description is required" })}
+          {...register("courseName", { required: "Grade name is required" })}
           sx={{ gridColumn: "span 2" }}
         />
 
-       
-      <Typography variant="h3" mt={2} sx={{ gridColumn: "span 2" }} >Availale Time Set</Typography>
-      <TimingFormTable formData={formData} setFormData={setFormData}/>
-       
-        <Button type="submit" variant="contained" color="success">
-          Save
-        </Button>
-        <Button onClick={handleClose} variant="contained" color="warning">
-          Close
-        </Button>
+        <Box sx={{gridColumn:"2"}} display="flex" justifyContent="flex-end" gap="0 10px">
+          <Button type="submit"  variant="contained" color="success">
+            Save
+          </Button>
+          <Button onClick={handleClose} variant="contained" color="warning">
+            Close
+          </Button>
+        </Box>
       </Form>
     </Box>
   );
 };
 
-export default NewClassModal;
+export default NewGradeModal;

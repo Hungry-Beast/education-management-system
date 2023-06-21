@@ -15,7 +15,6 @@ import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { Button } from "@mui/material";
-import { ImageContext } from "../../../../../context/Context";
 
 const Component = styled.div`
   width: calc(100% - 30px);
@@ -27,10 +26,10 @@ const Component = styled.div`
 `;
 const Form = styled.form`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 0.5fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 0.5fr;
   gap: 30px;
 `;
-const ClassTimeTable = () => {
+const LinkClassSubject = () => {
   const {
     register,
     handleSubmit,
@@ -38,10 +37,7 @@ const ClassTimeTable = () => {
     control,
     formState: { errors },
   } = useForm();
-  const [context, setContext] = useContext(ImageContext);
-  useEffect(() => {
-    setContext("classSchedule.svg");
-  }, []);
+  
   return (
     <Component>
       <Form>
@@ -141,24 +137,61 @@ const ClassTimeTable = () => {
             )}
           />
         </Box>
+        
         <Box>
-          <InputLabel sx={{ p: "9px", pb: "1px" }} required>
-            Select Date
+          <InputLabel sx={{ p: "9px" }} required>
+            Select Subject
           </InputLabel>
           <Controller
-            name="date"
+            name="class"
             control={control}
             required
             //   defaultValue={1}
             render={({ field }) => (
-              <LocalizationProvider dateAdapter={AdapterDayjs}>
-                <DemoContainer components={["DatePicker"]}>
-                  <DatePicker {...field} label="Select Date" />
-                </DemoContainer>
-              </LocalizationProvider>
+              <FormControl fullWidth>
+                <InputLabel required>Select Subject</InputLabel>
+                <Select
+                  {...field}
+                  // defaultValue={1}
+                  fullWidth
+                >
+                  <MenuItem value={1}>Physics</MenuItem>
+                  <MenuItem value={2}>Chemistry</MenuItem>
+                  <MenuItem value={3}>Electronics</MenuItem>
+                  <MenuItem value={4}>Maths</MenuItem>
+                </Select>
+              </FormControl>
             )}
           />
         </Box>
+        
+        <Box>
+          <InputLabel sx={{ p: "9px" }} required>
+            Select Grade Point
+          </InputLabel>
+          <Controller
+            name="class"
+            control={control}
+            required
+            //   defaultValue={1}
+            render={({ field }) => (
+              <FormControl fullWidth>
+                <InputLabel required>Select Grade Point</InputLabel>
+                <Select
+                  {...field}
+                  // defaultValue={1}
+                  fullWidth
+                >
+                  <MenuItem value={1}>Physics</MenuItem>
+                  <MenuItem value={2}>Chemistry</MenuItem>
+                  <MenuItem value={3}>Electronics</MenuItem>
+                  <MenuItem value={4}>Maths</MenuItem>
+                </Select>
+              </FormControl>
+            )}
+          />
+        </Box>
+        
         <Box sx={{ display: "flex", alignItems: "flex-end" }}>
           <Button
             variant="contained"
@@ -173,4 +206,4 @@ const ClassTimeTable = () => {
   );
 };
 
-export default ClassTimeTable;
+export default LinkClassSubject;
