@@ -53,6 +53,7 @@ import AssetPurchase from "./scenes/modules/administration/asset/assetpurchase/A
 import SchoolStructure from "./scenes/modules/administration/school structure/schoolstructure";
 import SchoolStructureUI from "./scenes/modules/administration/school structure/schoolstructureUI";
 import TeacherSetting from "./scenes/modules/administration/teacher attendance/teachersetting";
+import StaffAttendance from "./scenes/modules/administration/teacher attendance/staffattendance";
 // import OrgProfile from "./settingcomponents/OrgProfile/OrgProfile";
 //>>>>>>> b63988d5e5c115f3840ce513fec25967cdd5c832
 
@@ -115,6 +116,7 @@ function App() {
             <Route path="/modules/administration/school-structure" element={<SchoolStructure/>} />
             <Route path="/modules/administration/school-structure-blocks" element={<SchoolStructureUI/>} />
             <Route path="/modules/administration/attendance-status/teacher" element={<TeacherSetting/>} />
+            <Route path="/modules/administration/attendance-manage-staff" element={<StaffAttendance/>} />
           </Route>
           {/* <Route path="/profile" element={<Dprofile/>} /> */}
           <Route path="/" element={<Navigate replace to="/login" />} />
