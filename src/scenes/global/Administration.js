@@ -129,7 +129,7 @@ const Administration = () => {
         </Typography>
         <Divider />
         <Li>
-          <Link to="/admin">
+          <Link to="/modules/administration/attendance-status/teacher">
             <Typography variant="h5">Teacher Setting</Typography>
           </Link>
         </Li>
