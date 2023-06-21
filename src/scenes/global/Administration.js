@@ -139,7 +139,7 @@ const Administration = () => {
           </Link>
         </Li>
         <Li>
-          <Link to="/admin">
+          <Link to="/modules/administration/attendance-manage-staff">
             <Typography variant="h5">Staff Attendance</Typography>
           </Link>
         </Li>
