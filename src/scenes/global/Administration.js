@@ -122,7 +122,6 @@ const Administration = () => {
             marginBottom: "12px",
           }}
         >
-          {" "}
           <Resolve>
           < TeacherIcon sx={{ fontSize:"30px" ,mx: "5px" }} /> Teacher/Staff Attendance
           </Resolve>
@@ -155,12 +154,11 @@ const Administration = () => {
             marginBottom: "12px",
           }}
         >
-          {" "}
           < VisitorIcon sx={{ fontSize:"30px" ,mx: "5px" }} /> Visitor
         </Typography>
         <Divider />
         <Li>
-          <Link to="/admin">
+          <Link to="/modules/administration/manage-visitor">
             <Typography variant="h5">Manage Visitor</Typography>
           </Link>
         </Li>
@@ -186,7 +184,6 @@ const Administration = () => {
             marginBottom: "12px",
           }}
         >
-          {" "}
           < HostelIcon sx={{ fontSize:"30px" ,mx: "5px" }} /> Hostel
         </Typography>
         <Divider />
@@ -207,7 +204,6 @@ const Administration = () => {
             marginBottom: "12px",
           }}
         >
-          {" "}
           < TransportIcon sx={{ fontSize:"30px" ,mx: "5px" }} /> Transport
         </Typography>
         <Divider />
@@ -233,7 +229,6 @@ const Administration = () => {
             marginBottom: "12px",
           }}
         >
-          {" "}
           < ImportExportIcon  sx={{ fontSize:"30px" ,mx: "5px" }} /> Import/Export
         </Typography>
         <Divider />
@@ -254,7 +249,6 @@ const Administration = () => {
             marginBottom: "12px",
           }}
         >
-          {" "}
           < ReportIcon sx={{ mx: "5px" }} /> Report
         </Typography>
         <Divider />
@@ -264,19 +258,6 @@ const Administration = () => {
           </Link>
         </Li>
     </Ul>
-
-
-
-
-
-
-
-
-     
-      
-      
-      
-    
     </Container>
   );
 };
