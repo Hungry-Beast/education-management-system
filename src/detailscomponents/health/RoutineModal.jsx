@@ -53,7 +53,7 @@ import {
     justify-content: space-between;
   `;
   
-  const RoutineModal = ({ handleClose }) => {
+  const RoutineModal = ({ handleClose }) =>  {
     const {
       register,
       handleSubmit,
@@ -69,7 +69,7 @@ import {
         //   courseType: 1,
       },
     });
-  
+   
     const onSubmit = (data) => console.log(data);
     console.log(watch("isSpecialization"));
     return (

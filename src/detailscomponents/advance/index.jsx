@@ -21,7 +21,7 @@ export default function Advance(){
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
-    const [age, setAge] = React.useState('')
+    const [ setAge] = React.useState('')
     const handleChange = (event) => {
     setAge(event.target.value);
     }
@@ -40,53 +40,18 @@ export default function Advance(){
                     aria-labelledby="modal-modal-title"
                     aria-describedby="modal-modal-description"
                 >
-                {/* <Box>
-                <Typography id="modal-modal-title" variant="h6" component="h2">
-                    <StyledInside>
-                        <h3>Advance Payment</h3>
-                        <StyledTwo>
-                            <h4>Amount</h4>
-                            <h4>Required Date</h4>
-                        </StyledTwo>
-                        <StyledInput>
-                            <input type="text"/>
-                            <input type="datetime-local"/>
-                        </StyledInput>
-                        <StyledTwo>
-                            <h4>Re-pay in Month(s)</h4>
-                            <h4>re-pay Month Start's</h4>
-                        </StyledTwo>
-                        <StyledInput>
-                            <input type="text"/>
-                            <input type="datetime-local"/>
-                        </StyledInput>
-                        <h4>Description</h4>
-                        <input type="text"/>
-                        <StyledButton>
-                            <button>Apply</button>
-                            <button onClick={handleClose}>Close</button>
-                        </StyledButton>
-                    </StyledInside>
-                </Typography>
-                <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                </Typography>
-                </Box> */}
-                <AdvanceModal/>
+                
+                <AdvanceModal handleClose={handleClose}/>
                 </Modal>
             </StyledHead>
             <StyledShowandSearchContainer>
-                
                 <StyledShow>
-
-
                     <p>Show</p>
                 <FormControl fullWidth>
                 <InputLabel id="demo-simple-select-label"></InputLabel>
                 <Select 
                     defaultValue={10}
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    value={age}
+                    label="10"
                     onChange={handleChange}
                 >
                     <MenuItem value={10}>10</MenuItem>

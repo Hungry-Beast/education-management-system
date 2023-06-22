@@ -292,3 +292,18 @@ export const StyledHealthButton = styled.div`
     padding: 0.5rem;
   }
 `;
+export const StyledDesc = styled.div`
+    display: flex;
+    justify-content: space-between;
+`;
+export const StyledLast = styled.div`
+    display: flex;
+    gap: 3rem;
+    p:hover{
+        padding: 0.3rem;
+        background-color: #169395;
+        color: white;
+        cursor: not-allowed;
+        border-radius: 0.2rem;
+    }
+`;

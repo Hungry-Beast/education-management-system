@@ -45,7 +45,13 @@ const Sidebar = () => {
         "& .pro-sidebar-inner": {
           background: `${colors.primary[400]} !important`,
         },
-        "& .pro-icon-wrapper": {
+        "& .pro-sidebar": {
+          width: "90% !important",
+        },
+        "& .pro-menu-item": {
+          marginTop: "13px !important",
+        },
+        "& .pro-icon-wrapper": { 
           backgroundColor: "transparent !important",
         },
         "& .pro-inner-item": {
@@ -56,12 +62,12 @@ const Sidebar = () => {
         },
         "& .pro-menu-item.active": {
           color: "#6870fa !important",
-        },
+        }
       }}
     >
-      <ProSidebar >
+      <ProSidebar sx={{width: "100%"}} >
         <Menu iconShape="square">
-          <Box paddingLeft={"10%"}>
+          <Box paddingLeft={"13%"} >
             <Item
               title="Dashboard"
               to="/admin/"

@@ -124,7 +124,14 @@ export const StyledDesc = styled.div`
 `;
 export const StyledLast = styled.div`
     display: flex;
-    gap: 1rem;
+    gap: 3rem;
+    p:hover{
+        padding: 0.3rem;
+        background-color: #169395;
+        color: white;
+        cursor: not-allowed;
+        border-radius: 0.2rem;
+    }
 `;
 export const Container = styled.div`
 

@@ -58,22 +58,22 @@ const Administration = () => {
         </Typography>
         <Divider />
         <Li>
-          <Link to="/admin">
+          <Link to="/modules/administration/location-category">
             <Typography variant="h5">Category & Location</Typography>
           </Link>
         </Li>
         <Li>
-          <Link to="/admin">
+          <Link to="/modules/administration/vendor">
             <Typography variant="h5">vendor</Typography>
           </Link>
         </Li>
         <Li>
-          <Link to="/admin">
+          <Link to="/modules/administration/assets">
             <Typography variant="h5">Assets</Typography>
           </Link>
         </Li>
         <Li>
-          <Link to="/admin">
+          <Link to="/modules/administration/asset-purchase">
             <Typography variant="h5">Assests purchase</Typography>
           </Link>
         </Li>
@@ -101,12 +101,12 @@ const Administration = () => {
         </Typography>
         <Divider />
         <Li>
-          <Link to="/admin">
+          <Link to="/modules/administration/school-structure">
             <Typography variant="h5">School Structure</Typography>
           </Link>
         </Li>
         <Li>
-          <Link to="/admin">
+          <Link to="/modules/administration/school-structure-blocks">
             <Typography variant="h5">School Structure UI</Typography>
           </Link>
         </Li>
@@ -129,7 +129,7 @@ const Administration = () => {
         </Typography>
         <Divider />
         <Li>
-          <Link to="/admin">
+          <Link to="/modules/administration/attendance-status/teacher">
             <Typography variant="h5">Teacher Setting</Typography>
           </Link>
         </Li>
