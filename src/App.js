@@ -56,6 +56,7 @@ import TeacherSetting from "./scenes/modules/administration/teacher attendance/t
 import StaffAttendance from "./scenes/modules/administration/teacher attendance/staffattendance";
 import ManageVisitors from "./scenes/modules/administration/visitor/managevisitors";
 import Postal from "./scenes/modules/administration/visitor/postal";
+import Enquiry from "./scenes/modules/administration/visitor/enquiry";
 // import OrgProfile from "./settingcomponents/OrgProfile/OrgProfile";
 //>>>>>>> b63988d5e5c115f3840ce513fec25967cdd5c832
 
@@ -121,6 +122,7 @@ function App() {
             <Route path="/modules/administration/attendance-manage-staff" element={<StaffAttendance/>} />
             <Route path="/modules/administration/manage-visitor" element={<ManageVisitors/>} />
             <Route path="/modules/administration/manage-postal" element={<Postal/>} />
+            <Route path="/modules/administration/manage-enquiry" element={<Enquiry/>} />
           </Route>
           {/* <Route path="/profile" element={<Dprofile/>} /> */}
           <Route path="/" element={<Navigate replace to="/login" />} />
