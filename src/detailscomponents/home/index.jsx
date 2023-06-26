@@ -226,8 +226,8 @@ export default function Home() {
         <StyledMap>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d28650.728913675077!2d91.784281!3d26.153018!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375a591866013303%3A0x9a010eab0d7c7802!2sGaneshguri%2C%20Guwahati%2C%20Assam%2C%20India!5e0!3m2!1sen!2sus!4v1686927065894!5m2!1sen!2sus"
-            width="600"
-            height="450"
+            width="580"
+            height="400"
             styled={{ border: "0" }}
             allowfullscreen=""
             loading="lazy"

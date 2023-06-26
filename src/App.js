@@ -42,6 +42,7 @@ import ClassTeacherMapping from "./scenes/modules/academic/academic/class-teache
 import ClassSchedule from "./scenes/modules/academic/class-schedule/class-schedule/ClassSchedule";
 import ClassTimeTable from "./scenes/modules/academic/class-schedule/class-time-table/ClassTimeTable";
 import Health from "./detailscomponents/health";
+import Subject from "./detailscomponents/subjectMapping";
 import StudentSettings from "./scenes/modules/academic/attendence/student-setting/StudentSettings";
 import { ImageContext } from "./context/Context";
 import StudentAttendence from "./scenes/modules/academic/attendence/student-attendence/StudentAttendence";
@@ -54,6 +55,23 @@ import AssessmentLink from "./scenes/modules/academic/grade-setup/assessment-and
 import SectionGradeBook from "./scenes/modules/academic/grade-setup/section-grade-book/SectionGradeBook";
 import PromotionGraduation from "./scenes/modules/academic/promotion-graduation/PromotionGraduation";
 import Student from "./scenes/modules/user/student/Student";
+import CategoryLocation from "./scenes/modules/administration/asset/categorylocation";
+import Vendor from "./scenes/modules/administration/asset/vendor";
+import Assets from "./scenes/modules/administration/asset/assets";
+import AssetPurchase from "./scenes/modules/administration/asset/assetpurchase/AssetPurchase";
+import SchoolStructure from "./scenes/modules/administration/school structure/schoolstructure";
+import SchoolStructureUI from "./scenes/modules/administration/school structure/schoolstructureUI";
+import TeacherSetting from "./scenes/modules/administration/teacher attendance/teachersetting";
+import Myleaves from "./detailscomponents/myleaves";
+
+import RolesPermissions from "./scenes/roles&permision/roles-permision";
+import { NotificationPanel } from "./scenes/modules/communication/announcement/NotificationPanel";
+import Advance from "./detailscomponents/advance/index";
+import ChangeAcademic from "./scenes/changeacademic/change-academic";
+import StaffAttendance from "./scenes/modules/administration/teacher attendance/staffattendance";
+import ManageVisitors from "./scenes/modules/administration/visitor/managevisitors";
+import Postal from "./scenes/modules/administration/visitor/postal";
+import Enquiry from "./scenes/modules/administration/visitor/enquiry";
 // import OrgProfile from "./settingcomponents/OrgProfile/OrgProfile";
 //>>>>>>> b63988d5e5c115f3840ce513fec25967cdd5c832
 
@@ -133,14 +151,51 @@ function App() {
               path="/modules/academic/promotion-and-graduation"
               element={<PromotionGraduation />}
             />
-            
+
+            <Route path="/modules/users/students" element={<Student />} />
+
             <Route
-              path="/modules/users/students"
-              element={<Student />}
+              path="/modules/administration/location-category"
+              element={<CategoryLocation />}
             />
-
-
-
+            <Route path="/modules/administration/vendor" element={<Vendor />} />
+            <Route path="/modules/administration/assets" element={<Assets />} />
+            <Route
+              path="/modules/administration/asset-purchase"
+              element={<AssetPurchase />}
+            />
+            <Route
+              path="/modules/administration/school-structure"
+              element={<SchoolStructure />}
+            />
+            <Route
+              path="/modules/administration/school-structure-blocks"
+              element={<SchoolStructureUI />}
+            />
+            <Route
+              path="/modules/administration/attendance-status/teacher"
+              element={<TeacherSetting />}
+            />
+            <Route
+              path="/modules/communication/announcement/notification-panel"
+              element={<NotificationPanel />}
+            />
+            <Route
+              path="/modules/administration/attendance-manage-staff"
+              element={<StaffAttendance />}
+            />
+            <Route
+              path="/modules/administration/manage-visitor"
+              element={<ManageVisitors />}
+            />
+            <Route
+              path="/modules/administration/manage-postal"
+              element={<Postal />}
+            />
+            <Route
+              path="/modules/administration/manage-enquiry"
+              element={<Enquiry />}
+            />
           </Route>
           {/* <Route path="/profile" element={<Dprofile/>} /> */}
           <Route path="/" element={<Navigate replace to="/login" />} />
@@ -168,6 +223,8 @@ function App() {
             <Route path="intime-outtime" element={<IntimeOuttime />} />
           </Route>
           <Route path="/login" element={<Login />} />
+          <Route path="/roles-permissions" element={<RolesPermissions />} />
+          <Route path="/change-academic" element={<ChangeAcademic />} />
           <Route path="/change-password" element={<Changepassword />} />
           <Route path="/school-terms" element={<TermsDisplayPage />} />{" "}
           {/*Route to Display the terms and conditions */}
@@ -177,6 +234,9 @@ function App() {
             <Route path="/profile/staff-home" element={<Home />} />
             <Route path="/profile/staff-profile" element={<Profile />} />
             <Route path="/profile/staff-health-record" element={<Health />} />
+            <Route path="/profile/staff-myleaves" element={<Myleaves />} />
+            <Route path="/profile/staff-subjectMapping" element={<Subject />} />
+            <Route path="/profile/staff-advance" element={<Advance />} />
           </Route>
         </Routes>
       </ThemeProvider>

@@ -6,14 +6,6 @@ export const BodyStyled = styled.div`
   gap: 4rem;
   flex-direction: column;
 `;
-export const StyledProfileCard = styled.div`
-  width: 280px;
-  height: 280px;
-  margin-top: 50px;
-  margin-left: 40px;
-  border-radius: 12px;
-  background-color: white;
-`;
 
 export const StyledImageCard = styled.div`
   width: 160px;
@@ -32,20 +24,7 @@ export const StyledImageCard = styled.div`
     font-size: 16px;
   }
 `;
-export const StyledDEsc = styled.div`
-  line-height: 0.12rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
 
-export const StyledNavbar = styled.div`
-  /* width: 900px;
-height:80px;
-background-color: white;
-border-radius: 10px;
-margin-top: 50px; */
-`;
 export const StyledContainer = styled.div`
   width: 100%;
   height: 100%;
@@ -53,6 +32,10 @@ export const StyledContainer = styled.div`
   border-radius: 0.4rem;
   background-color: white;
   padding: 3rem;
+  @media(max-width: 768px){
+    width: 70%;
+    padding: 1rem;
+  }
 `;
 
 export const StyledHeader = styled.div`
@@ -106,15 +89,19 @@ export const StyledFile = styled.div`
   } */
 `;
 export const StyledAttachment = styled.div`
-  width: 40%;
-  margin: 7rem auto;
+  width: 95%;
+  /* margin: 2rem auto; */
   background-color: white;
-  padding: 2rem;
+  padding: 1rem;
   input {
     width: 100%;
     box-sizing: border-box;
     padding: 0.4rem;
     border-radius: 0.3rem;
+    border: 1px solid #169395;
+  }
+  p{
+    color: #169395;
   }
 `;
 export const StyledAttachButton = styled.div`
@@ -194,6 +181,7 @@ export const StyledBorder = styled.div`
   align-items: center;
   p {
     margin-left: 40%;
+    color: #169395;
   }
   &:hover {
     background-color: lightgray;
@@ -233,7 +221,11 @@ export const StyledBlood = styled.div`
     color: #172b4c;
   }
 `;
-export const StyledCardHeader = styled.div``;
+export const StyledCardHeader = styled.div`
+  @media(max-width: 768px){
+    width: 80%;
+  }
+`;
 
 export const StyledEnd = styled.div``;
 
@@ -246,10 +238,15 @@ export const StyledButton = styled.div`
     border-radius: 0.4rem;
     /* margin-left: 40rem; */
 `;
+export const StyledButtons = styled.div`
+  margin-left: 20rem;
+  display: flex;
+  gap: 1rem;
+`;
 export const StyledCheckupCard = styled.div`
-  width: 50%;
-  margin: 7rem auto;
-  padding: 2rem;
+  width: 95%;
+  /* margin: 1rem auto; */
+  padding: 1rem;
   /* border:1px solid black; */
 
   background-color: white;
@@ -258,15 +255,19 @@ export const StyledCheckupCard = styled.div`
 
   h4 {
     font-size: 1.6rem;
+    color: #169395;
   }
 
   p {
     font-size: 1rem;
+    color: #169395;
   }
 
   input {
     width: 100%;
     padding: 0.4rem;
+    border: 1px solid #169395;
+    border-radius: 0.2rem;
   }
 `;
 
@@ -277,4 +278,19 @@ export const StyledHealthButton = styled.div`
   button {
     padding: 0.5rem;
   }
+`;
+export const StyledDesc = styled.div`
+    display: flex;
+    justify-content: space-between;
+`;
+export const StyledLast = styled.div`
+    display: flex;
+    gap: 3rem;
+    p:hover{
+        padding: 0.3rem;
+        background-color: #169395;
+        color: white;
+        cursor: not-allowed;
+        border-radius: 0.2rem;
+    }
 `;
