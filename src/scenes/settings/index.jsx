@@ -3,10 +3,14 @@ import React from 'react'
 import Sidebar from "../global/Sidebar";
 import StatusBar from "../global/StatusBar";
 import { Outlet } from 'react-router-dom';
+import Topbar from '../global/Topbar';
 
 function SetSettings() {
   return (
     <>
+
+      <Topbar/>
+
       <StatusBar/>
     <br />
 
