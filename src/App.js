@@ -54,6 +54,10 @@ import AssetPurchase from "./scenes/modules/administration/asset/assetpurchase/A
 import SchoolStructure from "./scenes/modules/administration/school structure/schoolstructure";
 import SchoolStructureUI from "./scenes/modules/administration/school structure/schoolstructureUI";
 import TeacherSetting from "./scenes/modules/administration/teacher attendance/teachersetting";
+import Myleaves from "./detailscomponents/myleaves";
+
+import RolesPermissions from "./scenes/roles&permision/roles-permision";
+import { NotificationPanel } from "./scenes/modules/communication/announcement/NotificationPanel";
 import Advance from './detailscomponents/advance/index'
 import ChangeAcademic from "./scenes/changeacademic/change-academic";
 import StaffAttendance from "./scenes/modules/administration/teacher attendance/staffattendance";
@@ -122,6 +126,7 @@ function App() {
             <Route path="/modules/administration/school-structure" element={<SchoolStructure/>} />
             <Route path="/modules/administration/school-structure-blocks" element={<SchoolStructureUI/>} />
             <Route path="/modules/administration/attendance-status/teacher" element={<TeacherSetting/>} />
+            <Route path="/modules/communication/announcement/notification-panel" element={<NotificationPanel/>} />          
             <Route path="/modules/administration/attendance-manage-staff" element={<StaffAttendance/>} />
             <Route path="/modules/administration/manage-visitor" element={<ManageVisitors/>} />
             <Route path="/modules/administration/manage-postal" element={<Postal/>} />
@@ -129,6 +134,7 @@ function App() {
           </Route>
           {/* <Route path="/profile" element={<Dprofile/>} /> */}
           <Route path="/" element={<Navigate replace to="/login" />} />
+
           <Route element={<MyDetails />}>
             <Route path="/profile/staff-home" element={<Home />} />
             <Route path="/profile/staff-profile" element={<Profile />} />
@@ -153,6 +159,8 @@ function App() {
             <Route path="intime-outtime" element={<IntimeOuttime />} />
           </Route>
           <Route path="/login" element={<Login />} />
+          <Route path="/roles-permissions" element={<RolesPermissions />} />
+
           <Route path="/change-academic" element={<ChangeAcademic />} />
           <Route path="/change-password" element={<Changepassword />} />
           <Route path="/school-terms" element={<TermsDisplayPage />} />{" "}
@@ -164,9 +172,13 @@ function App() {
             <Route path="/profile/staff-home" element={<Home />} />
             <Route path="/profile/staff-profile" element={<Profile />} />
             <Route path="/profile/staff-health-record" element={<Health />} />
+            <Route path="/profile/staff-myleaves" element={<Myleaves />} />
             <Route path="/profile/staff-subjectMapping" element={<Subject />} />
             <Route path="/profile/staff-advance" element={<Advance />} />
           </Route>
+          
+
+
         </Routes>
       </ThemeProvider>
     </ImageContext.Provider>
