@@ -251,7 +251,10 @@ const Topbar = () => {
             </ListItemIcon>
             Change Academic Session
           </MenuItem>
-          <MenuItem onClick={handleClose}>
+          <MenuItem onClick={ () => {
+                navigate("/change-password");
+                handleClose();
+          }}>
             <ListItemIcon>
               <Explore fontSize="small" />
             </ListItemIcon>

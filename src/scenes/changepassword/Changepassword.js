@@ -17,7 +17,7 @@ export default function Changepassword() {
     <StyledMain>
       <StyledSubmain >
         <StyledCol1>
-              <img src={logo512} alt="logo512"/>
+              <img src="/assets/infotute1.gif" alt="logo512"/>
 
         </StyledCol1>
 
