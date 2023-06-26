@@ -53,10 +53,17 @@ import AssetPurchase from "./scenes/modules/administration/asset/assetpurchase/A
 import SchoolStructure from "./scenes/modules/administration/school structure/schoolstructure";
 import SchoolStructureUI from "./scenes/modules/administration/school structure/schoolstructureUI";
 import TeacherSetting from "./scenes/modules/administration/teacher attendance/teachersetting";
+<<<<<<< HEAD
 import Myleaves from "./detailscomponents/myleaves";
 
 import RolesPermissions from "./scenes/roles&permision/roles-permision";
 import { NotificationPanel } from "./scenes/modules/communication/announcement/NotificationPanel";
+=======
+import StaffAttendance from "./scenes/modules/administration/teacher attendance/staffattendance";
+import ManageVisitors from "./scenes/modules/administration/visitor/managevisitors";
+import Postal from "./scenes/modules/administration/visitor/postal";
+import Enquiry from "./scenes/modules/administration/visitor/enquiry";
+>>>>>>> a8304b3adf959010911b1f0c06da5a533c247b82
 // import OrgProfile from "./settingcomponents/OrgProfile/OrgProfile";
 //>>>>>>> b63988d5e5c115f3840ce513fec25967cdd5c832
 
@@ -119,7 +126,14 @@ function App() {
             <Route path="/modules/administration/school-structure" element={<SchoolStructure/>} />
             <Route path="/modules/administration/school-structure-blocks" element={<SchoolStructureUI/>} />
             <Route path="/modules/administration/attendance-status/teacher" element={<TeacherSetting/>} />
+<<<<<<< HEAD
             <Route path="/modules/communication/announcement/notification-panel" element={<NotificationPanel/>} />          
+=======
+            <Route path="/modules/administration/attendance-manage-staff" element={<StaffAttendance/>} />
+            <Route path="/modules/administration/manage-visitor" element={<ManageVisitors/>} />
+            <Route path="/modules/administration/manage-postal" element={<Postal/>} />
+            <Route path="/modules/administration/manage-enquiry" element={<Enquiry/>} />
+>>>>>>> a8304b3adf959010911b1f0c06da5a533c247b82
           </Route>
           {/* <Route path="/profile" element={<Dprofile/>} /> */}
           <Route path="/" element={<Navigate replace to="/login" />} />
