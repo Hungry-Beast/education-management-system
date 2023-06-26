@@ -78,6 +78,8 @@ function MyDetails() {
     if (newValue == "staff-home") navigate("/profile/staff-home");
     if (newValue == "staff-profile") navigate("/profile/staff-profile");
     if (newValue == "staff-health") navigate("/profile/staff-health");
+    if (newValue == "staff-myleaves") navigate("/profile/staff-myleaves");
+   
     if (newValue == "staff-subjectMapping") navigate("/profile/staff-subjectMapping");
     if (newValue == "staff-advance") navigate("/profile/staff-advance");
   };
