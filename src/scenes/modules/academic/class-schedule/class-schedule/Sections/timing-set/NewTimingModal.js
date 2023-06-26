@@ -12,7 +12,7 @@ import {
   colors,
 } from "@mui/material";
 import { Box } from "@mui/system";
-import React from "react";
+import React, { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import styled from "styled-components";
 import TimingFormTable from "./TimingFormTable";
@@ -63,6 +63,15 @@ const NewClassModal = ({ handleClose }) => {
       //   classType: 1,
     },
   });
+  const [formData, setFormData] = useState([
+    {
+      id: 1,
+      name: "",
+      startTime: undefined,
+      endTime: undefined,
+      break: false,
+    },
+  ]);
 
   const onSubmit = (data) => console.log(data);
   console.log(watch("isSpecialization"));
@@ -89,7 +98,7 @@ const NewClassModal = ({ handleClose }) => {
 
        
       <Typography variant="h3" mt={2} sx={{ gridColumn: "span 2" }} >Availale Time Set</Typography>
-      <TimingFormTable/>
+      <TimingFormTable formData={formData} setFormData={setFormData}/>
        
         <Button type="submit" variant="contained" color="success">
           Save

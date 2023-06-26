@@ -54,7 +54,7 @@ const Users = () => {
           </Typography>
           <Divider />
           <Li>
-          <Link to="/admin">
+          <Link to="/modules/users/students">
             <Typography variant="h5">Enrolled Records</Typography>
           </Link>
         </Li>
