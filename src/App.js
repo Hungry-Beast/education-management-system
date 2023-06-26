@@ -42,6 +42,7 @@ import ClassTeacherMapping from "./scenes/modules/academic/academic/class-teache
 import ClassSchedule from "./scenes/modules/academic/class-schedule/class-schedule/ClassSchedule";
 import ClassTimeTable from "./scenes/modules/academic/class-schedule/class-time-table/ClassTimeTable";
 import Health from "./detailscomponents/health";
+import Subject from './detailscomponents/subjectMapping'
 import StudentSettings from "./scenes/modules/academic/attendence/student-setting/StudentSettings";
 import { ImageContext } from "./context/Context";
 import StudentAttendence from "./scenes/modules/academic/attendence/student-attendence/StudentAttendence";
@@ -57,6 +58,8 @@ import Myleaves from "./detailscomponents/myleaves";
 
 import RolesPermissions from "./scenes/roles&permision/roles-permision";
 import { NotificationPanel } from "./scenes/modules/communication/announcement/NotificationPanel";
+import Advance from './detailscomponents/advance/index'
+import ChangeAcademic from "./scenes/changeacademic/change-academic";
 import StaffAttendance from "./scenes/modules/administration/teacher attendance/staffattendance";
 import ManageVisitors from "./scenes/modules/administration/visitor/managevisitors";
 import Postal from "./scenes/modules/administration/visitor/postal";
@@ -158,6 +161,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/roles-permissions" element={<RolesPermissions />} />
 
+          <Route path="/change-academic" element={<ChangeAcademic />} />
           <Route path="/change-password" element={<Changepassword />} />
           <Route path="/school-terms" element={<TermsDisplayPage />} />{" "}
           {/*Route to Display the terms and conditions */}
@@ -169,6 +173,8 @@ function App() {
             <Route path="/profile/staff-profile" element={<Profile />} />
             <Route path="/profile/staff-health-record" element={<Health />} />
             <Route path="/profile/staff-myleaves" element={<Myleaves />} />
+            <Route path="/profile/staff-subjectMapping" element={<Subject />} />
+            <Route path="/profile/staff-advance" element={<Advance />} />
           </Route>
           
 

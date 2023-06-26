@@ -80,6 +80,8 @@ function MyDetails() {
     if (newValue == "staff-health") navigate("/profile/staff-health");
     if (newValue == "staff-myleaves") navigate("/profile/staff-myleaves");
    
+    if (newValue == "staff-subjectMapping") navigate("/profile/staff-subjectMapping");
+    if (newValue == "staff-advance") navigate("/profile/staff-advance");
   };
 
   return (
@@ -115,9 +117,10 @@ function MyDetails() {
                     <Tab label="Home" value={"staff-home"} />
                     <Tab label="Profile" value={"staff-profile"} />
                     <Tab label="Health Record" value={"staff-health"} />
+                    <Tab label="Subject Mapping" value={"staff-subjectMapping"} />
                     <Tab label="Fees & Invoices" value={"staff-fee"} />
-                    <Tab label="My Leaves" value={"staff-myleaves"} />
-                    <Tab label="Advance Payment" value={"staff-adpayment"} />
+                    <Tab label="My Leaves" value={"staff-leave"} />
+                    <Tab label="Advance Payment" value={"staff-advance"} />
                   </Tabs>
                 </Box>
                 <TabPanel value={value} index={0}></TabPanel>
@@ -126,7 +129,7 @@ function MyDetails() {
                 <TabPanel value={value} index={3}></TabPanel>
                 <TabPanel value={value} index={4}></TabPanel>
                 <TabPanel value={value} index={5}></TabPanel>
-                
+                <TabPanel value={value} index={6}></TabPanel>
               </Box>
             </TabCont>
 

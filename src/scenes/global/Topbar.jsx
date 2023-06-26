@@ -244,7 +244,8 @@ const Topbar = () => {
             Inbox
           </MenuItem>
           <Divider />
-          <MenuItem onClick={handleClose}>
+          <MenuItem onClick={()=>{navigate("change-academic");
+        handleClose()}}>
             <ListItemIcon>
               <Explore fontSize="small" />
             </ListItemIcon>
