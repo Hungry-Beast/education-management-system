@@ -144,15 +144,7 @@ const ModalButton = () => {
       >
            <MyLeavesModal handleClose={handleClose}/>
       </Modal  >
-      {/* <Modal
-          open={open}
-          onClose={handleClose}
-          aria-labelledby="modal-modal-title"
-          aria-describedby="modal-modal-type"
-        >
-        <VendorModal handleClose={handleClose} />
-      </Modal>
-    */}
+  
     </StyledModal >
   );
 };

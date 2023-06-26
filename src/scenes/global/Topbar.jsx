@@ -235,7 +235,7 @@ const Topbar = () => {
             </ListItemIcon>
             Roles & Permissions
 
-          </MenuItem>
+          </MenuItem >
           <MenuItem onClick={handleClose}>
             <ListItemIcon>
               {" "}
