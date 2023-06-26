@@ -6,14 +6,6 @@ export const BodyStyled = styled.div`
   gap: 4rem;
   flex-direction: column;
 `;
-export const StyledProfileCard = styled.div`
-  width: 280px;
-  height: 280px;
-  margin-top: 50px;
-  margin-left: 40px;
-  border-radius: 12px;
-  background-color: white;
-`;
 
 export const StyledImageCard = styled.div`
   width: 160px;
@@ -32,20 +24,7 @@ export const StyledImageCard = styled.div`
     font-size: 16px;
   }
 `;
-export const StyledDEsc = styled.div`
-  line-height: 0.12rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
 
-export const StyledNavbar = styled.div`
-  /* width: 900px;
-height:80px;
-background-color: white;
-border-radius: 10px;
-margin-top: 50px; */
-`;
 export const StyledContainer = styled.div`
   width: 100%;
   height: 100%;
@@ -53,6 +32,10 @@ export const StyledContainer = styled.div`
   border-radius: 0.4rem;
   background-color: white;
   padding: 3rem;
+  @media(max-width: 768px){
+    width: 70%;
+    padding: 1rem;
+  }
 `;
 
 export const StyledHeader = styled.div`
@@ -238,7 +221,11 @@ export const StyledBlood = styled.div`
     color: #172b4c;
   }
 `;
-export const StyledCardHeader = styled.div``;
+export const StyledCardHeader = styled.div`
+  @media(max-width: 768px){
+    width: 80%;
+  }
+`;
 
 export const StyledEnd = styled.div``;
 

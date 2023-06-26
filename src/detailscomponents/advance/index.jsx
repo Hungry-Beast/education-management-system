@@ -47,20 +47,20 @@ export default function Advance(){
             <StyledShowandSearchContainer>
                 <StyledShow>
                     <p>Show</p>
-                <FormControl fullWidth>
-                <InputLabel id="demo-simple-select-label"></InputLabel>
-                <Select 
-                    defaultValue={10}
-                    label="10"
-                    onChange={handleChange}
-                >
-                    <MenuItem value={10}>10</MenuItem>
-                    <MenuItem value={30}>30</MenuItem>
-                    <MenuItem value={50}>50</MenuItem>
-                    <MenuItem value={100}>100</MenuItem>
-                </Select>
-                </FormControl>
-                <p>entries</p>
+                    <FormControl fullWidth>
+                    <InputLabel id="demo-simple-select-label"></InputLabel>
+                    <Select 
+                        defaultValue={10}
+                        label="10"
+                        onChange={handleChange}
+                    >
+                        <MenuItem value={10}>10</MenuItem>
+                        <MenuItem value={30}>30</MenuItem>
+                        <MenuItem value={50}>50</MenuItem>
+                        <MenuItem value={100}>100</MenuItem>
+                        </Select>
+                        </FormControl>
+                    <p>entries</p>
                 </StyledShow>
                 <StyledSearch>
                     <p>Search:</p>
