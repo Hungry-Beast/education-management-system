@@ -12,8 +12,14 @@ export const StyledContainer=styled.div`
     
     border-radius: 1rem;
     margin-top: 1rem;
+    @media(max-width: 768px){
+        width: 80%;
+        padding-left: 0.5rem;
+
+    }
 `;
 export const style=styled.div`
+
 
 `;
 export const StyledHead=styled.div`
@@ -102,6 +108,11 @@ export const StyledShow = styled.div`
     width:25%;
     gap:0.5rem;
     align-items:center;
+    @media(max-width: 768px){
+        width: 40%;
+        display: flex;
+        gap: 1rem;
+    }
 `
 
 export const StyledSearch = styled.div`
@@ -110,6 +121,10 @@ export const StyledSearch = styled.div`
     align-items:center;
     gap: 0.5rem;
     border-radius: 0.3rem;
+    @media(max-width: 768px){
+        margin-right: 0.5rem;
+
+    }
 
     input{
         width:100%;
@@ -121,6 +136,7 @@ export const StyledSearch = styled.div`
 export const StyledDesc = styled.div`
     display: flex;
     justify-content: space-between;
+    
 `;
 export const StyledLast = styled.div`
     display: flex;
