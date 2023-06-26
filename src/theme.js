@@ -82,6 +82,7 @@ export const themeSettings = (mode) => {
             },
             success: {
               main: colors.blueAccent[1000],
+              contrastText:"#fff"
             },
             neutral: {
               dark: colors.grey[700],
@@ -124,6 +125,11 @@ export const themeSettings = (mode) => {
         fontSize: 14,
       },
     },
+    button:{
+      success:{
+        color:"white !important"
+      }
+    }
   };
 };
 

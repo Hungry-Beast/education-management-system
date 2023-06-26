@@ -210,7 +210,7 @@ const Academic = () => {
         </Typography>
         <Divider />
         <Li>
-          <Link to="/admin">
+          <Link to="/modules/academic/promotion-and-graduation">
             <Typography variant="h5">Academic Session</Typography>
           </Link>
         </Li>

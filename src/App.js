@@ -52,6 +52,8 @@ import SectionLinkId from "./scenes/modules/academic/lms/SectionLinkId";
 import AssessmentAndGrade from "./scenes/modules/academic/grade-setup/assessment-and-grade/AssessmentAndGrade";
 import AssessmentLink from "./scenes/modules/academic/grade-setup/assessment-and-grade/Sections/Assessment/assessment-link/AssessmentLink";
 import SectionGradeBook from "./scenes/modules/academic/grade-setup/section-grade-book/SectionGradeBook";
+import PromotionGraduation from "./scenes/modules/academic/promotion-graduation/PromotionGraduation";
+import Student from "./scenes/modules/user/student/Student";
 // import OrgProfile from "./settingcomponents/OrgProfile/OrgProfile";
 //>>>>>>> b63988d5e5c115f3840ce513fec25967cdd5c832
 
@@ -127,6 +129,17 @@ function App() {
               path="/modules/academic/section-grade-book"
               element={<SectionGradeBook />}
             />
+            <Route
+              path="/modules/academic/promotion-and-graduation"
+              element={<PromotionGraduation />}
+            />
+            
+            <Route
+              path="/modules/users/students"
+              element={<Student />}
+            />
+
+
 
           </Route>
           {/* <Route path="/profile" element={<Dprofile/>} /> */}
