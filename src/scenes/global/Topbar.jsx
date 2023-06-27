@@ -103,9 +103,9 @@ const Topbar = () => {
         <Link to="/admin">
           <Box
             component="img"
-            sx={{ height: 40, mr: "10px" }}
+            sx={{ height: 40, mr: "30px" }}
             alt="Logo"
-            src="/logo192.png"
+            src="/assets/infotute1.gif"
           />
         </Link>
         <IconButton onClick={handleClickMenu}>
@@ -131,16 +131,17 @@ const Topbar = () => {
       </Box>
 
       <Box>
-        <Typography variant="h3" color={colors.grey[100]} fontWeight="bold">
-          {" "}
-          Infotute EMS{" "}
-        </Typography>
+        <Box
+            component="img"
+            sx={{ height: "40px", width: "220px", mr: "10px" }}
+            alt="The house from the offer."
+            src="/assets/infotute2.gif"
+          />
       </Box>
 
       <Box>
-        <Typography variant="h4" fontWeight="bold" color="#ae261d">
-          {" "}
-          Academic Year 2022-23{" "}
+        <Typography variant="h4" fontWeight="bold" color="#ec3535">
+          Academic Year 2022-23
         </Typography>
       </Box>
 
@@ -217,6 +218,7 @@ const Topbar = () => {
             </ListItemIcon>
             My Details
           </MenuItem>
+          
           <MenuItem onClick={handleClose}>
             <ListItemIcon>
               {" "}
@@ -224,6 +226,7 @@ const Topbar = () => {
             </ListItemIcon>
             Institute Settings
           </MenuItem>
+
           <MenuItem onClick={handleClose}>
             <ListItemIcon>
               {" "}
@@ -231,6 +234,7 @@ const Topbar = () => {
             </ListItemIcon>
             Roles & Permissions
           </MenuItem>
+
           <MenuItem onClick={handleClose}>
             <ListItemIcon>
               {" "}
@@ -238,25 +242,33 @@ const Topbar = () => {
             </ListItemIcon>
             Inbox
           </MenuItem>
+
           <Divider />
+
           <MenuItem onClick={handleClose}>
             <ListItemIcon>
               <Explore fontSize="small" />
             </ListItemIcon>
             Change Academic Session
           </MenuItem>
-          <MenuItem onClick={handleClose}>
+
+          <MenuItem onClick={ () => {
+                navigate("/change-password");
+                handleClose();
+          }}>
             <ListItemIcon>
               <Explore fontSize="small" />
             </ListItemIcon>
             Change Password
           </MenuItem>
+
           <MenuItem onClick={handleClose}>
             <ListItemIcon>
               <Logout fontSize="small" />
             </ListItemIcon>
             Logout
           </MenuItem>
+
         </Menu>
 
         <Menu

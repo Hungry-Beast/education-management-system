@@ -44,7 +44,7 @@ export const StyledBloodPressureCard = styled.div`
   padding: 0.7rem;
   border-radius: 0.4rem;
   background-color: #c7ffc7;
-  line-height: 0.4rem;
+  line-height: 0.9rem;
   font-size: 0.6rem;
 
   align-items: center;
@@ -297,7 +297,6 @@ export const StyledStaffAddress = styled.div`
 export const StyledMap = styled.div`
   width: 65%;
   background-color: white;
-
   margin-top: 1rem;
   padding: 0.7rem;
   border-radius: 0.4rem;

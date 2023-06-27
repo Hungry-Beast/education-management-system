@@ -58,22 +58,22 @@ const Administration = () => {
         </Typography>
         <Divider />
         <Li>
-          <Link to="/admin">
+          <Link to="/modules/administration/location-category">
             <Typography variant="h5">Category & Location</Typography>
           </Link>
         </Li>
         <Li>
-          <Link to="/admin">
+          <Link to="/modules/administration/vendor">
             <Typography variant="h5">vendor</Typography>
           </Link>
         </Li>
         <Li>
-          <Link to="/admin">
+          <Link to="/modules/administration/assets">
             <Typography variant="h5">Assets</Typography>
           </Link>
         </Li>
         <Li>
-          <Link to="/admin">
+          <Link to="/modules/administration/asset-purchase">
             <Typography variant="h5">Assests purchase</Typography>
           </Link>
         </Li>
@@ -101,12 +101,12 @@ const Administration = () => {
         </Typography>
         <Divider />
         <Li>
-          <Link to="/admin">
+          <Link to="/modules/administration/school-structure">
             <Typography variant="h5">School Structure</Typography>
           </Link>
         </Li>
         <Li>
-          <Link to="/admin">
+          <Link to="/modules/administration/school-structure-blocks">
             <Typography variant="h5">School Structure UI</Typography>
           </Link>
         </Li>
@@ -122,14 +122,13 @@ const Administration = () => {
             marginBottom: "12px",
           }}
         >
-          {" "}
           <Resolve>
           < TeacherIcon sx={{ fontSize:"30px" ,mx: "5px" }} /> Teacher/Staff Attendance
           </Resolve>
         </Typography>
         <Divider />
         <Li>
-          <Link to="/admin">
+          <Link to="/modules/administration/attendance-status/teacher">
             <Typography variant="h5">Teacher Setting</Typography>
           </Link>
         </Li>
@@ -139,7 +138,7 @@ const Administration = () => {
           </Link>
         </Li>
         <Li>
-          <Link to="/admin">
+          <Link to="/modules/administration/attendance-manage-staff">
             <Typography variant="h5">Staff Attendance</Typography>
           </Link>
         </Li>
@@ -155,22 +154,21 @@ const Administration = () => {
             marginBottom: "12px",
           }}
         >
-          {" "}
           < VisitorIcon sx={{ fontSize:"30px" ,mx: "5px" }} /> Visitor
         </Typography>
         <Divider />
         <Li>
-          <Link to="/admin">
+          <Link to="/modules/administration/manage-visitor">
             <Typography variant="h5">Manage Visitor</Typography>
           </Link>
         </Li>
         <Li>
-          <Link to="/admin">
+          <Link to="/modules/administration/manage-postal">
             <Typography variant="h5">Postal</Typography>
           </Link>
         </Li>
         <Li>
-          <Link to="/admin">
+          <Link to="/modules/administration/manage-enquiry">
             <Typography variant="h5">Enquiry</Typography>
           </Link>
         </Li>
@@ -186,7 +184,6 @@ const Administration = () => {
             marginBottom: "12px",
           }}
         >
-          {" "}
           < HostelIcon sx={{ fontSize:"30px" ,mx: "5px" }} /> Hostel
         </Typography>
         <Divider />
@@ -207,7 +204,6 @@ const Administration = () => {
             marginBottom: "12px",
           }}
         >
-          {" "}
           < TransportIcon sx={{ fontSize:"30px" ,mx: "5px" }} /> Transport
         </Typography>
         <Divider />
@@ -233,7 +229,6 @@ const Administration = () => {
             marginBottom: "12px",
           }}
         >
-          {" "}
           < ImportExportIcon  sx={{ fontSize:"30px" ,mx: "5px" }} /> Import/Export
         </Typography>
         <Divider />
@@ -254,7 +249,6 @@ const Administration = () => {
             marginBottom: "12px",
           }}
         >
-          {" "}
           < ReportIcon sx={{ mx: "5px" }} /> Report
         </Typography>
         <Divider />
@@ -264,19 +258,6 @@ const Administration = () => {
           </Link>
         </Li>
     </Ul>
-
-
-
-
-
-
-
-
-     
-      
-      
-      
-    
     </Container>
   );
 };
