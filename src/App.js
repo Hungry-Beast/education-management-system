@@ -46,6 +46,7 @@ import StudentSettings from "./scenes/modules/academic/attendence/student-settin
 import { ImageContext } from "./context/Context";
 import StudentAttendence from "./scenes/modules/academic/attendence/student-attendence/StudentAttendence";
 import AttendenceDashboard from "./scenes/modules/academic/attendence/attendence-dashboard/AttendenceDashboard";
+import Training from "./scenes/modules/others/training_and_placement/training/Training";
 // import OrgProfile from "./settingcomponents/OrgProfile/OrgProfile";
 //>>>>>>> b63988d5e5c115f3840ce513fec25967cdd5c832
 
@@ -101,6 +102,13 @@ function App() {
               path="/modules/academic/attendence-dashboard"
               element={<AttendenceDashboard />}
             />
+
+            <Route
+              path="/modules/others/training"
+              element={<Training />}
+            />
+
+          
           </Route>
           {/* <Route path="/profile" element={<Dprofile/>} /> */}
           <Route path="/" element={<Navigate replace to="/login" />} />
@@ -128,7 +136,7 @@ function App() {
             <Route path="intime-outtime" element={<IntimeOuttime />} />
           </Route>
           <Route path="/login" element={<Login />} />
-          <Route path="/change-password" element={<Changepassword />} />
+          <Route path="/changepassword" element={<Changepassword />} />
           <Route path="/school-terms" element={<TermsDisplayPage />} />{" "}
           {/*Route to Display the terms and conditions */}
           
