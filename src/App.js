@@ -56,7 +56,7 @@ import AssessmentAndGrade from "./scenes/modules/academic/grade-setup/assessment
 import AssessmentLink from "./scenes/modules/academic/grade-setup/assessment-and-grade/Sections/Assessment/assessment-link/AssessmentLink";
 import SectionGradeBook from "./scenes/modules/academic/grade-setup/section-grade-book/SectionGradeBook";
 import PromotionGraduation from "./scenes/modules/academic/promotion-graduation/PromotionGraduation";
-import Student from "./scenes/modules/user/student/Student";
+import Student from "./scenes/modules/user/student/enrollment-record/Student";
 import CategoryLocation from "./scenes/modules/administration/asset/categorylocation";
 import Vendor from "./scenes/modules/administration/asset/vendor";
 import Assets from "./scenes/modules/administration/asset/assets";
@@ -74,6 +74,7 @@ import StaffAttendance from "./scenes/modules/administration/teacher attendance/
 import ManageVisitors from "./scenes/modules/administration/visitor/managevisitors";
 import Postal from "./scenes/modules/administration/visitor/postal";
 import Enquiry from "./scenes/modules/administration/visitor/enquiry";
+import StudentProfile from "./scenes/modules/user/student/enrollment-record/student-profile/StudentProfile";
 
 // import OrgProfile from "./settingcomponents/OrgProfile/OrgProfile";
 //>>>>>>> b63988d5e5c115f3840ce513fec25967cdd5c832
@@ -164,6 +165,7 @@ function App() {
             />
 
             <Route path="/modules/users/students" element={<Student />} />
+            <Route path="/modules/users/students/:id" element={<StudentProfile />} />
 
             <Route
               path="/modules/administration/location-category"

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { ImageContext } from "../../../../context/Context";
+import { ImageContext } from "../../../../../context/Context";
 import { useContext } from "react";
 import { useEffect } from "react";
 import Retrive from "./Retrive";
@@ -10,11 +10,13 @@ const Component = styled.div`
   height: 100%;
   padding: 16px;
   background-color: #fff;
-  margin: 15px auto;
+  margin: 15px 0;
   border-radius: 10px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 10px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 0px;
+  align-items:center;
+  justify-content: space-between;
   /* justify-content: space-between; */
 `;
 const Student = () => {
