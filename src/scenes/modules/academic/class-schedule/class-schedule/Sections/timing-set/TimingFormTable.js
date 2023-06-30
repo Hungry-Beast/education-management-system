@@ -39,16 +39,8 @@ const rows = [
   createData("Gingerbread", 356, 16.0, 49, 3.9),
 ];
 
-export default function TimingFormTable() {
-  const [formData, setFormData] = useState([
-    {
-      id: 1,
-      name: "",
-      startTime: undefined,
-      endTime: undefined,
-      break: false,
-    },
-  ]);
+export default function TimingFormTable({formData, setFormData}) {
+  
   const addItem = () => {
     const newItem = {
       id: formData.length + 1,
@@ -118,7 +110,7 @@ export default function TimingFormTable() {
                   <LocalizationProvider dateAdapter={AdapterDayjs}>
                     <DemoContainer components={["TimePicker"]}>
                       <TimePicker
-                        label="Basic time picker"
+                        label="Start Time"
                         name="startTime"
                         value={row.startTime}
                         onChange={(value) => updateItem("startTime", i, value)}
@@ -130,7 +122,7 @@ export default function TimingFormTable() {
                   <LocalizationProvider dateAdapter={AdapterDayjs}>
                     <DemoContainer components={["TimePicker"]}>
                       <TimePicker
-                        label="Basic time picker"
+                        label="End Time"
                         value={row.endTime}
                         name="endTime"
                         onChange={(value) => updateItem("endTime", i, value)}

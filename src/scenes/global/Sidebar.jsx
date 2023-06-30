@@ -69,13 +69,6 @@ const Sidebar = () => {
         <Menu iconShape="square">
           <Box paddingLeft={"13%"} >
             <Item
-              title="Dashboard"
-              to="/admin/"
-              icon={<HomeOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-            <Item
               title="Manage Org. Profile"
               to="orgProfile"
               icon={<NoteAlt />}

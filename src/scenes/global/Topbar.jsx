@@ -218,6 +218,7 @@ const Topbar = () => {
             </ListItemIcon>
             My Details
           </MenuItem>
+          
           <MenuItem onClick={handleClose}>
             <ListItemIcon>
               {" "}
@@ -225,17 +226,15 @@ const Topbar = () => {
             </ListItemIcon>
             Institute Settings
           </MenuItem>
-          <MenuItem   onClick={() => {
-              navigate("/roles-permissions");
-              handleClose();
-            }}>
+
+          <MenuItem onClick={handleClose}>
             <ListItemIcon>
               {" "}
               <ManageAccounts fontSize="small" />{" "}
             </ListItemIcon>
             Roles & Permissions
+          </MenuItem>
 
-          </MenuItem >
           <MenuItem onClick={handleClose}>
             <ListItemIcon>
               {" "}
@@ -243,26 +242,33 @@ const Topbar = () => {
             </ListItemIcon>
             Inbox
           </MenuItem>
+
           <Divider />
-          <MenuItem onClick={()=>{navigate("change-academic");
-        handleClose()}}>
+
+          <MenuItem onClick={handleClose}>
             <ListItemIcon>
               <Explore fontSize="small" />
             </ListItemIcon>
             Change Academic Session
           </MenuItem>
-          <MenuItem onClick={handleClose}>
+
+          <MenuItem onClick={ () => {
+                navigate("/change-password");
+                handleClose();
+          }}>
             <ListItemIcon>
               <Explore fontSize="small" />
             </ListItemIcon>
             Change Password
           </MenuItem>
+
           <MenuItem onClick={handleClose}>
             <ListItemIcon>
               <Logout fontSize="small" />
             </ListItemIcon>
             Logout
           </MenuItem>
+
         </Menu>
 
         <Menu

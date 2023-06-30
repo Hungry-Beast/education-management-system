@@ -3,26 +3,14 @@ import { DataGrid } from "@mui/x-data-grid";
 import Stack from "@mui/material/Stack";
 
 import {
-  StyledProfileCard,
-  StyledImageCard,
-  StyledDEsc,
   BodyStyled,
   StyledContainer,
   StyledHeader,
-  StyledNavbar,
   StyledDetails,
 } from "./health.styles";
 import {
   StyledHeading,
   StyledFile,
-  StyledSearch,
-  StyledShow,
-  StyledBar,
-  StyledData,
-  StyledWrap,
-  StyledBorder,
-  StyledContent,
-  StyledTwo,
 } from "./health.styles";
 import {
   StyledRoutine,
@@ -30,11 +18,7 @@ import {
   StyledCardHeader,
   StyledEnd,
   StyledButton,
-  StyledCheckupCard,
-  StyledHealthButton,
   StyledHeadingDesc,
-  StyledAttachment,
-  StyledAttachButton,
   StyledDesc,
   StyledLast
 } from "./health.styles";
@@ -107,7 +91,6 @@ function Health() {
                 
               </Modal>
             </StyledFile>
-            {/* <TableHealth /> */}
             <TableHealth />
             <StyledDesc>
                 <p>Showing 0 to 0 of 0 entries</p>

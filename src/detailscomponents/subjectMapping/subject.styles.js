@@ -11,6 +11,10 @@ export const StyledContainer=styled.div`
     padding-left: 3rem;
     background-color: white;
     border-radius: 1rem;
+    @media(max-width: 768px){
+        width: 80%;
+        padding-left: 1rem;
+    }
 `;
 export const StyledDetails=styled.div`
     width: 97%;
@@ -19,6 +23,7 @@ export const StyledDetails=styled.div`
     height: 10rem;
     margin-top: 3rem;
     padding: 1rem;
+
 
     input{
         width: 98%;
@@ -43,7 +48,11 @@ export const StyledDetails=styled.div`
         cursor: pointer;
         border-radius: 0.3rem;
         margin-top: 0.5rem;
+        @media(max-width: 768px){
+            margin-left: 20rem;
+}
     }
+    
 `;
 export const Styledbox=styled.div`
     width: 97%;
