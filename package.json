@@ -14,11 +14,7 @@
     "@hookform/resolvers": "^3.1.0",
     "@mui/base": "^5.0.0-beta.4",
     "@mui/icons-material": "^5.10.3",
-<<<<<<< HEAD
-    "@mui/material": "^5.13.6",
-=======
     "@mui/material": "^5.13.5",
->>>>>>> f7b327f5b8dcbd023f25b245bee19feb288c9da2
     "@mui/x-data-grid": "^5.17.2",
     "@mui/x-data-grid-generator": "^6.6.0",
     "@mui/x-date-pickers": "^6.7.0",

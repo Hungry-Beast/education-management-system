@@ -134,12 +134,12 @@ function App() {
             <Route path="/modules/administration/manage-visitor" element={<ManageVisitors/>} />
             <Route path="/modules/administration/manage-postal" element={<Postal/>} />
             <Route path="/modules/administration/manage-enquiry" element={<Enquiry/>} />
+          
             <Route element={<NotificationPanel />}>
             <Route path="/announcement/View" element={<View />} />
             <Route path="/announcement/Create" element={<Create />} />
           </Route>
           </Route>
-          
           {/* <Route path="/profile" element={<Dprofile/>} /> */}
           <Route path="/" element={<Navigate replace to="/login" />} />
 
