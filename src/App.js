@@ -57,13 +57,16 @@ import TeacherSetting from "./scenes/modules/administration/teacher attendance/t
 import Myleaves from "./detailscomponents/myleaves";
 
 import RolesPermissions from "./scenes/roles&permision/roles-permision";
-import { NotificationPanel } from "./scenes/modules/communication/announcement/NotificationPanel";
+// import { NotificationPanel } from "./scenes/modules/communication/announcement/NotificationPanel";
 import Advance from './detailscomponents/advance/index'
 import ChangeAcademic from "./scenes/changeacademic/change-academic";
 import StaffAttendance from "./scenes/modules/administration/teacher attendance/staffattendance";
 import ManageVisitors from "./scenes/modules/administration/visitor/managevisitors";
 import Postal from "./scenes/modules/administration/visitor/postal";
 import Enquiry from "./scenes/modules/administration/visitor/enquiry";
+import NotificationPanel from "./scenes/modules/communication/announcement/NotificationPanel";
+import { View } from "./scenes/modules/communication/announcement/View";
+import { Create } from "@mui/icons-material";
 // import OrgProfile from "./settingcomponents/OrgProfile/OrgProfile";
 //>>>>>>> b63988d5e5c115f3840ce513fec25967cdd5c832
 
@@ -131,7 +134,12 @@ function App() {
             <Route path="/modules/administration/manage-visitor" element={<ManageVisitors/>} />
             <Route path="/modules/administration/manage-postal" element={<Postal/>} />
             <Route path="/modules/administration/manage-enquiry" element={<Enquiry/>} />
+            <Route element={<NotificationPanel />}>
+            <Route path="/announcement/View" element={<View />} />
+            <Route path="/announcement/Create" element={<Create />} />
           </Route>
+          </Route>
+          
           {/* <Route path="/profile" element={<Dprofile/>} /> */}
           <Route path="/" element={<Navigate replace to="/login" />} />
 
@@ -176,6 +184,8 @@ function App() {
             <Route path="/profile/staff-subjectMapping" element={<Subject />} />
             <Route path="/profile/staff-advance" element={<Advance />} />
           </Route>
+
+          
           
 
 
