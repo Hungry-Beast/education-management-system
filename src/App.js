@@ -66,7 +66,8 @@ import Postal from "./scenes/modules/administration/visitor/postal";
 import Enquiry from "./scenes/modules/administration/visitor/enquiry";
 import NotificationPanel from "./scenes/modules/communication/announcement/NotificationPanel";
 import { View } from "./scenes/modules/communication/announcement/View";
-import { Create } from "@mui/icons-material";
+import Create from "./scenes/modules/communication/announcement/Create";
+// import { Create } from "@mui/icons-material";
 // import OrgProfile from "./settingcomponents/OrgProfile/OrgProfile";
 //>>>>>>> b63988d5e5c115f3840ce513fec25967cdd5c832
 

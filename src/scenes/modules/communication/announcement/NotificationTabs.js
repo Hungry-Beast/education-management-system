@@ -113,11 +113,7 @@ const NotificationTabs = () => {
                 </Box>
                 <TabPanel value={value} index={0}></TabPanel>
                 <TabPanel value={value} index={1}></TabPanel>
-                <TabPanel value={value} index={2}></TabPanel>
-                <TabPanel value={value} index={3}></TabPanel>
-                <TabPanel value={value} index={4}></TabPanel>
-                <TabPanel value={value} index={5}></TabPanel>
-                <TabPanel value={value} index={6}></TabPanel>
+                
               </Box>
             </TabCont>
 
