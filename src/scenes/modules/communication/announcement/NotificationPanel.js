@@ -1,8 +1,10 @@
-import React, { useContext, useEffect } from 'react'
-import styled from 'styled-components';
-import { ImageContext } from '../../../../context/Context';
+import React, { useContext, useEffect } from "react";
+import { ImageContext } from "../../../../context/Context";
+import { View } from "./View";
 
-
+import styled from "styled-components";
+import { Create } from "@mui/icons-material";
+import NotificationTabs from "./NotificationTabs";
 
 const Component = styled.div`
   width: calc(100% - 30px);
@@ -13,17 +15,16 @@ const Component = styled.div`
   border-radius: 10px;
 `;
 
-
-
-
-export const NotificationPanel = () => {
-    const [context, setContext] = useContext(ImageContext);
+const NotificationPanel = () => {
+  const [context, setContext] = useContext(ImageContext);
   useEffect(() => {
-    setContext("notification.svg");
+    setContext("studentEnrolledRecords.svg");
   }, []);
-
-
   return (
-    <Component>NotificationPanelhjgjhg</Component>
-  )
-}
+    <Component>
+      <NotificationTabs />
+    </Component>
+  );
+};
+
+export default NotificationPanel;

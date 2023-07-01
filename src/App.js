@@ -67,7 +67,7 @@ import TeacherSetting from "./scenes/modules/administration/teacher attendance/t
 import Myleaves from "./detailscomponents/myleaves";
 
 import RolesPermissions from "./scenes/roles&permision/roles-permision";
-import { NotificationPanel } from "./scenes/modules/communication/announcement/NotificationPanel";
+// import { NotificationPanel } from "./scenes/modules/communication/announcement/NotificationPanel";
 import Advance from "./detailscomponents/advance/index";
 import ChangeAcademic from "./scenes/changeacademic/change-academic";
 import StaffAttendance from "./scenes/modules/administration/teacher attendance/staffattendance";
@@ -76,6 +76,10 @@ import Postal from "./scenes/modules/administration/visitor/postal";
 import Enquiry from "./scenes/modules/administration/visitor/enquiry";
 import StudentProfile from "./scenes/modules/user/student/enrollment-record/student-profile/StudentProfile";
 
+import NotificationPanel from "./scenes/modules/communication/announcement/NotificationPanel";
+import { View } from "./scenes/modules/communication/announcement/View";
+import { Create } from "@mui/icons-material";
+import Announcement from "./scenes/modules/communication/announcement/Academic";
 // import OrgProfile from "./settingcomponents/OrgProfile/OrgProfile";
 //>>>>>>> b63988d5e5c115f3840ce513fec25967cdd5c832
 
@@ -131,13 +135,48 @@ function App() {
               path="/modules/academic/attendence-dashboard"
               element={<AttendenceDashboard />}
             />
-
             <Route
-              path="/modules/others/training"
-              element={<Training />}
+              path="/modules/administration/location-category"
+              element={<CategoryLocation />}
             />
-
-          
+            <Route path="/modules/administration/vendor" element={<Vendor />} />
+            <Route path="/modules/administration/assets" element={<Assets />} />
+            <Route
+              path="/modules/administration/asset-purchase"
+              element={<AssetPurchase />}
+            />
+            <Route
+              path="/modules/administration/school-structure"
+              element={<SchoolStructure />}
+            />
+            <Route
+              path="/modules/administration/school-structure-blocks"
+              element={<SchoolStructureUI />}
+            />
+            <Route
+              path="/modules/administration/attendance-status/teacher"
+              element={<TeacherSetting />}
+            />
+            <Route
+              path="/modules/communication/announcement/notification-panel"
+              element={<NotificationPanel />}
+            />
+            <Route
+              path="/modules/administration/attendance-manage-staff"
+              element={<StaffAttendance />}
+            />
+            <Route
+              path="/modules/administration/manage-visitor"
+              element={<ManageVisitors />}
+            />
+            <Route
+              path="/modules/administration/manage-postal"
+              element={<Postal />}
+            />
+            <Route
+              path="/modules/administration/manage-enquiry"
+              element={<Enquiry />}
+            />
 
             <Route
               path="/modules/academic/learning-management-system/link"
@@ -165,7 +204,10 @@ function App() {
             />
 
             <Route path="/modules/users/students" element={<Student />} />
-            <Route path="/modules/users/students/:id" element={<StudentProfile />} />
+            <Route
+              path="/modules/users/students/:id"
+              element={<StudentProfile />}
+            />
 
             <Route
               path="/modules/administration/location-category"
@@ -210,6 +252,10 @@ function App() {
               element={<Enquiry />}
             />
 
+            <Route
+              path="/modules/announcement"
+              element={<Announcement />}
+            />
           </Route>
           {/* <Route path="/profile" element={<Dprofile/>} /> */}
           <Route path="/" element={<Navigate replace to="/login" />} />
@@ -237,13 +283,9 @@ function App() {
             <Route path="intime-outtime" element={<IntimeOuttime />} />
           </Route>
           <Route path="/login" element={<Login />} />
-
-          <Route path="/changepassword" element={<Changepassword />} />
-
           <Route path="/roles-permissions" element={<RolesPermissions />} />
           <Route path="/change-academic" element={<ChangeAcademic />} />
           <Route path="/change-password" element={<Changepassword />} />
-
           <Route path="/school-terms" element={<TermsDisplayPage />} />{" "}
           {/*Route to Display the terms and conditions */}
           {/* <Route path="/profile" element={<Dprofile/>} /> */}
