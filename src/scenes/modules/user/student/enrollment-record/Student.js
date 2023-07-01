@@ -10,7 +10,7 @@ const Component = styled.div`
   height: 100%;
   padding: 16px;
   background-color: #fff;
-  margin: 15px 0;
+  margin: 15px auto;
   border-radius: 10px;
   display: flex;
   flex-wrap: wrap;

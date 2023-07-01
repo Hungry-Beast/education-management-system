@@ -1,4 +1,4 @@
-import { LibraryBooks, ModeEdit, Subject } from "@mui/icons-material";
+import { LibraryBooks, ModeEdit, Person, Subject } from "@mui/icons-material";
 import { Divider, Tab, Tabs } from "@mui/material";
 import  { useState } from "react";
 import styled from "styled-components";
@@ -17,10 +17,12 @@ const TabsSection = ({value,handleChange}) => {
         value={value}
         onChange={handleChange}
         aria-label="tabs"
+        
       >
-        <Tab label="Subject" value={0} icon={<Subject/>} />
-        <Tab label="Courses" value={1} icon={<LibraryBooks/>}  />
-        <Tab label="Class/Sem/Year" value={2} icon={<ModeEdit/>} />
+        <Tab wrapped={true} label="Profile" value={0} icon={<Person/>} />
+        <Tab wrapped={true} label="Subject" value={1} icon={<Subject/>} />
+        <Tab wrapped={true} label="Courses" value={2} icon={<LibraryBooks/>}  />
+        <Tab wrapped={true} label="Class/Sem/Year" value={3} icon={<ModeEdit/>} />
       </Tabs>
     </Container>
   );

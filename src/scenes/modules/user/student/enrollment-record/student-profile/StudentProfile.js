@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Divider } from "@mui/material";
 import SectionContainer from "./SectionContainer";
 import { ImageContext } from "../../../../../../context/Context";
+import LeftComponent from "./LeftComponent";
 
 const Container = styled.div`
   display: flex;
@@ -15,9 +16,7 @@ const Container = styled.div`
   padding: 16px;
   margin: 15px auto;
 `;
-const LeftComponent = styled.div`
-  flex: 1;
-`;
+
 const Component = styled.div`
   flex: 3;
 
@@ -38,11 +37,7 @@ const StudentProfile = () => {
 
   return (
     <Container>
-      <LeftComponent>
-        <Component>
-          
-        </Component>
-      </LeftComponent>
+      <LeftComponent />
       <Component>
         <TabsSection value={value} handleChange={handleChange} />
         <Divider sx={{ my: "5px" }} color="#ffa800" />

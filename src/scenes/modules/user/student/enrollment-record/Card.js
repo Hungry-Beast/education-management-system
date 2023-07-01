@@ -24,6 +24,7 @@ import {
   Visibility,
   Woman,
 } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 
 const CardComponent = styled.div`
   padding: 20px 30px;
@@ -241,22 +242,24 @@ const Card = () => {
           </Typography>
         </Tooltip>
       </Lower>
-      <Box sx={{ width: "100%", position: "relative", pb: 1 }}>
+      <Box sx={{ width: "100%", position: "relative", pb: 0 }}>
         <Paper elevation={8}>
-          <Button
-            variant="contained"
-            color="warning"
-            sx={{
-              p: 0,
-              minWidth: "20px",
-              px: 0.5,
-              position: "absolute",
-              right: "-18px",
-              top: "-25px",
-            }}
-          >
-            <ArrowForward />
-          </Button>
+          <Link to="/modules/users/students/1">
+            <Button
+              variant="contained"
+              color="warning"
+              sx={{
+                p: 0,
+                minWidth: "20px",
+                px: 0.5,
+                position: "absolute",
+                right: "-18px",
+                top: "-25px",
+              }}
+            >
+              <ArrowForward />
+            </Button>
+          </Link>
         </Paper>
       </Box>
     </CardComponent>
