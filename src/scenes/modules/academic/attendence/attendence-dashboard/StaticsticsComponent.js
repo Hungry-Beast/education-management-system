@@ -13,6 +13,8 @@ const GradiantContainer = styled.div`
   flex: 30%;
   margin: 10px 20px;
   padding: 10px;
+  min-height: 240px;
+  
 `;
 const GenderDetailContainer = styled.div`
   display: flex;
@@ -37,7 +39,7 @@ const StaticsticsComponent = () => {
           Student Statistics
         </Typography>
         <Divider color="white" />
-        <Box sx={{ margin: "0 auto" }}>
+        <Box sx={{ margin: "0 auto", py: "10px" }}>
           <Typography variant="h3" color="#ffffff" align="center">
             411
           </Typography>
@@ -89,7 +91,7 @@ const StaticsticsComponent = () => {
           Teacher Statistics
         </Typography>
         <Divider color="white" />
-        <Box sx={{ margin: "0 auto" }}>
+        <Box sx={{ margin: "0 auto", py: "10px" }}>
           <Typography variant="h3" color="#ffffff" align="center">
             111
           </Typography>
@@ -143,7 +145,7 @@ const StaticsticsComponent = () => {
           Staff Statistics
         </Typography>
         <Divider color="white" />
-        <Box sx={{ margin: "0 auto" }}>
+        <Box sx={{ margin: "0 auto", py: "10px" }}>
           <Typography variant="h3" color="#ffffff" align="center">
             411
           </Typography>
