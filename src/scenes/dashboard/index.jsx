@@ -6,6 +6,8 @@ import BasicTable from "./EventTable";
 import PersonIcon from '@mui/icons-material/Person';
 import StaticsticsComponent from "../modules/academic/attendence/attendence-dashboard/StaticsticsComponent";
 import styled from "styled-components";
+import DatePickerComp from "./DatePickerComp";
+
 
 const Component = styled.div`
   width: calc(100% - 30px);
@@ -24,6 +26,8 @@ const Dashboard = () => {
   const toggleMenu = () => {
     setIsMenu(!isMenu);
   };
+
+
   return (
     <Box m="20px" pb="30px" >
       {/* HEADER */}
@@ -39,97 +43,36 @@ const Dashboard = () => {
         gridAutoRows="140px"
         gap="20px"
       >
-        {/* ROW 1 */}
-        {/* <Box
-          gridColumn="span 3"
-          backgroundColor={colors.primary[400]}
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-        >
-          <StatBox
-            title="12,361"
-            subtitle="Student Statistics"
-            progress="0.75"
-            increase="+14%"
-            icon={
-              <EmailIcon
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-              />
-            }
-          />
-        </Box>
-        <Box
-          gridColumn="span 3"
-          backgroundColor={colors.primary[400]}
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-        >
-          <StatBox
-            title="431,225"
-            subtitle="Teacher Statistics"
-            progress="0.50"
-            increase="+21%"
-            icon={
-              <PointOfSaleIcon
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-              />
-            }
-          />
-        </Box>
-        <Box
-          gridColumn="span 3"
-          backgroundColor={colors.primary[400]}
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-        >
-          <StatBox
-            title="32,441"
-            subtitle="Staff Statistics"
-            progress="0.30"
-            increase="+5%"
-            icon={
-              <PersonAddIcon
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
-              />
-            }
-          />
-        </Box> */}
+        
+        {/* Row 1 */}
         <Box gridColumn="span 12" gridRow="span 2" >
           <StaticsticsComponent />
         </Box>
 
         
-
         {/* ROW 2 */}
         <Box
           gridColumn="span 12"
           gridRow="span 3"
           backgroundColor={colors.primary[400]}
-          pb="20px"
         >
-          <Box
-            mt="25px"
-            p="0 30px"
-          >
+          <Box sx={{ px:"30px", mt: "10px" ,display: "flex", alignItems: "center", justifyContent: "space-between"}} >
             <Box>
-              <Typography
-                my="25px"
-                variant="h5"
-                fontWeight="600"
-                color={colors.grey[100]}
-              >
-                School Calender
-              </Typography>
-
+                <Typography my="5px" variant="h4" fontWeight="600" color={colors.grey[100]}>
+                  School Calender
+                </Typography>
             </Box>
+
+            <DatePickerComp/>
+
+            <Box></Box>
+          </Box>
+
+          <Box mt="25px" p="0 30px">
             <Box  >
               <BasicTable/>
             </Box>
           </Box>
-
         </Box>
 
 
