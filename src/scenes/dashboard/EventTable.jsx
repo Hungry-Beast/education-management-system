@@ -29,7 +29,7 @@ const rows = [
 
 export default function BasicTable() {
   return (
-    <TableContainer sx={{ width: '100%', maxHeight: '350px', overflowX: 'auto' }} component={Paper}>
+    <TableContainer sx={{ width: '100%', maxHeight: '330px', overflowX: 'auto', px: "30px" }} component={Paper}>
       <Table aria-label="simple table">
         <TableHead>
           <TableRow>

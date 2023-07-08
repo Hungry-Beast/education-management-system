@@ -103,7 +103,7 @@ const Topbar = () => {
         <Link to="/admin">
           <Box
             component="img"
-            sx={{ height: 40, mr: "30px" }}
+            sx={{ height: 70, mr: "30px" }}
             alt="Logo"
             src="/assets/infotute1.gif"
           />
