@@ -2,12 +2,12 @@ import { Box, Button, IconButton, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../theme";
 import ProgressCircle from "../../components/ProgressCircle";
 import { useState } from "react";
-import BasicTable from "./EventTable";
+import CalendarTable from "./CalendarTable";
 import PersonIcon from '@mui/icons-material/Person';
 import StaticsticsComponent from "../modules/academic/attendence/attendence-dashboard/StaticsticsComponent";
 import styled from "styled-components";
 import DatePickerComp from "./DatePickerComp";
-
+import BulletinTable from "./BulletinTable";
 
 const Component = styled.div`
   width: calc(100% - 30px);
@@ -51,42 +51,43 @@ const Dashboard = () => {
 
         
         {/* ROW 2 */}
-        <Box
-          gridColumn="span 12"
-          gridRow="span 3"
-          backgroundColor={colors.primary[400]}
-        >
+        <Box gridColumn="span 12" gridRow="span 3" backgroundColor={colors.primary[400]} >
           <Box sx={{ px:"30px", mt: "10px" ,display: "flex", alignItems: "center", justifyContent: "space-between"}} >
             <Box>
                 <Typography my="5px" variant="h4" fontWeight="600" color={colors.grey[100]}>
                   School Calender
                 </Typography>
             </Box>
-
             <DatePickerComp/>
-
             <Box></Box>
           </Box>
 
-          <Box mt="25px" p="0 30px">
-            <Box  >
-              <BasicTable/>
-            </Box>
+          <Box sx={{mt:"25px"}} >
+              <CalendarTable/>
           </Box>
         </Box>
 
 
+        <Box gridColumn="span 12" gridRow="span 3" backgroundColor={colors.primary[400]} >
+          <Box sx={{ px:"30px", mt: "10px" ,display: "flex", alignItems: "center", justifyContent: "space-between"}} >
+            <Box>
+                <Typography my="5px" variant="h4" fontWeight="600" color={colors.grey[100]}>
+                  Daily Bulletin
+                </Typography>
+            </Box>
+            <DatePickerComp/>
+            <Box></Box>
+          </Box>
+
+          <Box mt="25px">
+              <BulletinTable />
+            </Box>
+        </Box>
+
+
         {/* ROW 3 */}
-        <Box
-          gridColumn="span 12"
-          gridRow="span 2"
-          backgroundColor={colors.primary[400]}
-          overflow="auto"
-        >
-          <Box
-            mt="25px"
-            p="0 30px"
-          >
+        {/* <Box gridColumn="span 12" gridRow="span 2" backgroundColor={colors.primary[400]} overflow="auto" >
+          <Box mt="25px" p="0 30px" >
             <Box>
               <Typography
                 my="25px"
@@ -98,10 +99,8 @@ const Dashboard = () => {
               </Typography>
 
             </Box>
-
           </Box>
-
-        </Box>
+        </Box> */}
 
 
 
@@ -127,9 +126,9 @@ const Dashboard = () => {
               </Typography>
 
             </Box>
-            {/* <Box sx={{ width: 1 }} >
-              <BasicTable/>
-            </Box> */}
+            <Box  >
+              {/* <BasicTable /> */}
+            </Box>
           </Box>
 
         </Box>
