@@ -8,6 +8,7 @@ import StaticsticsComponent from "../modules/academic/attendence/attendence-dash
 import styled from "styled-components";
 import DatePickerComp from "./DatePickerComp";
 import BulletinTable from "./BulletinTable";
+import AttendanceTable from "./AttendanceTable";
 
 const Component = styled.div`
   width: calc(100% - 30px);
@@ -68,6 +69,7 @@ const Dashboard = () => {
         </Box>
 
 
+        {/* ROW 3  Daily Bulletin */}
         <Box gridColumn="span 12" gridRow="span 3" backgroundColor={colors.primary[400]} >
           <Box sx={{ px:"30px", mt: "10px" ,display: "flex", alignItems: "center", justifyContent: "space-between"}} >
             <Box>
@@ -81,58 +83,22 @@ const Dashboard = () => {
 
           <Box mt="25px">
               <BulletinTable />
-            </Box>
+          </Box>
         </Box>
 
 
-        {/* ROW 3 */}
-        {/* <Box gridColumn="span 12" gridRow="span 2" backgroundColor={colors.primary[400]} overflow="auto" >
-          <Box mt="25px" p="0 30px" >
-            <Box>
-              <Typography
-                my="25px"
-                variant="h5"
-                fontWeight="600"
-                color={colors.grey[100]}
-              >
-                Daily Bulletin
+        {/* ROW 4  Live Attendance */}
+        <Box gridColumn="span 12" gridRow="span 3" backgroundColor={colors.primary[400]} >
+          <Box sx={{ px:"30px", mt: "40px"}} >
+              <Typography  my="10px" variant="h4" fontWeight="600" color={colors.grey[100]}  >
+                    Live Attendance
               </Typography>
-
-            </Box>
-          </Box>
-        </Box> */}
-
-
-
-        {/* ROW 4 */}
-        <Box
-          gridColumn="span 12"
-          gridRow="span 2"
-          backgroundColor={colors.primary[400]}
-          overflow="auto"
-        >
-          <Box
-            mt="25px"
-            p="0 30px"
-          >
-            <Box>
-              <Typography
-                my="25px"
-                variant="h5"
-                fontWeight="600"
-                color={colors.grey[100]}
-              >
-                Live Attendance 
-              </Typography>
-
-            </Box>
-            <Box  >
-              {/* <BasicTable /> */}
-            </Box>
           </Box>
 
+          <Box mt="25px">
+            <AttendanceTable/>
+          </Box>
         </Box>
-
 
 
         {/* ROW 5 */}
