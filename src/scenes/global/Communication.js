@@ -49,7 +49,7 @@ const Communication = () => {
           </Typography>
           <Divider />
           <Li>
-          <Link to="/modules/communication/announcement/notification-panel">
+          <Link to="/modules/announcement">
             <Typography variant="h5">Notification Panel</Typography>
           </Link>
         </Li>

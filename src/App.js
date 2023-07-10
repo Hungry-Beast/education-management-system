@@ -42,11 +42,21 @@ import ClassTeacherMapping from "./scenes/modules/academic/academic/class-teache
 import ClassSchedule from "./scenes/modules/academic/class-schedule/class-schedule/ClassSchedule";
 import ClassTimeTable from "./scenes/modules/academic/class-schedule/class-time-table/ClassTimeTable";
 import Health from "./detailscomponents/health";
-import Subject from './detailscomponents/subjectMapping'
+import Subject from "./detailscomponents/subjectMapping";
 import StudentSettings from "./scenes/modules/academic/attendence/student-setting/StudentSettings";
 import { ImageContext } from "./context/Context";
 import StudentAttendence from "./scenes/modules/academic/attendence/student-attendence/StudentAttendence";
 import AttendenceDashboard from "./scenes/modules/academic/attendence/attendence-dashboard/AttendenceDashboard";
+import Training from "./scenes/modules/others/training_and_placement/training/Training";
+
+import LMS from "./scenes/modules/academic/lms/LMS";
+import LMSLink from "./scenes/modules/academic/lms/LMS";
+import SectionLinkId from "./scenes/modules/academic/lms/SectionLinkId";
+import AssessmentAndGrade from "./scenes/modules/academic/grade-setup/assessment-and-grade/AssessmentAndGrade";
+import AssessmentLink from "./scenes/modules/academic/grade-setup/assessment-and-grade/Sections/Assessment/assessment-link/AssessmentLink";
+import SectionGradeBook from "./scenes/modules/academic/grade-setup/section-grade-book/SectionGradeBook";
+import PromotionGraduation from "./scenes/modules/academic/promotion-graduation/PromotionGraduation";
+import Student from "./scenes/modules/user/student/enrollment-record/Student";
 import CategoryLocation from "./scenes/modules/administration/asset/categorylocation";
 import Vendor from "./scenes/modules/administration/asset/vendor";
 import Assets from "./scenes/modules/administration/asset/assets";
@@ -58,22 +68,22 @@ import Myleaves from "./detailscomponents/myleaves";
 
 import RolesPermissions from "./scenes/roles&permision/roles-permision";
 // import { NotificationPanel } from "./scenes/modules/communication/announcement/NotificationPanel";
-import Advance from './detailscomponents/advance/index'
+import Advance from "./detailscomponents/advance/index";
 import ChangeAcademic from "./scenes/changeacademic/change-academic";
 import StaffAttendance from "./scenes/modules/administration/teacher attendance/staffattendance";
 import ManageVisitors from "./scenes/modules/administration/visitor/managevisitors";
 import Postal from "./scenes/modules/administration/visitor/postal";
 import Enquiry from "./scenes/modules/administration/visitor/enquiry";
-import NotificationPanel from "./scenes/modules/communication/announcement/NotificationPanel";
-import { View } from "./scenes/modules/communication/announcement/View";
-import Create from "./scenes/modules/communication/announcement/Create";
-// import { Create } from "@mui/icons-material";
+import StudentProfile from "./scenes/modules/user/student/enrollment-record/student-profile/StudentProfile";
+
+
+import Announcement from "./scenes/modules/communication/announcement/Announcement";
 // import OrgProfile from "./settingcomponents/OrgProfile/OrgProfile";
 //>>>>>>> b63988d5e5c115f3840ce513fec25967cdd5c832
 
 function App() {
   const [theme, colorMode] = useMode();
-  const [context, setContext] = useState("")
+  const [context, setContext] = useState("");
 
   return (
     // <ColorModeContext.Provider value={colorMode}>
@@ -123,27 +133,130 @@ function App() {
               path="/modules/academic/attendence-dashboard"
               element={<AttendenceDashboard />}
             />
-            <Route path="/modules/administration/location-category" element={<CategoryLocation/>} />
-            <Route path="/modules/administration/vendor" element={<Vendor/>} />
-            <Route path="/modules/administration/assets" element={<Assets/>} />
-            <Route path="/modules/administration/asset-purchase" element={<AssetPurchase/>} />
-            <Route path="/modules/administration/school-structure" element={<SchoolStructure/>} />
-            <Route path="/modules/administration/school-structure-blocks" element={<SchoolStructureUI/>} />
-            <Route path="/modules/administration/attendance-status/teacher" element={<TeacherSetting/>} />
-            <Route path="/modules/communication/announcement/notification-panel" element={<NotificationPanel/>} />          
-            <Route path="/modules/administration/attendance-manage-staff" element={<StaffAttendance/>} />
-            <Route path="/modules/administration/manage-visitor" element={<ManageVisitors/>} />
-            <Route path="/modules/administration/manage-postal" element={<Postal/>} />
-            <Route path="/modules/administration/manage-enquiry" element={<Enquiry/>} />
-          
-            <Route element={<NotificationPanel />}>
-            <Route path="/announcement/View" element={<View />} />
-            <Route path="/announcement/Create" element={<Create />} />
-          </Route>
+            <Route
+              path="/modules/administration/location-category"
+              element={<CategoryLocation />}
+            />
+            <Route path="/modules/administration/vendor" element={<Vendor />} />
+            <Route path="/modules/administration/assets" element={<Assets />} />
+            <Route
+              path="/modules/administration/asset-purchase"
+              element={<AssetPurchase />}
+            />
+            <Route
+              path="/modules/administration/school-structure"
+              element={<SchoolStructure />}
+            />
+            <Route
+              path="/modules/administration/school-structure-blocks"
+              element={<SchoolStructureUI />}
+            />
+            <Route
+              path="/modules/administration/attendance-status/teacher"
+              element={<TeacherSetting />}
+            />
+            <Route
+              path="/modules/communication/announcement/notification-panel"
+              element={<Announcement />}
+            />
+            <Route
+              path="/modules/administration/attendance-manage-staff"
+              element={<StaffAttendance />}
+            />
+            <Route
+              path="/modules/administration/manage-visitor"
+              element={<ManageVisitors />}
+            />
+            <Route
+              path="/modules/administration/manage-postal"
+              element={<Postal />}
+            />
+            <Route
+              path="/modules/administration/manage-enquiry"
+              element={<Enquiry />}
+            />
+
+            <Route
+              path="/modules/academic/learning-management-system/link"
+              element={<LMSLink />}
+            />
+            <Route
+              path="/modules/academic/learning-management-system/link/:id"
+              element={<SectionLinkId />}
+            />
+            <Route
+              path="/modules/academic/assessment-and-grade"
+              element={<AssessmentAndGrade />}
+            />
+            <Route
+              path="/modules/academic/assessment-and-grade/assessment/:link"
+              element={<AssessmentLink />}
+            />
+            <Route
+              path="/modules/academic/section-grade-book"
+              element={<SectionGradeBook />}
+            />
+            <Route
+              path="/modules/academic/promotion-and-graduation"
+              element={<PromotionGraduation />}
+            />
+
+            <Route path="/modules/users/students" element={<Student />} />
+            <Route
+              path="/modules/users/students/:id"
+              element={<StudentProfile />}
+            />
+
+            <Route
+              path="/modules/administration/location-category"
+              element={<CategoryLocation />}
+            />
+            <Route path="/modules/administration/vendor" element={<Vendor />} />
+            <Route path="/modules/administration/assets" element={<Assets />} />
+            <Route
+              path="/modules/administration/asset-purchase"
+              element={<AssetPurchase />}
+            />
+            <Route
+              path="/modules/administration/school-structure"
+              element={<SchoolStructure />}
+            />
+            <Route
+              path="/modules/administration/school-structure-blocks"
+              element={<SchoolStructureUI />}
+            />
+            <Route
+              path="/modules/administration/attendance-status/teacher"
+              element={<TeacherSetting />}
+            />
+            <Route
+              path="/modules/communication/announcement/notification-panel"
+              element={<Announcement />}
+            />
+            <Route
+              path="/modules/administration/attendance-manage-staff"
+              element={<StaffAttendance />}
+            />
+            <Route
+              path="/modules/administration/manage-visitor"
+              element={<ManageVisitors />}
+            />
+            <Route
+              path="/modules/administration/manage-postal"
+              element={<Postal />}
+            />
+            <Route
+              path="/modules/administration/manage-enquiry"
+              element={<Enquiry />}
+            />
+
+            <Route
+              path="/modules/announcement"
+              element={<Announcement />}
+            />
           </Route>
           {/* <Route path="/profile" element={<Dprofile/>} /> */}
           <Route path="/" element={<Navigate replace to="/login" />} />
-
           <Route element={<MyDetails />}>
             <Route path="/profile/staff-home" element={<Home />} />
             <Route path="/profile/staff-profile" element={<Profile />} />
@@ -169,12 +282,10 @@ function App() {
           </Route>
           <Route path="/login" element={<Login />} />
           <Route path="/roles-permissions" element={<RolesPermissions />} />
-
           <Route path="/change-academic" element={<ChangeAcademic />} />
           <Route path="/change-password" element={<Changepassword />} />
           <Route path="/school-terms" element={<TermsDisplayPage />} />{" "}
           {/*Route to Display the terms and conditions */}
-          
           {/* <Route path="/profile" element={<Dprofile/>} /> */}
           <Route path="/" element={<Navigate replace to="/login" />} />
           <Route element={<MyDetails />}>
@@ -185,11 +296,6 @@ function App() {
             <Route path="/profile/staff-subjectMapping" element={<Subject />} />
             <Route path="/profile/staff-advance" element={<Advance />} />
           </Route>
-
-          
-          
-
-
         </Routes>
       </ThemeProvider>
     </ImageContext.Provider>
