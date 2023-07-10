@@ -72,7 +72,7 @@ const Communication = () => {
           </Typography>
           <Divider />
           <Li>
-          <Link to="/admin">
+          <Link to="/modules/communication/noticeboard/notice-board">
             <Typography variant="h5">Notice</Typography>
           </Link>
         </Li>
