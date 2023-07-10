@@ -9,6 +9,10 @@ import styled from "styled-components";
 import DatePickerComp from "./DatePickerComp";
 import BulletinTable from "./BulletinTable";
 import AttendanceTable from "./AttendanceTable";
+import FinanceTable from "./FinanceTable";
+import BasicDateCalendar from "./Calender";
+
+
 
 const Component = styled.div`
   width: calc(100% - 30px);
@@ -101,37 +105,39 @@ const Dashboard = () => {
         </Box>
 
 
-        {/* ROW 5 */}
-        <Box
-          gridColumn="span 12"
-          gridRow="span 2"
-          backgroundColor={colors.primary[400]}
-          overflow="auto"
-        >
-          <Box
-            mt="25px"
-            p="0 30px"
-          >
-            <Box>
-              <Typography
-                my="25px"
-                variant="h5"
-                fontWeight="600"
-                color={colors.grey[100]}
-              >
-                Live Finance Data
-              </Typography>
 
-            </Box>
-            {/* <Box sx={{ width: 1 }} >
-              <BasicTable/>
-            </Box> */}
+        {/* ROW 5 Live Finance Data */}
+        <Box gridColumn="span 9" gridRow="span 3" backgroundColor={colors.primary[400]} >
+          <Box sx={{ px:"30px", mt: "40px"}} >
+              <Typography  my="10px" variant="h4" fontWeight="600" color={colors.grey[100]}  >
+                    Live Finance Data
+              </Typography>
+          </Box>
+
+          <Box mt="25px">
+            <FinanceTable/>
           </Box>
         </Box>
 
 
+        {/* CALENDER HERE _-_-_-_-_- */}
+        <Box
+          gridColumn="span 3"
+          gridRow="span 3"
+          backgroundColor={colors.primary[400]}
+          sx={{pt: "40px"}}
+        >
+          <BasicDateCalendar
+            sx={{
+              '& .css-4zqhc7-MuiButtonBase-root-MuiPickersDay-root':{
+                bgcolor: "red",
+                backgroundColor: "red !important",
+                margin: "30px"
+              }
+            }}
+          />
 
-        
+        </Box>
 
 
         {/* LOWER LEVEL ROWS */}
@@ -164,7 +170,7 @@ const Dashboard = () => {
         </Box>
 
         <Box
-          gridColumn="span 5"
+          gridColumn="span 6"
           gridRow="span 2"
           backgroundColor={colors.primary[400]}
         >
@@ -182,7 +188,7 @@ const Dashboard = () => {
 
 
         <Box
-          gridColumn="span 4"
+          gridColumn="span 3"
           gridRow="span 2"
           backgroundColor={colors.primary[400]}
           p="30px"
