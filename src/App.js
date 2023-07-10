@@ -80,6 +80,7 @@ import NotificationPanel from "./scenes/modules/communication/announcement/Notif
 import { View } from "./scenes/modules/communication/announcement/View";
 import { Create } from "@mui/icons-material";
 import Announcement from "./scenes/modules/communication/announcement/Announcement";
+import FormBuilder from "./scenes/modules/user/preadmission/formbuilder/FormBuilder";
 // import OrgProfile from "./settingcomponents/OrgProfile/OrgProfile";
 //>>>>>>> b63988d5e5c115f3840ce513fec25967cdd5c832
 
@@ -207,6 +208,10 @@ function App() {
             <Route
               path="/modules/users/students/:id"
               element={<StudentProfile />}
+            />
+            <Route
+              path="/modules/users/preadmission/formbuilder"
+              element={<FormBuilder />}
             />
 
             <Route
