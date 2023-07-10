@@ -146,14 +146,14 @@ const ClassTimeTable = () => {
             Select Date
           </InputLabel>
           <Controller
-            name="class"
+            name="date"
             control={control}
             required
             //   defaultValue={1}
             render={({ field }) => (
               <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <DemoContainer components={["DatePicker"]}>
-                  <DatePicker {...field} label="Basic date picker" />
+                  <DatePicker {...field} label="Select Date" />
                 </DemoContainer>
               </LocalizationProvider>
             )}
