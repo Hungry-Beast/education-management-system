@@ -9,6 +9,7 @@ import Text from "./OptionalFields/Text";
 import React from "react";
 import Number from "./OptionalFields/Number";
 import Date from "./OptionalFields/Date";
+import Select from "./OptionalFields/Select";
 
 const OptionalDataCollector = ({
   schemaBuilder,
@@ -16,6 +17,9 @@ const OptionalDataCollector = ({
   handleTextChange,
   handleSelectChange,
   handleDateChange,
+  handleOptionChange,
+  handleOptionDelete,
+  handleAddOption,
 }) => {
   switch (schemaBuilder.type) {
     case "text":
@@ -41,6 +45,18 @@ const OptionalDataCollector = ({
           handleTextChange={handleTextChange}
           handleCheckChange={handleCheckChange}
           handleDateChange={handleDateChange}
+        />
+      );
+    case "select":
+      return (
+        <Select
+          schemaBuilder={schemaBuilder}
+          handleTextChange={handleTextChange}
+          handleCheckChange={handleCheckChange}
+          handleDateChange={handleDateChange}
+          handleOptionChange={handleOptionChange}
+          handleOptionDelete={handleOptionDelete}
+          handleAddOption={handleAddOption}
         />
       );
     default:

@@ -4,17 +4,17 @@ import React from "react";
 import styled from "styled-components";
 import Text from "./Preview/Text";
 import Number from "./Preview/Number";
+import SelectComponent from "./Preview/Select";
+import Date from "./Preview/Date";
 
-const ContainerBox = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-
-  gap: 10px 20px;
-`;
-
-const Fields = ({ schema, register, editSchema, deleteSchema, errors }) => {
+const Fields = ({
+  schema,
+  register,
+  editSchema,
+  deleteSchema,
+  errors,
+  control,
+}) => {
   switch (schema.type) {
     case "text":
       return (
@@ -38,8 +38,26 @@ const Fields = ({ schema, register, editSchema, deleteSchema, errors }) => {
       );
     case "date":
       return (
-       <></>
-      )
+        <Date
+          control={control}
+          schema={schema}
+          register={register}
+          editSchema={editSchema}
+          deleteSchema={deleteSchema}
+          errors={errors}
+        />
+      );
+    case "select":
+      return (
+        <SelectComponent
+          control={control}
+          schema={schema}
+          register={register}
+          editSchema={editSchema}
+          deleteSchema={deleteSchema}
+          errors={errors}
+        />
+      );
     default:
       break;
   }

@@ -1,4 +1,6 @@
 import {
+  Alert,
+  Box,
   Button,
   Checkbox,
   Divider,
@@ -15,6 +17,7 @@ import { useForm } from "react-hook-form";
 import styled from "styled-components";
 import Fields from "./Fields";
 import OptionalDataCollector from "./OptionalDataCollector";
+import { Delete, Edit } from "@mui/icons-material";
 
 const MainComponent = styled.div`
   display: grid;
@@ -49,6 +52,15 @@ const FormDisplayer = styled.form`
 
   /* align-items: center; */
   /* justify-content: space-between; */
+`;
+const ContainerBox = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  gap: 10px 20px;
+  grid-column: span ${(props) => (props.gridSpan ? 2 : 1)};
 `;
 
 const typeOptions = [
@@ -101,6 +113,7 @@ export default function App() {
   const {
     register,
     handleSubmit,
+    control,
     formState: { errors },
   } = useForm();
 
@@ -114,7 +127,7 @@ export default function App() {
     minLenght: "",
     maxLength: "",
     pattern: "",
-    options: [],
+    options: [{ value: "", label: "" }],
     id: 0,
   });
 
@@ -130,17 +143,51 @@ export default function App() {
     setSchemaBuilder({ ...schemaBuilder, [e.target.name]: e.target.checked });
   };
   const handleDateChange = (date, name) => {
-    const formatedDate = date.$D + "-" + date.$M + "-" + date.$y;
+    const formatedDate =
+      parseInt(date.$M + 1) + "-" + parseInt(date.$D) + "-" + date.$y;
+    console.log(formatedDate);
     setSchemaBuilder({ ...schemaBuilder, [name]: formatedDate });
   };
+  const handleOptionChange = (e, index) => {
+    setSchemaBuilder((prevObject) => {
+      let newOptions = [...prevObject.options];
+      newOptions[index][e.target.name] = e.target.value;
+      return {
+        ...prevObject,
+        options: newOptions,
+      };
+    });
+  };
+  const handleOptionDelete = (index) => {
+    // setSchemaBuilder(schemaBuilder?.options?.filter((ele, i) => i !== index));
+    setSchemaBuilder((prevObject) => {
+      const newOptions = [...prevObject.options];
+      newOptions.splice(index, 1);
+      return {
+        ...prevObject,
+        options: newOptions,
+      };
+    });
+  };
+  const handleAddOption = () => {
+    // let tempSchemaBuilder = schemaBuilder;
+    // tempSchemaBuilder?.options?.push({ label: "", value: "" });
+    setSchemaBuilder((prevSchema) => ({
+      ...prevSchema,
+      options: [...prevSchema.options, { label: "", value: "" }],
+    }));
+  };
+  // console.log(schemaBuilder);
+  // console.log(formSchema);
+
   const addSchema = (e) => {
     e.preventDefault();
     const id = formSchema.at(-1)?.id;
-    let tempSchema = schemaBuilder;
     // console.log(formSchema.at(-1).id);
-    tempSchema.id = id !== undefined ? id + 1 : 0;
-
+    
     if (!schemaBuilder.edited) {
+      let tempSchema = schemaBuilder;
+      tempSchema.id = id !== undefined ? id + 1 : 0;
       setFormSchema([...formSchema, tempSchema]);
     } else {
       setFormSchema(
@@ -156,16 +203,14 @@ export default function App() {
       minLenght: "",
       maxLength: "",
       pattern: "",
-      options: [],
+      options: [{ value: "", label: "" }],
       id: id,
     });
   };
   const editSchema = (schema) => {
+    let newSchema = schema;
+    newSchema.edited = true;
     setSchemaBuilder(schema);
-    console.log(schema);
-    setFormSchema([
-      ...formSchema.map((item) => (item.id === schema.id ? schema : item)),
-    ]);
   };
   const deleteSchema = (schema) => {
     setFormSchema(formSchema.filter((item) => item.id !== schema.id));
@@ -215,6 +260,9 @@ export default function App() {
             handleCheckChange={handleCheckChange}
             handleSelectChange={handleSelectChange}
             handleDateChange={handleDateChange}
+            handleOptionChange={handleOptionChange}
+            handleOptionDelete={handleOptionDelete}
+            handleAddOption={handleAddOption}
           />
           <Button
             type="submit"
@@ -226,8 +274,8 @@ export default function App() {
           </Button>
         </FormControl>
       </Component>
-      <Component>
-        <FormDisplayer onSubmit={handleSubmit(onSubmit)}>
+      <Component onSubmit={handleSubmit(onSubmit)}>
+        <FormDisplayer>
           <Typography variant="h3" gridColumn="span 2">
             Preview Form
           </Typography>
@@ -239,7 +287,7 @@ export default function App() {
             }}
           />
           {formSchema?.map((schema) => (
-            <ContainerBox>
+            <ContainerBox gridSpan={schema?.gridSpan}>
               <Fields
                 key={schema.id}
                 schema={schema}
@@ -247,6 +295,7 @@ export default function App() {
                 editSchema={editSchema}
                 deleteSchema={deleteSchema}
                 errors={errors}
+                control={control}
               />
 
               {schema.errorMessage ||

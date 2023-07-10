@@ -7,6 +7,7 @@ import {
 import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
+import dayjs from "dayjs";
 import styled from "styled-components";
 const ComponentInside = styled.div`
   display: flex;
@@ -52,9 +53,9 @@ const Date = ({
                 },
               },
             }}
+            minDate={dayjs(schemaBuilder?.minDate)}
             label="Max Date"
-            onChange={(date) => handleDateChange(date, "Max Date")}
-
+            onChange={(date) => handleDateChange(date, "maxDate")}
           />
         </DemoContainer>
       </LocalizationProvider>
@@ -65,6 +66,7 @@ const Date = ({
             value={schemaBuilder?.gridSpan}
             name="gridSpan"
             onChange={handleCheckChange}
+            disabled
           />
         }
         label="Full Width"
