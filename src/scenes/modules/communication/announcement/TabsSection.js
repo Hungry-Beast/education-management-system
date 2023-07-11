@@ -1,6 +1,6 @@
 import { LibraryBooks, ModeEdit, Subject } from "@mui/icons-material";
 import { Divider, Tab, Tabs } from "@mui/material";
-import  { useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -9,19 +9,37 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
 `;
-const TabsSection = ({value,handleChange}) => {
- 
+
+const StyledTabs = styled(Tabs)`
+  .MuiTabs-flexContainer {
+    background-color: white;
+    color:white;
+  }
+
+  .MuiTab-root {
+    color: black;
+    &:hover {
+      background-color: blue;
+      color: white;
+    }
+  }
+
+  .Mui-selected {
+    background-color: blue;
+    color: white !important;
+  }
+`;
+
+const TabsSection = ({ value, handleChange }) => {
   return (
     <Container>
-      <Tabs
-        value={value}
-        onChange={handleChange}
-        aria-label="tabs"
-      >
-        <Tab label="Subject" value={0} icon={<Subject/>} />
-        <Tab label="Courses" value={1} icon={<LibraryBooks/>}  />
-        <Tab label="Class/Sem/Year" value={2} icon={<ModeEdit/>} />
-      </Tabs>
+      <StyledTabs value={value} onChange={handleChange} aria-label="tabs">
+        <Tab label="View" value={0} />
+        <Tab label="Create" value={1}  />
+        <Tab label="SMS" value={2} />
+        <Tab label="Mail" value={3} />
+        <Tab label="Push Notification" value={4} />
+      </StyledTabs>
     </Container>
   );
 };
