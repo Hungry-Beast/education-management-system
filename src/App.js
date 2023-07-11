@@ -77,9 +77,7 @@ import Enquiry from "./scenes/modules/administration/visitor/enquiry";
 import { Notice } from "./scenes/modules/communication/noticeboard/Notice";
 import StudentProfile from "./scenes/modules/user/student/enrollment-record/student-profile/StudentProfile";
 
-import NotificationPanel from "./scenes/modules/communication/announcement/NotificationPanel";
-import { View } from "./scenes/modules/communication/announcement/View";
-import { Create } from "@mui/icons-material";
+
 import Announcement from "./scenes/modules/communication/announcement/Announcement";
 import FormBuilder from "./scenes/modules/user/preadmission/formbuilder/FormBuilder";
 // import OrgProfile from "./settingcomponents/OrgProfile/OrgProfile";
@@ -174,7 +172,7 @@ function App() {
             />
             <Route
               path="/modules/communication/announcement/notification-panel"
-              element={<NotificationPanel />}
+              element={<Announcement />}
             />
             <Route
               path="/modules/administration/attendance-manage-staff"
@@ -252,7 +250,7 @@ function App() {
             />
             <Route
               path="/modules/communication/announcement/notification-panel"
-              element={<NotificationPanel />}
+              element={<Announcement />}
             />
             <Route
               path="/modules/administration/attendance-manage-staff"
