@@ -103,7 +103,7 @@ const Topbar = () => {
         <Link to="/admin">
           <Box
             component="img"
-            sx={{ height: 70, mr: "30px" }}
+            sx={{ height: 50, mr: "30px" }}
             alt="Logo"
             src="/assets/infotute1.gif"
           />
@@ -123,7 +123,7 @@ const Topbar = () => {
           backgroundColor={colors.primary[400]}
           borderRadius="3px"
         >
-          <InputBase sx={{ ml: 2, flex: 1 }} placeholder="Search" />
+          <InputBase sx={{ ml: 2, flex: 1}} placeholder="Search" />
           <IconButton type="button" sx={{ p: 1 }}>
             <SearchIcon />
           </IconButton>

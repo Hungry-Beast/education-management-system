@@ -11,6 +11,7 @@ import BulletinTable from "./BulletinTable";
 import AttendanceTable from "./AttendanceTable";
 import FinanceTable from "./FinanceTable";
 import BasicDateCalendar from "./Calender";
+import LibraryChart from "./PieChart";
 
 
 
@@ -145,28 +146,11 @@ const Dashboard = () => {
           gridColumn="span 3"
           gridRow="span 2"
           backgroundColor={colors.primary[400]}
-          p="30px"
-          
         >
-          <Typography variant="h5" fontWeight="600">
+          <Typography variant="h4" fontWeight="600" sx={{px: '20px', pt: "10px"}} >
             Library
           </Typography>
-          <Box
-            display="flex"
-            flexDirection="column"
-            alignItems="center"
-            mt="25px"
-          >
-            <ProgressCircle size="125" />
-            <Typography
-              variant="h5"
-              color={colors.greenAccent[500]}
-              sx={{ mt: "15px" }}
-            >
-              Total Books
-            </Typography>
-            <Typography>Includes extra misc expenditures and costs</Typography>
-          </Box>
+            <LibraryChart />
         </Box>
 
         <Box
@@ -191,28 +175,11 @@ const Dashboard = () => {
           gridColumn="span 3"
           gridRow="span 2"
           backgroundColor={colors.primary[400]}
-          p="30px"
-          
         >
-          <Typography variant="h5" fontWeight="600">
+          <Typography variant="h4" fontWeight="600" sx={{px: '20px', pt: "10px"}}>
             Finance
           </Typography>
-          <Box
-            display="flex"
-            flexDirection="column"
-            alignItems="center"
-            mt="25px"
-          >
-            <ProgressCircle size="125" />
-            <Typography
-              variant="h5"
-              color={colors.greenAccent[500]}
-              sx={{ mt: "15px" }}
-            >
-              Amount To Be Received
-            </Typography>
-            
-          </Box>
+          <LibraryChart />
         </Box>
 
       </Box>
