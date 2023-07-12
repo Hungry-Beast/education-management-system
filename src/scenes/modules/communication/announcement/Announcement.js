@@ -26,6 +26,7 @@ const Announcement = () => {
   }, []);
 
   return (
+    // main page 
     <Component>
       <TabsSection value={value} handleChange={handleChange} />
       <Divider sx={{my:"5px"}} color="#ffa800" />
