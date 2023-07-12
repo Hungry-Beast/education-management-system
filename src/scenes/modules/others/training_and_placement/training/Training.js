@@ -208,7 +208,7 @@ export default function Training(){
                     <Select 
                         defaultValue={10}
                         label="10"
-                        onChange={handleChange}
+                        
                     >
                         <MenuItem value={10}>10</MenuItem>
                         <MenuItem value={25}>25</MenuItem>
