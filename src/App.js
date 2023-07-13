@@ -67,7 +67,6 @@ import TeacherSetting from "./scenes/modules/administration/teacher attendance/t
 import Myleaves from "./detailscomponents/myleaves";
 
 import RolesPermissions from "./scenes/roles&permision/roles-permision";
-// import { NotificationPanel } from "./scenes/modules/communication/announcement/NotificationPanel";
 import Advance from "./detailscomponents/advance/index";
 import ChangeAcademic from "./scenes/changeacademic/change-academic";
 import StaffAttendance from "./scenes/modules/administration/teacher attendance/staffattendance";
@@ -80,6 +79,7 @@ import StudentProfile from "./scenes/modules/user/student/enrollment-record/stud
 
 import Announcement from "./scenes/modules/communication/announcement/Announcement";
 import FormBuilder from "./scenes/modules/user/preadmission/formbuilder/FormBuilder";
+// import  NotificationPanel  from "./scenes/modules/communication/announcement/Announcement";
 // import OrgProfile from "./settingcomponents/OrgProfile/OrgProfile";
 //>>>>>>> b63988d5e5c115f3840ce513fec25967cdd5c832
 
@@ -142,7 +142,7 @@ function App() {
             <Route path="/modules/administration/school-structure" element={<SchoolStructure/>} />
             <Route path="/modules/administration/school-structure-blocks" element={<SchoolStructureUI/>} />
             <Route path="/modules/administration/attendance-status/teacher" element={<TeacherSetting/>} />
-            <Route path="/modules/communication/announcement/notification-panel" element={<NotificationPanel/>} /> 
+            {/* <Route path="/modules/communication/announcement/notification-panel" element={<NotificationPanel/>} />  */}
             <Route path="/modules/communication/noticeboard/notice-board" element={<Notice/>} />         
             <Route path="/modules/administration/attendance-manage-staff" element={<StaffAttendance/>} />
             <Route path="/modules/administration/manage-visitor" element={<ManageVisitors/>} />
