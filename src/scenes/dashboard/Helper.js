@@ -10,7 +10,7 @@ function OnlineHelper({name, position}) {
         src="/assets/Profilepic.jpg"
       />
 
-      <Box sx={{ml:"-80px"}} >
+      <Box sx={{ml:"-10px", width: "50%"}} >
           <Typography>{name}</Typography>
           <Typography sx={{ml:"2px"}} >{position}</Typography>
       </Box>
@@ -24,4 +24,27 @@ function OnlineHelper({name, position}) {
   )
 }
 
-export { OnlineHelper };
+
+function BirthdayHelper({name, position}) {
+  return (
+    <Box sx={{px: "30px", mb: '15px'  ,display: "flex", justifyContent: "space-between", alignItems: "center"}} >
+      <Box component="img" sx={{ height: "45px", width: "45px", borderRadius: "100%" }} alt="Logo"
+        src="/assets/Profilepic.jpg"
+      />
+
+      <Box sx={{ml:"-20px", width: "50%"}} >
+          <Typography>{name}</Typography>
+          <Typography sx={{ml:"2px"}} >{position}</Typography>
+      </Box>
+
+      <Box>
+      <Box component="img" sx={{ height: "45px", width: "45px" }} alt="Logo"
+        src="/assets/birthday.jpg"
+      />
+        
+      </Box>
+  </Box>
+  )
+}
+
+export { OnlineHelper, BirthdayHelper };

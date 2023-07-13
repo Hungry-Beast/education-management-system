@@ -16,7 +16,7 @@ import ApprovalTable from "./ApprovalTable";
 import WeatherComp from "../../components/WeatherComp";
 import LaptopMacIcon from '@mui/icons-material/LaptopMac';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
-import { OnlineHelper } from "./Helper";
+import { BirthdayHelper, OnlineHelper } from "./Helper";
 
 const Component = styled.div`
   width: calc(100% - 30px);
@@ -52,7 +52,7 @@ const Dashboard = () => {
           <StaticsticsComponent />
         </Box>
 
-        <Box gridColumn="span 3" gridRow="span 2" sx={{bgcolor: "pink"}} >
+        <Box gridColumn="span 3" gridRow="span 2" >
             <Box>
               <Typography variant="h4" sx={{bgcolor: "#edf1f4", py: "18px", color: "#131313", pl: "30px"}}  >
                   Who's Online
@@ -60,7 +60,7 @@ const Dashboard = () => {
             </Box>
           <br/>
             <OnlineHelper name="SULEKHA PANDIT" position="Teacher" />
-            <OnlineHelper name="RAKESH SHARMA" position="Staff" />
+            <OnlineHelper name="ARINDOM CHATTERJEE" position="Staff" />
         </Box>
 
         
@@ -81,8 +81,15 @@ const Dashboard = () => {
           </Box>
         </Box>
 
-        <Box gridColumn="span 3" gridRow="span 2" sx={{bgcolor: "blue"}} >
-          Birthday Card
+        <Box gridColumn="span 3" gridRow="span 2" sx={{bgcolor: "white"}} >
+            <Box>
+              <Typography variant="h4" sx={{bgcolor: "#edf1f4", py: "18px", color: "#131313", pl: "30px"}}  >
+                  Birthday Card
+              </Typography>
+            </Box>
+          <br/>
+            <BirthdayHelper name="TANIYA NARZARY" position="Teacher" />
+            <BirthdayHelper name="JAYSWRANG BASUMATARY" position="Staff" />
         </Box>
 
 
