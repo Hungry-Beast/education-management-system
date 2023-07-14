@@ -79,11 +79,8 @@ import StudentProfile from "./scenes/modules/user/student/enrollment-record/stud
 
 import Announcement from "./scenes/modules/communication/announcement/Announcement";
 import FormBuilder from "./scenes/modules/user/preadmission/formbuilder/FormBuilder";
-<<<<<<< HEAD
 import ManageEvent from "./scenes/modules/communication/manageevent";
-=======
 // import  NotificationPanel  from "./scenes/modules/communication/announcement/Announcement";
->>>>>>> 6ea09c234089d9a0d5502a994e2868bf8b33138d
 // import OrgProfile from "./settingcomponents/OrgProfile/OrgProfile";
 //>>>>>>> b63988d5e5c115f3840ce513fec25967cdd5c832
 
