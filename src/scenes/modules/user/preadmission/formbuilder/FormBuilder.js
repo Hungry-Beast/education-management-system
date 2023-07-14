@@ -57,7 +57,7 @@ const ContainerBox = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
 
   gap: 10px 20px;
   grid-column: span ${(props) => (props.gridSpan ? 2 : 1)};
@@ -68,11 +68,12 @@ const typeOptions = [
   "number",
   "date",
   "select",
-  "autocomplete",
+  // "autocomplete",
   "textarea",
   "checkbox",
   "radio",
   "file",
+  "header"
 ];
 
 const schemaOptions = [
@@ -128,6 +129,7 @@ export default function App() {
     maxLength: "",
     pattern: "",
     options: [{ value: "", label: "" }],
+    radios: [""],
     id: 0,
   });
 
@@ -169,6 +171,7 @@ export default function App() {
       };
     });
   };
+
   const handleAddOption = () => {
     // let tempSchemaBuilder = schemaBuilder;
     // tempSchemaBuilder?.options?.push({ label: "", value: "" });
@@ -177,19 +180,45 @@ export default function App() {
       options: [...prevSchema.options, { label: "", value: "" }],
     }));
   };
-  // console.log(schemaBuilder);
-  // console.log(formSchema);
-
+  const handleAddRadio = () => {
+    setSchemaBuilder((prevSchema) => ({
+      ...prevSchema,
+      radios: [...prevSchema.radios, ""],
+    }));
+  };
+  const handleRadioChange = (e, index) => {
+    setSchemaBuilder((prevObject) => {
+      let newRadios = [...prevObject.radios];
+      newRadios[index] = e.target.value;
+      return {
+        ...prevObject,
+        radios: newRadios,
+      };
+    });
+  };
+  const handleRadioDelete = (index) => {
+    // setSchemaBuilder(schemaBuilder?.options?.filter((ele, i) => i !== index));
+    setSchemaBuilder((prevObject) => {
+      const newRadios = [...prevObject.radios];
+      newRadios.splice(index, 1);
+      return {
+        ...prevObject,
+        radios: newRadios,
+      };
+    });
+  };
   const addSchema = (e) => {
     e.preventDefault();
     const id = formSchema.at(-1)?.id;
     // console.log(formSchema.at(-1).id);
-    
+
     if (!schemaBuilder.edited) {
       let tempSchema = schemaBuilder;
       tempSchema.id = id !== undefined ? id + 1 : 0;
+      if (tempSchema.type === "header") tempSchema.gridSpan = true;
       setFormSchema([...formSchema, tempSchema]);
     } else {
+      let tempSchema = schemaBuilder;
       setFormSchema(
         formSchema.map((item) =>
           item.id === schemaBuilder.id ? schemaBuilder : item
@@ -215,6 +244,7 @@ export default function App() {
   const deleteSchema = (schema) => {
     setFormSchema(formSchema.filter((item) => item.id !== schema.id));
   };
+  console.log(schemaBuilder);
 
   return (
     <MainComponent>
@@ -263,6 +293,9 @@ export default function App() {
             handleOptionChange={handleOptionChange}
             handleOptionDelete={handleOptionDelete}
             handleAddOption={handleAddOption}
+            handleAddRadio={handleAddRadio}
+            handleRadioChange={handleRadioChange}
+            handleRadioDelete={handleRadioDelete}
           />
           <Button
             type="submit"
