@@ -80,6 +80,7 @@ import StudentProfile from "./scenes/modules/user/student/enrollment-record/stud
 
 import Announcement from "./scenes/modules/communication/announcement/Announcement";
 import FormBuilder from "./scenes/modules/user/preadmission/formbuilder/FormBuilder";
+import ManageEvent from "./scenes/modules/communication/manageevent";
 // import OrgProfile from "./settingcomponents/OrgProfile/OrgProfile";
 //>>>>>>> b63988d5e5c115f3840ce513fec25967cdd5c832
 
@@ -142,7 +143,7 @@ function App() {
             <Route path="/modules/administration/school-structure" element={<SchoolStructure/>} />
             <Route path="/modules/administration/school-structure-blocks" element={<SchoolStructureUI/>} />
             <Route path="/modules/administration/attendance-status/teacher" element={<TeacherSetting/>} />
-            <Route path="/modules/communication/announcement/notification-panel" element={<NotificationPanel/>} /> 
+            {/* <Route path="/modules/communication/announcement/notification-panel" element={<NotificationPanel/>} />  */}
             <Route path="/modules/communication/noticeboard/notice-board" element={<Notice/>} />         
             <Route path="/modules/administration/attendance-manage-staff" element={<StaffAttendance/>} />
             <Route path="/modules/administration/manage-visitor" element={<ManageVisitors/>} />
@@ -173,6 +174,10 @@ function App() {
             <Route
               path="/modules/communication/announcement/notification-panel"
               element={<Announcement />}
+            />
+             <Route
+              path="/modules/events"
+              element={<ManageEvent />}
             />
             <Route
               path="/modules/administration/attendance-manage-staff"
@@ -251,6 +256,10 @@ function App() {
             <Route
               path="/modules/communication/announcement/notification-panel"
               element={<Announcement />}
+            />
+            <Route
+              path="/modules/communication/events/manage-event"
+              element={<ManageEvent/>}
             />
             <Route
               path="/modules/administration/attendance-manage-staff"
