@@ -37,7 +37,7 @@ const rows = [
 
 export default function ApprovalTable() {
   return (
-    <TableContainer sx={{ width: '100%', maxHeight: '260px', overflowX: 'auto', px: "10px" }} component={Paper}>
+    <TableContainer sx={{ width: '100%', maxHeight: '240px', overflowX: 'auto', px: "10px" }} component={Paper}>
       <Table aria-label="simple table">
         <TableBody>
           {rows.map((row) => (
@@ -46,8 +46,8 @@ export default function ApprovalTable() {
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell >
-               <p style={{fontSize: "15px", marginBottom: "-10px"}} ><strong>{row.title}</strong></p> 
-                <p  >{row.classroom}</p> 
+               <p style={{fontSize: "15px", marginBottom: "-12px", marginTop: "-2px"}} ><strong>{row.title}</strong></p> 
+                <p style={{marginBottom: "-2px"}} >{row.classroom}</p> 
               </TableCell>
               
               <TableCell align="right">
