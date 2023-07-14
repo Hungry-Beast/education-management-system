@@ -95,7 +95,7 @@ const Communication = () => {
           </Typography>
           <Divider />
           <Li>
-          <Link to="/admin">
+          <Link to="/modules/communication/events/manage-event">
             <Typography variant="h5">Manage Events</Typography>
           </Link>
         </Li>
