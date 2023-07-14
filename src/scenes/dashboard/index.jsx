@@ -152,24 +152,28 @@ const Dashboard = () => {
 
         {/* LOWER LEVEL ROWS */}
 
-        <Box gridColumn="span 3" gridRow="span 3" backgroundColor={colors.primary[400]}>
-          <Typography variant="h4" fontWeight="600" sx={{px: '20px', pt: "10px"}}>Finance</Typography>
+        <Box gridColumn="span 3" gridRow="span 3" >
+          <Typography variant="h4" fontWeight="600" sx={{bgcolor: "#edf1f4", py: "18px", color: "#131313", pl: "30px", mb: "15px"}}>Finance</Typography>
+          <Typography variant="h4" fontWeight="500" sx={{pl: '30px'}}>Amount to be received</Typography>
+          <Typography variant="h4" fontWeight="500" sx={{pl: '30px' ,mb: "40px", color: "#2e43ce"}}>$14677722</Typography>
           <LibraryChart />
         </Box>
 
 
-        <Box gridColumn="span 6" gridRow="span 2" backgroundColor={colors.primary[400]}>
-          <Typography variant="h4" fontWeight="600" sx={{ padding: "10px 20px 0 20px", mb:"10px" }}>Approvals</Typography>
+        <Box gridColumn="span 3" gridRow="span 2"   >
+          <Typography variant="h4" fontWeight="600" sx={{bgcolor: "#edf1f4", py: "18px", color: "#131313", pl: "30px"}} > Library </Typography>
+            <LibraryChart />
+        </Box>
+
+        <Box gridColumn="span 6" gridRow="span 2" >
+          <Typography variant="h4" fontWeight="600" sx={{ bgcolor: "#edf1f4", py: "18px", color: "#131313", pl: "30px"}}>Approvals</Typography>
           
           <Box>
             <ApprovalTable />
           </Box>
         </Box>
 
-        <Box gridColumn="span 3" gridRow="span 2" backgroundColor={colors.primary[400]} >
-          <Typography variant="h4" fontWeight="600" sx={{px: '20px', pt: "10px"}} > Library </Typography>
-            <LibraryChart />
-        </Box>
+
 
       </Box>
     </Box>
