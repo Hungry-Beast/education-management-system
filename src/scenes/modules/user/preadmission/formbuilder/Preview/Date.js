@@ -21,7 +21,7 @@ import dayjs from "dayjs";
 import React from "react";
 import { Controller } from "react-hook-form";
 import styled from "styled-components";
-
+import './Date.css'
 const Date = ({
   schema,
   register,
