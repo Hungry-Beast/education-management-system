@@ -100,7 +100,7 @@ const Communication = () => {
           </Link>
         </Li>
         <Li>
-          <Link to="/admin">
+          <Link to="/modules/communication/event/event-calender">
             <Typography variant="h5">Events Calendar</Typography>
           </Link>
         </Li>

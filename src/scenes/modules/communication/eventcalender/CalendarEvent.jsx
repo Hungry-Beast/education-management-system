@@ -12,11 +12,10 @@ import {
   Typography,
   useTheme,
 } from "@mui/material";
-import Header from "../../components/Header";
-import { tokens } from "../../theme";
+import Header from "../../../../components/Header";
+import { tokens } from "../../../../theme";
 
-
-const Calendar = () => {
+const CalendarEvent = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [currentEvents, setCurrentEvents] = useState([]);
@@ -48,50 +47,18 @@ const Calendar = () => {
   };
 
   return (
+
+    
+ 
     <Box m="20px">
-      <Header title="Calendar" subtitle="Full Calendar Interactive Page" />
+        
+      {/* <Header title="Calendar" subtitle="Full Calendar Interactive Page" /> */}
 
       <Box display="flex" justifyContent="space-between">
-        {/* CALENDAR SIDEBAR */}
-        <Box
-          flex="1 1 20%"
-          backgroundColor={colors.primary[400]}
-          p="15px"
-          borderRadius="4px"
-         
-          border= '1px solid red'
-          
-        >
-          <Typography variant="h5">Events</Typography>
-          <List>
-            {currentEvents.map((event) => (
-              <ListItem
-                key={event.id}
-                sx={{
-                  backgroundColor: colors.greenAccent[500],
-                  margin: "10px 0",
-                  borderRadius: "2px",
-                }}
-              >
-                <ListItemText
-                  primary={event.title}
-                  secondary={
-                    <Typography>
-                      {formatDate(event.start, {
-                        year: "numeric",
-                        month: "short",
-                        day: "numeric",
-                      })}
-                    </Typography>
-                  }
-                />
-              </ListItem>
-            ))}
-          </List>
-        </Box>
+
 
         {/* CALENDAR */}
-        <Box flex="1 1 100%" ml="15px">
+        <Box flex="1 1 90%" ml="15px">
           <FullCalendar
             height="75vh"
             plugins={[
@@ -129,7 +96,8 @@ const Calendar = () => {
         </Box>
       </Box>
     </Box>
+
   );
 };
 
-export default Calendar;
+export default CalendarEvent;

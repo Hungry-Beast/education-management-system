@@ -82,6 +82,7 @@ import { View } from "./scenes/modules/communication/announcement/View";
 import { Create } from "@mui/icons-material";
 import Announcement from "./scenes/modules/communication/announcement/Announcement";
 import FormBuilder from "./scenes/modules/user/preadmission/formbuilder/FormBuilder";
+import EventCalender from "./scenes/modules/communication/eventcalender";
 // import OrgProfile from "./settingcomponents/OrgProfile/OrgProfile";
 //>>>>>>> b63988d5e5c115f3840ce513fec25967cdd5c832
 
@@ -175,6 +176,10 @@ function App() {
             <Route
               path="/modules/communication/announcement/notification-panel"
               element={<NotificationPanel />}
+            />
+             <Route
+              path="/modules/communication/event/event-calender"
+              element={<EventCalender />}
             />
             <Route
               path="/modules/administration/attendance-manage-staff"
