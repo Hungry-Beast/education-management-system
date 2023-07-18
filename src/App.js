@@ -79,6 +79,7 @@ import StudentProfile from "./scenes/modules/user/student/enrollment-record/stud
 import Announcement from "./scenes/modules/communication/announcement/Announcement";
 import FormBuilder from "./scenes/modules/user/preadmission/formbuilder/FormBuilder";
 import ManageEvent from "./scenes/modules/communication/manageevent";
+import FormPreview from "./scenes/modules/user/preadmission/formpreviewer/FormBuilder";
 // import  NotificationPanel  from "./scenes/modules/communication/announcement/Announcement";
 // import OrgProfile from "./settingcomponents/OrgProfile/OrgProfile";
 //>>>>>>> b63988d5e5c115f3840ce513fec25967cdd5c832
@@ -204,10 +205,7 @@ function App() {
               path="/modules/communication/announcement/notification-panel"
               element={<Announcement />}
             />
-             <Route
-              path="/modules/events"
-              element={<ManageEvent />}
-            />
+            <Route path="/modules/events" element={<ManageEvent />} />
             <Route
               path="/modules/administration/attendance-manage-staff"
               element={<StaffAttendance />}
@@ -288,7 +286,7 @@ function App() {
             />
             <Route
               path="/modules/communication/events/manage-event"
-              element={<ManageEvent/>}
+              element={<ManageEvent />}
             />
             <Route
               path="/modules/administration/attendance-manage-staff"
@@ -350,6 +348,8 @@ function App() {
             <Route path="/profile/staff-subjectMapping" element={<Subject />} />
             <Route path="/profile/staff-advance" element={<Advance />} />
           </Route>
+          <Route path="/formpreview" element={<FormPreview />} />
+          <Route path="/formpreview/:id" element={<FormPreview />} />
         </Routes>
       </ThemeProvider>
     </ImageContext.Provider>

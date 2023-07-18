@@ -29,18 +29,18 @@ const RadioBuilder = ({
   return (
     <FormControl>
       <FormLabel id="demo-row-radio-buttons-group-label">{schema?.label}</FormLabel>
-      {/* <Controller
+      <Controller
         name={schema?.name}
         control={control}
-        required */}
-        {/* //   defaultValue={1} */}
-        {/* render={({ field }) => ( */}
+        required
+        //   defaultValue={1}
+        render={({ field }) => (
           <RadioGroup
             row={schema?.row}
             
             aria-labelledby="demo-row-radio-buttons-group-label"
             name="row-radio-buttons-group"
-            // {...field}
+            {...field}
           >
             {schema?.radios?.map((radio) => (
               <FormControlLabel
@@ -51,8 +51,8 @@ const RadioBuilder = ({
               />
             ))}
           </RadioGroup>
-        {/* )}
-      /> */}
+        )}
+      />
     </FormControl>
   );
 };

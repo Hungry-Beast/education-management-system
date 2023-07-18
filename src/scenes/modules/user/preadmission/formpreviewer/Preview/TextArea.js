@@ -13,12 +13,12 @@ const TextArea = ({schema, register, editSchema, deleteSchema, errors }) => {
         multiline
         minRows={schema.minRow}
         maxRows={schema.maxRow}
-        // {...register(schema.name, {
-        //   required: schema.required,
-        //   maxLength: schema.maxLength,
-        //   minLength: schema.minLength,
-        //   pattern: schema.pattern,
-        // })}
+        {...register(schema.name, {
+          required: schema.required,
+          maxLength: schema.maxLength,
+          minLength: schema.minLength,
+          pattern: schema.pattern,
+        })}
         fullWidth
       />
     

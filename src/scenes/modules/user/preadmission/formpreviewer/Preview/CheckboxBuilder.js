@@ -28,12 +28,12 @@ const CheckboxBuilder = ({
             required={schema.required}
             name={schema.name}
             label={schema.label}
-            // {...register(schema.name, {
-            //   required: schema.required,
-            //   maxLength: schema.maxLength,
-            //   minLength: schema.minLength,
-            //   pattern: schema.pattern,
-            // })}
+            {...register(schema.name, {
+              required: schema.required,
+              maxLength: schema.maxLength,
+              minLength: schema.minLength,
+              pattern: schema.pattern,
+            })}
             fullWidth
           />
         }

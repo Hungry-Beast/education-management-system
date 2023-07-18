@@ -10,12 +10,12 @@ const Text = ({schema, register, editSchema, deleteSchema, errors }) => {
         name={schema.name}
         label={schema.label}
         sx={{ gridColumn: `span ${schema.gridSpan?"2":"1"}` }}
-        {...register(schema.name, {
-          required: schema.required,
-          maxLength: schema.maxLength,
-          minLength: schema.minLength,
-          pattern: schema.pattern,
-        })}
+        // {...register(schema.name, {
+        //   required: schema.required,
+        //   maxLength: schema.maxLength,
+        //   minLength: schema.minLength,
+        //   pattern: schema.pattern,
+        // })}
         fullWidth
       />
     

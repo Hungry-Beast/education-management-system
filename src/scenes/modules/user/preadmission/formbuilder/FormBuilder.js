@@ -18,6 +18,7 @@ import styled from "styled-components";
 import Fields from "./Fields";
 import OptionalDataCollector from "./OptionalDataCollector";
 import { Delete, Edit } from "@mui/icons-material";
+import { useNavigate } from "react-router-dom";
 
 const MainComponent = styled.div`
   display: grid;
@@ -40,7 +41,7 @@ const Component = styled.form`
   justify-content: space-between;
 `;
 
-const FormDisplayer = styled.form`
+const FormDisplayer = styled.div`
   width: 100%;
   height: max-content;
   padding: 24px;
@@ -58,6 +59,7 @@ const ContainerBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  
 
   gap: 10px 20px;
   grid-column: span ${(props) => (props.gridSpan ? 2 : 1)};
@@ -73,7 +75,7 @@ const typeOptions = [
   "checkbox",
   "radio",
   "file",
-  "header"
+  "header",
 ];
 
 const schemaOptions = [
@@ -118,7 +120,13 @@ export default function App() {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => console.log(data);
+  const navigate = useNavigate();
+
+  const onSubmit = (e) => {
+    // console.log(data);
+    e.preventDefault();
+    navigate("/formpreview", { state: formSchema });
+  };
 
   const [formSchema, setFormSchema] = useState([]);
   const [schemaBuilder, setSchemaBuilder] = useState({
@@ -307,7 +315,7 @@ export default function App() {
           </Button>
         </FormControl>
       </Component>
-      <Component onSubmit={handleSubmit(onSubmit)}>
+      <Component onSubmit={onSubmit}>
         <FormDisplayer>
           <Typography variant="h3" gridColumn="span 2">
             Preview Form
@@ -319,8 +327,8 @@ export default function App() {
               gridColumn: "span 2",
             }}
           />
-          {formSchema?.map((schema) => (
-            <ContainerBox gridSpan={schema?.gridSpan}>
+          {formSchema?.map((schema, i) => (
+            <ContainerBox key={i} gridSpan={schema?.gridSpan}>
               <Fields
                 key={schema.id}
                 schema={schema}
@@ -360,6 +368,16 @@ export default function App() {
               </Box>
             </ContainerBox>
           ))}
+          <Box
+            display="flex"
+            alignContent="center"
+            justifyContent={"flex-end"}
+            gridColumn={"span 2"}
+          >
+            <Button type="submit" color="success" variant="contained">
+              Preview
+            </Button>
+          </Box>
         </FormDisplayer>
       </Component>
     </MainComponent>

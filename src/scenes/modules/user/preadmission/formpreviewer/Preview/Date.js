@@ -31,13 +31,13 @@ const Date = ({
   control,
 }) => {
   return (
-    // <Controller
-    //   name={schema?.name}
-    //   control={control}
-    //   required={schema?.required}
-    //   //   defaultValue={1}
-    //   style={{ width: "100% !important" }}
-    //   render={({ field }) => (
+    <Controller
+      name={schema?.name}
+      control={control}
+      required={schema?.required}
+      //   defaultValue={1}
+      style={{ width: "100% !important" }}
+      render={({ field }) => (
         <LocalizationProvider dateAdapter={AdapterDayjs}>
           <DemoContainer components={["DatePicker"]}>
             <DatePicker
@@ -45,7 +45,7 @@ const Date = ({
               name={schema?.name}
               minDate={dayjs(schema?.minDate)}
               maxDate={dayjs(schema?.maxDate)}
-              // {...field}
+              {...field}
               sx={{
                     width: "100% !important",
                     "& .css-1u3bzj6-MuiFormControl-root-MuiTextField-root": {
@@ -67,8 +67,8 @@ const Date = ({
             />
           </DemoContainer>
         </LocalizationProvider>
-    //   )}
-    // />
+      )}
+    />
   );
 };
 

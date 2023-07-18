@@ -8,24 +8,24 @@ const File = ({ schema, register, editSchema, deleteSchema, errors }) => {
     <TextField
       accept="image/*" // Specify the accepted file types if needed
       type="file"
-      {...register(schema.name, {
-        required: `${schema.name} is required`,
-        validate: {
-          minSize: (value) => {
-            if (value[0]?.size < schema.minKb * 1024) {
-              return "Invalid file size";
-            }
-            return true;
-          },
-          maxSize: (value) => {
-            // const maxSizeInBytes = 1024 * 1024; // Example: 1MB
-            if (value[0]?.size > schema.maxKb * 1024) {
-              return "File size exceeds the maximum limit";
-            }
-            return true;
-          },
-        },
-      })}
+      // {...register(schema.name, {
+      //   required: `${schema.name} is required`,
+      //   validate: {
+      //     minSize: (value) => {
+      //       if (value[0]?.size < schema.minKb * 1024) {
+      //         return "Invalid file size";
+      //       }
+      //       return true;
+      //     },
+      //     maxSize: (value) => {
+      //       // const maxSizeInBytes = 1024 * 1024; // Example: 1MB
+      //       if (value[0]?.size > schema.maxKb * 1024) {
+      //         return "File size exceeds the maximum limit";
+      //       }
+      //       return true;
+      //     },
+      //   },
+      // })}
     />
   );
 };
