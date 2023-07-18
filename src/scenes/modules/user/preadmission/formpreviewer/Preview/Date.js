@@ -21,7 +21,7 @@ import dayjs from "dayjs";
 import React from "react";
 import { Controller } from "react-hook-form";
 import styled from "styled-components";
-import './Date.css'
+import "./Date.css";
 const Date = ({
   schema,
   register,
@@ -43,15 +43,15 @@ const Date = ({
             <DatePicker
               label={schema?.label}
               name={schema?.name}
-              minDate={dayjs(schema?.minDate)}
-              maxDate={dayjs(schema?.maxDate)}
+              minDate={schema.minDate ? dayjs(schema?.minDate) : undefined}
+              maxDate={schema.maxDate ? dayjs(schema?.maxDate) : undefined}
               {...field}
               sx={{
-                    width: "100% !important",
-                    "& .css-1u3bzj6-MuiFormControl-root-MuiTextField-root": {
-                      width: "100% important",
-                    },
-                  }}
+                width: "100% !important",
+                "& .css-1u3bzj6-MuiFormControl-root-MuiTextField-root": {
+                  width: "100% important",
+                },
+              }}
               renderInput={(params) => (
                 <TextField
                   {...params}

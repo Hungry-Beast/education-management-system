@@ -21,7 +21,7 @@ import dayjs from "dayjs";
 import React from "react";
 import { Controller } from "react-hook-form";
 import styled from "styled-components";
-import './Date.css'
+import "./Date.css";
 const Date = ({
   schema,
   register,
@@ -30,6 +30,8 @@ const Date = ({
   errors,
   control,
 }) => {
+  console.log(schema.minDate)
+  console.log(schema.maxDate)
   return (
     // <Controller
     //   name={schema?.name}
@@ -38,35 +40,35 @@ const Date = ({
     //   //   defaultValue={1}
     //   style={{ width: "100% !important" }}
     //   render={({ field }) => (
-        <LocalizationProvider dateAdapter={AdapterDayjs}>
-          <DemoContainer components={["DatePicker"]}>
-            <DatePicker
-              label={schema?.label}
-              name={schema?.name}
-              minDate={dayjs(schema?.minDate)}
-              maxDate={dayjs(schema?.maxDate)}
-              // {...field}
+    <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <DemoContainer components={["DatePicker"]}>
+        <DatePicker
+          label={schema?.label}
+          name={schema?.name}
+          minDate={schema.minDate ? dayjs(schema?.minDate) : undefined}
+          maxDate={schema.maxDate ? dayjs(schema?.maxDate) : undefined}
+          // {...field}
+          sx={{
+            width: "100% !important",
+            "& .css-1u3bzj6-MuiFormControl-root-MuiTextField-root": {
+              width: "100% important",
+            },
+          }}
+          renderInput={(params) => (
+            <TextField
+              {...params}
               sx={{
-                    width: "100% !important",
-                    "& .css-1u3bzj6-MuiFormControl-root-MuiTextField-root": {
-                      width: "100% important",
-                    },
-                  }}
-              renderInput={(params) => (
-                <TextField
-                  {...params}
-                  sx={{
-                    width: "100% !important",
-                    "& .css-1u3bzj6-MuiFormControl-root-MuiTextField-root": {
-                      width: "100% important",
-                    },
-                  }}
-                  fullWidth
-                />
-              )}
+                width: "100% !important",
+                "& .css-1u3bzj6-MuiFormControl-root-MuiTextField-root": {
+                  width: "100% important",
+                },
+              }}
+              fullWidth
             />
-          </DemoContainer>
-        </LocalizationProvider>
+          )}
+        />
+      </DemoContainer>
+    </LocalizationProvider>
     //   )}
     // />
   );
