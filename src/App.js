@@ -80,6 +80,8 @@ import StudentProfile from "./scenes/modules/user/student/enrollment-record/stud
 
 import Announcement from "./scenes/modules/communication/announcement/Announcement";
 import FormBuilder from "./scenes/modules/user/preadmission/formbuilder/FormBuilder";
+import Finance from "./scenes/global/Finance";
+import DashboardFinance from "./scenes/modules/finance/finance-and-fees/financedashboard/DashboardFinance";
 // import OrgProfile from "./settingcomponents/OrgProfile/OrgProfile";
 //>>>>>>> b63988d5e5c115f3840ce513fec25967cdd5c832
 
@@ -135,6 +137,17 @@ function App() {
               path="/modules/academic/attendence-dashboard"
               element={<AttendenceDashboard />}
             />
+
+            <Route
+              path="/modules/others/training"
+              element={<Training />}
+            />
+
+            <Route
+              path="/modules/finance/financedashboard"
+              element={<DashboardFinance />}
+            />
+
             <Route path="/modules/administration/location-category" element={<CategoryLocation/>} />
             <Route path="/modules/administration/vendor" element={<Vendor/>} />
             <Route path="/modules/administration/assets" element={<Assets/>} />
@@ -142,7 +155,7 @@ function App() {
             <Route path="/modules/administration/school-structure" element={<SchoolStructure/>} />
             <Route path="/modules/administration/school-structure-blocks" element={<SchoolStructureUI/>} />
             <Route path="/modules/administration/attendance-status/teacher" element={<TeacherSetting/>} />
-            <Route path="/modules/communication/announcement/notification-panel" element={<NotificationPanel/>} /> 
+            {/* <Route path="/modules/communication/announcement/notification-panel" element={<NotificationPanel/>} />  */}
             <Route path="/modules/communication/noticeboard/notice-board" element={<Notice/>} />         
             <Route path="/modules/administration/attendance-manage-staff" element={<StaffAttendance/>} />
             <Route path="/modules/administration/manage-visitor" element={<ManageVisitors/>} />

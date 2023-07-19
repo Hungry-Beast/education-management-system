@@ -182,6 +182,7 @@ export default function Training(){
 
 
 <StyledTrainingCard>
+    
         <StyledContainer>
           <StyledBox>
           <Typography variant="h3" mb="">Applicant's List</Typography>
