@@ -24,7 +24,7 @@ const rows = [
 
 export default function CalendarTable() {
   return (
-    <TableContainer sx={{ width: '100%', maxHeight: '360px', overflowX: 'auto', px: "30px" }} component={Paper}>
+    <TableContainer sx={{ width: '100%', maxHeight: '220px', overflowX: 'auto', px: "30px" }} component={Paper}>
       <Table aria-label="simple table">
         <TableHead>
           <TableRow>

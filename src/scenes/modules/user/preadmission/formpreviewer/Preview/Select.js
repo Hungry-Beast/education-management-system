@@ -23,31 +23,32 @@ const SelectComponent = ({
   control
 }) => {
   return (
-    // <Controller
-    //   name={schema?.name}
-    //   control={control}
-    //   required
-    //   //   defaultValue={1}
-    //   render={({ field }) => (
+    <Controller
+      name={schema?.name}
+      control={control}
+      required
+      //   defaultValue={1}
+      render={({ field }) => (
         <FormControl fullWidth>
           <InputLabel id="demo-simple-select-label">{schema.label}</InputLabel>
           <Select
             required={schema.required}
             name={schema.name}
             label={schema.label}
-            sx={{ gridColumn: `span ${schema.gridSpan ? "2" : "1"}` }}
+            sx={{ gridColumn: `span ${schema.gridSpan ? "2" : "1"}`,marginTop:1 }}
             {...register(schema.name, {
               required: schema.required,
             })}
             fullWidth
+          
           >
             {schema?.options?.map((option, index) => (
               <MenuItem value={option.value}>{option.label}</MenuItem>
             ))}
           </Select>
         </FormControl>
-    //   )}
-    // />
+      )}
+    />
   );
 };
 

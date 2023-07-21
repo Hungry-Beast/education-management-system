@@ -12,8 +12,11 @@ import AttendanceTable from "./AttendanceTable";
 import FinanceTable from "./FinanceTable";
 import BasicDateCalendar from "./Calender";
 import LibraryChart from "./PieChart";
-
-
+import ApprovalTable from "./ApprovalTable";
+import WeatherComp from "../../components/WeatherComp";
+import LaptopMacIcon from '@mui/icons-material/LaptopMac';
+import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
+import { BirthdayHelper, OnlineHelper } from "./Helper";
 
 const Component = styled.div`
   width: calc(100% - 30px);
@@ -43,24 +46,29 @@ const Dashboard = () => {
       </Box>
 
       {/* GRID & CHARTS */}
-      <Box
-        display="grid"
-        gridTemplateColumns="repeat(12, 1fr)"
-        gridAutoRows="140px"
-        gap="20px"
-      >
-        
+      <Box display="grid" gridTemplateColumns="repeat(12, 1fr)" gridAutoRows="140px" gap="20px" >
         {/* Row 1 */}
-        <Box gridColumn="span 12" gridRow="span 2" >
+        <Box gridColumn="span 9" gridRow="span 2" sx={{marginTop: "40px"}} >
           <StaticsticsComponent />
+        </Box>
+
+        <Box gridColumn="span 3" gridRow="span 2" >
+            <Box>
+              <Typography variant="h4" sx={{bgcolor: "#edf1f4", py: "18px", color: "#131313", pl: "30px"}}  >
+                  Who's Online
+              </Typography>
+            </Box>
+          <br/>
+            <OnlineHelper name="SULEKHA PANDIT" position="Teacher" />
+            <OnlineHelper name="ARINDOM CHATTERJEE" position="Staff" />
         </Box>
 
         
         {/* ROW 2 */}
-        <Box gridColumn="span 12" gridRow="span 3" backgroundColor={colors.primary[400]} >
-          <Box sx={{ px:"30px", mt: "10px" ,display: "flex", alignItems: "center", justifyContent: "space-between"}} >
+        <Box gridColumn="span 9" gridRow="span 2" backgroundColor={colors.primary[400]} >
+          <Box sx={{ px:"30px", mt: "5px" ,display: "flex", alignItems: "center", justifyContent: "space-between"}} >
             <Box>
-                <Typography my="5px" variant="h4" fontWeight="600" color={colors.grey[100]}>
+                <Typography variant="h4" fontWeight="600" color={colors.grey[100]}>
                   School Calender
                 </Typography>
             </Box>
@@ -68,15 +76,26 @@ const Dashboard = () => {
             <Box></Box>
           </Box>
 
-          <Box sx={{mt:"25px"}} >
+          <Box sx={{mt:"12px"}} >
               <CalendarTable/>
           </Box>
         </Box>
 
+        <Box gridColumn="span 3" gridRow="span 2" sx={{bgcolor: "white"}} >
+            <Box>
+              <Typography variant="h4" sx={{bgcolor: "#edf1f4", py: "18px", color: "#131313", pl: "30px"}}  >
+                  Birthday Card
+              </Typography>
+            </Box>
+          <br/>
+            <BirthdayHelper name="TANIYA NARZARY" position="Teacher" />
+            <BirthdayHelper name="JAYSWRANG BASUMATARY" position="Staff" />
+        </Box>
+
 
         {/* ROW 3  Daily Bulletin */}
-        <Box gridColumn="span 12" gridRow="span 3" backgroundColor={colors.primary[400]} >
-          <Box sx={{ px:"30px", mt: "10px" ,display: "flex", alignItems: "center", justifyContent: "space-between"}} >
+        <Box gridColumn="span 9" gridRow="span 2" backgroundColor={colors.primary[400]} >
+          <Box sx={{ px:"30px", mt: "5px" ,display: "flex", alignItems: "center", justifyContent: "space-between"}} >
             <Box>
                 <Typography my="5px" variant="h4" fontWeight="600" color={colors.grey[100]}>
                   Daily Bulletin
@@ -86,101 +105,75 @@ const Dashboard = () => {
             <Box></Box>
           </Box>
 
-          <Box mt="25px">
+          <Box mt="12px">
               <BulletinTable />
           </Box>
         </Box>
 
+        <Box gridColumn="span 3" gridRow="span 2" sx={{bgcolor: "brown"}} >
+          <WeatherComp />
+        </Box>
+
 
         {/* ROW 4  Live Attendance */}
-        <Box gridColumn="span 12" gridRow="span 3" backgroundColor={colors.primary[400]} >
-          <Box sx={{ px:"30px", mt: "40px"}} >
-              <Typography  my="10px" variant="h4" fontWeight="600" color={colors.grey[100]}  >
+        <Box gridColumn="span 9" gridRow="span 2" backgroundColor={colors.primary[400]} >
+          <Box sx={{ px:"30px", mt: "5px"}} >
+              <Typography  my="15px" variant="h4" fontWeight="600" color={colors.grey[100]}  >
                     Live Attendance
               </Typography>
           </Box>
 
-          <Box mt="25px">
+          <Box mt="12px">
             <AttendanceTable/>
           </Box>
+        </Box>
+
+        {/* CALENDER HERE _-_-_-_-_- */}
+        <Box gridColumn="span 3" gridRow="span 3" backgroundColor={colors.primary[400]} sx={{pt: "40px"}}>
+          <BasicDateCalendar/>
         </Box>
 
 
 
         {/* ROW 5 Live Finance Data */}
-        <Box gridColumn="span 9" gridRow="span 3" backgroundColor={colors.primary[400]} >
-          <Box sx={{ px:"30px", mt: "40px"}} >
-              <Typography  my="10px" variant="h4" fontWeight="600" color={colors.grey[100]}  >
+        <Box gridColumn="span 9" gridRow="span 2" backgroundColor={colors.primary[400]} >
+          <Box sx={{ px:"30px", mt: "5px"}} >
+              <Typography  my="15px" variant="h4" fontWeight="600" color={colors.grey[100]}  >
                     Live Finance Data
               </Typography>
           </Box>
 
-          <Box mt="25px">
+          <Box mt="12px">
             <FinanceTable/>
           </Box>
         </Box>
 
 
-        {/* CALENDER HERE _-_-_-_-_- */}
-        <Box
-          gridColumn="span 3"
-          gridRow="span 3"
-          backgroundColor={colors.primary[400]}
-          sx={{pt: "40px"}}
-        >
-          <BasicDateCalendar
-            sx={{
-              '& .css-4zqhc7-MuiButtonBase-root-MuiPickersDay-root':{
-                bgcolor: "red",
-                backgroundColor: "red !important",
-                margin: "30px"
-              }
-            }}
-          />
 
+        {/* LOWER LEVEL ROWS */}
+
+        <Box gridColumn="span 3" gridRow="span 3" >
+          <Typography variant="h4" fontWeight="600" sx={{bgcolor: "#edf1f4", py: "18px", color: "#131313", pl: "30px", mb: "15px"}}>Finance</Typography>
+          <Typography variant="h4" fontWeight="500" sx={{pl: '30px'}}>Amount to be received</Typography>
+          <Typography variant="h4" fontWeight="500" sx={{pl: '30px' ,mb: "40px", color: "#2e43ce"}}>$14677722</Typography>
+          <LibraryChart />
         </Box>
 
 
-        {/* LOWER LEVEL ROWS */}
-        <Box
-          gridColumn="span 3"
-          gridRow="span 2"
-          backgroundColor={colors.primary[400]}
-        >
-          <Typography variant="h4" fontWeight="600" sx={{px: '20px', pt: "10px"}} >
-            Library
-          </Typography>
+        <Box gridColumn="span 3" gridRow="span 2"   >
+          <Typography variant="h4" fontWeight="600" sx={{bgcolor: "#edf1f4", py: "18px", color: "#131313", pl: "30px"}} > Library </Typography>
             <LibraryChart />
         </Box>
 
-        <Box
-          gridColumn="span 6"
-          gridRow="span 2"
-          backgroundColor={colors.primary[400]}
-        >
-          <Typography
-            variant="h5"
-            fontWeight="600"
-            sx={{ padding: "30px 30px 0 30px" }}
-          >
-            Approvals
-          </Typography>
-          {/* <Box height="250px" mt="-20px">
-            <BarChart isDashboard={true} />
-          </Box> */}
+        <Box gridColumn="span 6" gridRow="span 2" >
+          <Typography variant="h4" fontWeight="600" sx={{ bgcolor: "#edf1f4", py: "18px", color: "#131313", pl: "30px"}}>Approvals</Typography>
+          
+          <Box>
+            <ApprovalTable />
+          </Box>
         </Box>
 
 
-        <Box
-          gridColumn="span 3"
-          gridRow="span 2"
-          backgroundColor={colors.primary[400]}
-        >
-          <Typography variant="h4" fontWeight="600" sx={{px: '20px', pt: "10px"}}>
-            Finance
-          </Typography>
-          <LibraryChart />
-        </Box>
 
       </Box>
     </Box>

@@ -67,7 +67,6 @@ import TeacherSetting from "./scenes/modules/administration/teacher attendance/t
 import Myleaves from "./detailscomponents/myleaves";
 
 import RolesPermissions from "./scenes/roles&permision/roles-permision";
-// import { NotificationPanel } from "./scenes/modules/communication/announcement/NotificationPanel";
 import Advance from "./detailscomponents/advance/index";
 import ChangeAcademic from "./scenes/changeacademic/change-academic";
 import StaffAttendance from "./scenes/modules/administration/teacher attendance/staffattendance";
@@ -77,11 +76,14 @@ import Enquiry from "./scenes/modules/administration/visitor/enquiry";
 import { Notice } from "./scenes/modules/communication/noticeboard/Notice";
 import StudentProfile from "./scenes/modules/user/student/enrollment-record/student-profile/StudentProfile";
 
-
 import Announcement from "./scenes/modules/communication/announcement/Announcement";
 import FormBuilder from "./scenes/modules/user/preadmission/formbuilder/FormBuilder";
 import Finance from "./scenes/global/Finance";
 import DashboardFinance from "./scenes/modules/finance/finance-and-fees/financedashboard/DashboardFinance";
+
+import ManageEvent from "./scenes/modules/communication/manageevent";
+import FormPreview from "./scenes/modules/user/preadmission/formpreviewer/FormBuilder";
+// import  NotificationPanel  from "./scenes/modules/communication/announcement/Announcement";
 // import OrgProfile from "./settingcomponents/OrgProfile/OrgProfile";
 //>>>>>>> b63988d5e5c115f3840ce513fec25967cdd5c832
 
@@ -138,6 +140,7 @@ function App() {
               element={<AttendenceDashboard />}
             />
 
+
             <Route
               path="/modules/others/training"
               element={<Training />}
@@ -161,6 +164,51 @@ function App() {
             <Route path="/modules/administration/manage-visitor" element={<ManageVisitors/>} />
             <Route path="/modules/administration/manage-postal" element={<Postal/>} />
             <Route path="/modules/administration/manage-enquiry" element={<Enquiry/>} />
+
+            <Route
+              path="/modules/administration/location-category"
+              element={<CategoryLocation />}
+            />
+            <Route path="/modules/administration/vendor" element={<Vendor />} />
+            <Route path="/modules/administration/assets" element={<Assets />} />
+            <Route
+              path="/modules/administration/asset-purchase"
+              element={<AssetPurchase />}
+            />
+            <Route
+              path="/modules/administration/school-structure"
+              element={<SchoolStructure />}
+            />
+            <Route
+              path="/modules/administration/school-structure-blocks"
+              element={<SchoolStructureUI />}
+            />
+            <Route
+              path="/modules/administration/attendance-status/teacher"
+              element={<TeacherSetting />}
+            />
+            {/* <Route path="/modules/communication/announcement/notification-panel" element={<NotificationPanel/>} />  */}
+            <Route
+              path="/modules/communication/noticeboard/notice-board"
+              element={<Notice />}
+            />
+            <Route
+              path="/modules/administration/attendance-manage-staff"
+              element={<StaffAttendance />}
+            />
+            <Route
+              path="/modules/administration/manage-visitor"
+              element={<ManageVisitors />}
+            />
+            <Route
+              path="/modules/administration/manage-postal"
+              element={<Postal />}
+            />
+            <Route
+              path="/modules/administration/manage-enquiry"
+              element={<Enquiry />}
+            />
+
             <Route
               path="/modules/administration/location-category"
               element={<CategoryLocation />}
@@ -187,6 +235,7 @@ function App() {
               path="/modules/communication/announcement/notification-panel"
               element={<Announcement />}
             />
+            <Route path="/modules/events" element={<ManageEvent />} />
             <Route
               path="/modules/administration/attendance-manage-staff"
               element={<StaffAttendance />}
@@ -266,6 +315,10 @@ function App() {
               element={<Announcement />}
             />
             <Route
+              path="/modules/communication/events/manage-event"
+              element={<ManageEvent />}
+            />
+            <Route
               path="/modules/administration/attendance-manage-staff"
               element={<StaffAttendance />}
             />
@@ -282,10 +335,7 @@ function App() {
               element={<Enquiry />}
             />
 
-            <Route
-              path="/modules/announcement"
-              element={<Announcement />}
-            />
+            <Route path="/modules/announcement" element={<Announcement />} />
           </Route>
           {/* <Route path="/profile" element={<Dprofile/>} /> */}
           <Route path="/" element={<Navigate replace to="/login" />} />
@@ -328,6 +378,8 @@ function App() {
             <Route path="/profile/staff-subjectMapping" element={<Subject />} />
             <Route path="/profile/staff-advance" element={<Advance />} />
           </Route>
+          <Route path="/formpreview" element={<FormPreview />} />
+          <Route path="/formpreview/:id" element={<FormPreview />} />
         </Routes>
       </ThemeProvider>
     </ImageContext.Provider>

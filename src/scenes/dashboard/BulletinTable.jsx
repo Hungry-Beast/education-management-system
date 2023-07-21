@@ -31,7 +31,7 @@ const rows = [
 
 export default function BulletinTable() {
   return (
-    <TableContainer sx={{ width: '100%', maxHeight: '350px', overflowX: 'auto', px: "30px" }} component={Paper}>
+    <TableContainer sx={{ width: '100%', maxHeight: '224px', overflowX: 'auto', px: "30px" }} component={Paper}>
       <Table aria-label="simple table">
         <TableBody>
           {rows.map((row) => (
@@ -40,8 +40,8 @@ export default function BulletinTable() {
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell >
-               <p style={{fontSize: "15px", marginBottom: "-5px"}} ><strong>{row.title}</strong></p> 
-                <p  >{row.postedOn}</p> 
+               <p style={{fontSize: "15px", marginBottom: "-7px", marginTop: "5px"}} ><strong>{row.title}</strong></p> 
+                <p style={{marginBottom: "-3px"}} >{row.postedOn}</p> 
               </TableCell>
               
               <TableCell align="right" > <PushBtn>{row.push}</PushBtn> </TableCell>

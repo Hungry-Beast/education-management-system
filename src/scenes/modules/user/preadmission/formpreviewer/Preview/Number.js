@@ -11,12 +11,12 @@ const Number = ({ schema, register, editSchema, deleteSchema, errors }) => {
       type="number"
       required={schema.required}
       sx={{ gridColumn: `span ${schema.gridSpan}` }}
-      // {...register(schema.name, {
-      //   required: schema.required,
-      //   max: schema.max,
-      //   min: schema.min,
-      //   pattern: schema.pattern,
-      // })}
+      {...register(schema.name, {
+        required: schema.required,
+        max: schema.max,
+        min: schema.min,
+        pattern: schema.pattern,
+      })}
       fullWidth
     />
   );
