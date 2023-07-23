@@ -62,7 +62,7 @@ const Others = () => {
           </Link>
         </Li>
         <Li>
-          <Link to="/admin">
+          <Link to="/modules/others/training">
             <Typography variant="h5">Training</Typography>
           </Link>
         </Li>

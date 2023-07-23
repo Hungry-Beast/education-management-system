@@ -78,6 +78,9 @@ import StudentProfile from "./scenes/modules/user/student/enrollment-record/stud
 
 import Announcement from "./scenes/modules/communication/announcement/Announcement";
 import FormBuilder from "./scenes/modules/user/preadmission/formbuilder/FormBuilder";
+import Finance from "./scenes/global/Finance";
+import DashboardFinance from "./scenes/modules/finance/finance-and-fees/financedashboard/DashboardFinance";
+
 import ManageEvent from "./scenes/modules/communication/manageevent";
 import FormPreview from "./scenes/modules/user/preadmission/formpreviewer/FormBuilder";
 // import  NotificationPanel  from "./scenes/modules/communication/announcement/Announcement";
@@ -136,6 +139,32 @@ function App() {
               path="/modules/academic/attendence-dashboard"
               element={<AttendenceDashboard />}
             />
+
+
+            <Route
+              path="/modules/others/training"
+              element={<Training />}
+            />
+
+            <Route
+              path="/modules/finance/financedashboard"
+              element={<DashboardFinance />}
+            />
+
+            <Route path="/modules/administration/location-category" element={<CategoryLocation/>} />
+            <Route path="/modules/administration/vendor" element={<Vendor/>} />
+            <Route path="/modules/administration/assets" element={<Assets/>} />
+            <Route path="/modules/administration/asset-purchase" element={<AssetPurchase/>} />
+            <Route path="/modules/administration/school-structure" element={<SchoolStructure/>} />
+            <Route path="/modules/administration/school-structure-blocks" element={<SchoolStructureUI/>} />
+            <Route path="/modules/administration/attendance-status/teacher" element={<TeacherSetting/>} />
+            {/* <Route path="/modules/communication/announcement/notification-panel" element={<NotificationPanel/>} />  */}
+            <Route path="/modules/communication/noticeboard/notice-board" element={<Notice/>} />         
+            <Route path="/modules/administration/attendance-manage-staff" element={<StaffAttendance/>} />
+            <Route path="/modules/administration/manage-visitor" element={<ManageVisitors/>} />
+            <Route path="/modules/administration/manage-postal" element={<Postal/>} />
+            <Route path="/modules/administration/manage-enquiry" element={<Enquiry/>} />
+
             <Route
               path="/modules/administration/location-category"
               element={<CategoryLocation />}
@@ -179,6 +208,7 @@ function App() {
               path="/modules/administration/manage-enquiry"
               element={<Enquiry />}
             />
+
             <Route
               path="/modules/administration/location-category"
               element={<CategoryLocation />}

@@ -47,8 +47,8 @@ const Finance = () => {
           </Typography>
           <Divider />
           <Li>
-          <Link to="/admin">
-            <Typography variant="h5">Dashboard</Typography>
+          <Link to="/modules/finance/financedashboard">
+            <Typography variant="h5">DashboardFinance</Typography>
           </Link>
         </Li>
         <Li>
